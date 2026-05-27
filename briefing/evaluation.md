@@ -9,7 +9,7 @@
 
 ## Baselines and Targets
 
-The reference baseline is a noisy online projected-gradient method adapted from private distributed optimization. The target behavior is competitive or lower exploitability than this baseline under the same noise/privacy schedule, while also showing the paper's claimed exploitability/privacy scaling trends as player count increases.
+Each submitted method is compared with a fixed reference comparator through the same artifact interface. The target behavior is competitive or lower exploitability than the comparator on matched games while also showing the claimed exploitability/privacy scaling trends as player count increases.
 
 ## Evaluation Protocol
 

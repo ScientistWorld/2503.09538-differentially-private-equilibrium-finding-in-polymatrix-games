@@ -2,4 +2,4 @@ action: submit
 gpus: 0
 test: true
 milestone: core_claim_plus
-notes: "CPU container validation after tightening evaluate.sh/method.sh/baseline.sh manifest scoping to avoid stale-output scoring during partial reruns."
+notes: "CPU container validation of manifest-scoped evaluation scripts and final method-agnostic documentation cleanup."

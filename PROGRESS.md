@@ -71,6 +71,8 @@ Final verification, 2026-05-27 20:11 UTC: CPU validation job `abee7929-170` comp
 
 Packaging fix, 2026-05-27 20:15 UTC: tightened `scripts/evaluate.sh` so callers can pass explicit manifest paths. `scripts/method.sh` and `scripts/baseline.sh` now evaluate only the artifact set they just produced plus the matched counterpart manifest when present. This avoids stale-output mixing during one-topology partial reruns. Shell syntax checks passed locally; full evaluation requires the container because NumPy is installed through `environment/setup.sh`.
 
+Final verifier update, 2026-05-27 20:19 UTC: train/test evaluators were inspected and confirmed to discover all manifests, score saved artifacts rather than method internals, enforce matching method keys on the held-out slice, and write explicit slice markers in diagnostics. `briefing/evaluation.md` was reworded to keep the comparator description method-agnostic. A CPU container validation job is being submitted for the latest script/documentation state.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.

@@ -35,3 +35,8 @@
 ### [2026-05-27 20:15] - core_claim_plus
 - Fixed method/baseline auto-evaluation to pass explicit manifests, avoiding accidental mixing of fresh artifacts with stale outputs during partial reruns.
 - Submitting a CPU validation job to verify the packaging change inside the container runtime.
+
+### [2026-05-27 20:19] - core_claim_plus
+- Final verifier tightened method-agnostic evaluation documentation to avoid naming the comparator algorithm.
+- Train/test evaluators were inspected and confirmed to score saved artifacts with matching method keys and slice markers.
+- Submitting a CPU validation job for the current manifest-scoped scripts and documentation state.
