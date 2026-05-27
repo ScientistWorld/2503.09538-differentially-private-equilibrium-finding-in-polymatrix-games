@@ -33,11 +33,11 @@
         "our_method": {
           "baseline_cce_ratio": 1.0191128529626898,
           "cce_exploitability_mean": 0.12725251780034766,
-          "cce_stable_or_decreases_with_n": 1.0,
+          "cce_stable_or_decreases_with_n": 1.0041847116042244,
           "competitive_with_baseline": 1.0,
           "final_nash_gap_mean": 0.14583326693269036,
           "privacy_budget_mean": 5473.381623769861,
-          "privacy_decreases_with_n": 1.25,
+          "privacy_decreases_with_n": 1.4875392089523471,
           "strategy_simplex_violation_mean": 4.44161489994895e-17
         }
       }
