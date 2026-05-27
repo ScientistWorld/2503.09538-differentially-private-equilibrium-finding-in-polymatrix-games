@@ -19,6 +19,7 @@ The workspace started at milestone `core_claim_plus`. The claimed milestone was 
 - Reworded the method-agnostic evaluation briefing to describe the comparator contract without naming the comparator algorithm.
 - Ran CPU validation job `abee7929-170`, which regenerated standalone, train, and held-out test scores and passed `python validate.py --compare`.
 - Accepted the later manifest-scoping changes by direct shell-script inspection and `bash -n`; they only restrict which manifests are passed to the already validated evaluator.
+- Removed generated `jobs/` and `trajectory/` logs from the git index; `.gitignore` already excludes them and they remain local runtime evidence rather than shipped gym contents.
 
 ## Final Judgment
 

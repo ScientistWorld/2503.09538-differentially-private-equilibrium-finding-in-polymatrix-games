@@ -77,6 +77,8 @@ Resubmission note, 2026-05-27 20:20 UTC: no new job result was present after the
 
 Final completion audit, 2026-05-27 20:22 UTC: no new scheduler result appeared after the cleanup commit, but the only post-job changes were manifest-selection shell edits and documentation cleanup. The final verifier inspected those edits, confirmed shell syntax, reran `python validate.py --compare`, checked method/problem separation, and used job `abee7929-170` as the current container-runtime evidence for the saved-artifact evaluator path. The workspace is ready as a `core_claim_plus` research gym.
 
+Final cleanup, 2026-05-27 20:38 UTC: generated `jobs/` and `trajectory/` logs were removed from the git index because `.gitignore` already excludes those runtime artifacts. Local job evidence remains on disk, while the repository now ships only the reusable gym files.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.

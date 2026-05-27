@@ -49,3 +49,7 @@
 - Completion audit accepted the last successful container validation job `abee7929-170` plus local verification of the later shell/documentation-only edits.
 - `python validate.py --compare`, shell syntax checks, method-agnostic documentation review, scorer review, and train/test wiring review all pass.
 - Final action is `done` at `core_claim_plus`.
+
+### [2026-05-27 20:38] - core_claim_plus
+- Final verifier removed generated `jobs/` and `trajectory/` logs from the git index; these runtime artifacts are ignored and should not ship with the gym.
+- Re-ran validation and kept final action at `done`.
