@@ -26,3 +26,8 @@
 ### [2026-05-27 20:45] - core_claim_plus
 - Final packaging rerun completed successfully and validation passed.
 - `scores.json` contains the three reproduced scored experiments; `diagnostics.json` also records sparse-random as an unscored finite-grid gap.
+
+### [2026-05-27 20:11] - core_claim_plus
+- Final verification job `abee7929-170` completed with exit code 0.
+- `scripts/evaluate.sh`, `scripts/evaluate_train.sh`, `scripts/evaluate_test.sh`, and `python validate.py --compare` all passed in the container runtime.
+- Verified that method-agnostic files, scoring docs, and train/test split wiring are suitable for gym use.

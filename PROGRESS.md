@@ -67,6 +67,8 @@ Train/test scoring update, 2026-05-27 19:55 EDT: jobs `651a3ed7-e9e` and `98d11a
 
 Packaging audit update, 2026-05-27 20:03 UTC: updated the standalone evaluator used by `scripts/evaluate.sh` to emit the same raw benefit and constraint metrics declared in `reference.json`: CCE exploitability, privacy budget, final Nash gap, baseline CCE ratio, and simplex violation. The evaluator now recomputes privacy bounds from saved games and run parameters instead of trusting manifest values. A CPU test job is being submitted to regenerate scores and validate the package in the container runtime.
 
+Final verification, 2026-05-27 20:11 UTC: CPU validation job `abee7929-170` completed with exit code 0. It regenerated `scores.json`, `scores_train.json`, and `scores_test.json`, then `python validate.py --compare` passed. The final audit removed method-specific naming from problem-side helper functions, trimmed template text from method-agnostic briefing files, and aligned `scoring/EXPERIMENTS.md` exactly with scored experiments. Milestone remains `core_claim_plus`.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.
