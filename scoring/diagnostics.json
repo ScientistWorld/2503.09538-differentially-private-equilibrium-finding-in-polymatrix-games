@@ -4,21 +4,21 @@
       "our_method": {
         "raw_baseline_cce_ratio": 1.032432503639121,
         "raw_cce_slope": -0.3798901008384497,
-        "raw_privacy_slope": -8.423352447272559e-18
+        "raw_privacy_slope": -0.06000106423822897
       }
     },
     "dense_er_scaling": {
       "our_method": {
         "raw_baseline_cce_ratio": 1.0192083484172125,
         "raw_cce_slope": -0.38563446515348954,
-        "raw_privacy_slope": -8.423352447272559e-18
+        "raw_privacy_slope": -0.08594711347561035
       }
     },
     "sparse_knn_scaling": {
       "our_method": {
         "raw_baseline_cce_ratio": 1.016861943065566,
         "raw_cce_slope": -0.045615368577869325,
-        "raw_privacy_slope": -0.7343868786526576
+        "raw_privacy_slope": -4.884306656673597
       }
     }
   }
