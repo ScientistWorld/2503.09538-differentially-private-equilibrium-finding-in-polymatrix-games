@@ -31,7 +31,7 @@ Final rerun after averaging privacy over sampled adjacent edges kept the same qu
 
 ## Remaining
 
-To go beyond `core_claim_plus`, a closer implementation of the Huang et al. adapted baseline would be needed to reproduce the paper's baseline separation more faithfully. The sparse-random privacy target has been restored for rerun after correcting the privacy helper to match the paper's `min{club, spade}` Theorem 8.1 bound.
+To go beyond `core_claim_plus`, a closer implementation of the Huang et al. adapted baseline would be needed to reproduce the paper's baseline separation more faithfully. Sparse-random privacy remains a diagnostic gap on this finite grid: even after correcting the privacy helper to match the paper's `min{club, spade}` Theorem 8.1 bound, the available rerun did not reproduce the decreasing privacy trend.
 
 ## Issues
 
@@ -52,6 +52,8 @@ Final update, 2026-05-27 21:05 UTC: averaging privacy over sampled adjacent edge
 Update, 2026-05-27 19:21 UTC: continuing audit found that the privacy helper was choosing either the dense or sparse branch by harmonic degree, while Theorem 7.1 and Theorem 8.1 bound privacy with `min{club, spade}`. The helper and scoring target set have been corrected, and a CPU rerun is being submitted to verify sparse random under the paper's bound.
 
 Update, 2026-05-27 19:30 UTC: corrected the CCE evaluator to use fixed-deviation regret over the empirical trajectory, matching Proposition 5.1. The previous metric selected a fresh best action at every timestep, which was stricter than the paper's CCE objective.
+
+Audit update, 2026-05-27 20:10 UTC: the continuing audit found that sparse-random had been restored to `reference.json` and `TARGETS.md` even though the finite-grid job still failed its privacy trend and the checked-in `scores.json` omitted it. Sparse-random has been moved back to diagnostics, and a fresh CPU job is being submitted to regenerate scores under the corrected fixed-deviation CCE evaluator.
 
 ## Deviations from Paper
 

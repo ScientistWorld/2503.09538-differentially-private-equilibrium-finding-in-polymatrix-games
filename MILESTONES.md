@@ -1,6 +1,6 @@
 # Reproduction Milestones
 
-**Current: core_claim_plus**
+**Current: core_claim**
 
 ## Progress Log
 
@@ -9,3 +9,7 @@
 - Existing completed CPU jobs reproduce the core simultaneous exploitability/privacy scaling claim on dense ER, dense clustered, and sparse kNN settings.
 - Corrected the Theorem 8.1 privacy helper to use the paper's `min{club, spade}` bound before rerunning the full scored grid with sparse random restored.
 - Corrected CCE scoring to use fixed-deviation regret over the empirical trajectory, matching Proposition 5.1.
+
+### [2026-05-27 20:10] - core_claim
+- Continuing audit reset the claimed milestone to `core_claim` until a fresh run verifies the corrected CCE evaluator.
+- Removed sparse-random from scored targets after the available finite-grid rerun failed its privacy trend; it remains a diagnostic output.

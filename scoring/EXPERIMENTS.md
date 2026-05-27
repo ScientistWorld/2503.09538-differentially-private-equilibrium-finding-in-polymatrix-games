@@ -12,6 +12,6 @@ Tests whether the dense-graph behavior also appears on the clustered dense topol
 
 Tests the sparse geometric nearest-neighbor topology from the paper's additional experiments under the same sparse-graph success criteria.
 
-## sparse_random_scaling
+## sparse_random_scaling Diagnostic
 
-Tests the sparse random topology from the paper's main sparse-graph experiment: privacy budget should decrease while finite-scale exploitability remains stable or improves.
+Sparse random graphs from Figure 6 are generated during reproduction and emitted to `scoring/diagnostics.json`. They are intentionally not scored because the finite-scale grid used here did not reproduce the paper's decreasing privacy-budget trend.

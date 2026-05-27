@@ -4,5 +4,5 @@
 action: submit
 gpus: 0
 test: true
-milestone: core_claim_plus
-notes: "CPU rerun of all scored topologies after correcting CCE fixed-deviation scoring and Theorem 8.1 privacy min-bound."
+milestone: core_claim
+notes: "CPU rerun to regenerate scores after audit fixes: fixed-deviation CCE metric and sparse-random moved back to diagnostics."
