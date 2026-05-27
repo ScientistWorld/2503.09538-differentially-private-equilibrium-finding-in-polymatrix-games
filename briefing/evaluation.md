@@ -1,7 +1,5 @@
 # Evaluation
 
-How success is measured. Describe only the metrics, targets, and evaluation procedure — do NOT describe the paper's method or how they achieved these results. Think of this as a general evaluation protocal for other scientists trying to solve the same problem, where they should not see this paper's solution.
-
 ## Metrics
 
 - **CCE exploitability**: average per-player fixed-deviation regret of the empirical distribution over iterates. Lower is better.

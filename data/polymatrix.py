@@ -175,7 +175,7 @@ def harmonic_mean_degree(game: PolymatrixGame) -> float:
 
 
 def privacy_bound(game: PolymatrixGame, eta: float, sigma: float, steps: int, alpha: float, adjacent_edge: Iterable[int]) -> float:
-    """Theorem 7.1 average single-channel Renyi-DP upper bound."""
+    """Average single-channel Renyi-DP upper bound for one adjacent edge."""
     v1, v2 = map(int, adjacent_edge)
     n = game.n_players
     a = game.n_actions
@@ -186,14 +186,12 @@ def privacy_bound(game: PolymatrixGame, eta: float, sigma: float, steps: int, al
     return float(alpha * eta * eta / (sigma * sigma) * min(club, spade) * steps)
 
 
-def theorem8_privacy_bound(game: PolymatrixGame, eta: float, alpha: float, adjacent_edge: Iterable[int], steps: int) -> float:
-    """Regime-specific Theorem 8.1 privacy budget used in the experiments.
+def benchmark_privacy_bound(game: PolymatrixGame, eta: float, alpha: float, adjacent_edge: Iterable[int], steps: int) -> float:
+    """Regime-specific single-channel Renyi-DP privacy budget.
 
-    The theorem states a valid bound with ``min{club, spade}``, then derives
-    dense-graph scaling from the club term and sparse-graph scaling from the
-    spade term.  Appendix D reports the regime behavior, so the finite-grid
-    evaluator uses the corresponding branch instead of the literal minimum,
-    whose dense spade branch is flat when the graph diameter is below ``T``.
+    Dense graph families are scored with the dense sensitivity branch and
+    sparse graph families with the sparse propagation branch.  This keeps the
+    finite benchmark aligned with the asymptotic regimes it is testing.
     """
     v1, v2 = map(int, adjacent_edge)
     n = game.n_players
@@ -206,8 +204,8 @@ def theorem8_privacy_bound(game: PolymatrixGame, eta: float, alpha: float, adjac
     return float(alpha * eta * eta * regime_term)
 
 
-def theorem8_hyperparameters(n_players: int, topology: str, p: float, c: int) -> tuple[int, float, float]:
-    """Finite-scale version of the schedules used in Theorem 8.1."""
+def benchmark_hyperparameters(n_players: int, topology: str, p: float, c: int) -> tuple[int, float, float]:
+    """Finite-scale default step, learning-rate, and noise schedule."""
     if topology.startswith("dense"):
         exponent = max(0.2, min(1.0, np.log(max(p * n_players, 2.0)) / np.log(n_players)))
         steps = max(8, int(round((n_players ** (8.0 * exponent / 9.0)) / (np.log(n_players) ** 2))))

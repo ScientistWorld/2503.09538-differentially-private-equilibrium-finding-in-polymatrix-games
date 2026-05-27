@@ -14,6 +14,6 @@ Methods must write manifests and trajectory artifacts with the same fields expec
 
 ## Compliance Checklist
 - [ ] Uses the same procedural game generator, topology, seeds, action count, and player-count grid.
-- [ ] Keeps the same noisy communication/privacy accounting setup.
+- [ ] Keeps the same privacy accounting, adjacency definition, and communication-observation setting.
 - [ ] Writes artifacts in the expected manifest and trajectory format.
 - [ ] Scores are produced by `bash scripts/evaluate.sh`, not by method-side self-reporting.

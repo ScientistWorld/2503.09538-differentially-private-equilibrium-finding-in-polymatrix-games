@@ -15,7 +15,7 @@ from pathlib import Path
 
 import numpy as np
 
-from data.polymatrix import cce_exploitability, load_game, nash_gap, theorem8_privacy_bound
+from data.polymatrix import benchmark_privacy_bound, cce_exploitability, load_game, nash_gap
 
 SLICE = "test"
 SCORED_TOPOLOGIES = {"dense_er", "dense_cluster", "sparse_knn"}
@@ -56,7 +56,7 @@ def deterministic_privacy_bound(game, run: dict) -> float:
     )
     indices = edge_order[:count]
     bounds = [
-        theorem8_privacy_bound(
+        benchmark_privacy_bound(
             game,
             float(run["eta"]),
             float(run.get("alpha", 2.0)),

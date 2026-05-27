@@ -8,7 +8,14 @@ from pathlib import Path
 
 import numpy as np
 
-from data.polymatrix import generate_game, harmonic_mean_degree, project_simplex, save_game, theorem8_hyperparameters, theorem8_privacy_bound
+from data.polymatrix import (
+    benchmark_hyperparameters,
+    benchmark_privacy_bound,
+    generate_game,
+    harmonic_mean_degree,
+    project_simplex,
+    save_game,
+)
 
 
 def average_privacy_bound(game, eta: float, alpha: float, steps: int, seed: int, samples: int) -> tuple[float, list[list[int]]]:
@@ -16,7 +23,7 @@ def average_privacy_bound(game, eta: float, alpha: float, steps: int, seed: int,
     count = min(samples, len(game.edges))
     indices = rng.choice(len(game.edges), size=count, replace=False)
     edges = [game.edges[int(idx)].tolist() for idx in indices]
-    bounds = [theorem8_privacy_bound(game, eta, alpha, edge, steps) for edge in edges]
+    bounds = [benchmark_privacy_bound(game, eta, alpha, edge, steps) for edge in edges]
     return float(np.mean(bounds)), edges
 
 
@@ -58,7 +65,7 @@ def main() -> None:
     out.mkdir(parents=True, exist_ok=True)
     runs = []
     for n in args.n_values:
-        steps, eta, sigma = theorem8_hyperparameters(n, args.topology, args.p, args.c)
+        steps, eta, sigma = benchmark_hyperparameters(n, args.topology, args.p, args.c)
         for seed in args.seeds:
             game = generate_game(n, args.actions, args.topology, seed=1000 + 17 * seed + n, p=args.p, c=args.c)
             privacy_bound, privacy_edges = average_privacy_bound(
