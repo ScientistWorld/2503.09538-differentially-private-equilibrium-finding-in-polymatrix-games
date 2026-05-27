@@ -15,7 +15,7 @@ from pathlib import Path
 
 import numpy as np
 
-from data.polymatrix import cce_exploitability, load_game, nash_gap
+from data.polymatrix import cce_exploitability, load_game, nash_gap, theorem8_privacy_bound
 
 SLICE = "test"
 SCORED_TOPOLOGIES = {"dense_er", "dense_cluster", "sparse_knn"}
@@ -42,6 +42,33 @@ def run_seed(run: dict) -> int:
         return int(match.group(1))
     digest = hashlib.sha256(f"{run['topology']}|{run['method']}|{run['n_players']}|{text}".encode()).hexdigest()
     return int(digest[:12], 16)
+
+
+def deterministic_privacy_bound(game, run: dict) -> float:
+    """Recompute the benchmark privacy bound instead of trusting manifest values."""
+    count = min(8, len(game.edges))
+    if count == 0:
+        return 0.0
+    rng = np.random.default_rng(4000 + 31 * run_seed(run) + int(run["n_players"]))
+    indices = rng.choice(len(game.edges), size=count, replace=False)
+    bounds = [
+        theorem8_privacy_bound(
+            game,
+            float(run["eta"]),
+            float(run.get("alpha", 2.0)),
+            game.edges[int(idx)],
+            int(run["steps"]),
+        )
+        for idx in indices
+    ]
+    return float(np.mean(bounds))
+
+
+def simplex_violation(trajectory: np.ndarray) -> float:
+    row_sum_error = np.abs(np.sum(trajectory, axis=-1) - 1.0)
+    negative_mass = np.maximum(-trajectory, 0.0)
+    excess_mass = np.maximum(trajectory - 1.0, 0.0)
+    return float(row_sum_error.mean() + negative_mass.mean() + excess_mass.mean())
 
 
 def select_slice_runs(runs: list[dict]) -> list[dict]:
@@ -123,26 +150,37 @@ def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
         cce_vals = []
         gap_vals = []
         privacy_vals = []
+        simplex_vals = []
         for run in group:
             game = load_game(run["game_path"])
             data = np.load(run["trajectory_path"])
             trajectory = data["trajectory"]
+            if trajectory.ndim != 3 or trajectory.shape[1:] != (game.n_players, game.n_actions):
+                raise ValueError(
+                    f"bad trajectory shape for {run['trajectory_path']}: "
+                    f"expected (*, {game.n_players}, {game.n_actions}), got {trajectory.shape}"
+                )
+            if not np.isfinite(trajectory).all():
+                raise ValueError(f"non-finite trajectory values in {run['trajectory_path']}")
             cce, _ = cce_exploitability(game, trajectory)
             gap, _ = nash_gap(game, trajectory[-1])
             cce_vals.append(cce)
             gap_vals.append(gap)
-            privacy_vals.append(float(run["privacy_bound"]))
+            privacy_vals.append(deterministic_privacy_bound(game, run))
+            simplex_vals.append(simplex_violation(trajectory))
 
         method_name = canonical_method_name(method)
         cce_summary = summarize(cce_vals)
         gap_summary = summarize(gap_vals)
         privacy_summary = summarize(privacy_vals)
+        simplex_summary = summarize(simplex_vals)
         aggregate[topology][method_name].append(
             {
                 "n_players": n_players,
                 "cce": cce_summary["mean"],
                 "nash_gap": gap_summary["mean"],
                 "privacy": privacy_summary["mean"],
+                "simplex_violation": simplex_summary["mean"],
                 "runs": cce_summary["n"],
             }
         )
@@ -152,6 +190,7 @@ def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
             "cce_exploitability": cce_summary,
             "final_nash_gap": gap_summary,
             "privacy_budget": privacy_summary,
+            "strategy_simplex_violation": simplex_summary,
         }
 
     by_experiment: dict[str, dict] = {}
@@ -186,6 +225,7 @@ def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
             cce_mean = float(np.mean([float(v["cce"]) for v in vals]))
             privacy_mean = float(np.mean([float(v["privacy"]) for v in vals]))
             gap_mean = float(np.mean([float(v["nash_gap"]) for v in vals]))
+            simplex_mean = float(np.mean([float(v["simplex_violation"]) for v in vals]))
 
             if topology.startswith("sparse"):
                 primary_cce_metric = {"cce_stable_or_decreases_with_n": stable_score(cce_slope)}
@@ -200,6 +240,7 @@ def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
                 "privacy_budget_mean": privacy_mean,
                 "final_nash_gap_mean": gap_mean,
                 "baseline_cce_ratio": baseline_ratio,
+                "strategy_simplex_violation_mean": simplex_mean,
             }
             diagnostics["experiments"][exp_name]["methods"][method_name] = {
                 "slice": SLICE,
