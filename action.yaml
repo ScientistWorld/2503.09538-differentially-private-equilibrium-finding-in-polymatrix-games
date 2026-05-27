@@ -27,8 +27,8 @@
 #   milestone: core_claim
 #   notes: "Reproduced the core claim. Environment packaged."
 
-action: pending
-gpus: 1
+action: submit
+gpus: 0
 test: false
-milestone: none
-notes: ""
+milestone: method_runs
+notes: "Run the dense Erdos-Renyi reproduction with Algorithm 1 and the noisy OMD baseline, then evaluate scaling metrics."
