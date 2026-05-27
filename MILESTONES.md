@@ -1,6 +1,6 @@
 # Reproduction Milestones
 
-**Current: none**
+**Current: method_runs**
 
 <!-- Milestone levels (update "Current" above as you progress):
   none             — just started, no meaningful progress yet
@@ -15,7 +15,10 @@
 
 ## Progress Log
 
-<!-- Write your progress here -->
+### [2026-05-27 19:20] - method_runs
+- Read the paper and identified Algorithm 1 as the reproducible core method.
+- Implemented procedural polymatrix-game generation, Algorithm 1, a private noisy OMD baseline, and artifact-based evaluation.
+- Ran a local CPU smoke test on small dense games; the method and evaluator execute end-to-end.
 
 ## Stop Justification
-- Completed at milestone `none`.
+- Not stopped. A scheduled reproduction job is needed to test the core scaling claim on larger dense games.

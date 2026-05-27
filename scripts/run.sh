@@ -13,8 +13,15 @@ set -e
 
 cd /home/user
 
-# Example: train a model
-python method/train.py --epochs 10 --lr 0.001
+rm -rf outputs/proposed outputs/baseline
 
-# Example: evaluate
-bash scripts/evaluate.sh checkpoints/best.pt
+export TOPOLOGY=dense_er
+export N_VALUES="64 128 256 512"
+export ACTIONS=5
+export P_EDGE=0.12
+export SEEDS="0 1 2 3 4"
+export ALPHA=2.0
+
+bash scripts/baseline.sh
+bash scripts/method.sh
+python validate.py --compare

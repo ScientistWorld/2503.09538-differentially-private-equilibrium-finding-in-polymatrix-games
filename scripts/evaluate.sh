@@ -26,5 +26,6 @@ cd /home/user
 
 mkdir -p scoring
 
-# TODO: implement evaluation using code in eval/
-# Must write scoring/scores.json at the end
+python -m eval.evaluate_runs \
+  --manifest outputs/proposed/manifest.json outputs/baseline/manifest.json \
+  --output scoring/scores.json

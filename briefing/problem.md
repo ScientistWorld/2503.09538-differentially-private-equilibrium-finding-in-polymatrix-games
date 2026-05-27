@@ -6,12 +6,12 @@ Do NOT describe the paper's method or solution here — only the problem itself.
 
 ## Research Question
 
-<!-- What problem or challenge does this paper tackle? What gap in existing work does it address? -->
+How can a distributed group of agents compute an approximate equilibrium in a polymatrix game while keeping individual pairwise utility matrices private from an adversary who observes a limited number of communication channels?
 
 ## Why It Matters
 
-<!-- Why is this problem important? What would a good solution enable? Make it short -->
+Polymatrix games model networked multi-agent settings such as trading, security, and local coordination. In these settings, payoffs can reveal private preferences or valuations, so an equilibrium-finding protocol is useful only if it reaches a good equilibrium without exposing those payoffs.
 
 ## Success Criteria
 
-<!-- What would a successful solution look like? What properties should it have? This is about the goal, not the paper's specific approach. Make it short -->
+A successful solution should output a low-exploitability coarse correlated equilibrium on random polymatrix games and should maintain a decreasing differential-privacy budget as the number of players grows. The evaluation must measure both equilibrium quality and privacy; improving only one side is insufficient.

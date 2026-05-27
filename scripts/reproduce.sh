@@ -18,7 +18,6 @@ set -e
 
 cd /home/user
 
-# TODO: implement full reproduction pipeline
-# e.g.:
-#   bash scripts/baseline.sh
-#   bash scripts/method.sh
+rm -rf outputs/proposed outputs/baseline
+bash scripts/baseline.sh
+bash scripts/method.sh
