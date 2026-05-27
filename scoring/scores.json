@@ -1,11 +1,38 @@
 {
   "experiments": {
+    "dense_cluster_scaling": {
+      "results": {
+        "our_method": {
+          "cce_decreases_with_n": 1.0,
+          "competitive_with_baseline": 1.0,
+          "privacy_decreases_with_n": 1.0
+        }
+      }
+    },
     "dense_er_scaling": {
       "results": {
         "our_method": {
           "cce_decreases_with_n": 1.0,
           "competitive_with_baseline": 1.0,
           "privacy_decreases_with_n": 1.0
+        }
+      }
+    },
+    "sparse_knn_scaling": {
+      "results": {
+        "our_method": {
+          "cce_stable_or_decreases_with_n": 1.0,
+          "competitive_with_baseline": 1.0,
+          "privacy_decreases_with_n": 1.0
+        }
+      }
+    },
+    "sparse_random_scaling": {
+      "results": {
+        "our_method": {
+          "cce_stable_or_decreases_with_n": 1.0,
+          "competitive_with_baseline": 1.0,
+          "privacy_decreases_with_n": 0.0
         }
       }
     }

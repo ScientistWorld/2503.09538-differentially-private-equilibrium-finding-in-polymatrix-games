@@ -1,0 +1,32 @@
+{
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "raw_baseline_cce_ratio": 1.0268860561827864,
+        "raw_cce_slope": -0.39070688618005533,
+        "raw_privacy_slope": -0.06000106423822897
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "raw_baseline_cce_ratio": 1.0221315201125267,
+        "raw_cce_slope": -0.4119327697860449,
+        "raw_privacy_slope": -0.08594711347561035
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "raw_baseline_cce_ratio": 1.0016239537242866,
+        "raw_cce_slope": 0.011687527230812199,
+        "raw_privacy_slope": -4.028026421607523
+      }
+    },
+    "sparse_random_scaling": {
+      "our_method": {
+        "raw_baseline_cce_ratio": 1.025642775958962,
+        "raw_cce_slope": -0.01735832068701804,
+        "raw_privacy_slope": 0.38125069749919993
+      }
+    }
+  }
+}
