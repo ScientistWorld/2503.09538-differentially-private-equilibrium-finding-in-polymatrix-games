@@ -1,4 +1,5 @@
 action: done
 gpus: 0
 test: false
+milestone: core_claim_plus
 notes: "Odd/even seed train-test split over saved artifacts; 24 train metrics and 24 test metrics populated; train/test comparable with CCE mean gaps <=0.0024 and privacy mean gaps <=0.7%; no nulls or method mismatches."

@@ -63,6 +63,8 @@ Packaging update, 2026-05-27 20:40 UTC: adjusted the evaluator so unscored topol
 
 Final packaging update, 2026-05-27 20:45 UTC: job `c141f894-2c0` completed with exit code 0. `scores.json` includes dense ER, dense clustered, and sparse kNN; `diagnostics.json` now also includes sparse-random with CCE slope `-0.0635` and privacy slope `0.2253`, confirming it remains an unscored diagnostic gap. Final milestone is `core_claim_plus`.
 
+Train/test scoring update, 2026-05-27 19:55 EDT: jobs `651a3ed7-e9e` and `98d11a15-30c` completed the ResearchGym split evaluation over the existing final artifacts. The final split scores populate 24 train metrics and 24 held-out test metrics with matching method identifiers, no nulls, and comparable train/test behavior. A sparse trend-score ceiling exposed by the first split run was removed before the final run.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.
