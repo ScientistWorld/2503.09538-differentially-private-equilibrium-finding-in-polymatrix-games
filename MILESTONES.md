@@ -22,3 +22,7 @@
 - Regime-specific privacy rerun completed successfully and `python validate.py --compare` passed.
 - Reproduced the core dense ER scaling claim plus dense clustered and sparse kNN settings with fixed-deviation CCE scoring.
 - Submitted one final packaging rerun so unscored sparse-random remains visible in `scoring/diagnostics.json`.
+
+### [2026-05-27 20:45] - core_claim_plus
+- Final packaging rerun completed successfully and validation passed.
+- `scores.json` contains the three reproduced scored experiments; `diagnostics.json` also records sparse-random as an unscored finite-grid gap.

@@ -1,8 +1,8 @@
 # IMPORTANT: Once you set action to 'submit' or 'done', STOP immediately.
 # Do NOT sleep, poll, or wait for jobs. The system reads this file
 # only after your turn ends. Sleeping blocks the entire pipeline.
-action: submit
+action: done
 gpus: 0
 test: true
 milestone: core_claim_plus
-notes: "CPU rerun after ensuring unscored sparse-random remains in diagnostics while scored targets stay unchanged."
+notes: "Reproduced core dense scaling plus dense clustered and sparse kNN settings. Final validation passed; sparse-random is retained as an unscored diagnostic gap."

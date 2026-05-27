@@ -61,6 +61,8 @@ Final update, 2026-05-27 20:35 UTC: job `b28bb075-c5e` completed successfully un
 
 Packaging update, 2026-05-27 20:40 UTC: adjusted the evaluator so unscored topologies are still written to `scoring/diagnostics.json`. This keeps sparse-random visible as a diagnostic gap while leaving scored targets limited to reproduced claims.
 
+Final packaging update, 2026-05-27 20:45 UTC: job `c141f894-2c0` completed with exit code 0. `scores.json` includes dense ER, dense clustered, and sparse kNN; `diagnostics.json` now also includes sparse-random with CCE slope `-0.0635` and privacy slope `0.2253`, confirming it remains an unscored diagnostic gap. Final milestone is `core_claim_plus`.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.
