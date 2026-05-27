@@ -16,16 +16,16 @@
     },
     "sparse_knn_scaling": {
       "our_method": {
-        "raw_baseline_cce_ratio": 1.0016239537242866,
-        "raw_cce_slope": 0.011687527230812199,
-        "raw_privacy_slope": -4.028026421607523
+        "raw_baseline_cce_ratio": 1.0208665200620806,
+        "raw_cce_slope": -0.011629667469276727,
+        "raw_privacy_slope": -4.971785905333118
       }
     },
     "sparse_random_scaling": {
       "our_method": {
-        "raw_baseline_cce_ratio": 1.025642775958962,
-        "raw_cce_slope": -0.01735832068701804,
-        "raw_privacy_slope": 0.38125069749919993
+        "raw_baseline_cce_ratio": 1.0518429094626378,
+        "raw_cce_slope": -0.030070663945580604,
+        "raw_privacy_slope": 0.22526069730689
       }
     }
   }
