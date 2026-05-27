@@ -11,7 +11,7 @@ import numpy as np
 
 from data.polymatrix import cce_exploitability, load_game, nash_gap
 
-SCORED_TOPOLOGIES = {"dense_er", "dense_cluster", "sparse_knn"}
+SCORED_TOPOLOGIES = {"dense_er", "dense_cluster", "sparse_random", "sparse_knn"}
 
 
 def load_manifests(paths: list[str]) -> list[dict]:

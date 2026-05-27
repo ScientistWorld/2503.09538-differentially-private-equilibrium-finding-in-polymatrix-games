@@ -11,3 +11,7 @@ Tests whether the dense-graph behavior also appears on the clustered dense topol
 ## sparse_knn_scaling
 
 Tests the sparse geometric nearest-neighbor topology from the paper's additional experiments under the same sparse-graph success criteria.
+
+## sparse_random_scaling
+
+Tests the sparse random topology from the paper's main sparse-graph experiment: privacy budget should decrease while finite-scale exploitability remains stable or improves.

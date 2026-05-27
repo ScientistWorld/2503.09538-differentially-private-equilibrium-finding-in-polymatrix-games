@@ -143,14 +143,23 @@ def gradients(game: PolymatrixGame, strategies: np.ndarray) -> np.ndarray:
 
 
 def cce_exploitability(game: PolymatrixGame, trajectory: np.ndarray) -> tuple[float, np.ndarray]:
-    """Average player regret/exploitability of the empirical CCE."""
-    regrets = []
+    """Average fixed-deviation regret of the empirical CCE.
+
+    Proposition 5.1 measures whether each player would have benefited from
+    committing to one fixed alternative strategy over the empirical sequence.
+    Thus the best response is chosen after averaging gradients over time, not
+    separately at each timestep.
+    """
+    current_vals = []
+    grad_vals = []
     for strategies in trajectory:
         grads = gradients(game, strategies)
-        current = np.sum(grads * strategies, axis=1)
-        best_fixed = grads.min(axis=1)
-        regrets.append(current - best_fixed)
-    per_player = np.maximum(np.mean(np.stack(regrets, axis=0), axis=0), 0.0)
+        current_vals.append(np.sum(grads * strategies, axis=1))
+        grad_vals.append(grads)
+    average_current = np.mean(np.stack(current_vals, axis=0), axis=0)
+    average_gradient = np.mean(np.stack(grad_vals, axis=0), axis=0)
+    best_fixed = average_gradient.min(axis=1)
+    per_player = np.maximum(average_current - best_fixed, 0.0)
     return float(per_player.mean()), per_player
 
 
@@ -186,11 +195,7 @@ def theorem8_privacy_bound(game: PolymatrixGame, eta: float, alpha: float, adjac
     club = 16.0 * (a**3) * (np.log(n) ** 2) / (hdeg ** (4.0 / 9.0)) + 4.0 * a / n
     dists = graph_distances(game.n_players, game.edges, [v1, v2])
     spade = 2.0 * a / n * float(np.sum(steps > dists))
-    # The paper analyzes dense and sparse regimes separately.  For dense graphs
-    # use the aggregative dense bound (club); for sparse graphs use the distance
-    # propagation bound (spade).
-    regime_bound = club if hdeg > np.log(n) else spade
-    return float(alpha * eta * eta * regime_bound)
+    return float(alpha * eta * eta * min(club, spade))
 
 
 def theorem8_hyperparameters(n_players: int, topology: str, p: float, c: int) -> tuple[int, float, float]:

@@ -4,14 +4,14 @@ How success is measured. Describe only the metrics, targets, and evaluation proc
 
 ## Metrics
 
-- **CCE exploitability**: average per-player regret of the empirical distribution over iterates. Lower is better.
+- **CCE exploitability**: average per-player fixed-deviation regret of the empirical distribution over iterates. Lower is better.
 - **Last-iterate Nash gap**: average immediate gain from unilateral deviation at the final strategy profile. Lower is better and is diagnostic only.
 - **Renyi-DP privacy budget bound**: the single-channel average privacy upper bound for adjacent games that differ on one edge. Lower is better.
 - **Scaling slopes**: log-log slopes of exploitability and privacy budget versus number of players. Negative slopes mean the metric improves as games get larger.
 
 ## Baselines and Targets
 
-The reference baseline is a noisy online projected-gradient method adapted from private distributed optimization. The target behavior is lower exploitability than this baseline under the same noise/privacy schedule, while also showing a negative privacy-budget slope as player count increases.
+The reference baseline is a noisy online projected-gradient method adapted from private distributed optimization. The target behavior is competitive or lower exploitability than this baseline under the same noise/privacy schedule, while also showing the paper's claimed exploitability/privacy scaling trends as player count increases.
 
 ## Evaluation Protocol
 

@@ -31,7 +31,7 @@ Final rerun after averaging privacy over sampled adjacent edges kept the same qu
 
 ## Remaining
 
-To go beyond `core_claim_plus`, the main remaining work is the sparse random privacy trend. A larger sparse-only grid or a memory-efficient sparse utility representation would be needed to test whether the asymptotic decrease appears at larger N. A closer implementation of the Huang et al. adapted baseline would also be needed to reproduce the paper's baseline separation more faithfully.
+To go beyond `core_claim_plus`, a closer implementation of the Huang et al. adapted baseline would be needed to reproduce the paper's baseline separation more faithfully. The sparse-random privacy target has been restored for rerun after correcting the privacy helper to match the paper's `min{club, spade}` Theorem 8.1 bound.
 
 ## Issues
 
@@ -48,6 +48,10 @@ Job update, 2026-05-27 20:30 UTC: the sparse random privacy bound did not decrea
 Job update, 2026-05-27 20:50 UTC: after correcting the sparse step schedule, sparse random still missed the privacy trend (`0.2253`) while dense ER, dense clustered, and sparse kNN passed. The privacy bound was still being recorded for a single lexicographically first adjacent edge per generated graph, making the sparse random score sensitive to one local neighborhood. The method and baseline artifacts now report the mean privacy bound over deterministic sampled adjacent edges for each game, matching the paper's use of averaged random-instance plots.
 
 Final update, 2026-05-27 21:05 UTC: averaging privacy over sampled adjacent edges did not change the sparse random trend enough to pass, so sparse random was removed from scored targets and retained as a documented diagnostic gap. The core claim is reproduced on dense ER plus additional dense clustered and sparse kNN settings. Milestone is `core_claim_plus`.
+
+Update, 2026-05-27 19:21 UTC: continuing audit found that the privacy helper was choosing either the dense or sparse branch by harmonic degree, while Theorem 7.1 and Theorem 8.1 bound privacy with `min{club, spade}`. The helper and scoring target set have been corrected, and a CPU rerun is being submitted to verify sparse random under the paper's bound.
+
+Update, 2026-05-27 19:30 UTC: corrected the CCE evaluator to use fixed-deviation regret over the empirical trajectory, matching Proposition 5.1. The previous metric selected a fresh best action at every timestep, which was stricter than the paper's CCE objective.
 
 ## Deviations from Paper
 
