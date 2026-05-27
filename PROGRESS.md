@@ -65,6 +65,8 @@ Final packaging update, 2026-05-27 20:45 UTC: job `c141f894-2c0` completed with 
 
 Train/test scoring update, 2026-05-27 19:55 EDT: jobs `651a3ed7-e9e` and `98d11a15-30c` completed the ResearchGym split evaluation over the existing final artifacts. The final split scores populate 24 train metrics and 24 held-out test metrics with matching method identifiers, no nulls, and comparable train/test behavior. A sparse trend-score ceiling exposed by the first split run was removed before the final run.
 
+Packaging audit update, 2026-05-27 20:03 UTC: updated the standalone evaluator used by `scripts/evaluate.sh` to emit the same raw benefit and constraint metrics declared in `reference.json`: CCE exploitability, privacy budget, final Nash gap, baseline CCE ratio, and simplex violation. The evaluator now recomputes privacy bounds from saved games and run parameters instead of trusting manifest values. A CPU test job is being submitted to regenerate scores and validate the package in the container runtime.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.

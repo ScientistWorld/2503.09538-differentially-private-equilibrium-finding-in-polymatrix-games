@@ -1,5 +1,5 @@
-action: done
+action: submit
 gpus: 0
-test: false
+test: true
 milestone: core_claim_plus
-notes: "Packager audit passed: no external artifacts are required, download.sh only prepares data/downloads, and no shared paths are referenced."
+notes: "CPU validation job: regenerate standalone, train, and held-out test scores after adding raw benefit and constraint metrics to evaluate.sh output; then run validate.py --compare."
