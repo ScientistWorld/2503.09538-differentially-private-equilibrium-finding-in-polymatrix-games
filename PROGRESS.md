@@ -27,6 +27,8 @@ Validation note, 2026-05-27 19:04 UTC: the score contract was changed from non-p
 
 Update, 2026-05-27 19:25 UTC: prepared a multi-topology reproduction job. Dense graphs are scored for decreasing exploitability and privacy budget; sparse graphs are scored for non-increasing exploitability and decreasing privacy budget, matching Appendix D's qualitative claims.
 
+Audit update, 2026-05-27 20:05 UTC: continuing agent reviewed `method/`, `data/`, and `eval/`. The method is a direct implementation of Algorithm 1 rather than a surrogate. One scoring issue was found before rerunning: raw diagnostic slopes were being written into `scores.json` even though they are not declared metrics in `reference.json`. This was fixed by writing diagnostics to `scoring/diagnostics.json` and keeping `scores.json` limited to declared benchmark metrics.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.

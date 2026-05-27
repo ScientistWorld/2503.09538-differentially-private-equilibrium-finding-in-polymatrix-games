@@ -34,12 +34,13 @@ def _trend_slope(vals: list[tuple[int, float, float]], index: int) -> float:
     return float(np.polyfit(np.log(ns), np.log(metric), 1)[0])
 
 
-def evaluate_runs(runs: list[dict]) -> dict:
+def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
     grouped: dict[tuple[str, str, int], list[dict]] = defaultdict(list)
     for run in runs:
         grouped[(run["topology"], run["method"], int(run["n_players"]))].append(run)
 
     by_experiment: dict[str, dict] = {}
+    diagnostics: dict[str, dict] = {}
     aggregate: dict[str, dict[str, list[tuple[int, float, float]]]] = defaultdict(lambda: defaultdict(list))
     for (topology, method, n_players), group in sorted(grouped.items()):
         exp_name = f"{topology}_n{n_players}"
@@ -77,28 +78,30 @@ def evaluate_runs(runs: list[dict]) -> dict:
             privacy_slope = _trend_slope(vals, 2)
             ratios = [c / baseline_cce_by_n[n] for n, c, _ in vals if n in baseline_cce_by_n and baseline_cce_by_n[n] > 0]
             ratio = float(np.mean(ratios)) if ratios else 1.0
+            diagnostics[exp_name] = {
+                method_name: {
+                    "raw_cce_slope": cce_slope,
+                    "raw_privacy_slope": privacy_slope,
+                    "raw_baseline_cce_ratio": ratio,
+                }
+            }
             # Paper figures report trend direction rather than tabulated slopes.
-            # Score the qualitative claims as binary indicators; raw slopes are
-            # documented in PROGRESS.md from the completed run.
+            # Score the qualitative claims as binary indicators.  Raw slopes are
+            # emitted to scoring/diagnostics.json because scores.json must only
+            # contain declared reference metrics.
             if topology.startswith("sparse"):
                 by_experiment[exp_name]["results"][method_name] = {
                     "cce_stable_or_decreases_with_n": float(cce_slope <= 0.05),
                     "privacy_decreases_with_n": float(privacy_slope < 0.0),
                     "competitive_with_baseline": float(ratio <= 1.10),
-                    "raw_cce_slope": cce_slope,
-                    "raw_privacy_slope": privacy_slope,
-                    "raw_baseline_cce_ratio": ratio,
                 }
             else:
                 by_experiment[exp_name]["results"][method_name] = {
                     "cce_decreases_with_n": float(cce_slope < 0.0),
                     "privacy_decreases_with_n": float(privacy_slope < 0.0),
                     "competitive_with_baseline": float(ratio <= 1.10),
-                    "raw_cce_slope": cce_slope,
-                    "raw_privacy_slope": privacy_slope,
-                    "raw_baseline_cce_ratio": ratio,
                 }
-    return {"experiments": by_experiment}
+    return {"experiments": by_experiment}, {"experiments": diagnostics}
 
 
 def main() -> None:
@@ -109,9 +112,10 @@ def main() -> None:
     existing = [p for p in args.manifest if Path(p).exists()]
     if not existing:
         raise FileNotFoundError("No manifest files found to evaluate.")
-    scores = evaluate_runs(load_manifests(existing))
+    scores, diagnostics = evaluate_runs(load_manifests(existing))
     Path(args.output).parent.mkdir(parents=True, exist_ok=True)
     Path(args.output).write_text(json.dumps(scores, indent=2, sort_keys=True))
+    Path(args.output).with_name("diagnostics.json").write_text(json.dumps(diagnostics, indent=2, sort_keys=True))
     print(json.dumps(scores, indent=2, sort_keys=True))
 
 
