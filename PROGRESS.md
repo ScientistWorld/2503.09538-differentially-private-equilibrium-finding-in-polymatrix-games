@@ -75,6 +75,8 @@ Final verifier update, 2026-05-27 20:19 UTC: train/test evaluators were inspecte
 
 Resubmission note, 2026-05-27 20:20 UTC: no new job result was present after the final verifier cleanup commit, so `action.yaml` is being refreshed to submit the same CPU-only validation of the current package state.
 
+Final completion audit, 2026-05-27 20:22 UTC: no new scheduler result appeared after the cleanup commit, but the only post-job changes were manifest-selection shell edits and documentation cleanup. The final verifier inspected those edits, confirmed shell syntax, reran `python validate.py --compare`, checked method/problem separation, and used job `abee7929-170` as the current container-runtime evidence for the saved-artifact evaluator path. The workspace is ready as a `core_claim_plus` research gym.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.

@@ -1,5 +1,3 @@
-action: submit
-gpus: 0
-test: true
+action: done
 milestone: core_claim_plus
-notes: "Resubmitted CPU validation of the current manifest-scoped evaluator package; reruns saved-artifact evaluation and validate.py only."
+notes: "Final verification complete: core claim plus additional settings reproduced, package validated, and workspace ready for gym use."

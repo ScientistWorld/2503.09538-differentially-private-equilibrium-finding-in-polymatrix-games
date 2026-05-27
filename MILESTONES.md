@@ -44,3 +44,8 @@
 ### [2026-05-27 20:20] - core_claim_plus
 - No post-cleanup job result was present yet, so the final verifier is resubmitting the same CPU validation action.
 - The validation job only reruns saved-artifact evaluators and `python validate.py --compare`; it does not retrain or regenerate method outputs.
+
+### [2026-05-27 20:22] - core_claim_plus
+- Completion audit accepted the last successful container validation job `abee7929-170` plus local verification of the later shell/documentation-only edits.
+- `python validate.py --compare`, shell syntax checks, method-agnostic documentation review, scorer review, and train/test wiring review all pass.
+- Final action is `done` at `core_claim_plus`.

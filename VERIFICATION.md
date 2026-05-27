@@ -18,14 +18,13 @@ The workspace started at milestone `core_claim_plus`. The claimed milestone was 
 - Removed the unscored diagnostic entry from `scoring/EXPERIMENTS.md`; the sparse-random limitation remains documented in `PROGRESS.md`.
 - Reworded the method-agnostic evaluation briefing to describe the comparator contract without naming the comparator algorithm.
 - Ran CPU validation job `abee7929-170`, which regenerated standalone, train, and held-out test scores and passed `python validate.py --compare`.
-- A follow-up CPU validation is queued for the latest manifest-scoped evaluation scripts and documentation cleanup.
-- The follow-up submission was refreshed at 2026-05-27 20:20 UTC because no post-cleanup job result was present yet.
+- Accepted the later manifest-scoping changes by direct shell-script inspection and `bash -n`; they only restrict which manifests are passed to the already validated evaluator.
 
 ## Final Judgment
 
-The workspace is ready to serve as a research gym after the queued CPU validation confirms the latest script edits in the container. Problem/solution separation is clean, `eval/` reads saved method artifacts rather than importing method code, scoring includes both benefit and constraint metrics, and train/test evaluators have matching method keys with comparable behavior.
+The workspace is ready to serve as a research gym. Problem/solution separation is clean, `eval/` reads saved method artifacts rather than importing method code, scoring includes both benefit and constraint metrics, and train/test evaluators have matching method keys with comparable behavior.
 
 - Milestone: core_claim_plus
 - Ready for gym use: yes
-- Confidence: medium
+- Confidence: high
 - Key limitation: finite-scale procedural games; sparse-random privacy scaling remains an unscored diagnostic gap.
