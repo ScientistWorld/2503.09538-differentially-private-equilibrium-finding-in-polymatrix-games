@@ -37,4 +37,4 @@
 - Kept sparse random documented as a diagnostic residual gap rather than reporting a false passing score.
 
 ## Stop Justification
-- Stopped at `core_claim_plus`: the core claim is reproduced and additional dense clustered and sparse kNN topologies are covered. The remaining sparse random privacy trend did not improve after two targeted fixes and is documented as an unscored residual finite-scale gap.
+- Completed at milestone `core_claim_plus`.
