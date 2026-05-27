@@ -7,7 +7,27 @@
       "metrics": {
         "cce_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
         "privacy_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
-        "competitive_with_baseline": {"higher_is_better": true, "coefficient": 0.3}
+        "competitive_with_baseline": {"higher_is_better": true, "coefficient": 0.3},
+        "cce_exploitability_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.6,
+          "description": "Mean CCE exploitability on the evaluated slice; lower values indicate better equilibrium quality."
+        },
+        "privacy_budget_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.6,
+          "description": "Mean Renyi-DP privacy budget on the evaluated slice; lower values preserve the paper's privacy constraint."
+        },
+        "final_nash_gap_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.3,
+          "description": "Mean final-iterate Nash gap, a secondary equilibrium-quality check against shortcut trajectories."
+        },
+        "baseline_cce_ratio": {
+          "higher_is_better": false,
+          "coefficient": 0.4,
+          "description": "Mean CCE exploitability divided by the noisy-OMD baseline at matched player counts."
+        }
       },
       "results": {
         "our_method": {
@@ -25,7 +45,27 @@
       "metrics": {
         "cce_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
         "privacy_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
-        "competitive_with_baseline": {"higher_is_better": true, "coefficient": 0.3}
+        "competitive_with_baseline": {"higher_is_better": true, "coefficient": 0.3},
+        "cce_exploitability_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.6,
+          "description": "Mean CCE exploitability on the evaluated slice; lower values indicate better equilibrium quality."
+        },
+        "privacy_budget_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.6,
+          "description": "Mean Renyi-DP privacy budget on the evaluated slice; lower values preserve the paper's privacy constraint."
+        },
+        "final_nash_gap_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.3,
+          "description": "Mean final-iterate Nash gap, a secondary equilibrium-quality check against shortcut trajectories."
+        },
+        "baseline_cce_ratio": {
+          "higher_is_better": false,
+          "coefficient": 0.4,
+          "description": "Mean CCE exploitability divided by the noisy-OMD baseline at matched player counts."
+        }
       },
       "results": {
         "our_method": {
@@ -43,7 +83,27 @@
       "metrics": {
         "cce_stable_or_decreases_with_n": {"higher_is_better": true, "coefficient": 0.5},
         "privacy_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
-        "competitive_with_baseline": {"higher_is_better": true, "coefficient": 0.3}
+        "competitive_with_baseline": {"higher_is_better": true, "coefficient": 0.3},
+        "cce_exploitability_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.6,
+          "description": "Mean CCE exploitability on the evaluated slice; lower values indicate better equilibrium quality."
+        },
+        "privacy_budget_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.6,
+          "description": "Mean Renyi-DP privacy budget on the evaluated slice; lower values preserve the paper's privacy constraint."
+        },
+        "final_nash_gap_mean": {
+          "higher_is_better": false,
+          "coefficient": 0.3,
+          "description": "Mean final-iterate Nash gap, a secondary equilibrium-quality check against shortcut trajectories."
+        },
+        "baseline_cce_ratio": {
+          "higher_is_better": false,
+          "coefficient": 0.4,
+          "description": "Mean CCE exploitability divided by the noisy-OMD baseline at matched player counts."
+        }
       },
       "results": {
         "our_method": {
