@@ -17,5 +17,10 @@
 - Audited the inherited workspace and restored the core claim based on the completed dense Erdos-Renyi run.
 - Fixed the expanded evaluator so `scores.json` contains only metrics declared in `reference.json`; raw slopes are separated into `scoring/diagnostics.json`.
 
+### [2026-05-27 20:30] - core_claim
+- Multi-topology job completed and reproduced dense ER, dense clustered, and sparse kNN trend targets.
+- Sparse random exploitability was stable/decreasing, but privacy did not decrease on the first grid.
+- Corrected the sparse finite-scale step schedule to preserve the paper's sparse privacy propagation regime and submitted a rerun.
+
 ## Stop Justification
 - Not stopped. Current job submission is intended to expand coverage toward `core_claim_plus`.

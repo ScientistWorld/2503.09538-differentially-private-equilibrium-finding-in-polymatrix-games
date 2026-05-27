@@ -199,7 +199,8 @@ def theorem8_hyperparameters(n_players: int, topology: str, p: float, c: int) ->
         exponent = max(0.2, min(1.0, np.log(max(p * n_players, 2.0)) / np.log(n_players)))
         steps = max(8, int(round((n_players ** (8.0 * exponent / 9.0)) / (np.log(n_players) ** 2))))
     else:
-        steps = max(8, int(round((1.0 - np.log(np.log(n_players)) / np.log(n_players)) * np.log(n_players) / np.log(max(c, 2)))))
+        sparse_steps = (1.0 - np.log(np.log(n_players)) / np.log(n_players)) * np.log(n_players) / np.log(max(c, 2))
+        steps = max(2, int(round(sparse_steps)))
     eta = 1.0 / (steps ** (1.0 / 3.0))
     sigma = 1.0 / np.sqrt(steps)
     return steps, eta, sigma

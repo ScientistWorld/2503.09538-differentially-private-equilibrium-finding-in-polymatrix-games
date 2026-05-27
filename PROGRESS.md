@@ -15,6 +15,13 @@ The scheduled reproduction job completed successfully on dense Erdos-Renyi games
 - Largest evaluated game CCE exploitability: `0.0535`.
 - The noisy OMD baseline was close in this finite-scale setting and slightly better on mean exploitability ratio, so the reproduction supports the simultaneous accuracy/privacy scaling claim but not the full empirical baseline gap reported in the paper.
 
+The multi-topology job completed successfully. Dense ER, dense clustered, and sparse kNN matched their qualitative targets. Sparse random matched the exploitability target but not the privacy target on the first finite grid:
+
+- Dense ER: CCE slope `-0.4119`, privacy slope `-0.0859`.
+- Dense clustered: CCE slope `-0.3907`, privacy slope `-0.0600`.
+- Sparse kNN: CCE slope `0.0117`, privacy slope `-4.0280`.
+- Sparse random: CCE slope `-0.0174`, privacy slope `0.3813`.
+
 ## Remaining
 
 The next submitted job expands beyond `core_claim` to the paper's other graph topologies: dense clustered graphs, sparse random graphs, and sparse k-nearest-neighbor graphs. A closer implementation of the Huang et al. adapted baseline would still be needed to reproduce the paper's baseline separation more faithfully.
@@ -28,6 +35,8 @@ Validation note, 2026-05-27 19:04 UTC: the score contract was changed from non-p
 Update, 2026-05-27 19:25 UTC: prepared a multi-topology reproduction job. Dense graphs are scored for decreasing exploitability and privacy budget; sparse graphs are scored for non-increasing exploitability and decreasing privacy budget, matching Appendix D's qualitative claims.
 
 Audit update, 2026-05-27 20:05 UTC: continuing agent reviewed `method/`, `data/`, and `eval/`. The method is a direct implementation of Algorithm 1 rather than a surrogate. One scoring issue was found before rerunning: raw diagnostic slopes were being written into `scores.json` even though they are not declared metrics in `reference.json`. This was fixed by writing diagnostics to `scoring/diagnostics.json` and keeping `scores.json` limited to declared benchmark metrics.
+
+Job update, 2026-05-27 20:30 UTC: the sparse random privacy bound did not decrease because the finite-scale helper forced at least eight sparse iterations, which creates an overly large propagation horizon in the sparse privacy bound. The sparse schedule has been corrected to follow the logarithmic Theorem 8.1 scaling with a minimum of two iterations.
 
 ## Deviations from Paper
 
