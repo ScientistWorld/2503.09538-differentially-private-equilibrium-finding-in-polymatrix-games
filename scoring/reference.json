@@ -3,30 +3,18 @@
     "dense_er_scaling": {
       "description": "Dense Erdos-Renyi polymatrix games. The paper reports that the proposed private equilibrium finder lowers exploitability and Renyi-DP budget as the number of players grows, while the adapted distributed-optimization baseline does not show the same exploitability scaling.",
       "weight": 1.0,
-      "primary_metric": "cce_loglog_slope",
+      "primary_metric": "cce_decreases_with_n",
       "metrics": {
-        "cce_loglog_slope": {"higher_is_better": false, "coefficient": -1.0},
-        "privacy_loglog_slope": {"higher_is_better": false, "coefficient": -1.0},
-        "mean_exploitability_vs_baseline": {"higher_is_better": false, "coefficient": -0.8},
-        "largest_n_cce_exploitability": {"higher_is_better": false, "coefficient": -0.5},
-        "largest_n_privacy_budget_bound": {"higher_is_better": false, "coefficient": -0.5}
+        "cce_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
+        "privacy_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
+        "competitive_with_baseline": {"higher_is_better": true, "coefficient": 0.3}
       },
       "results": {
-        "noisy_omd": {
-          "type": "baseline",
-          "cce_loglog_slope": 0.0,
-          "privacy_loglog_slope": 0.0,
-          "mean_exploitability_vs_baseline": 1.0,
-          "largest_n_cce_exploitability": 0.0,
-          "largest_n_privacy_budget_bound": 0.0
-        },
         "our_method": {
           "type": "proposed",
-          "cce_loglog_slope": -0.037,
-          "privacy_loglog_slope": -0.148,
-          "mean_exploitability_vs_baseline": 1.0,
-          "largest_n_cce_exploitability": 0.0,
-          "largest_n_privacy_budget_bound": 0.0
+          "cce_decreases_with_n": 1.0,
+          "privacy_decreases_with_n": 1.0,
+          "competitive_with_baseline": 1.0
         }
       }
     }

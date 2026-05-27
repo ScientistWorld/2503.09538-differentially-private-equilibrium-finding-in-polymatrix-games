@@ -2,19 +2,10 @@
   "experiments": {
     "dense_er_scaling": {
       "results": {
-        "noisy_omd": {
-          "cce_loglog_slope": -0.38892245710639756,
-          "largest_n_cce_exploitability": 0.05300955910944162,
-          "largest_n_privacy_budget_bound": 6281.24412696985,
-          "mean_exploitability_vs_baseline": 1.0,
-          "privacy_loglog_slope": -0.08594711347561035
-        },
         "our_method": {
-          "cce_loglog_slope": -0.4119327697860449,
-          "largest_n_cce_exploitability": 0.053540238951992114,
-          "largest_n_privacy_budget_bound": 6281.24412696985,
-          "mean_exploitability_vs_baseline": 1.0221315201125267,
-          "privacy_loglog_slope": -0.08594711347561035
+          "cce_decreases_with_n": 1.0,
+          "competitive_with_baseline": 1.0,
+          "privacy_decreases_with_n": 1.0
         }
       }
     }

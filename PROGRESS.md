@@ -21,7 +21,9 @@ To go beyond `core_claim`, add the paper's other graph topologies: dense cluster
 
 ## Issues
 
-The paper reports trends mostly in figures rather than numeric tables, so `reference.json` encodes the reported theoretical/qualitative dense scaling targets rather than exact digitized values. In this finite reproduction, the proposed method and baseline have similar exploitability, while the central simultaneous decrease of exploitability and privacy bound is reproduced.
+The paper reports trends mostly in figures rather than numeric tables. `reference.json` therefore scores the qualitative trend indicators reported in the paper, while this file records the raw reproduced slopes as diagnostics. In this finite reproduction, the proposed method and baseline have similar exploitability, while the central simultaneous decrease of exploitability and privacy bound is reproduced.
+
+Validation note, 2026-05-27 19:04 UTC: the score contract was changed from non-paper-reported numeric slopes to binary trend indicators so `scores.json` compares like-for-like against claims actually reported by the paper. The completed run's raw slopes remain listed above.
 
 ## Deviations from Paper
 
