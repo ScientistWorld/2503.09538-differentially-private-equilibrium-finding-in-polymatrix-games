@@ -36,8 +36,8 @@
           "cce_stable_or_decreases_with_n": 1.0005126432593214,
           "competitive_with_baseline": 1.0,
           "final_nash_gap_mean": 0.14904532933520498,
-          "privacy_budget_mean": 5482.452215920739,
-          "privacy_decreases_with_n": 1.0489610805249174,
+          "privacy_budget_mean": 5482.4123499135685,
+          "privacy_decreases_with_n": 1.0487915353274446,
           "strategy_simplex_violation_mean": 4.5319650809894085e-17
         }
       }

@@ -18,7 +18,7 @@
       "our_method": {
         "raw_baseline_cce_ratio": 1.016861943065566,
         "raw_cce_slope": -0.045615368577869325,
-        "raw_privacy_slope": -4.884306656673597
+        "raw_privacy_slope": -4.895637391511347
       }
     },
     "sparse_random_scaling": {
