@@ -1,4 +1,4 @@
-action: submit
+action: done
 gpus: 0
 test: false
-notes: "Re-run train/test scoring after removing sparse trend metric saturation; overwrite scores_train.json and scores_test.json."
+notes: "Odd/even seed train-test split over saved artifacts; 24 train metrics and 24 test metrics populated; train/test comparable with CCE mean gaps <=0.0024 and privacy mean gaps <=0.7%; no nulls or method mismatches."
