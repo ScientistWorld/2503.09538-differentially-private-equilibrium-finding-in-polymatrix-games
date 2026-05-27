@@ -4,5 +4,5 @@
 action: submit
 gpus: 0
 test: true
-milestone: core_claim
-notes: "CPU rerun after making privacy scoring regime-specific and adding a nontrivial negative-slope threshold."
+milestone: core_claim_plus
+notes: "CPU rerun after ensuring unscored sparse-random remains in diagnostics while scored targets stay unchanged."

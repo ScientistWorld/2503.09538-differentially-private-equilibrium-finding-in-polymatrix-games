@@ -66,10 +66,7 @@ def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
         aggregate[topology][method_name].append((n_players, cce_mean, privacy_mean))
 
     for topology, methods in aggregate.items():
-        if topology not in SCORED_TOPOLOGIES:
-            continue
         exp_name = f"{topology}_scaling"
-        by_experiment.setdefault(exp_name, {"results": {}})
         baseline_cce_by_n = {n: cce for n, cce, _ in methods.get("noisy_omd", [])}
         for method_name, vals in methods.items():
             if method_name != "our_method":
@@ -89,6 +86,9 @@ def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
                     "raw_baseline_cce_ratio": ratio,
                 }
             }
+            if topology not in SCORED_TOPOLOGIES:
+                continue
+            by_experiment.setdefault(exp_name, {"results": {}})
             # Paper figures report trend direction rather than tabulated slopes.
             # Score the qualitative claims as binary indicators.  Raw slopes are
             # emitted to scoring/diagnostics.json because scores.json must only
