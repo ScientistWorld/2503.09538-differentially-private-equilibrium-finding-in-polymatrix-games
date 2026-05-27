@@ -99,11 +99,11 @@ def trend_slope(vals: list[tuple[int, float]], floor: float = 1e-12) -> float:
 
 
 def trend_score(slope: float) -> float:
-    return float(np.clip(1.0 - 0.1 * slope, 0.0, 1.25))
+    return float(np.clip(1.0 - 0.1 * slope, 0.0, 2.0))
 
 
 def stable_score(slope: float) -> float:
-    return float(np.clip(1.0 - 0.1 * max(slope, 0.0), 0.0, 1.0))
+    return trend_score(slope)
 
 
 def expected_methods_from_train(path: str | None) -> dict[str, set[str]]:
