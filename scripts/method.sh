@@ -11,7 +11,7 @@ set -e
 cd /home/user
 
 python -m method.dp_cce \
-  --output-dir outputs/proposed \
+  --output-dir "outputs/proposed/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}" \
   --topology "${TOPOLOGY:-dense_er}" \
   --n-values ${N_VALUES:-64 128 256} \
   --actions "${ACTIONS:-5}" \
@@ -20,4 +20,6 @@ python -m method.dp_cce \
   --seeds ${SEEDS:-0 1 2} \
   --alpha "${ALPHA:-2.0}"
 
-bash scripts/evaluate.sh
+if [ "${AUTO_EVALUATE:-1}" = "1" ]; then
+  bash scripts/evaluate.sh
+fi

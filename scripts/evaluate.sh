@@ -26,6 +26,12 @@ cd /home/user
 
 mkdir -p scoring
 
+mapfile -t MANIFESTS < <(find outputs -mindepth 2 -maxdepth 3 -name manifest.json | sort)
+if [ "${#MANIFESTS[@]}" -eq 0 ]; then
+  echo "No output manifests found under outputs/." >&2
+  exit 1
+fi
+
 python -m eval.evaluate_runs \
-  --manifest outputs/proposed/manifest.json outputs/baseline/manifest.json \
+  --manifest "${MANIFESTS[@]}" \
   --output scoring/scores.json

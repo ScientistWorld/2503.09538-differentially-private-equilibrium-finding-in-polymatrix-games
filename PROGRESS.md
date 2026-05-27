@@ -17,13 +17,15 @@ The scheduled reproduction job completed successfully on dense Erdos-Renyi games
 
 ## Remaining
 
-To go beyond `core_claim`, add the paper's other graph topologies: dense clustered graphs, sparse random graphs, and sparse k-nearest-neighbor graphs. A closer implementation of the Huang et al. adapted baseline would also be needed to reproduce the paper's baseline separation more faithfully.
+The next submitted job expands beyond `core_claim` to the paper's other graph topologies: dense clustered graphs, sparse random graphs, and sparse k-nearest-neighbor graphs. A closer implementation of the Huang et al. adapted baseline would still be needed to reproduce the paper's baseline separation more faithfully.
 
 ## Issues
 
 The paper reports trends mostly in figures rather than numeric tables. `reference.json` therefore scores the qualitative trend indicators reported in the paper, while this file records the raw reproduced slopes as diagnostics. In this finite reproduction, the proposed method and baseline have similar exploitability, while the central simultaneous decrease of exploitability and privacy bound is reproduced.
 
 Validation note, 2026-05-27 19:04 UTC: the score contract was changed from non-paper-reported numeric slopes to binary trend indicators so `scores.json` compares like-for-like against claims actually reported by the paper. The completed run's raw slopes remain listed above.
+
+Update, 2026-05-27 19:25 UTC: prepared a multi-topology reproduction job. Dense graphs are scored for decreasing exploitability and privacy budget; sparse graphs are scored for non-increasing exploitability and decreasing privacy budget, matching Appendix D's qualitative claims.
 
 ## Deviations from Paper
 

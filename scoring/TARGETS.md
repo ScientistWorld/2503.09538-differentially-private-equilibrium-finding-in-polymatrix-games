@@ -1,15 +1,23 @@
 # Evaluation Targets
 
-## Primary: dense_er_scaling
-Tests whether equilibrium quality improves as random dense games grow in player count.
-- **Metric**: `cce_decreases_with_n` (higher is better)
+## Dense Graphs
 
-## Constraint: dense_er_scaling
-Tests whether the privacy budget improves rather than being sacrificed for accuracy.
-- **Metric**: `privacy_decreases_with_n` (higher is better)
+Experiments: `dense_er_scaling`, `dense_cluster_scaling`
 
-## Baseline Comparison: dense_er_scaling
-Tests whether equilibrium quality is competitive with the adapted private distributed-optimization baseline under the same generated games and random seeds.
-- **Metric**: `competitive_with_baseline` (higher is better)
+- **Primary metric**: `cce_decreases_with_n` (higher is better)
+- **Constraint metric**: `privacy_decreases_with_n` (higher is better)
+- **Baseline comparison**: `competitive_with_baseline` (higher is better)
 
-Run evaluation with `bash scripts/evaluate.sh` after one or more methods have written manifests under `outputs/`.
+These targets test the paper's dense-graph claim that equilibrium quality and privacy budget both improve as the number of players grows.
+
+## Sparse Graphs
+
+Experiments: `sparse_random_scaling`, `sparse_knn_scaling`
+
+- **Primary metric**: `privacy_decreases_with_n` (higher is better)
+- **Constraint metric**: `cce_stable_or_decreases_with_n` (higher is better)
+- **Baseline comparison**: `competitive_with_baseline` (higher is better)
+
+These targets test the paper's sparse-graph claim that privacy improves with player count while exploitability does not meaningfully degrade.
+
+Run evaluation with `bash scripts/evaluate.sh` after methods have written manifests under `outputs/`.

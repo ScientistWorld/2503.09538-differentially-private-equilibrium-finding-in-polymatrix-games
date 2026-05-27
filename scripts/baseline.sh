@@ -18,7 +18,7 @@ set -e
 cd /home/user
 
 python -m baseline.noisy_omd \
-  --output-dir outputs/baseline \
+  --output-dir "outputs/baseline/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}" \
   --topology "${TOPOLOGY:-dense_er}" \
   --n-values ${N_VALUES:-64 128 256} \
   --actions "${ACTIONS:-5}" \
@@ -27,4 +27,6 @@ python -m baseline.noisy_omd \
   --seeds ${SEEDS:-0 1 2} \
   --alpha "${ALPHA:-2.0}"
 
-bash scripts/evaluate.sh
+if [ "${AUTO_EVALUATE:-1}" = "1" ]; then
+  bash scripts/evaluate.sh
+fi

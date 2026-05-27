@@ -19,5 +19,20 @@ set -e
 cd /home/user
 
 rm -rf outputs/proposed outputs/baseline
-bash scripts/baseline.sh
-bash scripts/method.sh
+
+export N_VALUES="${N_VALUES:-64 128 256 512}"
+export ACTIONS="${ACTIONS:-5}"
+export P_EDGE="${P_EDGE:-0.12}"
+export SPARSE_DEGREE="${SPARSE_DEGREE:-4}"
+export SEEDS="${SEEDS:-0 1 2 3 4}"
+export ALPHA="${ALPHA:-2.0}"
+export AUTO_EVALUATE=0
+
+for TOPOLOGY in dense_er dense_cluster sparse_random sparse_knn; do
+  export TOPOLOGY
+  export OUTPUT_SUFFIX="$TOPOLOGY"
+  bash scripts/baseline.sh
+  bash scripts/method.sh
+done
+
+bash scripts/evaluate.sh

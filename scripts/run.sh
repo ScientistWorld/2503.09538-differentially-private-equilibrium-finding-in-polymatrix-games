@@ -15,13 +15,20 @@ cd /home/user
 
 rm -rf outputs/proposed outputs/baseline
 
-export TOPOLOGY=dense_er
 export N_VALUES="64 128 256 512"
 export ACTIONS=5
 export P_EDGE=0.12
+export SPARSE_DEGREE=4
 export SEEDS="0 1 2 3 4"
 export ALPHA=2.0
+export AUTO_EVALUATE=0
 
-bash scripts/baseline.sh
-bash scripts/method.sh
+for TOPOLOGY in dense_er dense_cluster sparse_random sparse_knn; do
+  export TOPOLOGY
+  export OUTPUT_SUFFIX="$TOPOLOGY"
+  bash scripts/baseline.sh
+  bash scripts/method.sh
+done
+
+bash scripts/evaluate.sh
 python validate.py --compare
