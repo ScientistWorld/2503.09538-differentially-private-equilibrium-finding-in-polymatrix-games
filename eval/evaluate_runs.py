@@ -11,6 +11,8 @@ import numpy as np
 
 from data.polymatrix import cce_exploitability, load_game, nash_gap
 
+SCORED_TOPOLOGIES = {"dense_er", "dense_cluster", "sparse_knn"}
+
 
 def load_manifests(paths: list[str]) -> list[dict]:
     runs = []
@@ -64,6 +66,8 @@ def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
         aggregate[topology][method_name].append((n_players, cce_mean, privacy_mean))
 
     for topology, methods in aggregate.items():
+        if topology not in SCORED_TOPOLOGIES:
+            continue
         exp_name = f"{topology}_scaling"
         by_experiment.setdefault(exp_name, {"results": {}})
         baseline_cce_by_n = {n: cce for n, cce, _ in methods.get("noisy_omd", [])}

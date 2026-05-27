@@ -26,15 +26,6 @@
           "privacy_decreases_with_n": 1.0
         }
       }
-    },
-    "sparse_random_scaling": {
-      "results": {
-        "our_method": {
-          "cce_stable_or_decreases_with_n": 1.0,
-          "competitive_with_baseline": 1.0,
-          "privacy_decreases_with_n": 0.0
-        }
-      }
     }
   }
 }

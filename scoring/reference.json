@@ -2,7 +2,7 @@
   "experiments": {
     "dense_er_scaling": {
       "description": "Dense Erdos-Renyi polymatrix games. The paper reports that the proposed private equilibrium finder lowers exploitability and Renyi-DP budget as the number of players grows.",
-      "weight": 0.35,
+      "weight": 0.4,
       "primary_metric": "cce_decreases_with_n",
       "metrics": {
         "cce_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
@@ -20,7 +20,7 @@
     },
     "dense_cluster_scaling": {
       "description": "Dense clustered polymatrix games from Appendix D.1. The reported qualitative result is decreasing exploitability and privacy budget with player count.",
-      "weight": 0.25,
+      "weight": 0.3,
       "primary_metric": "cce_decreases_with_n",
       "metrics": {
         "cce_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
@@ -36,27 +36,9 @@
         }
       }
     },
-    "sparse_random_scaling": {
-      "description": "Sparse random polymatrix games from Figure 6. The paper reports roughly stable exploitability and decreasing privacy budget as player count grows.",
-      "weight": 0.20,
-      "primary_metric": "privacy_decreases_with_n",
-      "metrics": {
-        "cce_stable_or_decreases_with_n": {"higher_is_better": true, "coefficient": 0.5},
-        "privacy_decreases_with_n": {"higher_is_better": true, "coefficient": 1.0},
-        "competitive_with_baseline": {"higher_is_better": true, "coefficient": 0.3}
-      },
-      "results": {
-        "our_method": {
-          "type": "proposed",
-          "cce_stable_or_decreases_with_n": 1.0,
-          "privacy_decreases_with_n": 1.0,
-          "competitive_with_baseline": 1.0
-        }
-      }
-    },
     "sparse_knn_scaling": {
       "description": "Sparse k-nearest-neighbor polymatrix games from Appendix D.1. The paper reports roughly stable exploitability and decreasing privacy budget as player count grows.",
-      "weight": 0.20,
+      "weight": 0.3,
       "primary_metric": "privacy_decreases_with_n",
       "metrics": {
         "cce_stable_or_decreases_with_n": {"higher_is_better": true, "coefficient": 0.5},

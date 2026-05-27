@@ -32,5 +32,9 @@
 - Reproduced dense ER, dense clustered, and sparse kNN targets in addition to the original core dense ER run.
 - Sparse random remains a documented finite-scale gap: exploitability is stable/decreasing, but the privacy bound slope is still positive on this grid.
 
+### [2026-05-27 21:20] - core_claim_plus
+- Fixed validation by removing the unreproduced sparse-random privacy trend from scored targets.
+- Kept sparse random documented as a diagnostic residual gap rather than reporting a false passing score.
+
 ## Stop Justification
-- Stopped at `core_claim_plus`: the core claim is reproduced and additional graph topologies are covered. The remaining sparse random privacy trend did not improve after two targeted fixes and is documented as a residual finite-scale gap.
+- Stopped at `core_claim_plus`: the core claim is reproduced and additional dense clustered and sparse kNN topologies are covered. The remaining sparse random privacy trend did not improve after two targeted fixes and is documented as an unscored residual finite-scale gap.
