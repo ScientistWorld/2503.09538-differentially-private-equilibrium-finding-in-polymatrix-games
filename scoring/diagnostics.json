@@ -20,6 +20,13 @@
         "raw_cce_slope": -0.045615368577869325,
         "raw_privacy_slope": -4.884306656673597
       }
+    },
+    "sparse_random_scaling": {
+      "our_method": {
+        "raw_baseline_cce_ratio": 1.0519990311923402,
+        "raw_cce_slope": -0.06350551073810216,
+        "raw_privacy_slope": 0.22526069730689
+      }
     }
   }
 }
