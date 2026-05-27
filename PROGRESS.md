@@ -8,15 +8,20 @@ The reusable evaluation pipeline reads saved manifests, games, and trajectories 
 
 ## Results
 
-A small local smoke test confirmed execution and scoring, but it is not sufficient to claim the central scaling result. A larger scheduler run is prepared for dense Erdos-Renyi games with player counts 64, 128, 256, and 512.
+The scheduled reproduction job completed successfully on dense Erdos-Renyi games with player counts 64, 128, 256, and 512 across five seeds.
+
+- Proposed method CCE exploitability log-log slope: `-0.4119` (lower is better; negative supports decreasing exploitability).
+- Proposed privacy bound log-log slope: `-0.0859` (lower is better; negative supports improving privacy with player count).
+- Largest evaluated game CCE exploitability: `0.0535`.
+- The noisy OMD baseline was close in this finite-scale setting and slightly better on mean exploitability ratio, so the reproduction supports the simultaneous accuracy/privacy scaling claim but not the full empirical baseline gap reported in the paper.
 
 ## Remaining
 
-Run the scheduled reproduction job, inspect `scoring/scores.json`, and determine whether the dense-graph exploitability and privacy scaling support the core claim. If the result is noisy, adjust finite-scale player counts or seeds while preserving the paper's procedure.
+To go beyond `core_claim`, add the paper's other graph topologies: dense clustered graphs, sparse random graphs, and sparse k-nearest-neighbor graphs. A closer implementation of the Huang et al. adapted baseline would also be needed to reproduce the paper's baseline separation more faithfully.
 
 ## Issues
 
-The paper reports trends mostly in figures rather than numeric tables, so `reference.json` encodes the reported theoretical/qualitative dense scaling targets rather than exact digitized values.
+The paper reports trends mostly in figures rather than numeric tables, so `reference.json` encodes the reported theoretical/qualitative dense scaling targets rather than exact digitized values. In this finite reproduction, the proposed method and baseline have similar exploitability, while the central simultaneous decrease of exploitability and privacy bound is reproduced.
 
 ## Deviations from Paper
 
