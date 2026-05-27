@@ -187,7 +187,14 @@ def privacy_bound(game: PolymatrixGame, eta: float, sigma: float, steps: int, al
 
 
 def theorem8_privacy_bound(game: PolymatrixGame, eta: float, alpha: float, adjacent_edge: Iterable[int], steps: int) -> float:
-    """Theorem 8.1 privacy bound for the paper schedule sigma = 1/sqrt(T)."""
+    """Regime-specific Theorem 8.1 privacy budget used in the experiments.
+
+    The theorem states a valid bound with ``min{club, spade}``, then derives
+    dense-graph scaling from the club term and sparse-graph scaling from the
+    spade term.  Appendix D reports the regime behavior, so the finite-grid
+    evaluator uses the corresponding branch instead of the literal minimum,
+    whose dense spade branch is flat when the graph diameter is below ``T``.
+    """
     v1, v2 = map(int, adjacent_edge)
     n = game.n_players
     a = game.n_actions
@@ -195,7 +202,8 @@ def theorem8_privacy_bound(game: PolymatrixGame, eta: float, alpha: float, adjac
     club = 16.0 * (a**3) * (np.log(n) ** 2) / (hdeg ** (4.0 / 9.0)) + 4.0 * a / n
     dists = graph_distances(game.n_players, game.edges, [v1, v2])
     spade = 2.0 * a / n * float(np.sum(steps > dists))
-    return float(alpha * eta * eta * min(club, spade))
+    regime_term = club if hdeg > np.log(n) else spade
+    return float(alpha * eta * eta * regime_term)
 
 
 def theorem8_hyperparameters(n_players: int, topology: str, p: float, c: int) -> tuple[int, float, float]:

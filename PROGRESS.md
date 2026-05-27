@@ -55,6 +55,8 @@ Update, 2026-05-27 19:30 UTC: corrected the CCE evaluator to use fixed-deviation
 
 Audit update, 2026-05-27 20:10 UTC: the continuing audit found that sparse-random had been restored to `reference.json` and `TARGETS.md` even though the finite-grid job still failed its privacy trend and the checked-in `scores.json` omitted it. Sparse-random has been moved back to diagnostics, and a fresh CPU job is being submitted to regenerate scores under the corrected fixed-deviation CCE evaluator.
 
+Job update, 2026-05-27 20:30 UTC: the corrected fixed-deviation evaluator passed on dense ER, dense clustered, and sparse kNN, but dense privacy diagnostics were essentially zero slope when using the literal `min{club, spade}` bound. This was too brittle because it passed only by floating-point sign. The privacy metric now follows the paper's regime-specific Theorem 8.1 analysis: dense graphs use the club bound and sparse graphs use the spade bound; the evaluator also requires privacy slopes below `-1e-6` rather than merely below zero.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.

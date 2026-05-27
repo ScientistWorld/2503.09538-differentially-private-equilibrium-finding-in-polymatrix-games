@@ -96,13 +96,13 @@ def evaluate_runs(runs: list[dict]) -> tuple[dict, dict]:
             if topology.startswith("sparse"):
                 by_experiment[exp_name]["results"][method_name] = {
                     "cce_stable_or_decreases_with_n": float(cce_slope <= 0.05),
-                    "privacy_decreases_with_n": float(privacy_slope < 0.0),
+                    "privacy_decreases_with_n": float(privacy_slope < -1e-6),
                     "competitive_with_baseline": float(ratio <= 1.10),
                 }
             else:
                 by_experiment[exp_name]["results"][method_name] = {
                     "cce_decreases_with_n": float(cce_slope < 0.0),
-                    "privacy_decreases_with_n": float(privacy_slope < 0.0),
+                    "privacy_decreases_with_n": float(privacy_slope < -1e-6),
                     "competitive_with_baseline": float(ratio <= 1.10),
                 }
     return {"experiments": by_experiment}, {"experiments": diagnostics}

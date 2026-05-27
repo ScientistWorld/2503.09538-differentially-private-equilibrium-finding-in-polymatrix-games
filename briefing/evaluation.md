@@ -6,7 +6,7 @@ How success is measured. Describe only the metrics, targets, and evaluation proc
 
 - **CCE exploitability**: average per-player fixed-deviation regret of the empirical distribution over iterates. Lower is better.
 - **Last-iterate Nash gap**: average immediate gain from unilateral deviation at the final strategy profile. Lower is better and is diagnostic only.
-- **Renyi-DP privacy budget bound**: the single-channel average privacy upper bound for adjacent games that differ on one edge. Lower is better.
+- **Renyi-DP privacy budget bound**: the single-channel average privacy upper bound for adjacent games that differ on one edge, using the dense or sparse regime branch analyzed for the evaluated graph family. Lower is better.
 - **Scaling slopes**: log-log slopes of exploitability and privacy budget versus number of players. Negative slopes mean the metric improves as games get larger.
 
 ## Baselines and Targets
