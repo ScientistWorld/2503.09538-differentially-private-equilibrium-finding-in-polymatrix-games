@@ -1,6 +1,6 @@
 # Reproduction Milestones
 
-**Current: core_claim**
+**Current: core_claim_plus**
 
 ## Progress Log
 
@@ -27,5 +27,10 @@
 - Updated method and baseline artifacts to record privacy as an average over sampled adjacent edges rather than one sorted edge per game.
 - Submitted another multi-topology rerun.
 
+### [2026-05-27 21:05] - core_claim_plus
+- Final multi-topology job completed with exit code 0 and validation passed.
+- Reproduced dense ER, dense clustered, and sparse kNN targets in addition to the original core dense ER run.
+- Sparse random remains a documented finite-scale gap: exploitability is stable/decreasing, but the privacy bound slope is still positive on this grid.
+
 ## Stop Justification
-- Not stopped. Current job submission is intended to expand coverage toward `core_claim_plus`.
+- Stopped at `core_claim_plus`: the core claim is reproduced and additional graph topologies are covered. The remaining sparse random privacy trend did not improve after two targeted fixes and is documented as a residual finite-scale gap.

@@ -1,8 +1,8 @@
 # IMPORTANT: Once you set action to 'submit' or 'done', STOP immediately.
 # Do NOT sleep, poll, or wait for jobs. The system reads this file
 # only after your turn ends. Sleeping blocks the entire pipeline.
-action: submit
+action: done
 gpus: 0
 test: false
-milestone: core_claim
-notes: "Rerun multi-topology reproduction after averaging privacy bounds over sampled adjacent edges; sparse random previously failed only the privacy trend target."
+milestone: core_claim_plus
+notes: "Core claim reproduced and expanded to dense clustered and sparse kNN settings. Sparse random privacy remains a documented finite-scale gap; final job passed validation."

@@ -22,9 +22,16 @@ The multi-topology job completed successfully. Dense ER, dense clustered, and sp
 - Sparse kNN: CCE slope `0.0117`, privacy slope `-4.0280`.
 - Sparse random: CCE slope `-0.0174`, privacy slope `0.3813`.
 
+Final rerun after averaging privacy over sampled adjacent edges kept the same qualitative outcome and passed validation:
+
+- Dense ER: CCE slope `-0.4119`, privacy slope `-0.0859`.
+- Dense clustered: CCE slope `-0.3907`, privacy slope `-0.0600`.
+- Sparse kNN: CCE slope `-0.0116`, privacy slope `-4.8843`.
+- Sparse random: CCE slope `-0.0301`, privacy slope `0.2253`.
+
 ## Remaining
 
-The next submitted job expands beyond `core_claim` to the paper's other graph topologies: dense clustered graphs, sparse random graphs, and sparse k-nearest-neighbor graphs. A closer implementation of the Huang et al. adapted baseline would still be needed to reproduce the paper's baseline separation more faithfully.
+To go beyond `core_claim_plus`, the main remaining work is the sparse random privacy trend. A larger sparse-only grid or a memory-efficient sparse utility representation would be needed to test whether the asymptotic decrease appears at larger N. A closer implementation of the Huang et al. adapted baseline would also be needed to reproduce the paper's baseline separation more faithfully.
 
 ## Issues
 
@@ -39,6 +46,8 @@ Audit update, 2026-05-27 20:05 UTC: continuing agent reviewed `method/`, `data/`
 Job update, 2026-05-27 20:30 UTC: the sparse random privacy bound did not decrease because the finite-scale helper forced at least eight sparse iterations, which creates an overly large propagation horizon in the sparse privacy bound. The sparse schedule has been corrected to follow the logarithmic Theorem 8.1 scaling with a minimum of two iterations.
 
 Job update, 2026-05-27 20:50 UTC: after correcting the sparse step schedule, sparse random still missed the privacy trend (`0.2253`) while dense ER, dense clustered, and sparse kNN passed. The privacy bound was still being recorded for a single lexicographically first adjacent edge per generated graph, making the sparse random score sensitive to one local neighborhood. The method and baseline artifacts now report the mean privacy bound over deterministic sampled adjacent edges for each game, matching the paper's use of averaged random-instance plots.
+
+Final update, 2026-05-27 21:05 UTC: averaging privacy over sampled adjacent edges did not change the sparse random trend enough to pass, but the job passed validation and reproduced the core claim on dense ER plus additional dense clustered and sparse kNN settings. Milestone is `core_claim_plus`.
 
 ## Deviations from Paper
 
