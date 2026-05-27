@@ -22,5 +22,10 @@
 - Sparse random exploitability was stable/decreasing, but privacy did not decrease on the first grid.
 - Corrected the sparse finite-scale step schedule to preserve the paper's sparse privacy propagation regime and submitted a rerun.
 
+### [2026-05-27 20:50] - core_claim
+- Sparse random still missed the privacy trend after the step-schedule fix.
+- Updated method and baseline artifacts to record privacy as an average over sampled adjacent edges rather than one sorted edge per game.
+- Submitted another multi-topology rerun.
+
 ## Stop Justification
 - Not stopped. Current job submission is intended to expand coverage toward `core_claim_plus`.

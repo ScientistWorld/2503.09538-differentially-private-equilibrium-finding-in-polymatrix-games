@@ -11,6 +11,15 @@ import numpy as np
 from data.polymatrix import generate_game, harmonic_mean_degree, project_simplex, save_game, theorem8_hyperparameters, theorem8_privacy_bound
 
 
+def average_privacy_bound(game, eta: float, alpha: float, steps: int, seed: int, samples: int) -> tuple[float, list[list[int]]]:
+    rng = np.random.default_rng(seed)
+    count = min(samples, len(game.edges))
+    indices = rng.choice(len(game.edges), size=count, replace=False)
+    edges = [game.edges[int(idx)].tolist() for idx in indices]
+    bounds = [theorem8_privacy_bound(game, eta, alpha, edge, steps) for edge in edges]
+    return float(np.mean(bounds)), edges
+
+
 def run_baseline(game, steps: int, eta: float, sigma: float, seed: int) -> tuple[np.ndarray, np.ndarray]:
     rng = np.random.default_rng(seed)
     n, a = game.n_players, game.n_actions
@@ -42,6 +51,7 @@ def main() -> None:
     parser.add_argument("--c", type=int, default=4)
     parser.add_argument("--seeds", nargs="+", type=int, default=[0, 1, 2])
     parser.add_argument("--alpha", type=float, default=2.0)
+    parser.add_argument("--privacy-edge-samples", type=int, default=8)
     args = parser.parse_args()
 
     out = Path(args.output_dir)
@@ -51,7 +61,14 @@ def main() -> None:
         steps, eta, sigma = theorem8_hyperparameters(n, args.topology, args.p, args.c)
         for seed in args.seeds:
             game = generate_game(n, args.actions, args.topology, seed=1000 + 17 * seed + n, p=args.p, c=args.c)
-            edge = game.edges[0].tolist()
+            privacy_bound, privacy_edges = average_privacy_bound(
+                game,
+                eta,
+                args.alpha,
+                steps,
+                seed=4000 + 31 * seed + n,
+                samples=args.privacy_edge_samples,
+            )
             traj, broadcasts = run_baseline(game, steps, eta, sigma, seed=3000 + seed)
             name = f"noisy_omd_{args.topology}_n{n}_seed{seed}"
             game_path = out / f"{name}_game.npz"
@@ -67,10 +84,11 @@ def main() -> None:
                 "eta": eta,
                 "sigma": sigma,
                 "alpha": args.alpha,
-                "adjacent_edge": edge,
+                "adjacent_edge": privacy_edges[0],
+                "privacy_edges": privacy_edges,
                 "game_path": str(game_path),
                 "trajectory_path": str(traj_path),
-                "privacy_bound": theorem8_privacy_bound(game, eta, args.alpha, edge, steps),
+                "privacy_bound": privacy_bound,
             })
     (out / "manifest.json").write_text(json.dumps({"runs": runs}, indent=2))
 

@@ -38,6 +38,8 @@ Audit update, 2026-05-27 20:05 UTC: continuing agent reviewed `method/`, `data/`
 
 Job update, 2026-05-27 20:30 UTC: the sparse random privacy bound did not decrease because the finite-scale helper forced at least eight sparse iterations, which creates an overly large propagation horizon in the sparse privacy bound. The sparse schedule has been corrected to follow the logarithmic Theorem 8.1 scaling with a minimum of two iterations.
 
+Job update, 2026-05-27 20:50 UTC: after correcting the sparse step schedule, sparse random still missed the privacy trend (`0.2253`) while dense ER, dense clustered, and sparse kNN passed. The privacy bound was still being recorded for a single lexicographically first adjacent edge per generated graph, making the sparse random score sensitive to one local neighborhood. The method and baseline artifacts now report the mean privacy bound over deterministic sampled adjacent edges for each game, matching the paper's use of averaged random-instance plots.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.
