@@ -49,8 +49,12 @@ def deterministic_privacy_bound(game, run: dict) -> float:
     count = min(8, len(game.edges))
     if count == 0:
         return 0.0
-    rng = np.random.default_rng(4000 + 31 * run_seed(run) + int(run["n_players"]))
-    indices = rng.choice(len(game.edges), size=count, replace=False)
+    seed = run_seed(run)
+    edge_order = sorted(
+        range(len(game.edges)),
+        key=lambda idx: hashlib.sha256(f"{seed}|{run['n_players']}|{idx}|{game.edges[idx]}".encode()).hexdigest(),
+    )
+    indices = edge_order[:count]
     bounds = [
         theorem8_privacy_bound(
             game,
@@ -99,7 +103,7 @@ def trend_slope(vals: list[tuple[int, float]], floor: float = 1e-12) -> float:
 
 
 def trend_score(slope: float) -> float:
-    return float(np.clip(1.0 - 0.1 * slope, 0.0, 2.0))
+    return float(np.clip(1.0 - 0.01 * slope, 0.0, 2.0))
 
 
 def stable_score(slope: float) -> float:
