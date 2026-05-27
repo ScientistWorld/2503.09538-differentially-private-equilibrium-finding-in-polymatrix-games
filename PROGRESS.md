@@ -73,6 +73,8 @@ Packaging fix, 2026-05-27 20:15 UTC: tightened `scripts/evaluate.sh` so callers 
 
 Final verifier update, 2026-05-27 20:19 UTC: train/test evaluators were inspected and confirmed to discover all manifests, score saved artifacts rather than method internals, enforce matching method keys on the held-out slice, and write explicit slice markers in diagnostics. `briefing/evaluation.md` was reworded to keep the comparator description method-agnostic. A CPU container validation job is being submitted for the latest script/documentation state.
 
+Resubmission note, 2026-05-27 20:20 UTC: no new job result was present after the final verifier cleanup commit, so `action.yaml` is being refreshed to submit the same CPU-only validation of the current package state.
+
 ## Deviations from Paper
 
 <!-- Do not edit this section unless you deviated from the paper's original setup.

@@ -40,3 +40,7 @@
 - Final verifier tightened method-agnostic evaluation documentation to avoid naming the comparator algorithm.
 - Train/test evaluators were inspected and confirmed to score saved artifacts with matching method keys and slice markers.
 - Submitting a CPU validation job for the current manifest-scoped scripts and documentation state.
+
+### [2026-05-27 20:20] - core_claim_plus
+- No post-cleanup job result was present yet, so the final verifier is resubmitting the same CPU validation action.
+- The validation job only reruns saved-artifact evaluators and `python validate.py --compare`; it does not retrain or regenerate method outputs.

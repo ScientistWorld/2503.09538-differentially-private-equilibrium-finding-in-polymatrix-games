@@ -19,6 +19,7 @@ The workspace started at milestone `core_claim_plus`. The claimed milestone was 
 - Reworded the method-agnostic evaluation briefing to describe the comparator contract without naming the comparator algorithm.
 - Ran CPU validation job `abee7929-170`, which regenerated standalone, train, and held-out test scores and passed `python validate.py --compare`.
 - A follow-up CPU validation is queued for the latest manifest-scoped evaluation scripts and documentation cleanup.
+- The follow-up submission was refreshed at 2026-05-27 20:20 UTC because no post-cleanup job result was present yet.
 
 ## Final Judgment
 
