@@ -26,4 +26,4 @@
 - The reproduced privacy budget bound also decreased with player count (log-log slope -0.0859), supporting the paper's simultaneous accuracy/privacy scaling claim at finite scale.
 
 ## Stop Justification
-- Completed at milestone `core_claim`. Broader claims remain: additional graph topologies and a stronger baseline reproduction were not fully covered.
+- Completed at milestone `core_claim`.

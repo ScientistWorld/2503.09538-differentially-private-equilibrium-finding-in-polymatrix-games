@@ -1,0 +1,116 @@
+{
+  "paper": {
+    "arxiv_id": "2503.09538",
+    "title": "Differentially Private Equilibrium Finding in Polymatrix Games",
+    "date": null,
+    "topics": null
+  },
+  "reproduction": {
+    "milestone": "core_claim",
+    "status": "done",
+    "error": null,
+    "scaffold": "codex",
+    "model": "gpt-5.5",
+    "profile": "gpt-5.5-medium",
+    "effort": "medium",
+    "gpu_hours_used": 0.0,
+    "current_iteration_gpu_budget": 30,
+    "current_iteration_gpu_hours_used": 0.0,
+    "total_gpu_hours_used": 0.0,
+    "current_iteration_cpu_hours_used": 0.014,
+    "total_cpu_hours_used": 0.014,
+    "gpu_budget": 30,
+    "duration_sec": 831.3,
+    "cost_usd": null,
+    "input_tokens": 5361131,
+    "output_tokens": 29812,
+    "cached_input_tokens": 5230464,
+    "cache_creation_tokens": null,
+    "reasoning_tokens": 0,
+    "total_input_tokens": 5361131,
+    "num_turns": 64,
+    "duration_api_ms": null,
+    "num_runs": 1,
+    "iteration_count": 0,
+    "workflow": "standard",
+    "workflow_step": 0,
+    "total_gpu_jobs": 1,
+    "time_breakdown": {
+      "working": 662.0455038547516,
+      "building": 0.12169766426086426,
+      "installing": 1.806401252746582,
+      "waiting": 53.80971956253052
+    }
+  },
+  "agents": [
+    {
+      "scaffold": "codex",
+      "model": "gpt-5.5",
+      "profile": "gpt-5.5-medium",
+      "effort": "medium",
+      "role": "reproducer",
+      "is_iteration": false,
+      "iteration": 1,
+      "workflow": "standard",
+      "workflow_step": 0,
+      "started_at": 1779907722.4274843,
+      "finished_at": 1779908553.7183342,
+      "duration_sec": 831.3,
+      "blocked_sec": 0.0,
+      "status": "done",
+      "error": null,
+      "milestone": "core_claim",
+      "gpu_budget": 30,
+      "gpu_hours_used": 0.0,
+      "total_gpu_hours_used": 0.0,
+      "cpu_hours_used": 0.014,
+      "time_breakdown": {
+        "working": 662.0455038547516,
+        "building": 0.12169766426086426,
+        "installing": 1.806401252746582,
+        "waiting": 53.80971956253052
+      },
+      "cost_usd": null,
+      "input_tokens": 5361131,
+      "output_tokens": 29812,
+      "cached_input_tokens": 5230464,
+      "cache_creation_tokens": null,
+      "reasoning_tokens": 0,
+      "total_input_tokens": 5361131,
+      "num_turns": 64,
+      "duration_api_ms": null,
+      "tool_uses": {
+        "shell": 49,
+        "file_edit": 15
+      },
+      "gpu_jobs": [
+        {
+          "run_id": "4a26754e-89f",
+          "command": "bash /home/user/scripts/run.sh",
+          "num_gpus": 0,
+          "num_cpus": 1,
+          "resource": "gpu-cpu-test",
+          "hive_job_id": "2cddad11",
+          "status": "completed",
+          "returncode": 0,
+          "duration_sec": 50.1,
+          "submitted_at": 1779908394.7692726,
+          "started_at": 1779908396.3579516,
+          "completed_at": 1779908446.461039
+        }
+      ],
+      "progress_log": "### [2026-05-27 18:50] - method_runs\n- Read the paper and identified Algorithm 1 as the reproducible core method.\n- Implemented procedural polymatrix-game generation, Algorithm 1, a private noisy OMD baseline, and artifact-based evaluation.\n- Ran a local CPU smoke test on small dense games; the method and evaluator execute end-to-end.\n\n### [2026-05-27 19:02] - core_claim\n- Completed a scheduled CPU reproduction job on dense Erdos-Renyi games with N in {64, 128, 256, 512} and five seeds.\n- The proposed method's CCE exploitability decreased with player count (log-log slope -0.4119).\n- The reproduced privacy budget bound also decreased with player count (log-log slope -0.0859), supporting the paper's simultaneous accuracy/privacy scaling claim at finite scale."
+    }
+  ],
+  "components": {
+    "has_container": true,
+    "has_method_code": true,
+    "has_evaluation": true,
+    "has_download_script": true,
+    "has_reproduce_script": true,
+    "has_method_script": true,
+    "has_baseline": true,
+    "has_reference": true,
+    "has_data": true
+  }
+}
