@@ -26,7 +26,11 @@ cd /home/user
 
 mkdir -p scoring
 
-mapfile -t MANIFESTS < <(find outputs -mindepth 2 -maxdepth 3 -name manifest.json | sort)
+if [ "$#" -gt 0 ]; then
+  MANIFESTS=("$@")
+else
+  mapfile -t MANIFESTS < <(find outputs -mindepth 2 -maxdepth 3 -name manifest.json | sort)
+fi
 if [ "${#MANIFESTS[@]}" -eq 0 ]; then
   echo "No output manifests found under outputs/." >&2
   exit 1

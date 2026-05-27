@@ -10,8 +10,10 @@ set -e
 
 cd /home/user
 
+OUT_DIR="outputs/proposed/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}"
+
 python -m method.dp_cce \
-  --output-dir "outputs/proposed/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}" \
+  --output-dir "$OUT_DIR" \
   --topology "${TOPOLOGY:-dense_er}" \
   --n-values ${N_VALUES:-64 128 256} \
   --actions "${ACTIONS:-5}" \
@@ -21,5 +23,10 @@ python -m method.dp_cce \
   --alpha "${ALPHA:-2.0}"
 
 if [ "${AUTO_EVALUATE:-1}" = "1" ]; then
-  bash scripts/evaluate.sh
+  MANIFESTS=("$OUT_DIR/manifest.json")
+  MATCHED_BASELINE="outputs/baseline/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}/manifest.json"
+  if [ -f "$MATCHED_BASELINE" ]; then
+    MANIFESTS+=("$MATCHED_BASELINE")
+  fi
+  bash scripts/evaluate.sh "${MANIFESTS[@]}"
 fi

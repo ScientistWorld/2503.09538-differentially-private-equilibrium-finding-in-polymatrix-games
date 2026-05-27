@@ -31,3 +31,7 @@
 - Final verification job `abee7929-170` completed with exit code 0.
 - `scripts/evaluate.sh`, `scripts/evaluate_train.sh`, `scripts/evaluate_test.sh`, and `python validate.py --compare` all passed in the container runtime.
 - Verified that method-agnostic files, scoring docs, and train/test split wiring are suitable for gym use.
+
+### [2026-05-27 20:15] - core_claim_plus
+- Fixed method/baseline auto-evaluation to pass explicit manifests, avoiding accidental mixing of fresh artifacts with stale outputs during partial reruns.
+- Submitting a CPU validation job to verify the packaging change inside the container runtime.

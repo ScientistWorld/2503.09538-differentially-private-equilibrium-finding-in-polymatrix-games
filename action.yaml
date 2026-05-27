@@ -1,3 +1,5 @@
-action: done
+action: submit
+gpus: 0
+test: true
 milestone: core_claim_plus
-notes: "Final verification passed; workspace is ready for gym use with a documented finite-scale sparse-random diagnostic limitation."
+notes: "CPU container validation after tightening evaluate.sh/method.sh/baseline.sh manifest scoping to avoid stale-output scoring during partial reruns."

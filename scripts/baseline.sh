@@ -17,8 +17,10 @@ set -e
 
 cd /home/user
 
+OUT_DIR="outputs/baseline/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}"
+
 python -m baseline.noisy_omd \
-  --output-dir "outputs/baseline/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}" \
+  --output-dir "$OUT_DIR" \
   --topology "${TOPOLOGY:-dense_er}" \
   --n-values ${N_VALUES:-64 128 256} \
   --actions "${ACTIONS:-5}" \
@@ -28,5 +30,10 @@ python -m baseline.noisy_omd \
   --alpha "${ALPHA:-2.0}"
 
 if [ "${AUTO_EVALUATE:-1}" = "1" ]; then
-  bash scripts/evaluate.sh
+  MANIFESTS=("$OUT_DIR/manifest.json")
+  MATCHED_PROPOSED="outputs/proposed/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}/manifest.json"
+  if [ -f "$MATCHED_PROPOSED" ]; then
+    MANIFESTS+=("$MATCHED_PROPOSED")
+  fi
+  bash scripts/evaluate.sh "${MANIFESTS[@]}"
 fi
