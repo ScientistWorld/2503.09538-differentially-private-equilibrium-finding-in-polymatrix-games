@@ -5,4 +5,4 @@ action: submit
 gpus: 0
 test: false
 milestone: core_claim
-notes: "Run the multi-topology NumPy reproduction for dense ER, dense clustered, sparse random, and sparse kNN games; regenerate scores and validate the expanded scoring contract."
+notes: "Audit restored core_claim and fixed scores/diagnostics separation. Run the multi-topology NumPy reproduction for dense ER, dense clustered, sparse random, and sparse kNN games; regenerate scores and validate the expanded scoring contract."
