@@ -52,6 +52,7 @@ RESULTS = HERE / "cases"
 # would not change any test score, so the audit skips them for speed.
 AUDIT_SEEDS = (1, 3, 5, 7, 9, 11)
 REPLICATE_KEYS = (1, 2, 3)
+REPLICATE_PREFIXES = ("reference_noise_key", "comparator_noise_key")
 
 CASES = {
     # name: (kind, description)
@@ -83,6 +84,8 @@ CASES = {
     "shortcut_best_of_8_noise": ("shortcut", "Algorithm 1 under 8 noise streams per instance, keeping the lowest-exploitability run."),
     "shortcut_fewer_rounds": ("shortcut", "Reference arrays truncated to T-1 rounds."),
     "shortcut_known_noise_gradient": ("shortcut", "Algorithm 1 but gradients use neighbours' true (pre-noise) strategies -- a privacy violation the transcript cannot reveal."),
+    "shortcut_known_noise_gradient_rescaled": ("left_shortcut", "As above, but the noiseless gradient is rescaled to the public-gradient norm so every update stays inside the allowance."),
+    "shortcut_select_best_variant": ("left_shortcut", "Per instance, keep whichever of five valid runs (reference, shrink 0.75, max shrink, half step, denoised) has the lowest exploitability computed with all utilities."),
 }
 
 
@@ -90,7 +93,7 @@ CASES = {
 # Candidate dynamics (public API only)
 # ---------------------------------------------------------------------------
 def simulate(game, steps, eta, noise, *, tau=None, keep=1.0, step_scale=1.0, grad_mode="public",
-             anchor_mode="public", denoise=False):
+             anchor_mode="public", denoise=False, rescale_to_public=False):
     n, a = game.n_players, game.n_actions
     uniform = np.full((n, a), 1.0 / a)
     op = payoff_operator(game)
@@ -106,6 +109,12 @@ def simulate(game, steps, eta, noise, *, tau=None, keep=1.0, step_scale=1.0, gra
             g = gradients(game, anchor_public, op)
         elif grad_mode == "true":
             g = gradients(game, s, op)
+            if rescale_to_public:
+                gp = gradients(game, anchor_public, op)
+                gp = gp - gp.mean(axis=1, keepdims=True)
+                g = g - g.mean(axis=1, keepdims=True)
+                scale = np.minimum(1.0, np.linalg.norm(gp, axis=1) / np.maximum(np.linalg.norm(g, axis=1), 1e-12))
+                g = g * scale[:, None]
         else:
             g = np.zeros((n, a))
         if denoise:
@@ -176,9 +185,18 @@ def build_instance(topology, n, seed):
     out["shortcut_best_of_8_noise"] = (best[1], best[2], {"selected_noise_key": best[3]})
     out["shortcut_fewer_rounds"] = (ref_t[:-1], ref_b[:-1], {})
     out["shortcut_known_noise_gradient"] = (*simulate(game, steps, eta, noise, tau=tau, grad_mode="true"), {})
+    out["shortcut_known_noise_gradient_rescaled"] = (*simulate(game, steps, eta, noise, tau=tau, grad_mode="true",
+                                                               rescale_to_public=True), {})
+    pool = [out[k] for k in ("reference", "better_shrink_075", "better_max_shrink", "weaker_half_step",
+                             "better_denoised_gradient")]
+    chosen = min(pool, key=lambda c: cce_exploitability(game, c[0])[0])
+    out["shortcut_select_best_variant"] = (chosen[0], chosen[1], {})
     replicates = {}
+    comparator_step = budget_matched_step(game, steps, eta)
     for key in REPLICATE_KEYS:
-        replicates[f"reference_noise_key{key}"] = run_algorithm1(game, steps, eta, broadcast_noise(topology, n, seed, key=key))
+        alt = broadcast_noise(topology, n, seed, key=key)
+        replicates[f"reference_noise_key{key}"] = run_algorithm1(game, steps, eta, alt)
+        replicates[f"comparator_noise_key{key}"] = run_structure_free(game, steps, comparator_step, alt)
     bad_baseline = None
     g_uniform = gradients(game, uniform)
     worst = np.eye(N_ACTIONS)[g_uniform.argmax(axis=1)]
@@ -273,8 +291,8 @@ def score_case(case):
         (ROOT / "scoring" / name).unlink(missing_ok=True)
     before = evaluator_hash()
     start = time.time()
-    if case.startswith("reference_noise_key"):
-        key = case.removeprefix("reference_noise_key")
+    if case.startswith(REPLICATE_PREFIXES):
+        key = case.rsplit("key", 1)[1]
         install_case(case)
         manifests = sorted(str(p) for p in (ROOT / "outputs").rglob("manifest.json"))
         cmd = [sys.executable, "-m", "eval.test.evaluate", "--manifest", *manifests, "--noise-key", key]
@@ -287,7 +305,8 @@ def score_case(case):
     if case in CASES:
         result["kind"], result["description"] = CASES[case]
     else:
-        result["kind"], result["description"] = "replicate", f"Reference under alternative noise stream {case[-1]} (seed-noise study)."
+        who = "Reference" if case.startswith("reference") else "Comparator"
+        result["kind"], result["description"] = "replicate", f"{who} under alternative noise stream {case[-1]} (seed-noise study; scored with --noise-key)."
     (folder / "evaluate_test.log").write_text(proc.stdout[-20000:] + "\n--- stderr ---\n" + proc.stderr[-20000:])
     if proc.returncode == 0:
         shutil.copy2(ROOT / "scoring" / "scores_test.json", folder / "scores_test.json")
@@ -318,7 +337,7 @@ def main(selected):
             shutil.rmtree(RUNS, ignore_errors=True)
             generate_all()
             (RUNS / "ready.json").write_text("{}")
-        cases = selected or (list(CASES) + [f"reference_noise_key{k}" for k in REPLICATE_KEYS])
+        cases = selected or (list(CASES) + [f"{prefix}{k}" for prefix in REPLICATE_PREFIXES for k in REPLICATE_KEYS])
         results = {}
         for case in cases:
             results[case] = score_case(case)

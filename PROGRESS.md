@@ -99,3 +99,12 @@ Final cleanup, 2026-05-27 20:38 UTC: generated `jobs/` and `trajectory/` logs we
      the paper you implemented? If not, you replaced the method. -->
 
 - The paper ran large PyTorch experiments on 2 x NVIDIA H200 GPUs. This reproduction uses NumPy and a smaller finite player-count grid to fit the available budget while preserving the same algorithmic steps and evaluation quantities.
+
+## Hardening iteration (final)
+
+The gym was re-built around a fixed privacy operating point (see `HARDENING.md`):
+- The evaluators regenerate games, rounds, step scale and a fixed broadcast-noise stream themselves, verify each transcript against the private protocol, and score exploitability relative to a fixed structure-free comparator at the same privacy budget and to uniform play.
+- Algorithm 1 now runs on the fixed noise stream and the public 12-seed instance grid (`method/dp_cce.py`).
+- Baselines: `baseline/structure_free.py` (budget-matched prior-work-style learner, also the comparator) and `baseline/no_payoff.py`.
+- Hidden-test reference scores (comparator ratio / relative exploitability): dense ER 0.987 / 0.979, dense clustered 0.986 / 0.996, sparse kNN 0.715 / 0.910.
+- The redteam's shortcuts tie (claimed numbers are ignored) or fail. A compliant shrinkage variant scores +0.23 and weaker variants score below the reference.

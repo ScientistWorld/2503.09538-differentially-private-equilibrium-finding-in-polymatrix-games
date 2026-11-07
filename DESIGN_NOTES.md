@@ -1,3 +1,5 @@
+> **Superseded (hardening iteration):** this note describes the pre-hardening evaluator (method-written games, claimed privacy parameters, `noisy_omd` comparator). The current evaluation design and its audit are in `HARDENING.md`, `briefing/evaluation.md` and `scoring/`.
+
 # Design Notes
 
 ## Checks Performed

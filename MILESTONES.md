@@ -53,3 +53,7 @@
 ### [2026-05-27 20:38] - core_claim_plus
 - Final verifier removed generated `jobs/` and `trajectory/` logs from the git index; these runtime artifacts are ignored and should not ship with the gym.
 - Re-ran validation and kept final action at `done`.
+
+### [2026-11-07] - core_claim_plus (hardening)
+- Test hardened: eval-owned games, operating point, noise stream and comparator values. Privacy is a verified protocol gate. Failures score below every valid run. 6 test seeds per size.
+- Algorithm 1 beats the budget-matched structure-free comparator in all three families: 0.715 on sparse kNN, about 1.3% better on dense graphs. Absolute dense exploitability falls with N (slope -0.40).
