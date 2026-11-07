@@ -18,12 +18,22 @@ the reported three-seed spread for this audit.
 Scores/diagnostics/result files are saved next to each candidate's run.sh.
 The runtime harness restores the original outputs and scoring files after each
 case, and verifies evaluator hashes. Its installed method wrapper is removed.
-The temporary scheduler script will be restored before final delivery.
+The temporary scheduler script was restored before final delivery. Job logs
+and metadata are preserved in this directory's jobs/ subdirectory; per-case
+process logs are saved as .txt beside each run.sh.
 
 Job 0e3cdfc6-564 completed all 20 cases. Log review caught an ordinary Python
 bytecode-cache collision: the seed-2 wrapper had the seed-1 wrapper's filename,
 mtime and byte length, so Python executed seed 1 again. The harness now uses a
-different module filename per case and checks reference invocation logs. A
-follow-up job reruns seed 2; only the corrected three runs are used in the final
-seed-spread claim. Other adjacent wrappers had different byte lengths and their
+different module filename per case and checks reference invocation logs.
+Follow-up job `cfe3c415-076` reran seed 2 and exited 0; only the corrected
+three runs are used in the final seed-spread claim. All three trajectory hash
+lists and score files match exactly. Other adjacent wrappers had different byte lengths and their
 generation logs identify the intended case.
+
+Final cleanup restored the original scripts/run.sh and removed this audit's
+new job files from jobs/ after preserving them here. Platform-masked README.md
+and manifest.json and read-only trajectory/ cannot be restored in the worktree;
+their original git blobs were restored in the index. These mounts were present
+before the audit and were not modified. The final committed benchmark tree
+should differ only in redteam/, REDTEAM.md and the required action.yaml.

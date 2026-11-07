@@ -1,0 +1,6 @@
+[train] dense_er_scaling         our_method                   comparator_exploitability_ratio=0.9881 privacy_protocol_compliance=1.0000 relative_exploitability=0.9581 relative_final_nash_gap=1.2283
+[train] dense_er_scaling         structure_free_baseline      comparator_exploitability_ratio=10.0000 privacy_protocol_compliance=0.0000 relative_exploitability=10.0000 relative_final_nash_gap=10.0000
+[train] dense_cluster_scaling    our_method                   comparator_exploitability_ratio=0.9866 privacy_protocol_compliance=1.0000 relative_exploitability=0.9843 relative_final_nash_gap=1.2504
+[train] dense_cluster_scaling    structure_free_baseline      comparator_exploitability_ratio=10.0000 privacy_protocol_compliance=0.0000 relative_exploitability=10.0000 relative_final_nash_gap=10.0000
+[train] sparse_knn_scaling       our_method                   comparator_exploitability_ratio=0.7103 privacy_protocol_compliance=1.0000 relative_exploitability=0.9026 relative_final_nash_gap=1.0646
+[train] sparse_knn_scaling       structure_free_baseline      comparator_exploitability_ratio=10.0000 privacy_protocol_compliance=0.0000 relative_exploitability=10.0000 relative_final_nash_gap=10.0000

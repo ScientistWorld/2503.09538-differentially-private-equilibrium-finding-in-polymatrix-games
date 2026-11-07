@@ -1,0 +1,3 @@
+[train] dense_er_scaling         our_method                   comparator_exploitability_ratio=10.0000 privacy_protocol_compliance=0.7500 relative_exploitability=10.0000 relative_final_nash_gap=10.0000
+[train] dense_cluster_scaling    our_method                   comparator_exploitability_ratio=10.0000 privacy_protocol_compliance=0.7500 relative_exploitability=10.0000 relative_final_nash_gap=10.0000
+[train] sparse_knn_scaling       our_method                   comparator_exploitability_ratio=10.0000 privacy_protocol_compliance=0.7500 relative_exploitability=10.0000 relative_final_nash_gap=10.0000

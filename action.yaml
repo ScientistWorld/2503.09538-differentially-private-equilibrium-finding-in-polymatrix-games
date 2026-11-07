@@ -1,4 +1,2 @@
-action: submit
-gpus: 0
-test: false
-notes: "Complete audit: rerun reference seed 2 with a unique module filename and verify all 20 test results and three-seed spread."
+action: done
+notes: "Audit complete: genuine improvements rank higher; forbidden global-information shortcut gains +0.543399488. Report, 20 runnable cases, scores and logs committed."
