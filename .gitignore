@@ -235,3 +235,6 @@ core.[0-9]*
 redteam/hardening/_runs/
 redteam/hardening/_backup/
 redteam/hardening/cases/*/evaluate_test.log
+
+# Throwaway job logs
+tmp/

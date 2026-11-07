@@ -36,7 +36,16 @@ Genuine compliant improvements now score above the reference, by 4-6x the larges
 - The separate readout reports played strategies that are not the ones whose noisy versions were broadcast. Allowing that would also let a central solver's output be reported next to a valid transcript.
 - The persistent anchor starts its step from the private noiseless strategy, which the paper itself rules out for privacy (Section 5: the step must start from the noisy broadcast so that adjacent games' observations do not drift apart).
 
-__PAIRED_REPLICATES__
+**Effect vs seed noise (paired).** The reference and the comparator were rerun on three further noise streams. Each pair shares a stream; the evaluator was run with `--noise-key`, and every run is compared with the fixed key-0 comparator values.
+
+| Noise stream | Rank(reference) - rank(comparator) | Reference / comparator: dense ER | dense cluster | sparse kNN |
+|---|---:|---:|---:|---:|
+| 0 (benchmark) | 0.1886 | 0.9869 | 0.9862 | 0.7145 |
+| 1 | 0.1879 | 0.9885 | 0.9869 | 0.7109 |
+| 2 | 0.1882 | 0.9873 | 0.9863 | 0.7161 |
+| 3 | 0.1850 | 0.9880 | 0.9859 | 0.7126 |
+
+The paper's effect (ours vs the prior-work baseline at equal privacy) is 0.185-0.189 in rank, against a largest unpaired shift of the reference's own score of 0.037 across streams. Even the small dense-graph effect (1.2-1.4%) varies by only about 0.0016 across streams, roughly 8x below its size. The benchmark fixes the noise stream, so all hidden-test comparisons are paired in exactly this way.
 
 ## Major shortcuts: fix and score before/after
 
@@ -62,7 +71,19 @@ The "0" rows are ties because the forged field no longer does anything: the subm
 
 ## Shortcuts left open
 
-__LEFT_SHORTCUTS__
+Neither shortcut below can be seen in a transcript: each is a valid execution of the protocol, and only a code review can reject it. Both were probed through the hidden test; neither pays.
+
+| Left shortcut | What it does | Hidden-test rank gain | Why it is left |
+|---|---|---:|---|
+| `shortcut_known_noise_gradient_rescaled` | Uses neighbours' true (pre-noise) strategies, i.e. information leaked by knowing the public noise stream, for the gradient direction, rescaled to stay within the step allowance. | **-0.204** (worse than the reference: ratios 1.071 / 1.062 / 0.898) | Information misuse inside the allowance is invisible in the transcript. It does not pay here: the noisy broadcasts predict where neighbours will actually be next round better than their true strategies do. |
+| `shortcut_select_best_variant` | Per instance, keeps the best of five valid runs by exploitability computed with all utilities (a centralised selection). | +0.226, identical to the best single compliant variant (`better_shrink_075`), which it selected on every instance | Selecting runs with global knowledge is a centralised computation. The simulation necessarily hands a method every player's utilities, so only review can rule it out. With these variants it gains nothing beyond the best honest variant. Selection over a much larger pool of compliant runs could gain a little more; `scoring/CONSTRAINTS.md` and `scoring/DIRECTION.md` forbid it. |
+
+Further members of the same class, not probed and closable only by review:
+- choosing the next strategy using the known *future* noise of one's own broadcast;
+- using other players' utilities to choose a step direction within the allowance;
+- tuning per-instance hyperparameters on the public instances, whose seeds include the test seeds. The 12 public seeds include the 6 test seeds because a method must produce outputs for them, and the test never reruns a method.
+
+The step allowance caps how much any of these can move a strategy per round to the same O(eta) budget an honest update has. The two probed versions confirm the effect is nil or negative here.
 
 ## Reference before and after
 
