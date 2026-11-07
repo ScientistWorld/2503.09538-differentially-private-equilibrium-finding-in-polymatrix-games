@@ -329,7 +329,7 @@
     "reference_seed2": {
       "case": "reference_seed2",
       "description": "Independent reference rerun with process seed 2 and contract noise key 0.",
-      "elapsed_seconds": 40.29,
+      "elapsed_seconds": 47.3,
       "evaluator_command": [
         "bash",
         "scripts/evaluate_test.sh"
@@ -1346,7 +1346,7 @@
     0.0
   ],
   "seed_rank_spread": 0.0,
-  "seed_transcripts_identical": false,
+  "seed_transcripts_identical": true,
   "upper_bound_gain_with_one_failure": {
     "dense_cluster_scaling": -3.5770443346355245,
     "dense_er_scaling": -5.331211001302192,

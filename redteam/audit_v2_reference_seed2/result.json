@@ -1,7 +1,7 @@
 {
   "case": "reference_seed2",
   "description": "Independent reference rerun with process seed 2 and contract noise key 0.",
-  "elapsed_seconds": 40.29,
+  "elapsed_seconds": 47.3,
   "evaluator_command": [
     "bash",
     "scripts/evaluate_test.sh"

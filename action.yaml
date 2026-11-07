@@ -1,4 +1,4 @@
 action: submit
 gpus: 0
 test: false
-notes: "Run 20 current-gym audit cases: quality controls, 3 reference seeds, private-information shortcuts and degenerate/artifact checks via unchanged no-argument test."
+notes: "Complete audit: rerun reference seed 2 with a unique module filename and verify all 20 test results and three-seed spread."
