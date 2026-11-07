@@ -1,0 +1,9 @@
+{
+  "method": "our_method",
+  "module": "redteam.hardening_v3.policies",
+  "factory": "make_variant",
+  "options": {
+    "tau": "zero",
+    "keep": 0.75
+  }
+}

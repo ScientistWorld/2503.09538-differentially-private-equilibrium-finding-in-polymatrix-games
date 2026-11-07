@@ -1,0 +1,64 @@
+{
+  "case": "no_payoff_as_method",
+  "description": "The payoff-blind protocol baseline submitted as the method.",
+  "evaluator_unchanged": true,
+  "kind": "baseline",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 96,
+      "audited_players": 768,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 11.9
+    },
+    "seconds": 40.7,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 72,
+      "audited_players": 576,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 8.7
+    },
+    "seconds": 29.0,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  }
+}

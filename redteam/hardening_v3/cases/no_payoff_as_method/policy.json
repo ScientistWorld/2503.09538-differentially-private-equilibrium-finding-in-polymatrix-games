@@ -1,0 +1,6 @@
+{
+  "method": "our_method",
+  "module": "baseline.no_payoff",
+  "factory": "make_player",
+  "options": {}
+}

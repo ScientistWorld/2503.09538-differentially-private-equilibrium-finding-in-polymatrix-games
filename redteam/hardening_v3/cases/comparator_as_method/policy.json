@@ -1,0 +1,6 @@
+{
+  "method": "our_method",
+  "module": "baseline.structure_free",
+  "factory": "make_player",
+  "options": {}
+}

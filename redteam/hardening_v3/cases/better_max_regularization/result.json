@@ -1,0 +1,64 @@
+{
+  "case": "better_max_regularization",
+  "description": "Redteam variant: Algorithm 1 with regularizer weight 1 for every player.",
+  "evaluator_unchanged": true,
+  "kind": "better",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 96,
+      "audited_players": 768,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 21.0
+    },
+    "seconds": 43.8,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 72,
+      "audited_players": 576,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 15.0
+    },
+    "seconds": 34.3,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  }
+}

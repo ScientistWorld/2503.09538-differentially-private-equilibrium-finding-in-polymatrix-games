@@ -1,0 +1,64 @@
+{
+  "case": "left_shortcut_hidden_evaluator_oracle",
+  "description": "Imports the evaluator module at run time to regenerate the hidden instance and its noise, then plays the central optimiser.  Requires reading eval/ code at test time.",
+  "evaluator_unchanged": true,
+  "kind": "left_shortcut",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 96,
+      "audited_players": 768,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 149.9
+    },
+    "seconds": 292.7,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 72,
+      "audited_players": 576,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 96.0
+    },
+    "seconds": 211.4,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  }
+}

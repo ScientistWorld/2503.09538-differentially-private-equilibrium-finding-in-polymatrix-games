@@ -1,0 +1,64 @@
+{
+  "case": "shortcut_forged_policy_claims",
+  "description": "Payoff-blind dynamics; the policy manifest claims perfect scores, eta = 0, huge noise, 1 round.",
+  "evaluator_unchanged": true,
+  "kind": "shortcut",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 96,
+      "audited_players": 768,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 12.8
+    },
+    "seconds": 36.7,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 72,
+      "audited_players": 576,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 7.9
+    },
+    "seconds": 18.1,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  }
+}

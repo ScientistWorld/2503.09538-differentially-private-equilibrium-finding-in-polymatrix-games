@@ -1,0 +1,94 @@
+{
+  "case": "shortcut_crash_small_games",
+  "description": "Raises on the N=64 games (drops the smallest games), Algorithm 1 elsewhere.",
+  "evaluator_unchanged": true,
+  "kind": "shortcut",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [
+        "dense_cluster/n64/i0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+        "dense_cluster/n64/i1: no trajectory (policy error: RuntimeError: skip the smallest games)"
+      ],
+      "dense_er_scaling": [
+        "dense_er/n64/i0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+        "dense_er/n64/i1: no trajectory (policy error: RuntimeError: skip the smallest games)"
+      ],
+      "sparse_knn_scaling": [
+        "sparse_knn/n64/i0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+        "sparse_knn/n64/i1: no trajectory (policy error: RuntimeError: skip the smallest games)"
+      ]
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {
+        "no trajectory": 8
+      },
+      "dense_er_scaling": {
+        "no trajectory": 8
+      },
+      "sparse_knn_scaling": {
+        "no trajectory": 8
+      }
+    },
+    "locality_audit": {
+      "audited_instances": 72,
+      "audited_players": 576,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 18.5
+    },
+    "seconds": 35.3,
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [
+        "dense_cluster/n64/seed0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+        "dense_cluster/n64/seed2: no trajectory (policy error: RuntimeError: skip the smallest games)"
+      ],
+      "dense_er_scaling": [
+        "dense_er/n64/seed0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+        "dense_er/n64/seed2: no trajectory (policy error: RuntimeError: skip the smallest games)"
+      ],
+      "sparse_knn_scaling": [
+        "sparse_knn/n64/seed0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+        "sparse_knn/n64/seed2: no trajectory (policy error: RuntimeError: skip the smallest games)"
+      ]
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {
+        "no trajectory": 6
+      },
+      "dense_er_scaling": {
+        "no trajectory": 6
+      },
+      "sparse_knn_scaling": {
+        "no trajectory": 6
+      }
+    },
+    "locality_audit": {
+      "audited_instances": 54,
+      "audited_players": 432,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 14.0
+    },
+    "seconds": 27.4,
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    }
+  }
+}

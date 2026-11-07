@@ -1,0 +1,747 @@
+{
+  "_meta": {
+    "audit_tolerance": 1e-07,
+    "audited_players_per_instance": 8,
+    "instances_per_size": 6,
+    "locality_audit": {},
+    "methods": [
+      "our_method"
+    ],
+    "policy_runs": {
+      "our_method": {
+        "exit_code": 0,
+        "log_tail": "n256/seed4 ok (0.1s)\n[train:run] dense_cluster/n256/seed6 ok (0.1s)\n[train:run] dense_cluster/n256/seed8 ok (0.1s)\n[train:run] dense_cluster/n256/seed10 ok (0.1s)\n[train:run] dense_cluster/n512/seed0 ok (0.3s)\n[train:run] dense_cluster/n512/seed2 ok (0.3s)\n[train:run] dense_cluster/n512/seed4 ok (0.3s)\n[train:run] dense_cluster/n512/seed6 ok (0.3s)\n[train:run] dense_cluster/n512/seed8 ok (0.3s)\n[train:run] dense_cluster/n512/seed10 ok (0.3s)\n[train:run] sparse_knn/n64/seed0 ok (0.0s)\n[train:run] sparse_knn/n64/seed2 ok (0.0s)\n[train:run] sparse_knn/n64/seed4 ok (0.0s)\n[train:run] sparse_knn/n64/seed6 ok (0.0s)\n[train:run] sparse_knn/n64/seed8 ok (0.0s)\n[train:run] sparse_knn/n64/seed10 ok (0.0s)\n[train:run] sparse_knn/n128/seed0 ok (0.0s)\n[train:run] sparse_knn/n128/seed2 ok (0.0s)\n[train:run] sparse_knn/n128/seed4 ok (0.0s)\n[train:run] sparse_knn/n128/seed6 ok (0.0s)\n[train:run] sparse_knn/n128/seed8 ok (0.0s)\n[train:run] sparse_knn/n128/seed10 ok (0.0s)\n[train:run] sparse_knn/n256/seed0 ok (0.0s)\n[train:run] sparse_knn/n256/seed2 ok (0.0s)\n[train:run] sparse_knn/n256/seed4 ok (0.0s)\n[train:run] sparse_knn/n256/seed6 ok (0.0s)\n[train:run] sparse_knn/n256/seed8 ok (0.0s)\n[train:run] sparse_knn/n256/seed10 ok (0.0s)\n[train:run] sparse_knn/n512/seed0 ok (0.1s)\n[train:run] sparse_knn/n512/seed2 ok (0.1s)\n[train:run] sparse_knn/n512/seed4 ok (0.1s)\n[train:run] sparse_knn/n512/seed6 ok (0.1s)\n[train:run] sparse_knn/n512/seed8 ok (0.1s)\n[train:run] sparse_knn/n512/seed10 ok (0.1s)\n",
+        "seconds": 5.5
+      }
+    },
+    "sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "slice": "train"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "dense_cluster/n64/seed0: update exceeds the step allowance (round 3, player 59: 0.5591 > 0.08445)",
+          "dense_cluster/n64/seed2: update exceeds the step allowance (round 6, player 8: 0.5963 > 0.08328)",
+          "dense_cluster/n64/seed4: update exceeds the step allowance (round 2, player 11: 0.5963 > 0.06728)",
+          "dense_cluster/n64/seed6: update exceeds the step allowance (round 6, player 27: 0.5963 > 0.05335)",
+          "dense_cluster/n64/seed8: update exceeds the step allowance (round 2, player 22: 0.5788 > 0.08407)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 24
+        },
+        "max_step_utilization": 86.28092863077265,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": null,
+            "comparator": 0.08811926739433121,
+            "final_gap": null,
+            "key": "dense_cluster/n64/seed0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11424486954833481
+          },
+          {
+            "cce": null,
+            "comparator": 0.09298793349890949,
+            "final_gap": null,
+            "key": "dense_cluster/n64/seed2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10803807609686751
+          },
+          {
+            "cce": null,
+            "comparator": 0.08092070338042015,
+            "final_gap": null,
+            "key": "dense_cluster/n64/seed4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10555518692371242
+          },
+          {
+            "cce": null,
+            "comparator": 0.09289119302361633,
+            "final_gap": null,
+            "key": "dense_cluster/n64/seed6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.105657405180493
+          },
+          {
+            "cce": null,
+            "comparator": 0.09325920601691991,
+            "final_gap": null,
+            "key": "dense_cluster/n64/seed8",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10761736884266589
+          },
+          {
+            "cce": null,
+            "comparator": 0.09902307419361378,
+            "final_gap": null,
+            "key": "dense_cluster/n64/seed10",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1058583158843863
+          },
+          {
+            "cce": null,
+            "comparator": 0.07196171799963799,
+            "final_gap": null,
+            "key": "dense_cluster/n128/seed0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07601914576615074
+          },
+          {
+            "cce": null,
+            "comparator": 0.06527280568439783,
+            "final_gap": null,
+            "key": "dense_cluster/n128/seed2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07196469587266649
+          },
+          {
+            "cce": null,
+            "comparator": 0.07189071618975915,
+            "final_gap": null,
+            "key": "dense_cluster/n128/seed4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07848609408860603
+          },
+          {
+            "cce": null,
+            "comparator": 0.07114320776335133,
+            "final_gap": null,
+            "key": "dense_cluster/n128/seed6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.06982727060019543
+          },
+          {
+            "cce": null,
+            "comparator": 0.06898735981929573,
+            "final_gap": null,
+            "key": "dense_cluster/n128/seed8",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07293684052543968
+          },
+          {
+            "cce": null,
+            "comparator": 0.07407363036858094,
+            "final_gap": null,
+            "key": "dense_cluster/n128/seed10",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07460695329997077
+          },
+          {
+            "cce": null,
+            "comparator": 0.05588271268184078,
+            "final_gap": null,
+            "key": "dense_cluster/n256/seed0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.0515086549705151
+          },
+          {
+            "cce": null,
+            "comparator": 0.05540627572297798,
+            "final_gap": null,
+            "key": "dense_cluster/n256/seed2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05239177335673723
+          },
+          {
+            "cce": null,
+            "comparator": 0.05583305404109266,
+            "final_gap": null,
+            "key": "dense_cluster/n256/seed4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05438626525414266
+          },
+          {
+            "cce": null,
+            "comparator": 0.05319540687388839,
+            "final_gap": null,
+            "key": "dense_cluster/n256/seed6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.0521288337506745
+          },
+          {
+            "cce": null,
+            "comparator": 0.057272050815373246,
+            "final_gap": null,
+            "key": "dense_cluster/n256/seed8",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05212611893644035
+          },
+          {
+            "cce": null,
+            "comparator": 0.05424930392331867,
+            "final_gap": null,
+            "key": "dense_cluster/n256/seed10",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05119979917962336
+          },
+          {
+            "cce": null,
+            "comparator": 0.042699331448167246,
+            "final_gap": null,
+            "key": "dense_cluster/n512/seed0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03719139113163161
+          },
+          {
+            "cce": null,
+            "comparator": 0.04275793250348303,
+            "final_gap": null,
+            "key": "dense_cluster/n512/seed2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.038056467007149125
+          },
+          {
+            "cce": null,
+            "comparator": 0.04091281324152568,
+            "final_gap": null,
+            "key": "dense_cluster/n512/seed4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03634815495257253
+          },
+          {
+            "cce": null,
+            "comparator": 0.04028080121176165,
+            "final_gap": null,
+            "key": "dense_cluster/n512/seed6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03777469569225782
+          },
+          {
+            "cce": null,
+            "comparator": 0.042180186883932005,
+            "final_gap": null,
+            "key": "dense_cluster/n512/seed8",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03641972085517135
+          },
+          {
+            "cce": null,
+            "comparator": 0.04295807902948843,
+            "final_gap": null,
+            "key": "dense_cluster/n512/seed10",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03699560660507475
+          }
+        ],
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "train",
+        "status": "failed",
+        "transcript_valid_instances": 0,
+        "valid_instances": 0
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "dense_er/n64/seed0: update exceeds the step allowance (round 6, player 26: 0.5963 > 0.1283)",
+          "dense_er/n64/seed2: update exceeds the step allowance (round 7, player 34: 0.5963 > 0.1192)",
+          "dense_er/n64/seed4: update exceeds the step allowance (round 5, player 10: 0.5963 > 0.09724)",
+          "dense_er/n64/seed6: update exceeds the step allowance (round 6, player 45: 0.5759 > 0.11)",
+          "dense_er/n64/seed8: update exceeds the step allowance (round 6, player 33: 0.5144 > 0.0492)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 24
+        },
+        "max_step_utilization": 122.08663440250157,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": null,
+            "comparator": 0.08877127969547136,
+            "final_gap": null,
+            "key": "dense_er/n64/seed0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1187739854017924
+          },
+          {
+            "cce": null,
+            "comparator": 0.09747917578199564,
+            "final_gap": null,
+            "key": "dense_er/n64/seed2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10818231323900745
+          },
+          {
+            "cce": null,
+            "comparator": 0.10005727974369974,
+            "final_gap": null,
+            "key": "dense_er/n64/seed4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11809338629443222
+          },
+          {
+            "cce": null,
+            "comparator": 0.10092855508602128,
+            "final_gap": null,
+            "key": "dense_er/n64/seed6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1291517101541302
+          },
+          {
+            "cce": null,
+            "comparator": 0.09346378863871257,
+            "final_gap": null,
+            "key": "dense_er/n64/seed8",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11185452177031491
+          },
+          {
+            "cce": null,
+            "comparator": 0.0802285476507395,
+            "final_gap": null,
+            "key": "dense_er/n64/seed10",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12006810503042309
+          },
+          {
+            "cce": null,
+            "comparator": 0.06935625425672745,
+            "final_gap": null,
+            "key": "dense_er/n128/seed0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07623123557286055
+          },
+          {
+            "cce": null,
+            "comparator": 0.0782255090859563,
+            "final_gap": null,
+            "key": "dense_er/n128/seed2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07851140293526758
+          },
+          {
+            "cce": null,
+            "comparator": 0.07134380128257564,
+            "final_gap": null,
+            "key": "dense_er/n128/seed4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07516457535198084
+          },
+          {
+            "cce": null,
+            "comparator": 0.07154128430130516,
+            "final_gap": null,
+            "key": "dense_er/n128/seed6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07847217503252732
+          },
+          {
+            "cce": null,
+            "comparator": 0.08153278381136819,
+            "final_gap": null,
+            "key": "dense_er/n128/seed8",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.0877734835207116
+          },
+          {
+            "cce": null,
+            "comparator": 0.07431320587907102,
+            "final_gap": null,
+            "key": "dense_er/n128/seed10",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07960711544781227
+          },
+          {
+            "cce": null,
+            "comparator": 0.05819824162056167,
+            "final_gap": null,
+            "key": "dense_er/n256/seed0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05484143142422483
+          },
+          {
+            "cce": null,
+            "comparator": 0.06079565771852561,
+            "final_gap": null,
+            "key": "dense_er/n256/seed2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.0576992598092796
+          },
+          {
+            "cce": null,
+            "comparator": 0.05643962454137198,
+            "final_gap": null,
+            "key": "dense_er/n256/seed4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05513872256843546
+          },
+          {
+            "cce": null,
+            "comparator": 0.056864535931629004,
+            "final_gap": null,
+            "key": "dense_er/n256/seed6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05553559058635936
+          },
+          {
+            "cce": null,
+            "comparator": 0.05791115156228617,
+            "final_gap": null,
+            "key": "dense_er/n256/seed8",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05594643608977656
+          },
+          {
+            "cce": null,
+            "comparator": 0.05691083036687557,
+            "final_gap": null,
+            "key": "dense_er/n256/seed10",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.053408246967661326
+          },
+          {
+            "cce": null,
+            "comparator": 0.04291541784682038,
+            "final_gap": null,
+            "key": "dense_er/n512/seed0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03876950300805371
+          },
+          {
+            "cce": null,
+            "comparator": 0.041617069717745425,
+            "final_gap": null,
+            "key": "dense_er/n512/seed2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03814677050562461
+          },
+          {
+            "cce": null,
+            "comparator": 0.041499993029120205,
+            "final_gap": null,
+            "key": "dense_er/n512/seed4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.037357681441892304
+          },
+          {
+            "cce": null,
+            "comparator": 0.043026889146735345,
+            "final_gap": null,
+            "key": "dense_er/n512/seed6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03889196479365779
+          },
+          {
+            "cce": null,
+            "comparator": 0.04266472409265566,
+            "final_gap": null,
+            "key": "dense_er/n512/seed8",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.039537431463103886
+          },
+          {
+            "cce": null,
+            "comparator": 0.04261323330629983,
+            "final_gap": null,
+            "key": "dense_er/n512/seed10",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.0385926823444397
+          }
+        ],
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "train",
+        "status": "failed",
+        "transcript_valid_instances": 0,
+        "valid_instances": 0
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "sparse_knn/n64/seed0: update exceeds the step allowance (round 1, player 29: 0.4986 > 0.08239)",
+          "sparse_knn/n64/seed2: update exceeds the step allowance (round 1, player 12: 0.4986 > 0.09101)",
+          "sparse_knn/n64/seed4: update exceeds the step allowance (round 1, player 18: 0.4986 > 0.06311)",
+          "sparse_knn/n64/seed6: update exceeds the step allowance (round 0, player 0: 0.4986 > 0.08772)",
+          "sparse_knn/n64/seed8: update exceeds the step allowance (round 1, player 62: 0.4986 > 0.1948)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 24
+        },
+        "max_step_utilization": 23.22038125710246,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": null,
+            "comparator": 0.16786244123030813,
+            "final_gap": null,
+            "key": "sparse_knn/n64/seed0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1370340059321748
+          },
+          {
+            "cce": null,
+            "comparator": 0.166703104807429,
+            "final_gap": null,
+            "key": "sparse_knn/n64/seed2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.14012971743182645
+          },
+          {
+            "cce": null,
+            "comparator": 0.17926383925254752,
+            "final_gap": null,
+            "key": "sparse_knn/n64/seed4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.13569925738776079
+          },
+          {
+            "cce": null,
+            "comparator": 0.18079542590493175,
+            "final_gap": null,
+            "key": "sparse_knn/n64/seed6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1258756309635271
+          },
+          {
+            "cce": null,
+            "comparator": 0.16677240790218528,
+            "final_gap": null,
+            "key": "sparse_knn/n64/seed8",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.15194093475649606
+          },
+          {
+            "cce": null,
+            "comparator": 0.1551791887042186,
+            "final_gap": null,
+            "key": "sparse_knn/n64/seed10",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.127338200842233
+          },
+          {
+            "cce": null,
+            "comparator": 0.17829148931582234,
+            "final_gap": null,
+            "key": "sparse_knn/n128/seed0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.1284272149258059
+          },
+          {
+            "cce": null,
+            "comparator": 0.1716990800205136,
+            "final_gap": null,
+            "key": "sparse_knn/n128/seed2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.1324306657955059
+          },
+          {
+            "cce": null,
+            "comparator": 0.17363460693043187,
+            "final_gap": null,
+            "key": "sparse_knn/n128/seed4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.13319176429353766
+          },
+          {
+            "cce": null,
+            "comparator": 0.16714335765996785,
+            "final_gap": null,
+            "key": "sparse_knn/n128/seed6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14273853669669223
+          },
+          {
+            "cce": null,
+            "comparator": 0.1900608480143292,
+            "final_gap": null,
+            "key": "sparse_knn/n128/seed8",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14216519621615423
+          },
+          {
+            "cce": null,
+            "comparator": 0.18695952170208732,
+            "final_gap": null,
+            "key": "sparse_knn/n128/seed10",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.1390612372180955
+          },
+          {
+            "cce": null,
+            "comparator": 0.16558934423769062,
+            "final_gap": null,
+            "key": "sparse_knn/n256/seed0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13957947798413006
+          },
+          {
+            "cce": null,
+            "comparator": 0.17775693194010017,
+            "final_gap": null,
+            "key": "sparse_knn/n256/seed2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13666530871244137
+          },
+          {
+            "cce": null,
+            "comparator": 0.1641999035537489,
+            "final_gap": null,
+            "key": "sparse_knn/n256/seed4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.1357244537322742
+          },
+          {
+            "cce": null,
+            "comparator": 0.16082971749317554,
+            "final_gap": null,
+            "key": "sparse_knn/n256/seed6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13524406881442058
+          },
+          {
+            "cce": null,
+            "comparator": 0.15771359867902568,
+            "final_gap": null,
+            "key": "sparse_knn/n256/seed8",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13296330271947635
+          },
+          {
+            "cce": null,
+            "comparator": 0.18458301948057568,
+            "final_gap": null,
+            "key": "sparse_knn/n256/seed10",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13755694902852428
+          },
+          {
+            "cce": null,
+            "comparator": 0.17815996420387376,
+            "final_gap": null,
+            "key": "sparse_knn/n512/seed0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13585058385118928
+          },
+          {
+            "cce": null,
+            "comparator": 0.17965468895025064,
+            "final_gap": null,
+            "key": "sparse_knn/n512/seed2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13433950744382123
+          },
+          {
+            "cce": null,
+            "comparator": 0.1755736593047541,
+            "final_gap": null,
+            "key": "sparse_knn/n512/seed4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13718471810084426
+          },
+          {
+            "cce": null,
+            "comparator": 0.17883034218370658,
+            "final_gap": null,
+            "key": "sparse_knn/n512/seed6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13822483914240688
+          },
+          {
+            "cce": null,
+            "comparator": 0.17590206165577757,
+            "final_gap": null,
+            "key": "sparse_knn/n512/seed8",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.1354007600280997
+          },
+          {
+            "cce": null,
+            "comparator": 0.180852093442035,
+            "final_gap": null,
+            "key": "sparse_knn/n512/seed10",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.14364447321237872
+          }
+        ],
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "train",
+        "status": "failed",
+        "transcript_valid_instances": 0,
+        "valid_instances": 0
+      }
+    }
+  }
+}

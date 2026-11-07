@@ -1,0 +1,6 @@
+{
+  "method": "our_method",
+  "module": "method.dp_cce",
+  "factory": "make_player",
+  "options": {}
+}

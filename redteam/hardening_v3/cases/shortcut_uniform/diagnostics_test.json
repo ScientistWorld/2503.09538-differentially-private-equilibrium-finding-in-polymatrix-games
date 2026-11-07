@@ -1,0 +1,963 @@
+{
+  "_meta": {
+    "audit_tolerance": 1e-07,
+    "audited_players_per_instance": 8,
+    "instances_per_size": 8,
+    "locality_audit": {},
+    "methods": [
+      "our_method"
+    ],
+    "policy_runs": {
+      "our_method": {
+        "exit_code": 0,
+        "log_tail": "i2 ok (0.3s)\n[test:run] dense_cluster/n512/i3 ok (0.3s)\n[test:run] dense_cluster/n512/i4 ok (0.3s)\n[test:run] dense_cluster/n512/i5 ok (0.3s)\n[test:run] dense_cluster/n512/i6 ok (0.3s)\n[test:run] dense_cluster/n512/i7 ok (0.3s)\n[test:run] sparse_knn/n64/i0 ok (0.0s)\n[test:run] sparse_knn/n64/i1 ok (0.0s)\n[test:run] sparse_knn/n64/i2 ok (0.0s)\n[test:run] sparse_knn/n64/i3 ok (0.0s)\n[test:run] sparse_knn/n64/i4 ok (0.0s)\n[test:run] sparse_knn/n64/i5 ok (0.0s)\n[test:run] sparse_knn/n64/i6 ok (0.0s)\n[test:run] sparse_knn/n64/i7 ok (0.0s)\n[test:run] sparse_knn/n128/i0 ok (0.0s)\n[test:run] sparse_knn/n128/i1 ok (0.0s)\n[test:run] sparse_knn/n128/i2 ok (0.0s)\n[test:run] sparse_knn/n128/i3 ok (0.0s)\n[test:run] sparse_knn/n128/i4 ok (0.0s)\n[test:run] sparse_knn/n128/i5 ok (0.0s)\n[test:run] sparse_knn/n128/i6 ok (0.0s)\n[test:run] sparse_knn/n128/i7 ok (0.0s)\n[test:run] sparse_knn/n256/i0 ok (0.0s)\n[test:run] sparse_knn/n256/i1 ok (0.1s)\n[test:run] sparse_knn/n256/i2 ok (0.0s)\n[test:run] sparse_knn/n256/i3 ok (0.0s)\n[test:run] sparse_knn/n256/i4 ok (0.0s)\n[test:run] sparse_knn/n256/i5 ok (0.0s)\n[test:run] sparse_knn/n256/i6 ok (0.0s)\n[test:run] sparse_knn/n256/i7 ok (0.0s)\n[test:run] sparse_knn/n512/i0 ok (0.1s)\n[test:run] sparse_knn/n512/i1 ok (0.1s)\n[test:run] sparse_knn/n512/i2 ok (0.1s)\n[test:run] sparse_knn/n512/i3 ok (0.1s)\n[test:run] sparse_knn/n512/i4 ok (0.1s)\n[test:run] sparse_knn/n512/i5 ok (0.1s)\n[test:run] sparse_knn/n512/i6 ok (0.1s)\n[test:run] sparse_knn/n512/i7 ok (0.1s)\n",
+        "seconds": 7.0
+      }
+    },
+    "sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "slice": "test"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "dense_cluster/n64/i0: update exceeds the step allowance (round 1, player 15: 0.5963 > 0.09666)",
+          "dense_cluster/n64/i1: update exceeds the step allowance (round 3, player 10: 0.5963 > 0.08662)",
+          "dense_cluster/n64/i2: update exceeds the step allowance (round 7, player 0: 0.5963 > 0.08466)",
+          "dense_cluster/n64/i3: update exceeds the step allowance (round 0, player 28: 0.5722 > 0.03213)",
+          "dense_cluster/n64/i4: update exceeds the step allowance (round 3, player 62: 0.5777 > 0.06279)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 32
+        },
+        "max_step_utilization": 251.1475408940849,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": null,
+            "comparator": 0.10246468831225825,
+            "final_gap": null,
+            "key": "dense_cluster/n64/i0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11206914406193397
+          },
+          {
+            "cce": null,
+            "comparator": 0.09431520547344047,
+            "final_gap": null,
+            "key": "dense_cluster/n64/i1",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10800875722765235
+          },
+          {
+            "cce": null,
+            "comparator": 0.07863575036505835,
+            "final_gap": null,
+            "key": "dense_cluster/n64/i2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.08929831663763184
+          },
+          {
+            "cce": null,
+            "comparator": 0.09277907471011682,
+            "final_gap": null,
+            "key": "dense_cluster/n64/i3",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10633022764255104
+          },
+          {
+            "cce": null,
+            "comparator": 0.10035519065317507,
+            "final_gap": null,
+            "key": "dense_cluster/n64/i4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11897274135207224
+          },
+          {
+            "cce": null,
+            "comparator": 0.10584366060440577,
+            "final_gap": null,
+            "key": "dense_cluster/n64/i5",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10674225067016847
+          },
+          {
+            "cce": null,
+            "comparator": 0.08853841755873013,
+            "final_gap": null,
+            "key": "dense_cluster/n64/i6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10888856800386237
+          },
+          {
+            "cce": null,
+            "comparator": 0.0900850442097608,
+            "final_gap": null,
+            "key": "dense_cluster/n64/i7",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1120515930323277
+          },
+          {
+            "cce": null,
+            "comparator": 0.07787335665038697,
+            "final_gap": null,
+            "key": "dense_cluster/n128/i0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07513131600903902
+          },
+          {
+            "cce": null,
+            "comparator": 0.07321347914237661,
+            "final_gap": null,
+            "key": "dense_cluster/n128/i1",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07405936813065427
+          },
+          {
+            "cce": null,
+            "comparator": 0.06900550288759681,
+            "final_gap": null,
+            "key": "dense_cluster/n128/i2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07368222084861445
+          },
+          {
+            "cce": null,
+            "comparator": 0.06851219131844186,
+            "final_gap": null,
+            "key": "dense_cluster/n128/i3",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.06735998291507966
+          },
+          {
+            "cce": null,
+            "comparator": 0.07059181227642894,
+            "final_gap": null,
+            "key": "dense_cluster/n128/i4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.0709334716339116
+          },
+          {
+            "cce": null,
+            "comparator": 0.0698350471743504,
+            "final_gap": null,
+            "key": "dense_cluster/n128/i5",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07023800989200368
+          },
+          {
+            "cce": null,
+            "comparator": 0.0728031975703384,
+            "final_gap": null,
+            "key": "dense_cluster/n128/i6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07340022174689993
+          },
+          {
+            "cce": null,
+            "comparator": 0.07130461240189565,
+            "final_gap": null,
+            "key": "dense_cluster/n128/i7",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07402814820480583
+          },
+          {
+            "cce": null,
+            "comparator": 0.052205292659571106,
+            "final_gap": null,
+            "key": "dense_cluster/n256/i0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05136551446377275
+          },
+          {
+            "cce": null,
+            "comparator": 0.05547292550448696,
+            "final_gap": null,
+            "key": "dense_cluster/n256/i1",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05252273277579116
+          },
+          {
+            "cce": null,
+            "comparator": 0.05498966748194558,
+            "final_gap": null,
+            "key": "dense_cluster/n256/i2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05229334408317371
+          },
+          {
+            "cce": null,
+            "comparator": 0.055579897864406376,
+            "final_gap": null,
+            "key": "dense_cluster/n256/i3",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05256221728700598
+          },
+          {
+            "cce": null,
+            "comparator": 0.05311463963839427,
+            "final_gap": null,
+            "key": "dense_cluster/n256/i4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05355333076948975
+          },
+          {
+            "cce": null,
+            "comparator": 0.05831788218886404,
+            "final_gap": null,
+            "key": "dense_cluster/n256/i5",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.053429960349203554
+          },
+          {
+            "cce": null,
+            "comparator": 0.05389620661381653,
+            "final_gap": null,
+            "key": "dense_cluster/n256/i6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.0544368504925587
+          },
+          {
+            "cce": null,
+            "comparator": 0.05537851770888932,
+            "final_gap": null,
+            "key": "dense_cluster/n256/i7",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05129175084267335
+          },
+          {
+            "cce": null,
+            "comparator": 0.04231267271520737,
+            "final_gap": null,
+            "key": "dense_cluster/n512/i0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.0386977012130513
+          },
+          {
+            "cce": null,
+            "comparator": 0.04191600943549653,
+            "final_gap": null,
+            "key": "dense_cluster/n512/i1",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03718909996630826
+          },
+          {
+            "cce": null,
+            "comparator": 0.04357747156131953,
+            "final_gap": null,
+            "key": "dense_cluster/n512/i2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.038856343096272644
+          },
+          {
+            "cce": null,
+            "comparator": 0.042101023892278634,
+            "final_gap": null,
+            "key": "dense_cluster/n512/i3",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.036626604882859376
+          },
+          {
+            "cce": null,
+            "comparator": 0.04225895661820259,
+            "final_gap": null,
+            "key": "dense_cluster/n512/i4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03768103385485123
+          },
+          {
+            "cce": null,
+            "comparator": 0.041836537601833916,
+            "final_gap": null,
+            "key": "dense_cluster/n512/i5",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.037439496081189946
+          },
+          {
+            "cce": null,
+            "comparator": 0.04199154768285579,
+            "final_gap": null,
+            "key": "dense_cluster/n512/i6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03777625420273774
+          },
+          {
+            "cce": null,
+            "comparator": 0.04069040948660495,
+            "final_gap": null,
+            "key": "dense_cluster/n512/i7",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03757559782973158
+          }
+        ],
+        "per_n": {},
+        "required_instances": 32,
+        "slice": "test",
+        "status": "failed",
+        "transcript_valid_instances": 0,
+        "valid_instances": 0
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "dense_er/n64/i0: update exceeds the step allowance (round 3, player 30: 0.5963 > 0.05583)",
+          "dense_er/n64/i1: update exceeds the step allowance (round 7, player 54: 0.5539 > 0.05038)",
+          "dense_er/n64/i2: update exceeds the step allowance (round 3, player 63: 0.5886 > 0.0721)",
+          "dense_er/n64/i3: update exceeds the step allowance (round 2, player 11: 0.5963 > 0.09167)",
+          "dense_er/n64/i4: update exceeds the step allowance (round 4, player 1: 0.5803 > 0.0634)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 32
+        },
+        "max_step_utilization": 93.02703180611854,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": null,
+            "comparator": 0.09642717493260737,
+            "final_gap": null,
+            "key": "dense_er/n64/i0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12222918958338283
+          },
+          {
+            "cce": null,
+            "comparator": 0.1038447384360493,
+            "final_gap": null,
+            "key": "dense_er/n64/i1",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11850270705370822
+          },
+          {
+            "cce": null,
+            "comparator": 0.09197998663240181,
+            "final_gap": null,
+            "key": "dense_er/n64/i2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12717409066855298
+          },
+          {
+            "cce": null,
+            "comparator": 0.09771714573072797,
+            "final_gap": null,
+            "key": "dense_er/n64/i3",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10575904574853359
+          },
+          {
+            "cce": null,
+            "comparator": 0.09582984778026392,
+            "final_gap": null,
+            "key": "dense_er/n64/i4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1229859435591773
+          },
+          {
+            "cce": null,
+            "comparator": 0.10301754182390041,
+            "final_gap": null,
+            "key": "dense_er/n64/i5",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12498690995933096
+          },
+          {
+            "cce": null,
+            "comparator": 0.0883934009977134,
+            "final_gap": null,
+            "key": "dense_er/n64/i6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11506159085943926
+          },
+          {
+            "cce": null,
+            "comparator": 0.10080026277898899,
+            "final_gap": null,
+            "key": "dense_er/n64/i7",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11214913509651313
+          },
+          {
+            "cce": null,
+            "comparator": 0.07334405415217529,
+            "final_gap": null,
+            "key": "dense_er/n128/i0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07440943286077535
+          },
+          {
+            "cce": null,
+            "comparator": 0.06968876739567058,
+            "final_gap": null,
+            "key": "dense_er/n128/i1",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.08169270656424257
+          },
+          {
+            "cce": null,
+            "comparator": 0.06920533042597574,
+            "final_gap": null,
+            "key": "dense_er/n128/i2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.08093871458121477
+          },
+          {
+            "cce": null,
+            "comparator": 0.06919071679986952,
+            "final_gap": null,
+            "key": "dense_er/n128/i3",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.0808939763822555
+          },
+          {
+            "cce": null,
+            "comparator": 0.070797186844615,
+            "final_gap": null,
+            "key": "dense_er/n128/i4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07841545979083642
+          },
+          {
+            "cce": null,
+            "comparator": 0.07384367004288808,
+            "final_gap": null,
+            "key": "dense_er/n128/i5",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.0759381371731005
+          },
+          {
+            "cce": null,
+            "comparator": 0.07833821031511407,
+            "final_gap": null,
+            "key": "dense_er/n128/i6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07846961824310758
+          },
+          {
+            "cce": null,
+            "comparator": 0.08340673791268832,
+            "final_gap": null,
+            "key": "dense_er/n128/i7",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.08014713204728224
+          },
+          {
+            "cce": null,
+            "comparator": 0.055937853022402735,
+            "final_gap": null,
+            "key": "dense_er/n256/i0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.0526042696073178
+          },
+          {
+            "cce": null,
+            "comparator": 0.05678453995007843,
+            "final_gap": null,
+            "key": "dense_er/n256/i1",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05418475162497019
+          },
+          {
+            "cce": null,
+            "comparator": 0.05806056583818672,
+            "final_gap": null,
+            "key": "dense_er/n256/i2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05578446430596169
+          },
+          {
+            "cce": null,
+            "comparator": 0.05470409724563988,
+            "final_gap": null,
+            "key": "dense_er/n256/i3",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05390188198973918
+          },
+          {
+            "cce": null,
+            "comparator": 0.057881325908334724,
+            "final_gap": null,
+            "key": "dense_er/n256/i4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05505560003837838
+          },
+          {
+            "cce": null,
+            "comparator": 0.05970895488410573,
+            "final_gap": null,
+            "key": "dense_er/n256/i5",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05625872627139668
+          },
+          {
+            "cce": null,
+            "comparator": 0.05338047893505086,
+            "final_gap": null,
+            "key": "dense_er/n256/i6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05172794992935925
+          },
+          {
+            "cce": null,
+            "comparator": 0.05600087902111804,
+            "final_gap": null,
+            "key": "dense_er/n256/i7",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05220674227481048
+          },
+          {
+            "cce": null,
+            "comparator": 0.043587245430350224,
+            "final_gap": null,
+            "key": "dense_er/n512/i0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.038821424047486994
+          },
+          {
+            "cce": null,
+            "comparator": 0.04171519277363962,
+            "final_gap": null,
+            "key": "dense_er/n512/i1",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.036838415604610306
+          },
+          {
+            "cce": null,
+            "comparator": 0.04328811431045791,
+            "final_gap": null,
+            "key": "dense_er/n512/i2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03889158326838596
+          },
+          {
+            "cce": null,
+            "comparator": 0.04096206624913798,
+            "final_gap": null,
+            "key": "dense_er/n512/i3",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.038510519359016594
+          },
+          {
+            "cce": null,
+            "comparator": 0.04122182562321794,
+            "final_gap": null,
+            "key": "dense_er/n512/i4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.036881995334389545
+          },
+          {
+            "cce": null,
+            "comparator": 0.04346263136874007,
+            "final_gap": null,
+            "key": "dense_er/n512/i5",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03760993748014879
+          },
+          {
+            "cce": null,
+            "comparator": 0.04230807613963137,
+            "final_gap": null,
+            "key": "dense_er/n512/i6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03780600926388229
+          },
+          {
+            "cce": null,
+            "comparator": 0.044761441635287905,
+            "final_gap": null,
+            "key": "dense_er/n512/i7",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.04007225795545151
+          }
+        ],
+        "per_n": {},
+        "required_instances": 32,
+        "slice": "test",
+        "status": "failed",
+        "transcript_valid_instances": 0,
+        "valid_instances": 0
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "sparse_knn/n64/i0: update exceeds the step allowance (round 1, player 28: 0.4986 > 0.1308)",
+          "sparse_knn/n64/i1: update exceeds the step allowance (round 0, player 9: 0.4986 > 0.136)",
+          "sparse_knn/n64/i2: update exceeds the step allowance (round 1, player 15: 0.4986 > 0.1303)",
+          "sparse_knn/n64/i3: update exceeds the step allowance (round 0, player 26: 0.432 > 0.07748)",
+          "sparse_knn/n64/i4: update exceeds the step allowance (round 0, player 55: 0.4986 > 0.1236)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 32
+        },
+        "max_step_utilization": 23.719257415286382,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": null,
+            "comparator": 0.15167596829579144,
+            "final_gap": null,
+            "key": "sparse_knn/n64/i0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1330208420945921
+          },
+          {
+            "cce": null,
+            "comparator": 0.16026610369539457,
+            "final_gap": null,
+            "key": "sparse_knn/n64/i1",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.13895573572550005
+          },
+          {
+            "cce": null,
+            "comparator": 0.18135457302114555,
+            "final_gap": null,
+            "key": "sparse_knn/n64/i2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.13216050517372313
+          },
+          {
+            "cce": null,
+            "comparator": 0.1724586061936559,
+            "final_gap": null,
+            "key": "sparse_knn/n64/i3",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12983542711289853
+          },
+          {
+            "cce": null,
+            "comparator": 0.16854804753715374,
+            "final_gap": null,
+            "key": "sparse_knn/n64/i4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1408071237487863
+          },
+          {
+            "cce": null,
+            "comparator": 0.17710585810502244,
+            "final_gap": null,
+            "key": "sparse_knn/n64/i5",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12957695172067035
+          },
+          {
+            "cce": null,
+            "comparator": 0.16830840482484313,
+            "final_gap": null,
+            "key": "sparse_knn/n64/i6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12855400330332278
+          },
+          {
+            "cce": null,
+            "comparator": 0.16910179734304795,
+            "final_gap": null,
+            "key": "sparse_knn/n64/i7",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12916796588538465
+          },
+          {
+            "cce": null,
+            "comparator": 0.17615714915592703,
+            "final_gap": null,
+            "key": "sparse_knn/n128/i0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14089101614974076
+          },
+          {
+            "cce": null,
+            "comparator": 0.192986550957122,
+            "final_gap": null,
+            "key": "sparse_knn/n128/i1",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14059885988209359
+          },
+          {
+            "cce": null,
+            "comparator": 0.19993779902775222,
+            "final_gap": null,
+            "key": "sparse_knn/n128/i2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.13423896031305305
+          },
+          {
+            "cce": null,
+            "comparator": 0.19023597633660017,
+            "final_gap": null,
+            "key": "sparse_knn/n128/i3",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.13331792736509357
+          },
+          {
+            "cce": null,
+            "comparator": 0.1932994125997803,
+            "final_gap": null,
+            "key": "sparse_knn/n128/i4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14260013947637823
+          },
+          {
+            "cce": null,
+            "comparator": 0.18898857618471168,
+            "final_gap": null,
+            "key": "sparse_knn/n128/i5",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14445365472812122
+          },
+          {
+            "cce": null,
+            "comparator": 0.18219097149909808,
+            "final_gap": null,
+            "key": "sparse_knn/n128/i6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.13479378174143025
+          },
+          {
+            "cce": null,
+            "comparator": 0.1944158290046993,
+            "final_gap": null,
+            "key": "sparse_knn/n128/i7",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.133828694070779
+          },
+          {
+            "cce": null,
+            "comparator": 0.1729533168415664,
+            "final_gap": null,
+            "key": "sparse_knn/n256/i0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13569911093703396
+          },
+          {
+            "cce": null,
+            "comparator": 0.16828373970745675,
+            "final_gap": null,
+            "key": "sparse_knn/n256/i1",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.1346547658928231
+          },
+          {
+            "cce": null,
+            "comparator": 0.1690813640573509,
+            "final_gap": null,
+            "key": "sparse_knn/n256/i2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.14087968140765106
+          },
+          {
+            "cce": null,
+            "comparator": 0.17415389530395442,
+            "final_gap": null,
+            "key": "sparse_knn/n256/i3",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13769495562323214
+          },
+          {
+            "cce": null,
+            "comparator": 0.1618962997434679,
+            "final_gap": null,
+            "key": "sparse_knn/n256/i4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13169077179407207
+          },
+          {
+            "cce": null,
+            "comparator": 0.16960776507339004,
+            "final_gap": null,
+            "key": "sparse_knn/n256/i5",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13255443299393793
+          },
+          {
+            "cce": null,
+            "comparator": 0.17016532385153021,
+            "final_gap": null,
+            "key": "sparse_knn/n256/i6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13754360293381102
+          },
+          {
+            "cce": null,
+            "comparator": 0.16339379683317162,
+            "final_gap": null,
+            "key": "sparse_knn/n256/i7",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13129187600731404
+          },
+          {
+            "cce": null,
+            "comparator": 0.18054227563932557,
+            "final_gap": null,
+            "key": "sparse_knn/n512/i0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.1394123214420902
+          },
+          {
+            "cce": null,
+            "comparator": 0.17566740906787892,
+            "final_gap": null,
+            "key": "sparse_knn/n512/i1",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.14005024518520537
+          },
+          {
+            "cce": null,
+            "comparator": 0.17689200088694884,
+            "final_gap": null,
+            "key": "sparse_knn/n512/i2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13908489045746997
+          },
+          {
+            "cce": null,
+            "comparator": 0.17847828131183371,
+            "final_gap": null,
+            "key": "sparse_knn/n512/i3",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13566036022119135
+          },
+          {
+            "cce": null,
+            "comparator": 0.18047275062872298,
+            "final_gap": null,
+            "key": "sparse_knn/n512/i4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13907772418141515
+          },
+          {
+            "cce": null,
+            "comparator": 0.17505063683840327,
+            "final_gap": null,
+            "key": "sparse_knn/n512/i5",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13559108645980125
+          },
+          {
+            "cce": null,
+            "comparator": 0.18321992336766246,
+            "final_gap": null,
+            "key": "sparse_knn/n512/i6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.1383888336578286
+          },
+          {
+            "cce": null,
+            "comparator": 0.174760521565789,
+            "final_gap": null,
+            "key": "sparse_knn/n512/i7",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13982812188020224
+          }
+        ],
+        "per_n": {},
+        "required_instances": 32,
+        "slice": "test",
+        "status": "failed",
+        "transcript_valid_instances": 0,
+        "valid_instances": 0
+      }
+    }
+  }
+}

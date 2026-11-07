@@ -1,0 +1,84 @@
+{
+  "case": "shortcut_nonfinite",
+  "description": "Returns NaN strategies.",
+  "evaluator_unchanged": true,
+  "kind": "shortcut",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [
+        "dense_cluster/n64/i0: non-finite values",
+        "dense_cluster/n64/i1: non-finite values"
+      ],
+      "dense_er_scaling": [
+        "dense_er/n64/i0: non-finite values",
+        "dense_er/n64/i1: non-finite values"
+      ],
+      "sparse_knn_scaling": [
+        "sparse_knn/n64/i0: non-finite values",
+        "sparse_knn/n64/i1: non-finite values"
+      ]
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {
+        "non-finite values": 32
+      },
+      "dense_er_scaling": {
+        "non-finite values": 32
+      },
+      "sparse_knn_scaling": {
+        "non-finite values": 32
+      }
+    },
+    "locality_audit": null,
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 7.1
+    },
+    "seconds": 15.7,
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [
+        "dense_cluster/n64/seed0: non-finite values",
+        "dense_cluster/n64/seed2: non-finite values"
+      ],
+      "dense_er_scaling": [
+        "dense_er/n64/seed0: non-finite values",
+        "dense_er/n64/seed2: non-finite values"
+      ],
+      "sparse_knn_scaling": [
+        "sparse_knn/n64/seed0: non-finite values",
+        "sparse_knn/n64/seed2: non-finite values"
+      ]
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {
+        "non-finite values": 24
+      },
+      "dense_er_scaling": {
+        "non-finite values": 24
+      },
+      "sparse_knn_scaling": {
+        "non-finite values": 24
+      }
+    },
+    "locality_audit": null,
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 5.5
+    },
+    "seconds": 12.6,
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    }
+  }
+}

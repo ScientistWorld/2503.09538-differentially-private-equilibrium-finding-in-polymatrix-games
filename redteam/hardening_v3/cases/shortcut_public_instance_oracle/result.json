@@ -1,0 +1,64 @@
+{
+  "case": "shortcut_public_instance_oracle",
+  "description": "Redteam's global private optimizer + oracle, ported: regenerate the public games and noise, identify the instance from the public graph, play a central joint-Nash-gap optimiser clipped to the step allowance (falls back to Algorithm 1 if the instance is not public).",
+  "evaluator_unchanged": true,
+  "kind": "shortcut",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 96,
+      "audited_players": 768,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 99.2
+    },
+    "seconds": 204.2,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [],
+      "dense_er_scaling": [],
+      "sparse_knn_scaling": []
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {},
+      "dense_er_scaling": {},
+      "sparse_knn_scaling": {}
+    },
+    "locality_audit": {
+      "audited_instances": 72,
+      "audited_players": 576,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 151.0
+    },
+    "seconds": 306.7,
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    }
+  }
+}

@@ -1,0 +1,1059 @@
+{
+  "_meta": {
+    "audit_tolerance": 1e-07,
+    "audited_players_per_instance": 8,
+    "instances_per_size": 8,
+    "locality_audit": {
+      "our_method": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 96,
+        "max_deviation": 0.48986401490986275
+      }
+    },
+    "methods": [
+      "our_method"
+    ],
+    "policy_runs": {
+      "our_method": {
+        "exit_code": 0,
+        "log_tail": "i2 ok (4.0s)\n[test:run] dense_cluster/n512/i3 ok (4.6s)\n[test:run] dense_cluster/n512/i4 ok (6.7s)\n[test:run] dense_cluster/n512/i5 ok (3.2s)\n[test:run] dense_cluster/n512/i6 ok (4.1s)\n[test:run] dense_cluster/n512/i7 ok (3.1s)\n[test:run] sparse_knn/n64/i0 ok (0.0s)\n[test:run] sparse_knn/n64/i1 ok (0.0s)\n[test:run] sparse_knn/n64/i2 ok (0.0s)\n[test:run] sparse_knn/n64/i3 ok (0.0s)\n[test:run] sparse_knn/n64/i4 ok (0.0s)\n[test:run] sparse_knn/n64/i5 ok (0.0s)\n[test:run] sparse_knn/n64/i6 ok (0.0s)\n[test:run] sparse_knn/n64/i7 ok (0.0s)\n[test:run] sparse_knn/n128/i0 ok (0.1s)\n[test:run] sparse_knn/n128/i1 ok (0.0s)\n[test:run] sparse_knn/n128/i2 ok (0.0s)\n[test:run] sparse_knn/n128/i3 ok (0.0s)\n[test:run] sparse_knn/n128/i4 ok (0.0s)\n[test:run] sparse_knn/n128/i5 ok (0.1s)\n[test:run] sparse_knn/n128/i6 ok (0.0s)\n[test:run] sparse_knn/n128/i7 ok (0.0s)\n[test:run] sparse_knn/n256/i0 ok (1.8s)\n[test:run] sparse_knn/n256/i1 ok (1.3s)\n[test:run] sparse_knn/n256/i2 ok (1.3s)\n[test:run] sparse_knn/n256/i3 ok (1.3s)\n[test:run] sparse_knn/n256/i4 ok (1.4s)\n[test:run] sparse_knn/n256/i5 ok (1.3s)\n[test:run] sparse_knn/n256/i6 ok (1.3s)\n[test:run] sparse_knn/n256/i7 ok (1.2s)\n[test:run] sparse_knn/n512/i0 ok (1.9s)\n[test:run] sparse_knn/n512/i1 ok (1.7s)\n[test:run] sparse_knn/n512/i2 ok (2.1s)\n[test:run] sparse_knn/n512/i3 ok (1.8s)\n[test:run] sparse_knn/n512/i4 ok (2.2s)\n[test:run] sparse_knn/n512/i5 ok (1.5s)\n[test:run] sparse_knn/n512/i6 ok (1.5s)\n[test:run] sparse_knn/n512/i7 ok (1.4s)\n",
+        "seconds": 153.6
+      }
+    },
+    "sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "slice": "test"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "dense_cluster/n64/i0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.172)",
+          "dense_cluster/n64/i1: locality audit: player 9's strategies are not reproduced from its local view and received messages (max deviation 0.178)",
+          "dense_cluster/n64/i2: locality audit: player 1's strategies are not reproduced from its local view and received messages (max deviation 0.118)",
+          "dense_cluster/n64/i3: locality audit: player 1's strategies are not reproduced from its local view and received messages (max deviation 0.196)",
+          "dense_cluster/n64/i4: locality audit: player 7's strategies are not reproduced from its local view and received messages (max deviation 0.179)"
+        ],
+        "failure_reasons": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 229's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 38's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 42's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 75's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 87's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 88's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+        },
+        "max_step_utilization": 1.0000000000000107,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": 0.08935793536991382,
+            "comparator": 0.10246468831225825,
+            "final_gap": 0.10310185328102357,
+            "key": "dense_cluster/n64/i0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11206914406193397
+          },
+          {
+            "cce": 0.08087129195886997,
+            "comparator": 0.09431520547344047,
+            "final_gap": 0.09448567353219049,
+            "key": "dense_cluster/n64/i1",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10800875722765235
+          },
+          {
+            "cce": 0.06851252616741113,
+            "comparator": 0.07863575036505835,
+            "final_gap": 0.09795884316166475,
+            "key": "dense_cluster/n64/i2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.08929831663763184
+          },
+          {
+            "cce": 0.08221494662316572,
+            "comparator": 0.09277907471011682,
+            "final_gap": 0.09624870162380117,
+            "key": "dense_cluster/n64/i3",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10633022764255104
+          },
+          {
+            "cce": 0.08827886545414987,
+            "comparator": 0.10035519065317507,
+            "final_gap": 0.10287749736834814,
+            "key": "dense_cluster/n64/i4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11897274135207224
+          },
+          {
+            "cce": 0.08557129653807369,
+            "comparator": 0.10584366060440577,
+            "final_gap": 0.09983254526436683,
+            "key": "dense_cluster/n64/i5",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10674225067016847
+          },
+          {
+            "cce": 0.0748961924085732,
+            "comparator": 0.08853841755873013,
+            "final_gap": 0.09730911258490604,
+            "key": "dense_cluster/n64/i6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10888856800386237
+          },
+          {
+            "cce": 0.07877559707377571,
+            "comparator": 0.0900850442097608,
+            "final_gap": 0.10539087249235904,
+            "key": "dense_cluster/n64/i7",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1120515930323277
+          },
+          {
+            "cce": 0.06419749143617927,
+            "comparator": 0.07787335665038697,
+            "final_gap": 0.07971006607639541,
+            "key": "dense_cluster/n128/i0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07513131600903902
+          },
+          {
+            "cce": 0.061540169004458176,
+            "comparator": 0.07321347914237661,
+            "final_gap": 0.07634580406522884,
+            "key": "dense_cluster/n128/i1",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07405936813065427
+          },
+          {
+            "cce": 0.05892171211245711,
+            "comparator": 0.06900550288759681,
+            "final_gap": 0.07294858525036288,
+            "key": "dense_cluster/n128/i2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07368222084861445
+          },
+          {
+            "cce": 0.05539827599459604,
+            "comparator": 0.06851219131844186,
+            "final_gap": 0.07092250147449812,
+            "key": "dense_cluster/n128/i3",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.06735998291507966
+          },
+          {
+            "cce": 0.05884687551756815,
+            "comparator": 0.07059181227642894,
+            "final_gap": 0.07410499102147507,
+            "key": "dense_cluster/n128/i4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.0709334716339116
+          },
+          {
+            "cce": 0.05735159806146384,
+            "comparator": 0.0698350471743504,
+            "final_gap": 0.07698819077046709,
+            "key": "dense_cluster/n128/i5",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07023800989200368
+          },
+          {
+            "cce": 0.061262099852770174,
+            "comparator": 0.0728031975703384,
+            "final_gap": 0.07974560388283133,
+            "key": "dense_cluster/n128/i6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07340022174689993
+          },
+          {
+            "cce": 0.05920982526927755,
+            "comparator": 0.07130461240189565,
+            "final_gap": 0.07341338075620454,
+            "key": "dense_cluster/n128/i7",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07402814820480583
+          },
+          {
+            "cce": 0.04448849630852429,
+            "comparator": 0.052205292659571106,
+            "final_gap": 0.05549533100409677,
+            "key": "dense_cluster/n256/i0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05136551446377275
+          },
+          {
+            "cce": 0.04725537609247634,
+            "comparator": 0.05547292550448696,
+            "final_gap": 0.05679895177196151,
+            "key": "dense_cluster/n256/i1",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05252273277579116
+          },
+          {
+            "cce": 0.04681469455251628,
+            "comparator": 0.05498966748194558,
+            "final_gap": 0.057393612872346324,
+            "key": "dense_cluster/n256/i2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05229334408317371
+          },
+          {
+            "cce": 0.0462952648524478,
+            "comparator": 0.055579897864406376,
+            "final_gap": 0.05759670851092967,
+            "key": "dense_cluster/n256/i3",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05256221728700598
+          },
+          {
+            "cce": 0.044980900474326645,
+            "comparator": 0.05311463963839427,
+            "final_gap": 0.05573075823774945,
+            "key": "dense_cluster/n256/i4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05355333076948975
+          },
+          {
+            "cce": 0.04874118189778519,
+            "comparator": 0.05831788218886404,
+            "final_gap": 0.05821568709156848,
+            "key": "dense_cluster/n256/i5",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.053429960349203554
+          },
+          {
+            "cce": 0.046746545212784985,
+            "comparator": 0.05389620661381653,
+            "final_gap": 0.05511218993470313,
+            "key": "dense_cluster/n256/i6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.0544368504925587
+          },
+          {
+            "cce": 0.04670211829159596,
+            "comparator": 0.05537851770888932,
+            "final_gap": 0.05787996725635095,
+            "key": "dense_cluster/n256/i7",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05129175084267335
+          },
+          {
+            "cce": 0.036037156274474735,
+            "comparator": 0.04231267271520737,
+            "final_gap": 0.04281064734010845,
+            "key": "dense_cluster/n512/i0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.0386977012130513
+          },
+          {
+            "cce": 0.03534400804864258,
+            "comparator": 0.04191600943549653,
+            "final_gap": 0.04286707594984449,
+            "key": "dense_cluster/n512/i1",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03718909996630826
+          },
+          {
+            "cce": 0.0363615142677068,
+            "comparator": 0.04357747156131953,
+            "final_gap": 0.04311551683461902,
+            "key": "dense_cluster/n512/i2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.038856343096272644
+          },
+          {
+            "cce": 0.03489298800546167,
+            "comparator": 0.042101023892278634,
+            "final_gap": 0.040511305989448326,
+            "key": "dense_cluster/n512/i3",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.036626604882859376
+          },
+          {
+            "cce": 0.03518166788441134,
+            "comparator": 0.04225895661820259,
+            "final_gap": 0.04249722130403123,
+            "key": "dense_cluster/n512/i4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03768103385485123
+          },
+          {
+            "cce": 0.03533116047035499,
+            "comparator": 0.041836537601833916,
+            "final_gap": 0.042447796294877826,
+            "key": "dense_cluster/n512/i5",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.037439496081189946
+          },
+          {
+            "cce": 0.03517721539888676,
+            "comparator": 0.04199154768285579,
+            "final_gap": 0.043133483056019994,
+            "key": "dense_cluster/n512/i6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03777625420273774
+          },
+          {
+            "cce": 0.03475080479501749,
+            "comparator": 0.04069040948660495,
+            "final_gap": 0.042324582138259195,
+            "key": "dense_cluster/n512/i7",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03757559782973158
+          }
+        ],
+        "per_n": {},
+        "required_instances": 32,
+        "slice": "test",
+        "status": "failed",
+        "transcript_valid_instances": 32,
+        "unaudited_metrics": {
+          "comparator_exploitability_ratio": 0.8453144231668324,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8492470222737484,
+          "relative_final_nash_gap": 1.0442340624853306
+        },
+        "valid_instances": 0
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "dense_er/n64/i0: locality audit: player 7's strategies are not reproduced from its local view and received messages (max deviation 0.214)",
+          "dense_er/n64/i1: locality audit: player 2's strategies are not reproduced from its local view and received messages (max deviation 0.26)",
+          "dense_er/n64/i2: locality audit: player 13's strategies are not reproduced from its local view and received messages (max deviation 0.214)",
+          "dense_er/n64/i3: locality audit: player 11's strategies are not reproduced from its local view and received messages (max deviation 0.159)",
+          "dense_er/n64/i4: locality audit: player 1's strategies are not reproduced from its local view and received messages (max deviation 0.218)"
+        ],
+        "failure_reasons": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 108's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 193's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 36's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 50's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2
+        },
+        "max_step_utilization": 1.0000000000000109,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": 0.08177593865133195,
+            "comparator": 0.09642717493260737,
+            "final_gap": 0.1189167529952389,
+            "key": "dense_er/n64/i0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12222918958338283
+          },
+          {
+            "cce": 0.08668539931619668,
+            "comparator": 0.1038447384360493,
+            "final_gap": 0.105048512120992,
+            "key": "dense_er/n64/i1",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11850270705370822
+          },
+          {
+            "cce": 0.08848110645603267,
+            "comparator": 0.09197998663240181,
+            "final_gap": 0.122212584147247,
+            "key": "dense_er/n64/i2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12717409066855298
+          },
+          {
+            "cce": 0.08138779599474116,
+            "comparator": 0.09771714573072797,
+            "final_gap": 0.10172856781616893,
+            "key": "dense_er/n64/i3",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.10575904574853359
+          },
+          {
+            "cce": 0.0887819314940251,
+            "comparator": 0.09582984778026392,
+            "final_gap": 0.12136085897995585,
+            "key": "dense_er/n64/i4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1229859435591773
+          },
+          {
+            "cce": 0.08911992233040475,
+            "comparator": 0.10301754182390041,
+            "final_gap": 0.10410748128203802,
+            "key": "dense_er/n64/i5",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12498690995933096
+          },
+          {
+            "cce": 0.08064972677908,
+            "comparator": 0.0883934009977134,
+            "final_gap": 0.09332861174280246,
+            "key": "dense_er/n64/i6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11506159085943926
+          },
+          {
+            "cce": 0.08048935863579963,
+            "comparator": 0.10080026277898899,
+            "final_gap": 0.10468698748061547,
+            "key": "dense_er/n64/i7",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.11214913509651313
+          },
+          {
+            "cce": 0.061917906335904556,
+            "comparator": 0.07334405415217529,
+            "final_gap": 0.07541440426702703,
+            "key": "dense_er/n128/i0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07440943286077535
+          },
+          {
+            "cce": 0.061973582711268724,
+            "comparator": 0.06968876739567058,
+            "final_gap": 0.07841355206187686,
+            "key": "dense_er/n128/i1",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.08169270656424257
+          },
+          {
+            "cce": 0.06160141903600067,
+            "comparator": 0.06920533042597574,
+            "final_gap": 0.08048022749197045,
+            "key": "dense_er/n128/i2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.08093871458121477
+          },
+          {
+            "cce": 0.06274806273650045,
+            "comparator": 0.06919071679986952,
+            "final_gap": 0.07827042394642594,
+            "key": "dense_er/n128/i3",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.0808939763822555
+          },
+          {
+            "cce": 0.06359003637542346,
+            "comparator": 0.070797186844615,
+            "final_gap": 0.07504148457720558,
+            "key": "dense_er/n128/i4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07841545979083642
+          },
+          {
+            "cce": 0.0627451274494284,
+            "comparator": 0.07384367004288808,
+            "final_gap": 0.07868131779231596,
+            "key": "dense_er/n128/i5",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.0759381371731005
+          },
+          {
+            "cce": 0.06479905036436458,
+            "comparator": 0.07833821031511407,
+            "final_gap": 0.07689071675988468,
+            "key": "dense_er/n128/i6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.07846961824310758
+          },
+          {
+            "cce": 0.06765157414613937,
+            "comparator": 0.08340673791268832,
+            "final_gap": 0.08341092426785143,
+            "key": "dense_er/n128/i7",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.08014713204728224
+          },
+          {
+            "cce": 0.04834556077431495,
+            "comparator": 0.055937853022402735,
+            "final_gap": 0.056598001997160786,
+            "key": "dense_er/n256/i0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.0526042696073178
+          },
+          {
+            "cce": 0.04858049313030624,
+            "comparator": 0.05678453995007843,
+            "final_gap": 0.059979403290012424,
+            "key": "dense_er/n256/i1",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05418475162497019
+          },
+          {
+            "cce": 0.04922472647424565,
+            "comparator": 0.05806056583818672,
+            "final_gap": 0.05943532568500623,
+            "key": "dense_er/n256/i2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05578446430596169
+          },
+          {
+            "cce": 0.04657839527625815,
+            "comparator": 0.05470409724563988,
+            "final_gap": 0.05849777655554185,
+            "key": "dense_er/n256/i3",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05390188198973918
+          },
+          {
+            "cce": 0.04797323203048464,
+            "comparator": 0.057881325908334724,
+            "final_gap": 0.054785305249210575,
+            "key": "dense_er/n256/i4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05505560003837838
+          },
+          {
+            "cce": 0.04995827289876287,
+            "comparator": 0.05970895488410573,
+            "final_gap": 0.059563051923962385,
+            "key": "dense_er/n256/i5",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05625872627139668
+          },
+          {
+            "cce": 0.04558592114536242,
+            "comparator": 0.05338047893505086,
+            "final_gap": 0.06119975345160919,
+            "key": "dense_er/n256/i6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05172794992935925
+          },
+          {
+            "cce": 0.04668463689982545,
+            "comparator": 0.05600087902111804,
+            "final_gap": 0.058495616992060864,
+            "key": "dense_er/n256/i7",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.05220674227481048
+          },
+          {
+            "cce": 0.036044824995895446,
+            "comparator": 0.043587245430350224,
+            "final_gap": 0.04288220855809713,
+            "key": "dense_er/n512/i0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.038821424047486994
+          },
+          {
+            "cce": 0.034903294248817295,
+            "comparator": 0.04171519277363962,
+            "final_gap": 0.04296137990824138,
+            "key": "dense_er/n512/i1",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.036838415604610306
+          },
+          {
+            "cce": 0.036288739093410655,
+            "comparator": 0.04328811431045791,
+            "final_gap": 0.04327661401098162,
+            "key": "dense_er/n512/i2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03889158326838596
+          },
+          {
+            "cce": 0.034856517881939664,
+            "comparator": 0.04096206624913798,
+            "final_gap": 0.043423680206585345,
+            "key": "dense_er/n512/i3",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.038510519359016594
+          },
+          {
+            "cce": 0.034783220850700666,
+            "comparator": 0.04122182562321794,
+            "final_gap": 0.04289755960761553,
+            "key": "dense_er/n512/i4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.036881995334389545
+          },
+          {
+            "cce": 0.03637949802243806,
+            "comparator": 0.04346263136874007,
+            "final_gap": 0.043567832719076854,
+            "key": "dense_er/n512/i5",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03760993748014879
+          },
+          {
+            "cce": 0.03575133582272855,
+            "comparator": 0.04230807613963137,
+            "final_gap": 0.04349179839259908,
+            "key": "dense_er/n512/i6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.03780600926388229
+          },
+          {
+            "cce": 0.03769978814727346,
+            "comparator": 0.044761441635287905,
+            "final_gap": 0.04426820454077572,
+            "key": "dense_er/n512/i7",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.04007225795545151
+          }
+        ],
+        "per_n": {},
+        "required_instances": 32,
+        "slice": "test",
+        "status": "failed",
+        "transcript_valid_instances": 32,
+        "unaudited_metrics": {
+          "comparator_exploitability_ratio": 0.8548926275680826,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8363115693657115,
+          "relative_final_nash_gap": 1.033570377376872
+        },
+        "valid_instances": 0
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "sparse_knn/n64/i0: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.49)",
+          "sparse_knn/n64/i1: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.276)",
+          "sparse_knn/n64/i2: locality audit: player 6's strategies are not reproduced from its local view and received messages (max deviation 0.362)",
+          "sparse_knn/n64/i3: locality audit: player 24's strategies are not reproduced from its local view and received messages (max deviation 0.246)",
+          "sparse_knn/n64/i4: locality audit: player 9's strategies are not reproduced from its local view and received messages (max deviation 0.232)"
+        ],
+        "failure_reasons": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 177's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 33's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 56's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 60's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 4,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 84's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 2
+        },
+        "max_step_utilization": 1.0000000000000027,
+        "mean_step_utilization": null,
+        "per_instance": [
+          {
+            "cce": 0.10244268683243088,
+            "comparator": 0.15167596829579144,
+            "final_gap": 0.13056619104764966,
+            "key": "sparse_knn/n64/i0",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1330208420945921
+          },
+          {
+            "cce": 0.10379847544998153,
+            "comparator": 0.16026610369539457,
+            "final_gap": 0.14474599582270478,
+            "key": "sparse_knn/n64/i1",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.13895573572550005
+          },
+          {
+            "cce": 0.10705940457263567,
+            "comparator": 0.18135457302114555,
+            "final_gap": 0.12384909399745161,
+            "key": "sparse_knn/n64/i2",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.13216050517372313
+          },
+          {
+            "cce": 0.10282190191102496,
+            "comparator": 0.1724586061936559,
+            "final_gap": 0.12605104830835767,
+            "key": "sparse_knn/n64/i3",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12983542711289853
+          },
+          {
+            "cce": 0.10758731149438819,
+            "comparator": 0.16854804753715374,
+            "final_gap": 0.12832057269118968,
+            "key": "sparse_knn/n64/i4",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.1408071237487863
+          },
+          {
+            "cce": 0.10914304963302676,
+            "comparator": 0.17710585810502244,
+            "final_gap": 0.12392789372097582,
+            "key": "sparse_knn/n64/i5",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12957695172067035
+          },
+          {
+            "cce": 0.10773914754059914,
+            "comparator": 0.16830840482484313,
+            "final_gap": 0.11581981174685407,
+            "key": "sparse_knn/n64/i6",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12855400330332278
+          },
+          {
+            "cce": 0.10888246969899255,
+            "comparator": 0.16910179734304795,
+            "final_gap": 0.12859618686578483,
+            "key": "sparse_knn/n64/i7",
+            "n": 64,
+            "ok": false,
+            "uniform": 0.12916796588538465
+          },
+          {
+            "cce": 0.10429397079119279,
+            "comparator": 0.17615714915592703,
+            "final_gap": 0.12047615675307405,
+            "key": "sparse_knn/n128/i0",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14089101614974076
+          },
+          {
+            "cce": 0.10828389853941592,
+            "comparator": 0.192986550957122,
+            "final_gap": 0.12208209167879816,
+            "key": "sparse_knn/n128/i1",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14059885988209359
+          },
+          {
+            "cce": 0.11180219063647326,
+            "comparator": 0.19993779902775222,
+            "final_gap": 0.13530424699360388,
+            "key": "sparse_knn/n128/i2",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.13423896031305305
+          },
+          {
+            "cce": 0.11081111924861484,
+            "comparator": 0.19023597633660017,
+            "final_gap": 0.13396380467324298,
+            "key": "sparse_knn/n128/i3",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.13331792736509357
+          },
+          {
+            "cce": 0.11112023153201185,
+            "comparator": 0.1932994125997803,
+            "final_gap": 0.1275080552336838,
+            "key": "sparse_knn/n128/i4",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14260013947637823
+          },
+          {
+            "cce": 0.11241808158738058,
+            "comparator": 0.18898857618471168,
+            "final_gap": 0.12773164557033728,
+            "key": "sparse_knn/n128/i5",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.14445365472812122
+          },
+          {
+            "cce": 0.10810490569466358,
+            "comparator": 0.18219097149909808,
+            "final_gap": 0.12445791896589936,
+            "key": "sparse_knn/n128/i6",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.13479378174143025
+          },
+          {
+            "cce": 0.11533442223020662,
+            "comparator": 0.1944158290046993,
+            "final_gap": 0.1264735212305245,
+            "key": "sparse_knn/n128/i7",
+            "n": 128,
+            "ok": false,
+            "uniform": 0.133828694070779
+          },
+          {
+            "cce": 0.09913717897458574,
+            "comparator": 0.1729533168415664,
+            "final_gap": 0.12054579416229617,
+            "key": "sparse_knn/n256/i0",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13569911093703396
+          },
+          {
+            "cce": 0.10261818290507983,
+            "comparator": 0.16828373970745675,
+            "final_gap": 0.13524568952696775,
+            "key": "sparse_knn/n256/i1",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.1346547658928231
+          },
+          {
+            "cce": 0.09890835930064365,
+            "comparator": 0.1690813640573509,
+            "final_gap": 0.12375611772947347,
+            "key": "sparse_knn/n256/i2",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.14087968140765106
+          },
+          {
+            "cce": 0.10072061886519987,
+            "comparator": 0.17415389530395442,
+            "final_gap": 0.12709017285470864,
+            "key": "sparse_knn/n256/i3",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13769495562323214
+          },
+          {
+            "cce": 0.09923962434959005,
+            "comparator": 0.1618962997434679,
+            "final_gap": 0.13482037710812808,
+            "key": "sparse_knn/n256/i4",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13169077179407207
+          },
+          {
+            "cce": 0.09870107279135173,
+            "comparator": 0.16960776507339004,
+            "final_gap": 0.12839493208040315,
+            "key": "sparse_knn/n256/i5",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13255443299393793
+          },
+          {
+            "cce": 0.10116118176837476,
+            "comparator": 0.17016532385153021,
+            "final_gap": 0.12447853727003519,
+            "key": "sparse_knn/n256/i6",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13754360293381102
+          },
+          {
+            "cce": 0.098560297334855,
+            "comparator": 0.16339379683317162,
+            "final_gap": 0.12717625492734055,
+            "key": "sparse_knn/n256/i7",
+            "n": 256,
+            "ok": false,
+            "uniform": 0.13129187600731404
+          },
+          {
+            "cce": 0.10380434798732414,
+            "comparator": 0.18054227563932557,
+            "final_gap": 0.12998422349657113,
+            "key": "sparse_knn/n512/i0",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.1394123214420902
+          },
+          {
+            "cce": 0.10130619078923314,
+            "comparator": 0.17566740906787892,
+            "final_gap": 0.12513138531399787,
+            "key": "sparse_knn/n512/i1",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.14005024518520537
+          },
+          {
+            "cce": 0.10236529894705218,
+            "comparator": 0.17689200088694884,
+            "final_gap": 0.1291930866141208,
+            "key": "sparse_knn/n512/i2",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13908489045746997
+          },
+          {
+            "cce": 0.10273228345746702,
+            "comparator": 0.17847828131183371,
+            "final_gap": 0.12757126567176286,
+            "key": "sparse_knn/n512/i3",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13566036022119135
+          },
+          {
+            "cce": 0.10188495380986726,
+            "comparator": 0.18047275062872298,
+            "final_gap": 0.1263621945491774,
+            "key": "sparse_knn/n512/i4",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13907772418141515
+          },
+          {
+            "cce": 0.10161371705820875,
+            "comparator": 0.17505063683840327,
+            "final_gap": 0.12185978464718167,
+            "key": "sparse_knn/n512/i5",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13559108645980125
+          },
+          {
+            "cce": 0.10473359943501614,
+            "comparator": 0.18321992336766246,
+            "final_gap": 0.1348734937663341,
+            "key": "sparse_knn/n512/i6",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.1383888336578286
+          },
+          {
+            "cce": 0.09922693095923198,
+            "comparator": 0.174760521565789,
+            "final_gap": 0.12561541018779304,
+            "key": "sparse_knn/n512/i7",
+            "n": 512,
+            "ok": false,
+            "uniform": 0.13982812188020224
+          }
+        ],
+        "per_n": {},
+        "required_instances": 32,
+        "slice": "test",
+        "status": "failed",
+        "transcript_valid_instances": 32,
+        "unaudited_metrics": {
+          "comparator_exploitability_ratio": 0.5941766658216019,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7694525262528252,
+          "relative_final_nash_gap": 0.9379353849772055
+        },
+        "valid_instances": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "method": "our_method",
+  "module": "redteam.hardening_v3.policies",
+  "factory": "make_shortcut_runner_noise_patch",
+  "options": {}
+}

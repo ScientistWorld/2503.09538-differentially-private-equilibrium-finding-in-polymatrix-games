@@ -9,15 +9,15 @@
           "relative_final_nash_gap": 1.2551802157762515
         },
         "our_method": {
-          "comparator_exploitability_ratio": 0.9866286682242642,
+          "comparator_exploitability_ratio": 0.9866286682242643,
           "privacy_protocol_compliance": 1.0,
           "relative_exploitability": 0.9843027782511572,
-          "relative_final_nash_gap": 1.250402923417976
+          "relative_final_nash_gap": 1.2504029234179759
         },
         "structure_free_baseline": {
           "comparator_exploitability_ratio": 1.0,
           "privacy_protocol_compliance": 1.0,
-          "relative_exploitability": 0.9974029751707406,
+          "relative_exploitability": 0.9974029751707407,
           "relative_final_nash_gap": 1.2665357383975262
         }
       }
@@ -31,9 +31,9 @@
           "relative_final_nash_gap": 1.2562056419240752
         },
         "our_method": {
-          "comparator_exploitability_ratio": 0.9880923791152614,
+          "comparator_exploitability_ratio": 0.9880923791152613,
           "privacy_protocol_compliance": 1.0,
-          "relative_exploitability": 0.9581044057855062,
+          "relative_exploitability": 0.9581044057855058,
           "relative_final_nash_gap": 1.2283381265296802
         },
         "structure_free_baseline": {
@@ -55,13 +55,13 @@
         "our_method": {
           "comparator_exploitability_ratio": 0.7103262689967298,
           "privacy_protocol_compliance": 1.0,
-          "relative_exploitability": 0.9026181148690554,
+          "relative_exploitability": 0.9026181148690555,
           "relative_final_nash_gap": 1.0645976236245143
         },
         "structure_free_baseline": {
           "comparator_exploitability_ratio": 1.0,
           "privacy_protocol_compliance": 1.0,
-          "relative_exploitability": 1.2718109220714888,
+          "relative_exploitability": 1.2718109220714886,
           "relative_final_nash_gap": 1.4789343863347335
         }
       }

@@ -1,0 +1,94 @@
+{
+  "case": "shortcut_runner_noise_patch",
+  "description": "Patches the protocol runner to deliver noiseless messages, then plays Algorithm 1.",
+  "evaluator_unchanged": true,
+  "kind": "shortcut",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [
+        "dense_cluster/n64/i0: update exceeds the step allowance (round 7, player 0: 0.7699 > 0.139)",
+        "dense_cluster/n64/i1: update exceeds the step allowance (round 3, player 13: 0.754 > 0.1345)"
+      ],
+      "dense_er_scaling": [
+        "dense_er/n64/i1: update exceeds the step allowance (round 7, player 41: 0.9107 > 0.1547)",
+        "dense_er/n64/i2: update exceeds the step allowance (round 3, player 8: 0.6831 > 0.08138)"
+      ],
+      "sparse_knn_scaling": [
+        "sparse_knn/n64/i0: update exceeds the step allowance (round 1, player 28: 0.7674 > 0.1378)",
+        "sparse_knn/n64/i1: update exceeds the step allowance (round 1, player 28: 0.6067 > 0.1588)"
+      ]
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {
+        "update exceeds the step allowance": 32
+      },
+      "dense_er_scaling": {
+        "update exceeds the step allowance": 31
+      },
+      "sparse_knn_scaling": {
+        "update exceeds the step allowance": 32
+      }
+    },
+    "locality_audit": {
+      "audited_instances": 1,
+      "audited_players": 8,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 23.7
+    },
+    "seconds": 42.9,
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [
+        "dense_cluster/n64/seed0: update exceeds the step allowance (round 7, player 4: 0.7711 > 0.1516)",
+        "dense_cluster/n64/seed2: update exceeds the step allowance (round 6, player 8: 0.7297 > 0.04017)"
+      ],
+      "dense_er_scaling": [
+        "dense_er/n64/seed2: update exceeds the step allowance (round 7, player 26: 0.6844 > 0.06989)",
+        "dense_er/n64/seed4: update exceeds the step allowance (round 7, player 18: 0.7717 > 0.0404)"
+      ],
+      "sparse_knn_scaling": [
+        "sparse_knn/n64/seed0: update exceeds the step allowance (round 1, player 31: 0.7246 > 0.2363)",
+        "sparse_knn/n64/seed2: update exceeds the step allowance (round 1, player 56: 0.5463 > 0.06898)"
+      ]
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {
+        "update exceeds the step allowance": 24
+      },
+      "dense_er_scaling": {
+        "update exceeds the step allowance": 23
+      },
+      "sparse_knn_scaling": {
+        "update exceeds the step allowance": 24
+      }
+    },
+    "locality_audit": {
+      "audited_instances": 1,
+      "audited_players": 8,
+      "failed_instances": 0,
+      "max_deviation": 0.0
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 16.8
+    },
+    "seconds": 32.3,
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    }
+  }
+}

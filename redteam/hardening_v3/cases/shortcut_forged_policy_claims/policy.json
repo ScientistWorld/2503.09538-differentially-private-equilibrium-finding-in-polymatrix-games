@@ -1,0 +1,16 @@
+{
+  "method": "our_method",
+  "module": "baseline.no_payoff",
+  "factory": "make_player",
+  "options": {},
+  "claimed_scores": {
+    "comparator_exploitability_ratio": 0.0,
+    "privacy_protocol_compliance": 1.0
+  },
+  "eta": 0.0,
+  "sigma": 100.0,
+  "rounds": 1,
+  "privacy_budget": 0.0,
+  "instances": "all",
+  "verdict": "pass"
+}
