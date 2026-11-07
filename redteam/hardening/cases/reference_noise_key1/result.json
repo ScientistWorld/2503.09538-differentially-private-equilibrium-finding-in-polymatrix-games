@@ -1,0 +1,64 @@
+{
+  "case": "reference_noise_key1",
+  "description": "Reference under alternative noise stream 1 (seed-noise study).",
+  "elapsed_seconds": 10.4,
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {}
+  },
+  "kind": "replicate",
+  "max_step_utilization": {
+    "dense_cluster_scaling": 0.9906076769660496,
+    "dense_er_scaling": 0.9905527883068515,
+    "sparse_knn_scaling": 0.969551752206953
+  },
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.9571801494800022,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.966093585020409,
+      "relative_final_nash_gap": 1.2566891536888234
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.9616795891852118,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9567206424757638,
+      "relative_final_nash_gap": 1.1946139872276993
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.7079107986564864,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.902054789890954,
+      "relative_final_nash_gap": 1.0577466516023764
+    }
+  },
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.008718429123433213,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.0045076848738432535,
+      "relative_final_nash_gap": -0.0004956808493449483
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.010080124238909027,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.004515143276462763,
+      "relative_final_nash_gap": 0.005419790493811739
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.0019643078010790683,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.0011955454129061404,
+      "relative_final_nash_gap": 0.0007407320268771833
+    }
+  },
+  "rank_gain": 0.03664607639797744,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "ok"
+  },
+  "test_exit": 0
+}

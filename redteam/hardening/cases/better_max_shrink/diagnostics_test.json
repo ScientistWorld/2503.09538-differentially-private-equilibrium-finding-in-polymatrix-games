@@ -1,0 +1,274 @@
+{
+  "_meta": {
+    "methods": [
+      "our_method"
+    ],
+    "noise_key": 0,
+    "seeds": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "slice": "test"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "cce_slope_vs_n": -0.40173040796348886,
+        "comparator_ratio_slope_vs_n": -0.03764296861109167,
+        "failure_examples": [],
+        "failure_reasons": {},
+        "max_step_utilization": 0.6666666666666758,
+        "mean_step_utilization": 0.6064870279742841,
+        "per_n": {
+          "128": {
+            "cce_exploitability_mean": 0.06816723577704989,
+            "comparator_cce_mean": 0.07523828672861803,
+            "comparator_ratio": 0.9060179164223505,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.9307249589096109,
+            "renyi_budget_regime_branch_mean": 6889.173885472314,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.07325274754859445
+          },
+          "256": {
+            "cce_exploitability_mean": 0.05122013946562708,
+            "comparator_cce_mean": 0.05681328796210817,
+            "comparator_ratio": 0.9015521069611134,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.9520873927224365,
+            "renyi_budget_regime_branch_mean": 6590.539114545507,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.053785583717144515
+          },
+          "512": {
+            "cce_exploitability_mean": 0.03684484446588956,
+            "comparator_cce_mean": 0.041465182089271115,
+            "comparator_ratio": 0.8885730776863743,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.9835757137542832,
+            "renyi_budget_regime_branch_mean": 6127.604755343155,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.03745903165523288
+          },
+          "64": {
+            "cce_exploitability_mean": 0.08474383139146213,
+            "comparator_cce_mean": 0.08757054514984129,
+            "comparator_ratio": 0.9677207244337421,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.8211062284893883,
+            "renyi_budget_regime_branch_mean": 6869.229995255868,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.10322804720794398
+          }
+        },
+        "relative_exploitability_slope_vs_n": 0.0814140810466153,
+        "renyi_budget_regime_branch_slope_vs_n": -0.055840994763518836,
+        "renyi_budget_theorem_slope_vs_n": -6.035412595360454e-16,
+        "required_instances": 24,
+        "slice": "test",
+        "status": "ok",
+        "valid_instances": 24
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "cce_slope_vs_n": -0.4464092578555723,
+        "comparator_ratio_slope_vs_n": -0.04476676668288781,
+        "failure_examples": [],
+        "failure_reasons": {},
+        "max_step_utilization": 0.666666666666672,
+        "mean_step_utilization": 0.6051313834211204,
+        "per_n": {
+          "128": {
+            "cce_exploitability_mean": 0.070314327619796,
+            "comparator_cce_mean": 0.07583078611829741,
+            "comparator_ratio": 0.9272530487829095,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.8954422158069125,
+            "renyi_budget_regime_branch_mean": 7190.046333797789,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.07854123871327803
+          },
+          "256": {
+            "cce_exploitability_mean": 0.0526192285015982,
+            "comparator_cce_mean": 0.0581726358797486,
+            "comparator_ratio": 0.9045357444412505,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.9497105882995448,
+            "renyi_budget_regime_branch_mean": 6833.598525393259,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.05541070237031313
+          },
+          "512": {
+            "cce_exploitability_mean": 0.03770763054665614,
+            "comparator_cce_mean": 0.04257572796799212,
+            "comparator_ratio": 0.8856602657505762,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.9842683190739766,
+            "renyi_budget_regime_branch_mean": 6270.36376366453,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.038313081645607726
+          },
+          "64": {
+            "cce_exploitability_mean": 0.0960295106577556,
+            "comparator_cce_mean": 0.09858434041188095,
+            "comparator_ratio": 0.9740848318967151,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.8186998802372564,
+            "renyi_budget_regime_branch_mean": 7655.038260524731,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.11720443440521362
+          }
+        },
+        "relative_exploitability_slope_vs_n": 0.08820385260382875,
+        "renyi_budget_regime_branch_slope_vs_n": -0.09369369189422612,
+        "renyi_budget_theorem_slope_vs_n": -6.035412595360454e-16,
+        "required_instances": 24,
+        "slice": "test",
+        "status": "ok",
+        "valid_instances": 24
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "cce_slope_vs_n": -0.019399985045422518,
+        "comparator_ratio_slope_vs_n": -0.022994267782184115,
+        "failure_examples": [],
+        "failure_reasons": {},
+        "max_step_utilization": 0.590541436813878,
+        "mean_step_utilization": 0.4977726310473254,
+        "per_n": {
+          "128": {
+            "cce_exploitability_mean": 0.11862487863379119,
+            "comparator_cce_mean": 0.1825929956305807,
+            "comparator_ratio": 0.649668286694804,
+            "comparator_step_mean": 0.2560637164338897,
+            "operating_point": {
+              "eta": 0.7937005259840997,
+              "sigma": 0.7071067811865475,
+              "steps": 2
+            },
+            "relative_exploitability": 0.8527037118052236,
+            "renyi_budget_regime_branch_mean": 1.3124177603071594,
+            "renyi_budget_theorem_mean": 5.2496710412286385,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.13904137474036812
+          },
+          "256": {
+            "cce_exploitability_mean": 0.11527164045403142,
+            "comparator_cce_mean": 0.1731734463193549,
+            "comparator_ratio": 0.6656427004487464,
+            "comparator_step_mean": 0.22293682066550013,
+            "operating_point": {
+              "eta": 0.6933612743506348,
+              "sigma": 0.5773502691896258,
+              "steps": 3
+            },
+            "relative_exploitability": 0.8363875254897506,
+            "renyi_budget_regime_branch_mean": 0.9953024378423523,
+            "renyi_budget_theorem_mean": 8.957721940581168,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.13782124621627434
+          },
+          "512": {
+            "cce_exploitability_mean": 0.11422873623829859,
+            "comparator_cce_mean": 0.17841791753570377,
+            "comparator_ratio": 0.6402313053308669,
+            "comparator_step_mean": 0.1562372166379573,
+            "operating_point": {
+              "eta": 0.6933612743506348,
+              "sigma": 0.5773502691896258,
+              "steps": 3
+            },
+            "relative_exploitability": 0.8279677817783098,
+            "renyi_budget_regime_branch_mean": 0.488261573281154,
+            "renyi_budget_theorem_mean": 4.394354159530384,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.1379618843400627
+          },
+          "64": {
+            "cce_exploitability_mean": 0.11832890917622672,
+            "comparator_cce_mean": 0.17384581421411927,
+            "comparator_ratio": 0.6806543471359369,
+            "comparator_step_mean": 0.3388052245246415,
+            "operating_point": {
+              "eta": 0.7937005259840997,
+              "sigma": 0.7071067811865475,
+              "steps": 2
+            },
+            "relative_exploitability": 0.8404348847656115,
+            "renyi_budget_regime_branch_mean": 21913.946173299566,
+            "renyi_budget_theorem_mean": 9.186924322150118,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.14096495673249912
+          }
+        },
+        "relative_exploitability_slope_vs_n": -0.009255724167047492,
+        "renyi_budget_regime_branch_slope_vs_n": -4.676052674802444,
+        "renyi_budget_theorem_slope_vs_n": -0.24208875300049956,
+        "required_instances": 24,
+        "slice": "test",
+        "status": "ok",
+        "valid_instances": 24
+      }
+    }
+  }
+}

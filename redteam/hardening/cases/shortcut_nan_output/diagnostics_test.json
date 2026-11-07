@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "methods": [
+      "our_method"
+    ],
+    "noise_key": 0,
+    "seeds": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "slice": "test"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: non-finite values",
+          "n=64 seed=3: non-finite values",
+          "n=64 seed=5: non-finite values",
+          "n=64 seed=7: non-finite values",
+          "n=64 seed=9: non-finite values"
+        ],
+        "failure_reasons": {
+          "non-finite values": 24
+        },
+        "max_step_utilization": 0.0,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: non-finite values",
+          "n=64 seed=3: non-finite values",
+          "n=64 seed=5: non-finite values",
+          "n=64 seed=7: non-finite values",
+          "n=64 seed=9: non-finite values"
+        ],
+        "failure_reasons": {
+          "non-finite values": 24
+        },
+        "max_step_utilization": 0.0,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: non-finite values",
+          "n=64 seed=3: non-finite values",
+          "n=64 seed=5: non-finite values",
+          "n=64 seed=7: non-finite values",
+          "n=64 seed=9: non-finite values"
+        ],
+        "failure_reasons": {
+          "non-finite values": 24
+        },
+        "max_step_utilization": 0.0,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    }
+  }
+}

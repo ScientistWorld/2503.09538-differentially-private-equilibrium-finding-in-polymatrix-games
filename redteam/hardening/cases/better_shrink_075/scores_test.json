@@ -1,0 +1,34 @@
+{
+  "experiments": {
+    "dense_cluster_scaling": {
+      "results": {
+        "our_method": {
+          "comparator_exploitability_ratio": 0.8622597397306763,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.870222663609541,
+          "relative_final_nash_gap": 1.0533778252153476
+        }
+      }
+    },
+    "dense_er_scaling": {
+      "results": {
+        "our_method": {
+          "comparator_exploitability_ratio": 0.8650275380959058,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8575425226137433,
+          "relative_final_nash_gap": 1.056871895942436
+        }
+      }
+    },
+    "sparse_knn_scaling": {
+      "results": {
+        "our_method": {
+          "comparator_exploitability_ratio": 0.6109436067517239,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7779966573820803,
+          "relative_final_nash_gap": 0.9067055486554675
+        }
+      }
+    }
+  }
+}

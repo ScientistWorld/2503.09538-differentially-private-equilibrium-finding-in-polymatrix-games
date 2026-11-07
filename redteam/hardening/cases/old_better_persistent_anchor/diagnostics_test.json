@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "methods": [
+      "our_method"
+    ],
+    "noise_key": 0,
+    "seeds": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "slice": "test"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: update exceeds the step allowance (round 7, player 41: 0.9401 > 0.1823)",
+          "n=64 seed=3: update exceeds the step allowance (round 7, player 11: 0.7207 > 0.09206)",
+          "n=64 seed=5: update exceeds the step allowance (round 6, player 42: 0.7445 > 0.0348)",
+          "n=64 seed=7: update exceeds the step allowance (round 7, player 11: 0.7003 > 0.0761)",
+          "n=64 seed=9: update exceeds the step allowance (round 7, player 1: 0.7119 > 0.1003)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 24
+        },
+        "max_step_utilization": 155.28221915087434,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: update exceeds the step allowance (round 7, player 6: 0.9194 > 0.179)",
+          "n=64 seed=3: update exceeds the step allowance (round 7, player 53: 0.8165 > 0.1811)",
+          "n=64 seed=5: update exceeds the step allowance (round 6, player 48: 0.7235 > 0.06706)",
+          "n=64 seed=7: update exceeds the step allowance (round 5, player 20: 0.7425 > 0.0594)",
+          "n=64 seed=9: update exceeds the step allowance (round 6, player 7: 0.7852 > 0.1741)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 24
+        },
+        "max_step_utilization": 92.02658784585275,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: update exceeds the step allowance (round 1, player 9: 0.7699 > 0.259)",
+          "n=64 seed=3: update exceeds the step allowance (round 1, player 42: 0.706 > 0.158)",
+          "n=64 seed=5: update exceeds the step allowance (round 1, player 22: 0.7539 > 0.2425)",
+          "n=64 seed=7: update exceeds the step allowance (round 1, player 37: 0.5768 > 0.06144)",
+          "n=64 seed=9: update exceeds the step allowance (round 0, player 1: 0.5498 > 0.1207)"
+        ],
+        "failure_reasons": {
+          "update exceeds the step allowance": 24
+        },
+        "max_step_utilization": 34.60518477175,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    }
+  }
+}

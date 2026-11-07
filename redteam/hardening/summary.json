@@ -1,0 +1,622 @@
+{
+  "better_denoised_gradient": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 1.0542199101389658,
+      "dense_er_scaling": 1.0601891650028978,
+      "sparse_knn_scaling": 0.7711181385046985
+    },
+    "kind": "better",
+    "rank_gain": -0.1296308266231051,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 1.0623204471967695,
+      "dense_er_scaling": 1.0489352171299455,
+      "sparse_knn_scaling": 0.982125234297885
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "better_max_shrink": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9159659563758951,
+      "dense_er_scaling": 0.9228834727178629,
+      "sparse_knn_scaling": 0.6590491599025886
+    },
+    "kind": "better",
+    "rank_gain": 0.1372133567622608,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9218735734689297,
+      "dense_er_scaling": 0.9120302508544226,
+      "sparse_knn_scaling": 0.8393734759597239
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "better_shrink_075": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.8622597397306763,
+      "dense_er_scaling": 0.8650275380959058,
+      "sparse_knn_scaling": 0.6109436067517239
+    },
+    "kind": "better",
+    "rank_gain": 0.2260488008753469,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.870222663609541,
+      "dense_er_scaling": 0.8575425226137433,
+      "sparse_knn_scaling": 0.7779966573820803
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "comparator_as_method": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 1.0,
+      "dense_er_scaling": 1.0,
+      "sparse_knn_scaling": 1.0
+    },
+    "kind": "baseline",
+    "rank_gain": -0.18857907043876534,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 1.0099298664896055,
+      "dense_er_scaling": 0.9921490119073079,
+      "sparse_knn_scaling": 1.2747341332694797
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "no_payoff_as_method": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 1.0816318256951711,
+      "dense_er_scaling": 1.101813371070106,
+      "sparse_knn_scaling": 0.9043295310903645
+    },
+    "kind": "baseline",
+    "rank_gain": -0.21672425509576398,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 1.0816269606148967,
+      "dense_er_scaling": 1.080828901772936,
+      "sparse_knn_scaling": 1.1522144095216638
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "old_better_final_average": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "redteam_better",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "old_better_persistent_anchor": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "redteam_better",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "old_better_separate_readout": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "redteam_better",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "reference": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9862415798914462,
+      "dense_er_scaling": 0.9868798997824844,
+      "sparse_knn_scaling": 0.71445849132675
+    },
+    "kind": "reference",
+    "rank_gain": 0.0,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9961448175126973,
+      "dense_er_scaling": 0.9792963588580776,
+      "sparse_knn_scaling": 0.9100250926436616
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "reference_noise_key1": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9571801494800022,
+      "dense_er_scaling": 0.9616795891852118,
+      "sparse_knn_scaling": 0.7079107986564864
+    },
+    "kind": "replicate",
+    "rank_gain": 0.03664607639797744,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.966093585020409,
+      "dense_er_scaling": 0.9567206424757638,
+      "sparse_knn_scaling": 0.902054789890954
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "reference_noise_key2": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9764627159702062,
+      "dense_er_scaling": 0.9772478835371887,
+      "sparse_knn_scaling": 0.7208945564662601
+    },
+    "kind": "replicate",
+    "rank_gain": 0.010620969413717131,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9856301146398915,
+      "dense_er_scaling": 0.9704399279442434,
+      "sparse_knn_scaling": 0.9186253988028302
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "reference_noise_key3": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9765953593170614,
+      "dense_er_scaling": 0.9896737705543901,
+      "sparse_knn_scaling": 0.6992152058402995
+    },
+    "kind": "replicate",
+    "rank_gain": 0.012454445343291369,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9860064407848433,
+      "dense_er_scaling": 0.9810160477547175,
+      "sparse_knn_scaling": 0.8915100395915494
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "shortcut_best_of_8_noise": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.764544334635527,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_constant_uniform": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_degrade_baseline": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9862415798914462,
+      "dense_er_scaling": 0.9868798997824844,
+      "sparse_knn_scaling": 0.71445849132675
+    },
+    "kind": "shortcut",
+    "rank_gain": 0.0,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9961448175126973,
+      "dense_er_scaling": 0.9792963588580776,
+      "sparse_knn_scaling": 0.9100250926436616
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "shortcut_drop_small_games": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.064544334635528,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_empty_output": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_eta_zero": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9862415798914462,
+      "dense_er_scaling": 0.9868798997824844,
+      "sparse_knn_scaling": 0.71445849132675
+    },
+    "kind": "shortcut",
+    "rank_gain": 0.0,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9961448175126973,
+      "dense_er_scaling": 0.9792963588580776,
+      "sparse_knn_scaling": 0.9100250926436616
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "shortcut_fabricated_noise": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_fewer_rounds": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_known_noise_gradient": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_large_step": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_nan_output": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_negative_alpha": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9862415798914462,
+      "dense_er_scaling": 0.9868798997824844,
+      "sparse_knn_scaling": 0.71445849132675
+    },
+    "kind": "shortcut",
+    "rank_gain": 0.0,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9961448175126973,
+      "dense_er_scaling": 0.9792963588580776,
+      "sparse_knn_scaling": 0.9100250926436616
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "shortcut_public_game_no_noise": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_reported_bound": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9862415798914462,
+      "dense_er_scaling": 0.9868798997824844,
+      "sparse_knn_scaling": 0.71445849132675
+    },
+    "kind": "shortcut",
+    "rank_gain": 0.0,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9961448175126973,
+      "dense_er_scaling": 0.9792963588580776,
+      "sparse_knn_scaling": 0.9100250926436616
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "shortcut_zero_game": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9862415798914462,
+      "dense_er_scaling": 0.9868798997824844,
+      "sparse_knn_scaling": 0.71445849132675
+    },
+    "kind": "shortcut",
+    "rank_gain": 0.0,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9961448175126973,
+      "dense_er_scaling": 0.9792963588580776,
+      "sparse_knn_scaling": 0.9100250926436616
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "shortcut_zero_outputs": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "shortcut_zero_outputs_zero_eta": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "kind": "shortcut",
+    "rank_gain": -16.814544334635524,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 10.0,
+      "dense_er_scaling": 10.0,
+      "sparse_knn_scaling": 10.0
+    },
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    },
+    "test_exit": 0
+  },
+  "weaker_half_step": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 1.1235590632178836,
+      "dense_er_scaling": 1.1325745922916335,
+      "sparse_knn_scaling": 0.8984558743599411
+    },
+    "kind": "weaker",
+    "rank_gain": -0.28607576604026136,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 1.130226127371854,
+      "dense_er_scaling": 1.1181527848208235,
+      "sparse_knn_scaling": 1.1446207436545681
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "weaker_no_gradient": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 1.272742810581053,
+      "dense_er_scaling": 1.293332847558282,
+      "sparse_knn_scaling": 1.125306905205317
+    },
+    "kind": "weaker",
+    "rank_gain": -0.612472136479587,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 1.274491092460473,
+      "dense_er_scaling": 1.2699309742790021,
+      "sparse_knn_scaling": 1.4340426632192547
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "case": "shortcut_zero_game",
+  "description": "Reference arrays; manifest points game_path at all-zero-utility games.",
+  "elapsed_seconds": 10.8,
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {}
+  },
+  "kind": "shortcut",
+  "max_step_utilization": {
+    "dense_cluster_scaling": 0.9912180083006272,
+    "dense_er_scaling": 0.9907675331930991,
+    "sparse_knn_scaling": 0.9704687464553707
+  },
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.9862415798914462,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9961448175126973,
+      "relative_final_nash_gap": 1.2500800756975574
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.9868798997824844,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9792963588580776,
+      "relative_final_nash_gap": 1.2488118921658167
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.71445849132675,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9100250926436616,
+      "relative_final_nash_gap": 1.0676230786274055
+    }
+  },
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": -0.0,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.0,
+      "relative_final_nash_gap": -0.0
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": -0.0,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.0,
+      "relative_final_nash_gap": -0.0
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": -0.0,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.0,
+      "relative_final_nash_gap": -0.0
+    }
+  },
+  "rank_gain": 0.0,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "ok"
+  },
+  "test_exit": 0
+}

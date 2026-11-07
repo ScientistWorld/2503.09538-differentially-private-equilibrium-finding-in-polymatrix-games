@@ -1,0 +1,64 @@
+{
+  "case": "weaker_half_step",
+  "description": "Algorithm 1 with half the step size.",
+  "elapsed_seconds": 9.6,
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {}
+  },
+  "kind": "weaker",
+  "max_step_utilization": {
+    "dense_cluster_scaling": 0.4977758535196066,
+    "dense_er_scaling": 0.4977058145144011,
+    "sparse_knn_scaling": 0.4927718773180241
+  },
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 1.1235590632178836,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 1.130226127371854,
+      "relative_final_nash_gap": 1.4156427341191236
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 1.1325745922916335,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 1.1181527848208235,
+      "relative_final_nash_gap": 1.4097446382455832
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.8984558743599411,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 1.1446207436545681,
+      "relative_final_nash_gap": 1.3318914228415448
+    }
+  },
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": -0.0411952449979312,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.020112196478873485,
+      "relative_final_nash_gap": -0.01241719938161746
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": -0.058277877003659655,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.027771285192549167,
+      "relative_final_nash_gap": -0.01609327460797665
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": -0.055199214909957335,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.03518934765163598,
+      "relative_final_nash_gap": -0.019820125816060453
+    }
+  },
+  "rank_gain": -0.28607576604026136,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "ok"
+  },
+  "test_exit": 0
+}

@@ -1,0 +1,235 @@
+{
+  "_meta": {
+    "methods": [
+      "our_method"
+    ],
+    "noise_key": 0,
+    "seeds": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11
+    ],
+    "sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "slice": "test"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: missing run",
+          "n=64 seed=3: missing run",
+          "n=64 seed=5: missing run",
+          "n=64 seed=7: missing run",
+          "n=64 seed=9: missing run"
+        ],
+        "failure_reasons": {
+          "missing run": 6
+        },
+        "max_step_utilization": 0.9912180083006272,
+        "mean_step_utilization": 0.6706087049648148,
+        "per_n": {
+          "128": {
+            "cce_exploitability_mean": 0.07390349454379423,
+            "comparator_cce_mean": 0.07523828672861803,
+            "comparator_ratio": 0.982259136367122,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 1.0089154875473023,
+            "renyi_budget_regime_branch_mean": 6889.173885472314,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.07325274754859445
+          },
+          "256": {
+            "cce_exploitability_mean": 0.05607615741673567,
+            "comparator_cce_mean": 0.05681328796210817,
+            "comparator_ratio": 0.9870253848736209,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 1.04230742109309,
+            "renyi_budget_regime_branch_mean": 6590.539114545507,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.053785583717144515
+          },
+          "512": {
+            "cce_exploitability_mean": 0.04108973391343585,
+            "comparator_cce_mean": 0.041465182089271115,
+            "comparator_ratio": 0.9909454593729516,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 1.0968933494996829,
+            "renyi_budget_regime_branch_mean": 6127.604755343155,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.03745903165523288
+          }
+        },
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 18
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: missing run",
+          "n=64 seed=3: missing run",
+          "n=64 seed=5: missing run",
+          "n=64 seed=7: missing run",
+          "n=64 seed=9: missing run"
+        ],
+        "failure_reasons": {
+          "missing run": 6
+        },
+        "max_step_utilization": 0.9907675331930991,
+        "mean_step_utilization": 0.6720551749475081,
+        "per_n": {
+          "128": {
+            "cce_exploitability_mean": 0.07466568485631242,
+            "comparator_cce_mean": 0.07583078611829741,
+            "comparator_ratio": 0.9846355112267013,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 0.9509926910528771,
+            "renyi_budget_regime_branch_mean": 7190.046333797789,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.07854123871327803
+          },
+          "256": {
+            "cce_exploitability_mean": 0.05741661509014719,
+            "comparator_cce_mean": 0.0581726358797486,
+            "comparator_ratio": 0.9870038416143938,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 1.0367368670845092,
+            "renyi_budget_regime_branch_mean": 6833.598525393259,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.05541070237031313
+          },
+          "512": {
+            "cce_exploitability_mean": 0.0421788414320759,
+            "comparator_cce_mean": 0.04257572796799212,
+            "comparator_ratio": 0.990678103349998,
+            "comparator_step_mean": 0.5,
+            "operating_point": {
+              "eta": 0.5,
+              "sigma": 0.35355339059327373,
+              "steps": 8
+            },
+            "relative_exploitability": 1.1009868913247522,
+            "renyi_budget_regime_branch_mean": 6270.36376366453,
+            "renyi_budget_theorem_mean": 320.00000000000006,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.038313081645607726
+          }
+        },
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 18
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=1: missing run",
+          "n=64 seed=3: missing run",
+          "n=64 seed=5: missing run",
+          "n=64 seed=7: missing run",
+          "n=64 seed=9: missing run"
+        ],
+        "failure_reasons": {
+          "missing run": 6
+        },
+        "max_step_utilization": 0.9704687464553707,
+        "mean_step_utilization": 0.5389552487002789,
+        "per_n": {
+          "128": {
+            "cce_exploitability_mean": 0.12889028032998492,
+            "comparator_cce_mean": 0.1825929956305807,
+            "comparator_ratio": 0.7058884152969029,
+            "comparator_step_mean": 0.2560637164338897,
+            "operating_point": {
+              "eta": 0.7937005259840997,
+              "sigma": 0.7071067811865475,
+              "steps": 2
+            },
+            "relative_exploitability": 0.92657681712279,
+            "renyi_budget_regime_branch_mean": 1.3124177603071594,
+            "renyi_budget_theorem_mean": 5.2496710412286385,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.13904137474036812
+          },
+          "256": {
+            "cce_exploitability_mean": 0.12349985658272704,
+            "comparator_cce_mean": 0.1731734463193549,
+            "comparator_ratio": 0.7131570065018908,
+            "comparator_step_mean": 0.22293682066550013,
+            "operating_point": {
+              "eta": 0.6933612743506348,
+              "sigma": 0.5773502691896258,
+              "steps": 3
+            },
+            "relative_exploitability": 0.8960622666879671,
+            "renyi_budget_regime_branch_mean": 0.9953024378423523,
+            "renyi_budget_theorem_mean": 8.957721940581168,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.13782124621627434
+          },
+          "512": {
+            "cce_exploitability_mean": 0.12220492219676367,
+            "comparator_cce_mean": 0.17841791753570377,
+            "comparator_ratio": 0.6849363779414636,
+            "comparator_step_mean": 0.1562372166379573,
+            "operating_point": {
+              "eta": 0.6933612743506348,
+              "sigma": 0.5773502691896258,
+              "steps": 3
+            },
+            "relative_exploitability": 0.8858218462546074,
+            "renyi_budget_regime_branch_mean": 0.488261573281154,
+            "renyi_budget_theorem_mean": 4.394354159530384,
+            "runs": 6,
+            "uniform_exploitability_mean": 0.1379618843400627
+          }
+        },
+        "required_instances": 24,
+        "slice": "test",
+        "status": "failed",
+        "valid_instances": 18
+      }
+    }
+  }
+}

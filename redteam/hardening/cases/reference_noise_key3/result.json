@@ -1,0 +1,64 @@
+{
+  "case": "reference_noise_key3",
+  "description": "Reference under alternative noise stream 3 (seed-noise study).",
+  "elapsed_seconds": 10.2,
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {}
+  },
+  "kind": "replicate",
+  "max_step_utilization": {
+    "dense_cluster_scaling": 0.9908305150471679,
+    "dense_er_scaling": 0.9899031635833189,
+    "sparse_knn_scaling": 0.9662750995044691
+  },
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.9765953593170614,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9860064407848433,
+      "relative_final_nash_gap": 1.2500273865690235
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.9896737705543901,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9810160477547175,
+      "relative_final_nash_gap": 1.2532738488141093
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.6992152058402995,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.8915100395915494,
+      "relative_final_nash_gap": 1.0330456236097343
+    }
+  },
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.0028938661723154403,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.0015207565091781006,
+      "relative_final_nash_gap": 3.951684640046693e-06
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": -0.0011175483087622951,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.0003439377793279741,
+      "relative_final_nash_gap": -0.0004461956648292631
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.0045729856459351455,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.002777257957816831,
+      "relative_final_nash_gap": 0.002593309126325338
+    }
+  },
+  "rank_gain": 0.012454445343291369,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "ok"
+  },
+  "test_exit": 0
+}

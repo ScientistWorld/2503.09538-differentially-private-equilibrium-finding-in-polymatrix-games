@@ -1,0 +1,52 @@
+{
+  "experiments": {
+    "dense_cluster_scaling": {
+      "results": {
+        "our_method": {
+          "comparator_exploitability_ratio": 0.9862415798914462,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9961448175126973,
+          "relative_final_nash_gap": 1.2500800756975574
+        },
+        "structure_free_baseline": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      }
+    },
+    "dense_er_scaling": {
+      "results": {
+        "our_method": {
+          "comparator_exploitability_ratio": 0.9868798997824844,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9792963588580776,
+          "relative_final_nash_gap": 1.2488118921658167
+        },
+        "structure_free_baseline": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      }
+    },
+    "sparse_knn_scaling": {
+      "results": {
+        "our_method": {
+          "comparator_exploitability_ratio": 0.71445849132675,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9100250926436616,
+          "relative_final_nash_gap": 1.0676230786274055
+        },
+        "structure_free_baseline": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      }
+    }
+  }
+}
