@@ -1,0 +1,6 @@
+{
+  "communication_steps": "unchanged except explicit shortcuts",
+  "name": "better_fixed_transcript_stronger_readout",
+  "runs": 60,
+  "uses_hidden_inputs": false
+}

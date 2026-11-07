@@ -1,4 +1,4 @@
 action: submit
 gpus: 0
-test: false
-notes: "Run 19 matched scientific controls and shortcut probes through the unchanged hidden test; preserve per-run scores and restore original artifacts."
+test: true
+notes: "Reuse the completed audit cache; test two local output improvements with the reference communication transcript held exactly unchanged."
