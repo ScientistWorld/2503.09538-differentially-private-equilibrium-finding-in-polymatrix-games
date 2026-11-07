@@ -1,8 +1,6 @@
 # Once you set action to 'submit' or 'done', STOP immediately.
 # Do NOT sleep, poll, or wait for jobs. The system reads this file
 # only after your turn ends.
-action: submit
-gpus: 0
-test: false
+action: done
 milestone: core_claim_plus
-notes: "Verification job (CPU): isolated replay module for the locality audit; smoke test incl. replay-isolation check, reproduce reference + baselines through final evaluators, full redteam/hardening_v3 audit (17 cases + cache-evasion probe), validate."
+notes: "Hardened: per-player policy interface run by the evaluator on hidden instances/noise with isolated locality audit; redteam's +0.543 central-optimizer shortcut now 0 on test; better variants +0.223/+0.130 (SE<=0.004); left: cache-evasion (+0.534, needs evaluator-internals access + disk cache; review/sandbox only). See HARDENING.md."
