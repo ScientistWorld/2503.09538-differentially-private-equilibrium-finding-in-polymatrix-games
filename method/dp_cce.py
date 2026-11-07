@@ -1,79 +1,65 @@
 """Algorithm 1: differentially private CCE computation in polymatrix games.
 
-Each player broadcasts its mixed strategy plus Gaussian noise, projects the
-received noisy strategies back to the simplex, and takes a proximal projected
-gradient step that starts from its own projected noisy broadcast and uses the
-degree-adaptive regularizer tau_i = (harmonic-mean degree)^(5/9) / (deg_i log N).
-The broadcast noise is the benchmark's fixed per-instance stream.
+Per-player policy (interface in data/protocol.py).  In every round player i
+
+  1. broadcasts its strategy plus Gaussian noise (the protocol runner adds the
+     noise and hands the player its own noisy message ``own_broadcast``),
+  2. projects the noisy strategies received from its neighbours onto the
+     simplex, bar pi_j = Proj(pi_j + n_j),
+  3. computes its loss gradient g_i = -(1/|N(i)|) sum_j U_ij bar pi_j, and
+  4. takes a proximal projected-gradient step that starts from its own
+     projected noisy broadcast bar pi_i, with the degree-adaptive regularizer
+     tau_i = hdeg^(5/9) / (|N(i)| log N), hdeg the harmonic mean of degrees:
+
+         pi_i <- Proj( (bar pi_i - eta g_i) / (1 + eta tau_i) ).
+
+Only the player's own payoff matrices, the public graph and the noisy
+messages are used.
 """
 
 from __future__ import annotations
 
 import argparse
-from pathlib import Path
 
 import numpy as np
 
-from data.polymatrix import (
-    SEEDS,
-    SIZES,
-    TOPOLOGIES,
-    benchmark_game,
-    benchmark_hyperparameters,
-    broadcast_noise,
-    gradients,
-    harmonic_mean_degree,
-    payoff_operator,
-    project_simplex,
-)
-from data.submission import save_run, write_manifest
+from data.polymatrix import harmonic_mean_degree_from_edges, project_simplex
+from data.submission import write_policy
 
 
-def degree_adaptive_regularizer(game) -> np.ndarray:
-    deg = np.maximum(game.degrees.astype(np.float64), 1.0)
-    return (harmonic_mean_degree(game) ** (5.0 / 9.0)) / (deg * np.log(game.n_players))
+def degree_adaptive_regularizer(n_players: int, edges: np.ndarray, degree: int) -> float:
+    hdeg = harmonic_mean_degree_from_edges(n_players, edges)
+    return float(hdeg ** (5.0 / 9.0) / (max(degree, 1) * np.log(n_players)))
 
 
-def run_algorithm1(game, steps: int, eta: float, noise: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    n, a = game.n_players, game.n_actions
-    strategies = np.full((n, a), 1.0 / a, dtype=np.float64)
-    tau = degree_adaptive_regularizer(game)
-    operator = payoff_operator(game)
-    trajectory, broadcasts = [], []
-    for t in range(steps):
-        noisy = strategies + noise[t]
-        projected_noisy = project_simplex(noisy)
-        grads = gradients(game, projected_noisy, operator)
-        strategies = project_simplex((projected_noisy - eta * grads) / (1.0 + eta * tau[:, None]))
-        trajectory.append(strategies.copy())
-        broadcasts.append(noisy.copy())
-    return np.stack(trajectory, axis=0), np.stack(broadcasts, axis=0)
+class Algorithm1Player:
+    def __init__(self, view: dict):
+        self.utilities = np.asarray(view["utilities"], dtype=np.float64)
+        self.degree = max(len(view["neighbors"]), 1)
+        self.eta = float(view["eta"])
+        self.tau = degree_adaptive_regularizer(int(view["n_players"]), view["edges"], self.degree)
+
+    def gradient(self, received: np.ndarray) -> np.ndarray:
+        projected = project_simplex(received)
+        return -np.einsum("kab,kb->a", self.utilities, projected) / self.degree
+
+    def step(self, t: int, own_broadcast: np.ndarray, received: np.ndarray) -> np.ndarray:
+        anchor = project_simplex(own_broadcast)
+        grad = self.gradient(received)
+        return project_simplex((anchor - self.eta * grad) / (1.0 + self.eta * self.tau))
+
+
+def make_player(view: dict) -> Algorithm1Player:
+    return Algorithm1Player(view)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Register Algorithm 1 as a player policy.")
     parser.add_argument("--output-dir", default="outputs/proposed")
     parser.add_argument("--method-name", default="our_method")
-    parser.add_argument("--topologies", nargs="+", default=list(TOPOLOGIES))
-    parser.add_argument("--n-values", nargs="+", type=int, default=list(SIZES))
-    parser.add_argument("--seeds", nargs="+", type=int, default=list(SEEDS))
-    parser.add_argument("--noise-key", type=int, default=0,
-                        help="Alternative noise stream for robustness studies; the benchmark uses 0.")
     args = parser.parse_args()
-
-    for topology in args.topologies:
-        out = Path(args.output_dir) / topology
-        runs = []
-        for n in args.n_values:
-            steps, eta, sigma = benchmark_hyperparameters(n, topology)
-            for seed in args.seeds:
-                game = benchmark_game(topology, n, seed)
-                noise = broadcast_noise(topology, n, seed, key=args.noise_key)
-                traj, broadcasts = run_algorithm1(game, steps, eta, noise)
-                runs.append(save_run(out, args.method_name, topology, n, seed, traj, broadcasts,
-                                     steps=steps, eta=eta, sigma=sigma))
-                print(f"{args.method_name} {topology} n={n} seed={seed} done", flush=True)
-        write_manifest(out, args.method_name, runs)
+    path = write_policy(args.output_dir, args.method_name, "method.dp_cce", "make_player")
+    print(f"registered {args.method_name} -> {path}")
 
 
 if __name__ == "__main__":

@@ -1,87 +1,77 @@
-"""Prior-work-style private baseline at the same privacy budget.
+"""Prior-work-style private baseline at the same privacy budget (player policy).
 
 The paper compares against a private distributed learner adapted from
 single-objective DP optimization (Huang et al., 2015) run "under the same
 differential privacy budget".  Such a learner cannot exploit the polymatrix
-graph structure in its privacy accounting.  This baseline therefore:
+graph structure in its privacy accounting.  Each player of this baseline:
 
-* broadcasts with the benchmark's fixed noise for the same T rounds,
+* follows the same protocol (same rounds, same broadcast noise),
 * takes plain projected gradient steps anchored at its projected noisy
   broadcast, with no graph-aware regularization, and
-* calibrates its step size so that a structure-free single-edge accounting
+* uses a step size calibrated so that a structure-free single-edge accounting
   (every observed player treated as affected by the changed edge, i.e. the
   locality term with all N players counted, 2A) equals the per-instance
   budget that the paper's accounting min{dense term, locality term} assigns
   to the operating point:  gamma = eta * sqrt(min(club, spade_max) / (2A)).
+
+The step depends only on the public graph and operating point.  The
+evaluators hold the fixed comparator values of this learner on their own
+instances; submitting it as a method reproduces them.
 """
 
 from __future__ import annotations
 
 import argparse
-from pathlib import Path
+import hashlib
 
 import numpy as np
 
 from data.polymatrix import (
-    SEEDS,
-    SIZES,
-    TOPOLOGIES,
-    benchmark_game,
-    benchmark_hyperparameters,
-    broadcast_noise,
-    dense_sensitivity_term,
-    gradients,
-    locality_fraction_max,
-    payoff_operator,
+    dense_sensitivity_term_from_edges,
+    locality_fraction_max_from_edges,
     project_simplex,
 )
-from data.submission import save_run, write_manifest
+from data.submission import write_policy
+
+# Public-graph computations are shared between the players of one game; the
+# cache is keyed by everything the value depends on.
+_STEP_CACHE: dict[tuple, float] = {}
 
 
-def budget_matched_step(game, steps: int, eta: float) -> float:
-    a = game.n_actions
-    club = dense_sensitivity_term(game)
-    spade_max = 2.0 * a * locality_fraction_max(game, steps)
-    return float(eta * min(1.0, np.sqrt(min(club, spade_max) / (2.0 * a))))
+def budget_matched_step(n_players: int, n_actions: int, edges: np.ndarray, steps: int, eta: float) -> float:
+    edges = np.ascontiguousarray(edges, dtype=np.int64)
+    key = (n_players, n_actions, steps, float(eta), hashlib.sha1(edges.tobytes()).hexdigest())
+    if key not in _STEP_CACHE:
+        club = dense_sensitivity_term_from_edges(n_players, n_actions, edges)
+        spade_max = 2.0 * n_actions * locality_fraction_max_from_edges(n_players, edges, steps)
+        _STEP_CACHE[key] = float(eta * min(1.0, np.sqrt(min(club, spade_max) / (2.0 * n_actions))))
+    return _STEP_CACHE[key]
 
 
-def run_structure_free(game, steps: int, step: float, noise: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    n, a = game.n_players, game.n_actions
-    strategies = np.full((n, a), 1.0 / a, dtype=np.float64)
-    operator = payoff_operator(game)
-    trajectory, broadcasts = [], []
-    for t in range(steps):
-        noisy = strategies + noise[t]
-        projected_noisy = project_simplex(noisy)
-        grads = gradients(game, projected_noisy, operator)
-        strategies = project_simplex(projected_noisy - step * grads)
-        trajectory.append(strategies.copy())
-        broadcasts.append(noisy.copy())
-    return np.stack(trajectory, axis=0), np.stack(broadcasts, axis=0)
+class StructureFreePlayer:
+    def __init__(self, view: dict):
+        self.utilities = np.asarray(view["utilities"], dtype=np.float64)
+        self.degree = max(len(view["neighbors"]), 1)
+        self.step_size = budget_matched_step(int(view["n_players"]), int(view["n_actions"]), view["edges"],
+                                             int(view["rounds"]), float(view["eta"]))
+
+    def step(self, t: int, own_broadcast: np.ndarray, received: np.ndarray) -> np.ndarray:
+        anchor = project_simplex(own_broadcast)
+        grad = -np.einsum("kab,kb->a", self.utilities, project_simplex(received)) / self.degree
+        return project_simplex(anchor - self.step_size * grad)
+
+
+def make_player(view: dict) -> StructureFreePlayer:
+    return StructureFreePlayer(view)
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Register the structure-free private baseline as a player policy.")
     parser.add_argument("--output-dir", default="outputs/structure_free_baseline")
     parser.add_argument("--method-name", default="structure_free_baseline")
-    parser.add_argument("--topologies", nargs="+", default=list(TOPOLOGIES))
-    parser.add_argument("--n-values", nargs="+", type=int, default=list(SIZES))
-    parser.add_argument("--seeds", nargs="+", type=int, default=list(SEEDS))
     args = parser.parse_args()
-
-    for topology in args.topologies:
-        out = Path(args.output_dir) / topology
-        runs = []
-        for n in args.n_values:
-            steps, eta, sigma = benchmark_hyperparameters(n, topology)
-            for seed in args.seeds:
-                game = benchmark_game(topology, n, seed)
-                step = budget_matched_step(game, steps, eta)
-                traj, broadcasts = run_structure_free(game, steps, step, broadcast_noise(topology, n, seed))
-                runs.append(save_run(out, args.method_name, topology, n, seed, traj, broadcasts,
-                                     steps=steps, eta=eta, sigma=sigma, budget_matched_step=step))
-                print(f"{args.method_name} {topology} n={n} seed={seed} step={step:.4f}", flush=True)
-        write_manifest(out, args.method_name, runs)
+    path = write_policy(args.output_dir, args.method_name, "baseline.structure_free", "make_player")
+    print(f"registered {args.method_name} -> {path}")
 
 
 if __name__ == "__main__":

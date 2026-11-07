@@ -238,3 +238,7 @@ redteam/hardening/cases/*/evaluate_test.log
 
 # Throwaway job logs
 tmp/
+
+# Hardening v3 audit runtime artifacts (rebuildable with python -m redteam.hardening_v3.harness)
+redteam/hardening_v3/_backup/
+redteam/hardening_v3/cases/*/evaluate_*.log

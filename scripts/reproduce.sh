@@ -1,12 +1,12 @@
 #!/bin/bash
 # Reproduce the reference results end-to-end inside the container.
 #
-# Runs both baselines and the paper's method on every benchmark instance
-# (3 topologies x 4 player counts x 12 seeds), then scores the visible slice
-# (scoring/scores.json, scoring/scores_train.json) and the held-out slice
-# (scoring/scores_test.json).  The fixed comparator values the evaluators
-# compare against are committed in eval/train/ and eval/test/; rebuild them
-# only if missing.
+# Registers both baselines and the paper's method (Algorithm 1) as player
+# policies, then scores the visible slice (scoring/scores.json,
+# scoring/scores_train.json) and the hidden test slice
+# (scoring/scores_test.json); each evaluator runs the private protocol itself.
+# The fixed comparator values the evaluators compare against are committed in
+# eval/train/ and eval/test/; rebuild them only if missing.
 
 set -e
 

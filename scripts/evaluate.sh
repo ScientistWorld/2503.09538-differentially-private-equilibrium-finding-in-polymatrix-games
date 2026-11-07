@@ -1,15 +1,15 @@
 #!/bin/bash
 # Standard evaluation entry point (visible train slice).
 #
-# Self-contained: uses only eval/train/ (never method/).  Scores every method
-# whose manifest is found under outputs/ (or the manifests passed as
-# arguments) and writes scoring/scores.json plus scoring/diagnostics.json.
-# Each manifest lists (topology, n_players, seed, trajectory_path) runs; see
-# data/submission.py for the artifact contract.
+# Self-contained: uses only eval/train/ (never imports method/).  Runs the
+# private protocol with every player policy registered under outputs/ (or the
+# policy manifests passed as arguments) on the public train instances and
+# writes scoring/scores.json plus scoring/diagnostics.json.  The policy
+# interface is described in data/protocol.py and briefing/evaluation.md.
 #
 # Usage:
-#   bash scripts/evaluate.sh                                  # all manifests under outputs/
-#   bash scripts/evaluate.sh outputs/my_method/*/manifest.json
+#   bash scripts/evaluate.sh                              # all outputs/*/policy.json
+#   bash scripts/evaluate.sh outputs/my_method/policy.json
 
 set -e
 
@@ -18,16 +18,16 @@ cd /home/user
 mkdir -p scoring
 
 if [ "$#" -gt 0 ]; then
-  MANIFESTS=("$@")
+  POLICIES=("$@")
 else
-  mapfile -t MANIFESTS < <(find outputs -mindepth 2 -maxdepth 4 -name manifest.json 2>/dev/null | sort)
+  mapfile -t POLICIES < <(find outputs -mindepth 2 -maxdepth 3 -name policy.json 2>/dev/null | sort)
 fi
-if [ "${#MANIFESTS[@]}" -eq 0 ]; then
-  echo "No output manifests found under outputs/." >&2
+if [ "${#POLICIES[@]}" -eq 0 ]; then
+  echo "No policy manifests found under outputs/ (expected outputs/<dir>/policy.json)." >&2
   exit 1
 fi
 
 python -m eval.train.evaluate \
-  --manifest "${MANIFESTS[@]}" \
+  --policy "${POLICIES[@]}" \
   --output scoring/scores.json \
   --diagnostics scoring/diagnostics.json

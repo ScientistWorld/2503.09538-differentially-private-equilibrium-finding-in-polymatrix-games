@@ -1,15 +1,16 @@
-"""Output contract helpers shared by any method (problem-side, method-agnostic).
+"""Submission contract helpers shared by any method (problem-side, method-agnostic).
 
-A submission is one directory per (method, topology) holding ``manifest.json``
-and one ``.npz`` file per instance with two arrays of shape (T, N, A):
+A submission is a *player policy* registered by one ``policy.json`` file in its
+own directory under ``outputs/`` (``outputs/<dir>/policy.json``):
 
-* ``trajectory`` -- the strategy profile played after each of the T rounds;
-* ``broadcasts`` -- the message each player broadcast in each round, i.e. the
-  profile played before that round (uniform before round 0) plus the fixed
-  instance noise from ``data.polymatrix.broadcast_noise``.
+    {"method": "our_method",            # name of the scored entry
+     "module": "method.my_policy",      # importable from the workspace root
+     "factory": "make_player",          # make_player(view) -> object with .step(...)
+     "options": {}}                     # JSON passed to every player as view["options"]
 
-Only these arrays and the instance identity (topology, n_players, seed) are
-read by the evaluators; every other manifest field is informational.
+The evaluators run the private protocol themselves with this policy on their
+own instances (see ``data/protocol.py`` for the interface).  ``our_method`` is
+the entry ranked against the reference.  Any other field is ignored.
 """
 
 from __future__ import annotations
@@ -17,25 +18,13 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
-import numpy as np
 
-
-def save_run(out_dir: str | Path, method: str, topology: str, n_players: int, seed: int,
-             trajectory: np.ndarray, broadcasts: np.ndarray, **info) -> dict:
+def write_policy(out_dir: str | Path, method: str, module: str, factory: str = "make_player",
+                 options: dict | None = None, **info) -> Path:
     out = Path(out_dir)
     out.mkdir(parents=True, exist_ok=True)
-    path = out / f"{method}_{topology}_n{n_players}_seed{seed}.npz"
-    np.savez_compressed(path, trajectory=np.asarray(trajectory, dtype=np.float64),
-                        broadcasts=np.asarray(broadcasts, dtype=np.float64))
-    run = {"method": method, "topology": topology, "n_players": int(n_players), "seed": int(seed),
-           "trajectory_path": str(path)}
-    run.update(info)
-    return run
-
-
-def write_manifest(out_dir: str | Path, method: str, runs: list[dict]) -> Path:
-    out = Path(out_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    path = out / "manifest.json"
-    path.write_text(json.dumps({"method": method, "runs": runs}, indent=2))
+    path = out / "policy.json"
+    payload = {"method": method, "module": module, "factory": factory, "options": dict(options or {})}
+    payload.update(info)
+    path.write_text(json.dumps(payload, indent=2))
     return path

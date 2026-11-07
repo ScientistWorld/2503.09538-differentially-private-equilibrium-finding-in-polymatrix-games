@@ -1,11 +1,14 @@
 """Problem-side utilities for private polymatrix-game equilibrium finding.
 
 This module is intentionally independent of method/.  It defines the public
-benchmark: procedural game generation, the instance grid, the privacy
-operating point (rounds, noise level, step scale), the fixed broadcast-noise
-stream every method must use, and basic game quantities.  The evaluators in
-eval/ keep their own copies of everything they score with, so editing this
-file cannot change a score.
+benchmark: procedural game generation (graph families and payoff
+distribution), the public development instances, the privacy operating point
+(rounds, noise level, step scale), the public broadcast-noise stream of the
+development instances, and basic game quantities.  The evaluators in eval/
+keep their own copies of everything they score with (the hidden test also
+holds its own instances and noise), so editing this file cannot change a
+score.  The protocol runner and the player-policy interface are in
+``data/protocol.py``.
 """
 
 from __future__ import annotations
@@ -162,7 +165,11 @@ def benchmark_game(topology: str, n_players: int, seed: int) -> PolymatrixGame:
 
 def benchmark_instances(topologies: Iterable[str] = TOPOLOGIES, sizes: Iterable[int] = SIZES,
                         seeds: Iterable[int] = SEEDS) -> list[tuple[str, int, int]]:
-    """Every (topology, n_players, seed) instance a submission must solve."""
+    """The public development instances (topology, n_players, seed).
+
+    The visible train slice scores the even seeds with noise key 0.  The hidden
+    test draws its own instances from the same generator and noise model.
+    """
     return [(t, int(n), int(s)) for t in topologies for n in sizes for s in seeds]
 
 
@@ -184,11 +191,13 @@ def benchmark_hyperparameters(n_players: int, topology: str, p: float = EDGE_PRO
 
 
 def broadcast_noise(topology: str, n_players: int, seed: int, key: int = 0) -> np.ndarray:
-    """The fixed Gaussian broadcast noise of one instance, shape (T, N, A).
+    """Gaussian broadcast noise of one public instance, shape (T, N, A).
 
     Round ``t`` broadcasts ``strategy_t + noise[t]`` (``strategy_0`` is the
-    uniform profile).  Every method uses this exact stream, so methods are
-    compared under common noise and cannot select or shape their noise.
+    uniform profile).  The protocol runner (evaluator) adds the noise; a
+    player only ever learns its own current noisy broadcast and the noisy
+    broadcasts of its neighbours.  Key 0 is the stream of the visible train
+    slice; the hidden test uses its own stream.
     """
     steps, _, sigma = benchmark_hyperparameters(n_players, topology)
     rng = np.random.default_rng([_NOISE_BASE, int(key), _TOPOLOGY_CODE[topology], int(n_players), int(seed)])
@@ -231,9 +240,18 @@ def nash_gap(game: PolymatrixGame, strategies: np.ndarray) -> tuple[float, np.nd
     return float(per_player.mean()), per_player
 
 
+def degrees_from_edges(n_players: int, edges: np.ndarray) -> np.ndarray:
+    """Degree of every player of the public interaction graph."""
+    return np.bincount(np.asarray(edges, dtype=np.int64).ravel(), minlength=n_players)
+
+
+def harmonic_mean_degree_from_edges(n_players: int, edges: np.ndarray) -> float:
+    deg = np.maximum(degrees_from_edges(n_players, edges).astype(np.float64), 1.0)
+    return float(n_players / np.sum(1.0 / deg))
+
+
 def harmonic_mean_degree(game: PolymatrixGame) -> float:
-    deg = np.maximum(game.degrees.astype(np.float64), 1.0)
-    return float(game.n_players / np.sum(1.0 / deg))
+    return harmonic_mean_degree_from_edges(game.n_players, game.edges)
 
 
 # ---------------------------------------------------------------------------
@@ -261,10 +279,15 @@ def graph_distances(n_players: int, edges: np.ndarray, sources: list[int]) -> np
 
 def all_pairs_distances(game: PolymatrixGame, max_depth: int) -> np.ndarray:
     """Shortest-path distances truncated at ``max_depth`` (larger values -> max_depth + 1)."""
-    n = game.n_players
+    return all_pairs_distances_from_edges(game.n_players, game.edges, max_depth)
+
+
+def all_pairs_distances_from_edges(n_players: int, edges: np.ndarray, max_depth: int) -> np.ndarray:
+    n = n_players
+    edges = np.asarray(edges, dtype=np.int64)
     adj = np.zeros((n, n), dtype=np.float32)
-    adj[game.edges[:, 0], game.edges[:, 1]] = 1.0
-    adj[game.edges[:, 1], game.edges[:, 0]] = 1.0
+    adj[edges[:, 0], edges[:, 1]] = 1.0
+    adj[edges[:, 1], edges[:, 0]] = 1.0
     dist = np.full((n, n), max_depth + 1, dtype=np.int16)
     reached = np.eye(n, dtype=bool)
     dist[reached] = 0
@@ -279,14 +302,23 @@ def all_pairs_distances(game: PolymatrixGame, max_depth: int) -> np.ndarray:
 
 def locality_fraction_max(game: PolymatrixGame, steps: int) -> float:
     """max over edges (v1,v2) of the fraction of players with min distance < steps."""
-    dist = all_pairs_distances(game, steps)
-    near = np.minimum(dist[game.edges[:, 0]], dist[game.edges[:, 1]]) < steps
-    return float(near.sum(axis=1).max() / game.n_players)
+    return locality_fraction_max_from_edges(game.n_players, game.edges, steps)
+
+
+def locality_fraction_max_from_edges(n_players: int, edges: np.ndarray, steps: int) -> float:
+    edges = np.asarray(edges, dtype=np.int64)
+    dist = all_pairs_distances_from_edges(n_players, edges, steps)
+    near = np.minimum(dist[edges[:, 0]], dist[edges[:, 1]]) < steps
+    return float(near.sum(axis=1).max() / n_players)
 
 
 def dense_sensitivity_term(game: PolymatrixGame) -> float:
-    n, a = game.n_players, game.n_actions
-    hdeg = harmonic_mean_degree(game)
+    return dense_sensitivity_term_from_edges(game.n_players, game.n_actions, game.edges)
+
+
+def dense_sensitivity_term_from_edges(n_players: int, n_actions: int, edges: np.ndarray) -> float:
+    n, a = n_players, n_actions
+    hdeg = harmonic_mean_degree_from_edges(n_players, edges)
     return float(16.0 * (a ** 3) * (np.log(n) ** 2) / (hdeg ** (4.0 / 9.0)) + 4.0 * a / n)
 
 

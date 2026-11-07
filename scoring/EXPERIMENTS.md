@@ -1,6 +1,6 @@
 # Experiment Overview
 
-All three experiments hold the privacy side fixed: every submission runs on the same games, for the same number of communication rounds, with the same broadcast noise and the same bound on how strongly each message may depend on private payoffs. What is measured is how close to a coarse correlated equilibrium the played profiles get under that fixed privacy budget, compared with a fixed private comparator at the same budget and with uniform play, across player counts 64 to 512.
+All three experiments hold the privacy side fixed. Every submission's update rule is run by the benchmark on the same games, for the same number of communication rounds, with the same broadcast noise, the same bound on how strongly each message may depend on private payoffs, and each player seeing only its own payoffs and the messages it receives. What is measured is how close to a coarse correlated equilibrium the played profiles get under that fixed privacy budget, compared with a fixed private comparator at the same budget and with uniform play, across player counts 64 to 512.
 
 ## dense_er_scaling
 
