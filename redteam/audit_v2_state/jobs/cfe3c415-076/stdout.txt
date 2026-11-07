@@ -1,0 +1,53 @@
+[hive] This stdout log is managed by Hive.
+[hive] job_id: 60cd32b5
+[hive] host: node
+[hive] node_id: 0e2da7d46377be01720740f5d6216c84c1cfd312d41e238f04a3568a
+[hive] user: nexus/user (remote)
+[hive] resource: gpu-cpu
+[hive] gpus: 0
+[hive] cpus: 1
+[hive] workdir: /home/user
+[hive] timeout_sec: 21600
+[hive] started_at: 2026-11-07 15:03:23 EST
+[hive] command: apptainer exec --containall --cleanenv --env HF_HOME=/home/user/shared/hf_cache --env TRANSFORMERS_CACHE=/home/user/shared/hf_cache --env HF_DATASETS_CACHE=/home/user/shared/hf_cache/datasets --env TORCH_HOME=/home/user/shared/hf_cache/torch --bind /home/user/scratch/AgentWorkspaces/workspaces/2503.09538:/home/user --overlay /home/user/scratch/AgentWorkspaces/workspaces/2503.09538/environment/overlay.img:ro --bind /home/user/scratch/AgentWorkspaces/shared/datasets:/home/user/shared/datasets:ro --bind /home/user/scratch/AgentWorkspaces/shared/models:/home/user/shared/models:ro --bind /home/user/scratch/AgentWorkspaces/shared/hf_cache:/home/user/shared/hf_cache /home/user/scratch/AgentWorkspaces/workspaces/2503.09538/environment/container.sif bash -c 'cd /home/user && bash /home/user/scripts/run.sh'
+reference_seed0 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+reference_seed1 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+reference_seed2 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+better_max_regularization 0.1372133567622608 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+better_shrink_075 0.2260488008753469 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+weaker_no_gradient -0.612472136479587 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+simple_baseline -0.21672425509576398 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+comparator_baseline -0.18857907043876534 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_global_private_optimizer 0.5433994878776767 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_oracle_selection 0.5433994878776767 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_forged_claims 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_move_baseline 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_zero_game_artifact 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_drop_small_games -16.064544334635528 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_failure_compensation -4.516061037438634 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'failed'}
+shortcut_constant_uniform -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_zero_outputs -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_nonfinite -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_empty -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_remove_noise -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+reference_seed0 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+reference_seed1 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+reference_seed2 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+better_max_regularization 0.1372133567622608 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+better_shrink_075 0.2260488008753469 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+weaker_no_gradient -0.612472136479587 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+simple_baseline -0.21672425509576398 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+comparator_baseline -0.18857907043876534 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_global_private_optimizer 0.5433994878776767 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_oracle_selection 0.5433994878776767 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_forged_claims 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_move_baseline 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_zero_game_artifact 0.0 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'ok'}
+shortcut_drop_small_games -16.064544334635528 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_failure_compensation -4.516061037438634 {'dense_cluster_scaling': 'ok', 'dense_er_scaling': 'ok', 'sparse_knn_scaling': 'failed'}
+shortcut_constant_uniform -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_zero_outputs -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_nonfinite -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_empty -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+shortcut_remove_noise -16.814544334635524 {'dense_cluster_scaling': 'failed', 'dense_er_scaling': 'failed', 'sparse_knn_scaling': 'failed'}
+All 20 cases complete. Three actual reference seeds: identical transcripts and zero rank spread.
