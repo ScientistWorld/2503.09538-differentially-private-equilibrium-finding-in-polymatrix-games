@@ -1,0 +1,70 @@
+{
+  "experiments": {
+    "dense_cluster_scaling": {
+      "results": {
+        "no_payoff_baseline": {
+          "comparator_exploitability_ratio": 1.0816318256951711,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0816269606148967,
+          "relative_final_nash_gap": 1.2399753453800875
+        },
+        "our_method": {
+          "comparator_exploitability_ratio": 0.9862415798914462,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9961448175126973,
+          "relative_final_nash_gap": 1.2500800756975574
+        },
+        "structure_free_baseline": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0099298664896055,
+          "relative_final_nash_gap": 1.2703986506480323
+        }
+      }
+    },
+    "dense_er_scaling": {
+      "results": {
+        "no_payoff_baseline": {
+          "comparator_exploitability_ratio": 1.101813371070106,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.080828901772936,
+          "relative_final_nash_gap": 1.2591920072725478
+        },
+        "our_method": {
+          "comparator_exploitability_ratio": 0.9868798997824844,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9792963588580776,
+          "relative_final_nash_gap": 1.2488118921658167
+        },
+        "structure_free_baseline": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9921490119073079,
+          "relative_final_nash_gap": 1.2650044306008794
+        }
+      }
+    },
+    "sparse_knn_scaling": {
+      "results": {
+        "no_payoff_baseline": {
+          "comparator_exploitability_ratio": 0.9043295310903645,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1522144095216638,
+          "relative_final_nash_gap": 1.2734243665427227
+        },
+        "our_method": {
+          "comparator_exploitability_ratio": 0.71445849132675,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9100250926436616,
+          "relative_final_nash_gap": 1.0676230786274055
+        },
+        "structure_free_baseline": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2747341332694797,
+          "relative_final_nash_gap": 1.4816665546563532
+        }
+      }
+    }
+  }
+}

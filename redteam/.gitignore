@@ -2,3 +2,6 @@ _cache/
 */artifacts/
 *.log
 __pycache__/
+
+# Current audit's reproducible numeric outputs and backups.
+audit_v2_state/runtime/

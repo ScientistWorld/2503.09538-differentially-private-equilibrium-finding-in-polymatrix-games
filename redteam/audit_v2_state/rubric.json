@@ -1,0 +1,164 @@
+{
+  "experiments": {
+    "dense_er_scaling": {
+      "description": "Dense Erdos-Renyi polymatrix games (edge probability 0.12, 5 actions, N in {64,128,256,512}). Every submission runs at the same fixed privacy operating point (rounds, broadcast noise, per-round step allowance) on the same fixed games and noise; the score is exploitability of the empirical distribution of played profiles, relative to a fixed comparator calibrated to the same privacy budget and to uniform play.",
+      "weight": 0.4,
+      "primary_metric": "comparator_exploitability_ratio",
+      "metrics": {
+        "comparator_exploitability_ratio": {
+          "higher_is_better": false,
+          "coefficient": -1.0,
+          "description": "Mean over player counts of (summed CCE exploitability of the submission) / (summed CCE exploitability of the fixed structure-free private comparator at the same privacy budget). The paper's headline comparison. 10 = failed experiment."
+        },
+        "relative_exploitability": {
+          "higher_is_better": false,
+          "coefficient": -0.5,
+          "description": "Mean over instances of CCE exploitability divided by the exploitability of the uniform profile on the same game (1 = no better than uniform play, 0 = exact CCE). 10 = failed experiment."
+        },
+        "relative_final_nash_gap": {
+          "higher_is_better": false,
+          "coefficient": -0.25,
+          "description": "Mean over instances of the last-iterate Nash gap divided by the uniform profile's Nash gap. Secondary quality check of the final profile. 10 = failed experiment."
+        },
+        "privacy_protocol_compliance": {
+          "higher_is_better": true,
+          "coefficient": 1.0,
+          "description": "Fraction of required instances whose transcript passes the privacy-protocol checks (exact rounds, valid strategies, broadcasts = played strategy + fixed noise, bounded payoff-dependent movement). Any shortfall fails the experiment."
+        }
+      },
+      "results": {
+        "our_method": {
+          "type": "proposed",
+          "comparator_exploitability_ratio": 0.84,
+          "privacy_protocol_compliance": 1.0
+        },
+        "structure_free_baseline": {
+          "type": "baseline",
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0
+        },
+        "no_payoff_baseline": {
+          "type": "baseline"
+        }
+      },
+      "paper_reported": {
+        "source": "Figures 3 and 5 (dense Erdos-Renyi, A=5, p in {0.1,0.3,0.5}, N from 2^7 to 2^12), values read from the plots.",
+        "exploitability_ours": {"N=128": 0.25, "N=512": 0.24, "N=2048": 0.225, "N=4096": 0.22},
+        "exploitability_baseline": {"N=128": 0.27, "N=512": 0.277, "N=2048": 0.284, "N=4096": 0.29},
+        "privacy_budget_both_methods": {"N=128,p=0.5": 17.0, "N=4096,p=0.5": 10.0, "N=128,p=0.1": 24.0, "N=4096,p=0.1": 12.5},
+        "comparator_exploitability_ratio_note": "0.84 = mean over the plotted N of ours/baseline (about 0.92 at N=128 falling to about 0.75 at N=4096).",
+        "qualitative_claims": {
+          "cce_decreases_with_n": 1.0,
+          "privacy_decreases_with_n": 1.0,
+          "lower_exploitability_than_baseline_at_same_budget": 1.0
+        }
+      },
+      "scale_note": "Scaled down: N in {64..512} instead of 2^7..2^12, one edge probability (0.12), the finite-scale operating point of data/polymatrix.benchmark_hyperparameters (T=8, eta=T^-1/3, sigma=T^-1/2) and a structure-free comparator instead of the paper's exact Huang et al. adaptation, whose constants are not given. Absolute exploitabilities are not comparable to the paper's (different utility scale); only the ratio is."
+    },
+    "dense_cluster_scaling": {
+      "description": "Dense clustered polymatrix games (floor(1/p)=8 clusters, all intra-cluster pairs connected, cross-cluster probability 10p/N, 5 actions, N in {64,...,512}). Same fixed operating point, games, noise and comparator protocol as dense_er_scaling.",
+      "weight": 0.3,
+      "primary_metric": "comparator_exploitability_ratio",
+      "metrics": {
+        "comparator_exploitability_ratio": {
+          "higher_is_better": false,
+          "coefficient": -1.0,
+          "description": "Mean over player counts of (summed CCE exploitability of the submission) / (summed CCE exploitability of the fixed structure-free private comparator at the same privacy budget). 10 = failed experiment."
+        },
+        "relative_exploitability": {
+          "higher_is_better": false,
+          "coefficient": -0.5,
+          "description": "Mean over instances of CCE exploitability divided by the uniform profile's exploitability on the same game. 10 = failed experiment."
+        },
+        "relative_final_nash_gap": {
+          "higher_is_better": false,
+          "coefficient": -0.25,
+          "description": "Mean over instances of the last-iterate Nash gap divided by the uniform profile's Nash gap. 10 = failed experiment."
+        },
+        "privacy_protocol_compliance": {
+          "higher_is_better": true,
+          "coefficient": 1.0,
+          "description": "Fraction of required instances whose transcript passes the privacy-protocol checks. Any shortfall fails the experiment."
+        }
+      },
+      "results": {
+        "our_method": {
+          "type": "proposed",
+          "comparator_exploitability_ratio": 0.83,
+          "privacy_protocol_compliance": 1.0
+        },
+        "structure_free_baseline": {
+          "type": "baseline",
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0
+        },
+        "no_payoff_baseline": {
+          "type": "baseline"
+        }
+      },
+      "paper_reported": {
+        "source": "Figures 4 and 7 (clustered dense graphs, A=5, p in {0.1,0.3,0.5}), values read from the plots.",
+        "exploitability_ours": {"N=128": 0.25, "N=512": 0.235, "N=2048": 0.225, "N=4096": 0.215},
+        "exploitability_baseline": {"N=128": 0.27, "N=512": 0.28, "N=2048": 0.287, "N=4096": 0.29},
+        "comparator_exploitability_ratio_note": "0.83 = mean over the plotted N of ours/baseline.",
+        "qualitative_claims": {
+          "cce_decreases_with_n": 1.0,
+          "privacy_decreases_with_n": 1.0,
+          "lower_exploitability_than_baseline_at_same_budget": 1.0
+        }
+      },
+      "scale_note": "Scaled down as in dense_er_scaling."
+    },
+    "sparse_knn_scaling": {
+      "description": "Sparse geometric graphs: players at random points in the unit square, each connected to its 4 nearest neighbours (5 actions, N in {64,...,512}, T=2 or 3 rounds). Same fixed protocol; this is the regime where the paper's own method makes little exploitability progress.",
+      "weight": 0.3,
+      "primary_metric": "comparator_exploitability_ratio",
+      "metrics": {
+        "comparator_exploitability_ratio": {
+          "higher_is_better": false,
+          "coefficient": -1.0,
+          "description": "Mean over player counts of (summed CCE exploitability of the submission) / (summed CCE exploitability of the fixed structure-free private comparator at the same privacy budget). 10 = failed experiment."
+        },
+        "relative_exploitability": {
+          "higher_is_better": false,
+          "coefficient": -0.5,
+          "description": "Mean over instances of CCE exploitability divided by the uniform profile's exploitability on the same game. 10 = failed experiment."
+        },
+        "relative_final_nash_gap": {
+          "higher_is_better": false,
+          "coefficient": -0.25,
+          "description": "Mean over instances of the last-iterate Nash gap divided by the uniform profile's Nash gap. 10 = failed experiment."
+        },
+        "privacy_protocol_compliance": {
+          "higher_is_better": true,
+          "coefficient": 1.0,
+          "description": "Fraction of required instances whose transcript passes the privacy-protocol checks. Any shortfall fails the experiment."
+        }
+      },
+      "results": {
+        "our_method": {
+          "type": "proposed",
+          "comparator_exploitability_ratio": 0.8,
+          "privacy_protocol_compliance": 1.0
+        },
+        "structure_free_baseline": {
+          "type": "baseline",
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0
+        },
+        "no_payoff_baseline": {
+          "type": "baseline"
+        }
+      },
+      "paper_reported": {
+        "source": "Figure 8 (c-nearest-neighbour graphs, A=5, c in {3,5}), values read from the plots; the curves are noisy and overlap at small N.",
+        "comparator_exploitability_ratio_note": "0.8 = rough mean over N of ours/baseline for c=3 and c=5.",
+        "qualitative_claims": {
+          "cce_stable_or_decreases_with_n": 1.0,
+          "privacy_decreases_with_n": 1.0
+        }
+      },
+      "scale_note": "Scaled down: N in {64..512} instead of up to 2^16, c=4."
+    }
+  }
+}
