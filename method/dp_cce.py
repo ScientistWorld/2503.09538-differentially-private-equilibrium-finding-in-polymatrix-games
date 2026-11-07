@@ -1,105 +1,79 @@
-"""Algorithm 1: differentially private CCE computation in polymatrix games."""
+"""Algorithm 1: differentially private CCE computation in polymatrix games.
+
+Each player broadcasts its mixed strategy plus Gaussian noise, projects the
+received noisy strategies back to the simplex, and takes a proximal projected
+gradient step that starts from its own projected noisy broadcast and uses the
+degree-adaptive regularizer tau_i = (harmonic-mean degree)^(5/9) / (deg_i log N).
+The broadcast noise is the benchmark's fixed per-instance stream.
+"""
 
 from __future__ import annotations
 
 import argparse
-import json
 from pathlib import Path
 
 import numpy as np
 
 from data.polymatrix import (
-    generate_game,
-    harmonic_mean_degree,
-    project_simplex,
-    save_game,
+    SEEDS,
+    SIZES,
+    TOPOLOGIES,
+    benchmark_game,
     benchmark_hyperparameters,
-    benchmark_privacy_bound,
+    broadcast_noise,
+    gradients,
+    harmonic_mean_degree,
+    payoff_operator,
+    project_simplex,
 )
+from data.submission import save_run, write_manifest
 
 
-def average_privacy_bound(game, eta: float, alpha: float, steps: int, seed: int, samples: int) -> tuple[float, list[list[int]]]:
-    rng = np.random.default_rng(seed)
-    count = min(samples, len(game.edges))
-    indices = rng.choice(len(game.edges), size=count, replace=False)
-    edges = [game.edges[int(idx)].tolist() for idx in indices]
-    bounds = [benchmark_privacy_bound(game, eta, alpha, edge, steps) for edge in edges]
-    return float(np.mean(bounds)), edges
+def degree_adaptive_regularizer(game) -> np.ndarray:
+    deg = np.maximum(game.degrees.astype(np.float64), 1.0)
+    return (harmonic_mean_degree(game) ** (5.0 / 9.0)) / (deg * np.log(game.n_players))
 
 
-def run_algorithm1(game, steps: int, eta: float, sigma: float, seed: int) -> tuple[np.ndarray, np.ndarray]:
-    rng = np.random.default_rng(seed)
+def run_algorithm1(game, steps: int, eta: float, noise: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
     n, a = game.n_players, game.n_actions
     strategies = np.full((n, a), 1.0 / a, dtype=np.float64)
-    trajectory = []
-    broadcast_trajectory = []
-    deg = np.maximum(game.degrees.astype(np.float64), 1.0)
-    hdeg = harmonic_mean_degree(game)
-    tau = (hdeg ** (5.0 / 9.0)) / (deg * np.log(n))
-
-    for _ in range(steps):
-        noisy = strategies + rng.normal(0.0, sigma, size=strategies.shape)
+    tau = degree_adaptive_regularizer(game)
+    operator = payoff_operator(game)
+    trajectory, broadcasts = [], []
+    for t in range(steps):
+        noisy = strategies + noise[t]
         projected_noisy = project_simplex(noisy)
-        grads = np.zeros_like(strategies)
-        for i, j in game.edges:
-            grads[i] -= game.utilities[i, j] @ projected_noisy[j] / deg[i]
-            grads[j] -= game.utilities[j, i] @ projected_noisy[i] / deg[j]
+        grads = gradients(game, projected_noisy, operator)
         strategies = project_simplex((projected_noisy - eta * grads) / (1.0 + eta * tau[:, None]))
         trajectory.append(strategies.copy())
-        broadcast_trajectory.append(noisy.copy())
-    return np.stack(trajectory, axis=0), np.stack(broadcast_trajectory, axis=0)
+        broadcasts.append(noisy.copy())
+    return np.stack(trajectory, axis=0), np.stack(broadcasts, axis=0)
 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output-dir", default="outputs/proposed")
-    parser.add_argument("--topology", choices=["dense_er", "dense_cluster", "sparse_random", "sparse_knn"], default="dense_er")
-    parser.add_argument("--n-values", nargs="+", type=int, default=[64, 128, 256])
-    parser.add_argument("--actions", type=int, default=5)
-    parser.add_argument("--p", type=float, default=0.12)
-    parser.add_argument("--c", type=int, default=4)
-    parser.add_argument("--seeds", nargs="+", type=int, default=[0, 1, 2])
-    parser.add_argument("--alpha", type=float, default=2.0)
-    parser.add_argument("--privacy-edge-samples", type=int, default=8)
+    parser.add_argument("--method-name", default="our_method")
+    parser.add_argument("--topologies", nargs="+", default=list(TOPOLOGIES))
+    parser.add_argument("--n-values", nargs="+", type=int, default=list(SIZES))
+    parser.add_argument("--seeds", nargs="+", type=int, default=list(SEEDS))
+    parser.add_argument("--noise-key", type=int, default=0,
+                        help="Alternative noise stream for robustness studies; the benchmark uses 0.")
     args = parser.parse_args()
 
-    out = Path(args.output_dir)
-    out.mkdir(parents=True, exist_ok=True)
-    runs = []
-    for n in args.n_values:
-        steps, eta, sigma = benchmark_hyperparameters(n, args.topology, args.p, args.c)
-        for seed in args.seeds:
-            game = generate_game(n, args.actions, args.topology, seed=1000 + 17 * seed + n, p=args.p, c=args.c)
-            privacy_bound, privacy_edges = average_privacy_bound(
-                game,
-                eta,
-                args.alpha,
-                steps,
-                seed=4000 + 31 * seed + n,
-                samples=args.privacy_edge_samples,
-            )
-            traj, broadcasts = run_algorithm1(game, steps, eta, sigma, seed=2000 + seed)
-            name = f"algorithm1_{args.topology}_n{n}_seed{seed}"
-            game_path = out / f"{name}_game.npz"
-            traj_path = out / f"{name}_trajectory.npz"
-            save_game(game_path, game)
-            np.savez_compressed(traj_path, trajectory=traj, broadcasts=broadcasts)
-            runs.append({
-                "method": "algorithm1",
-                "topology": args.topology,
-                "n_players": n,
-                "n_actions": args.actions,
-                "steps": steps,
-                "eta": eta,
-                "sigma": sigma,
-                "alpha": args.alpha,
-                "adjacent_edge": privacy_edges[0],
-                "privacy_edges": privacy_edges,
-                "game_path": str(game_path),
-                "trajectory_path": str(traj_path),
-                "privacy_bound": privacy_bound,
-            })
-    (out / "manifest.json").write_text(json.dumps({"runs": runs}, indent=2))
+    for topology in args.topologies:
+        out = Path(args.output_dir) / topology
+        runs = []
+        for n in args.n_values:
+            steps, eta, sigma = benchmark_hyperparameters(n, topology)
+            for seed in args.seeds:
+                game = benchmark_game(topology, n, seed)
+                noise = broadcast_noise(topology, n, seed, key=args.noise_key)
+                traj, broadcasts = run_algorithm1(game, steps, eta, noise)
+                runs.append(save_run(out, args.method_name, topology, n, seed, traj, broadcasts,
+                                     steps=steps, eta=eta, sigma=sigma))
+                print(f"{args.method_name} {topology} n={n} seed={seed} done", flush=True)
+        write_manifest(out, args.method_name, runs)
 
 
 if __name__ == "__main__":

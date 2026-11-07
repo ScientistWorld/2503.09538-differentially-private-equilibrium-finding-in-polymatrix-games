@@ -1,24 +1,15 @@
 #!/bin/bash
-# Evaluation script — the standard way to evaluate work in this environment.
+# Standard evaluation entry point (visible train slice).
 #
-# This script must be SELF-CONTAINED using only code in eval/.
-# Do NOT import from method/ — evaluate.sh must work even when the
-# paper's method code is hidden from a scientist agent.
+# Self-contained: uses only eval/train/ (never method/).  Scores every method
+# whose manifest is found under outputs/ (or the manifests passed as
+# arguments) and writes scoring/scores.json plus scoring/diagnostics.json.
+# Each manifest lists (topology, n_players, seed, trajectory_path) runs; see
+# data/submission.py for the artifact contract.
 #
-# Design it so that anyone following the same output format can run
-# this script to evaluate their results.
-#
-# OUTPUT CONTRACT: This script MUST write scoring/scores.json containing
-# a JSON dict nested by experiment, e.g.:
-#   {"imagenet_classification": {"top1_accuracy": 82.1, "top5_accuracy": 94.8}}
-# Experiment and metric names must match the keys in scoring/reference.json.
-# This file is read by the system for automated comparison.
-#
-# Example usage:
-#   ./evaluate.sh <method_and_run_name>                             # evaluate with defaults
-#   ./evaluate.sh <method_and_run_name> checkpoints/epoch_10.pt     # evaluate a specific checkpoint
-#
-# Called from run.sh after training, or independently.
+# Usage:
+#   bash scripts/evaluate.sh                                  # all manifests under outputs/
+#   bash scripts/evaluate.sh outputs/my_method/*/manifest.json
 
 set -e
 
@@ -29,13 +20,14 @@ mkdir -p scoring
 if [ "$#" -gt 0 ]; then
   MANIFESTS=("$@")
 else
-  mapfile -t MANIFESTS < <(find outputs -mindepth 2 -maxdepth 3 -name manifest.json | sort)
+  mapfile -t MANIFESTS < <(find outputs -mindepth 2 -maxdepth 4 -name manifest.json 2>/dev/null | sort)
 fi
 if [ "${#MANIFESTS[@]}" -eq 0 ]; then
   echo "No output manifests found under outputs/." >&2
   exit 1
 fi
 
-python -m eval.evaluate_runs \
+python -m eval.train.evaluate \
   --manifest "${MANIFESTS[@]}" \
-  --output scoring/scores.json
+  --output scoring/scores.json \
+  --diagnostics scoring/diagnostics.json

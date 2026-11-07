@@ -1,23 +1,11 @@
 # Evaluation Targets
 
-## Dense Graphs
+Every experiment is scored with the same four metrics (see `scoring/reference.json` and `briefing/evaluation.md`). Lower is better for the three exploitability metrics; a failed experiment scores 10 on them.
 
-Experiments: `dense_er_scaling`, `dense_cluster_scaling`
+## All experiments (`dense_er_scaling`, `dense_cluster_scaling`, `sparse_knn_scaling`)
 
-- **Primary metric**: `cce_decreases_with_n` (higher is better)
-- **Constraint metric**: `privacy_decreases_with_n` (higher is better)
-- **Baseline comparison**: `competitive_with_baseline` (higher is better)
+- **Primary metric**: `comparator_exploitability_ratio` -- exploitability relative to the fixed comparator at the same privacy budget (paper: 0.84 dense ER, 0.83 dense clustered, about 0.8 nearest-neighbour graphs, read from its figures at larger N).
+- **Constraint metric**: `privacy_protocol_compliance` -- must be 1.0; any failing or missing instance fails the experiment.
+- **Secondary metrics**: `relative_exploitability` (vs uniform play), `relative_final_nash_gap`.
 
-These targets test the paper's dense-graph claim that equilibrium quality and privacy budget both improve as the number of players grows.
-
-## Sparse Graphs
-
-Experiment: `sparse_knn_scaling`
-
-- **Primary metric**: `privacy_decreases_with_n` (higher is better)
-- **Constraint metric**: `cce_stable_or_decreases_with_n` (higher is better)
-- **Baseline comparison**: `competitive_with_baseline` (higher is better)
-
-This target tests the paper's sparse-graph claim on the k-nearest-neighbor graph family from Appendix D.1. Sparse random graphs from Figure 6 are still generated and reported in `scoring/diagnostics.json`, but they are not a scored target because the finite player-count grid used here did not reproduce the paper's decreasing privacy trend.
-
-Run evaluation with `bash scripts/evaluate.sh` after methods have written manifests under `outputs/`.
+Reference values (Algorithm 1 on this benchmark) are filled in below from `scoring/scores_test.json`.

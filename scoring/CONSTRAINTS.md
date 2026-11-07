@@ -1,19 +1,20 @@
 # Scientist Constraints
 
 ## Problem Instances
-Use the provided procedural polymatrix-game generator and the evaluation seeds used by the scripts. Do not replace the game family with an easier synthetic problem or evaluate on hand-selected games.
+Solve every public instance of `data/polymatrix.benchmark_instances()` (3 graph families x N in {64, 128, 256, 512} x seeds 0-11) on the games produced by `data/polymatrix.benchmark_game`. The evaluators regenerate the games themselves; outputs computed on any other game are scored against the benchmark game anyway. A missing instance fails its whole experiment.
 
-## Resource Scale
-Use the same player counts, action-set size, graph topology, and number of random seeds as the submitted run unless the benchmark scripts are explicitly changed for everyone. Increasing player count or seed count can alter the scaling metrics and is resource scaling, not a method improvement.
+## Privacy Operating Point (fixed)
+Use exactly T rounds, the per-instance noise stream `data/polymatrix.broadcast_noise(topology, N, seed)` (key 0) and the step scale eta of `data/polymatrix.benchmark_hyperparameters`. Each round, every player broadcasts the profile it is playing plus that noise; the next profile must satisfy the per-round payoff-dependence bound described in `briefing/evaluation.md`. Do not select among noise streams, reshape the noise, add rounds, or report a played profile different from the one whose noisy version was broadcast.
 
-## Privacy Accounting
-Report the same Renyi-DP bound used by `scripts/evaluate.sh`. Do not improve exploitability by reducing noise, changing the privacy definition, changing adjacency, or dropping the privacy metric.
+## Information Use
+A player's update may use only its own utility matrices, the public graph, and the noisy messages it has received (current and past). Using other players' noiseless strategies, their utilities, or the known future noise is a privacy violation even when the transcript passes the checks; such submissions are disqualified by review.
 
 ## Output Contract
-Methods must write manifests and trajectory artifacts with the same fields expected by `eval/evaluate_runs.py`. The evaluator must not import method code.
+One `manifest.json` per method directory under `outputs/` and one `.npz` per instance with `trajectory` and `broadcasts` arrays of shape (T, N, 5), as written by `data/submission.py`. Scores are produced only by `scripts/evaluate*.sh`; numbers written by the method are ignored.
 
 ## Compliance Checklist
-- [ ] Uses the same procedural game generator, topology, seeds, action count, and player-count grid.
-- [ ] Keeps the same privacy accounting, adjacency definition, and communication-observation setting.
-- [ ] Writes artifacts in the expected manifest and trajectory format.
-- [ ] Scores are produced by `bash scripts/evaluate.sh`, not by method-side self-reporting.
+- [ ] Every benchmark instance is present, with exactly T rounds.
+- [ ] Broadcasts are the played profile plus the fixed instance noise.
+- [ ] Updates stay within the per-round payoff-dependence bound (the evaluator reports violations).
+- [ ] Updates use only own utilities, the public graph and received noisy messages.
+- [ ] Scores come from `bash scripts/evaluate.sh` (visible) and the hidden `scripts/evaluate_test.sh`.

@@ -230,3 +230,8 @@ tmp/
 protocol.md
 *.egg-info
 core.[0-9]*
+
+# Hardening audit runtime artifacts (rebuildable with python -m redteam.hardening.harness)
+redteam/hardening/_runs/
+redteam/hardening/_backup/
+redteam/hardening/cases/*/evaluate_test.log

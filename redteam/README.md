@@ -28,3 +28,11 @@ the reference communication transcript and computes a separate private local
 output state from each player's own payoffs and received messages. The other
 `better_*` names describe experimental hypotheses, not guaranteed successes;
 the final-average hypothesis did not improve the aggregate score.
+
+**Superseded interface (hardening iteration).** The audit above ran against the
+pre-hardening gym (method-written game files, claimed `eta`/`alpha`, a
+`noisy_omd` comparator read from disk). That interface no longer exists, so
+`redteam.audit`/`redteam.methods` are kept only as evidence and no longer run.
+The same cases, adapted to the hardened output contract, plus new shortcuts are
+rerun by `python -m redteam.hardening.harness`; results are under
+`hardening/cases/` and summarised in `../HARDENING.md`.

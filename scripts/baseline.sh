@@ -1,39 +1,29 @@
 #!/bin/bash
-# Run a baseline method from the paper.
+# Run the baselines on every benchmark instance.
 #
-# Baselines are simple reference methods the paper compares against. 
-# Implement this only if applicable, i.e. the paper has baselines.
-# You do not need to implement all baselines to begin — 
-# just enough to validate that the evaluation pipeline works 
-# and provide a reference point. You can decide to expand more baselines later.
-# Each baseline must be actually run and scored through evaluate.sh
-# so the numbers are verified, not self-reported.
-# You can decide what this baseline script should do yourself.
+#   structure_free_baseline -- prior-work-style private learner whose step size
+#                              is calibrated to the same privacy budget with an
+#                              accounting that ignores the graph structure
+#                              (the comparator whose fixed values live in eval/).
+#   no_payoff_baseline      -- follows the noisy protocol but never uses payoffs.
 #
 # Usage:
-#   bash scripts/baseline.sh <name>
+#   bash scripts/baseline.sh            # both
+#   bash scripts/baseline.sh structure_free
 
 set -e
 
 cd /home/user
 
-OUT_DIR="outputs/baseline/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}"
+ARGS=()
+[ -n "${TOPOLOGIES:-}" ] && ARGS+=(--topologies ${TOPOLOGIES})
+[ -n "${N_VALUES:-}" ] && ARGS+=(--n-values ${N_VALUES})
+[ -n "${SEEDS:-}" ] && ARGS+=(--seeds ${SEEDS})
 
-python -m baseline.noisy_omd \
-  --output-dir "$OUT_DIR" \
-  --topology "${TOPOLOGY:-dense_er}" \
-  --n-values ${N_VALUES:-64 128 256} \
-  --actions "${ACTIONS:-5}" \
-  --p "${P_EDGE:-0.12}" \
-  --c "${SPARSE_DEGREE:-4}" \
-  --seeds ${SEEDS:-0 1 2} \
-  --alpha "${ALPHA:-2.0}"
-
-if [ "${AUTO_EVALUATE:-1}" = "1" ]; then
-  MANIFESTS=("$OUT_DIR/manifest.json")
-  MATCHED_PROPOSED="outputs/proposed/${OUTPUT_SUFFIX:-${TOPOLOGY:-dense_er}}/manifest.json"
-  if [ -f "$MATCHED_PROPOSED" ]; then
-    MANIFESTS+=("$MATCHED_PROPOSED")
-  fi
-  bash scripts/evaluate.sh "${MANIFESTS[@]}"
+WHICH="${1:-all}"
+if [ "$WHICH" = "all" ] || [ "$WHICH" = "structure_free" ]; then
+  python -m baseline.structure_free --output-dir outputs/structure_free_baseline "${ARGS[@]}"
+fi
+if [ "$WHICH" = "all" ] || [ "$WHICH" = "no_payoff" ]; then
+  python -m baseline.no_payoff --output-dir outputs/no_payoff_baseline "${ARGS[@]}"
 fi

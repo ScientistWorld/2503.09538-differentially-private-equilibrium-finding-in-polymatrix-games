@@ -1,16 +1,16 @@
 # Research Direction
 
 ## Research Problem
-Improve distributed differentially private equilibrium finding for polymatrix games. The question is how to reduce equilibrium exploitability while preserving privacy against adversaries observing limited communication channels.
+Reduce the CCE exploitability that distributed players reach in polymatrix games when every message they exchange is noisy and the privacy budget is fixed.
 
 ## Core Contribution
-The relevant contribution space is private iterative equilibrium computation using noisy local communication and graph-aware stabilization. Improvements should address the accuracy/privacy trade-off in this setting rather than switching to a centralized solver.
+The relevant contribution space is the update rule each player applies to the noisy messages it receives: how it stabilises its own strategy against the noise it injects, how it estimates its payoff gradient from noisy neighbour messages, and how it uses the interaction graph -- all without increasing how strongly its messages depend on its private payoffs.
 
 ## Approach Scope
-Work within distributed first-order or online-learning style algorithms for polymatrix games. Changes may alter update rules, regularization schedules, noise schedules, averaging, or graph-aware sensitivity control, provided the algorithm still communicates only local noisy strategy information and is evaluated under the same privacy notion.
+Distributed first-order / online-learning style updates for polymatrix games under the fixed protocol: per-round regularisation towards the uniform strategy, step directions built from current and past received messages (post-processing of public information is free), graph- or degree-aware step rules, and schedules over the fixed number of rounds, provided each update stays within the per-round payoff-dependence allowance.
 
 ## Out of Bounds
-- Centralized algorithms that inspect all utility matrices directly.
-- Methods that remove or weaken the privacy requirement.
-- Methods that optimize a different equilibrium notion without reporting CCE exploitability.
-- Replacing the game class with unrelated optimization or learning tasks.
+- Centralised computation that inspects other players' utilities or noiseless strategies.
+- Changing the noise, the number of rounds, the instances, or the step allowance.
+- Reporting played profiles other than the ones whose noisy versions were broadcast.
+- Optimising a different equilibrium notion or selecting runs by their exploitability.
