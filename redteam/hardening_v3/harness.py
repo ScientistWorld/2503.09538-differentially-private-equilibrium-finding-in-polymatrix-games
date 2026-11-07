@@ -76,10 +76,14 @@ CASES = {
     "shortcut_uniform": ("shortcut", P, "make_shortcut_uniform", {}, {}, "Returns the uniform strategy every round."),
     "shortcut_crash_small_games": ("shortcut", P, "make_shortcut_crash_small_games", {}, {},
                                    "Raises on the N=64 games (drops the smallest games), Algorithm 1 elsewhere."),
-    "left_shortcut_hidden_evaluator_oracle": (
-        "left_shortcut", P, "make_shortcut_hidden_evaluator_oracle", {}, {},
-        "Imports the evaluator module at run time to regenerate the hidden instance and its noise, then plays the "
-        "central optimiser.  Requires reading eval/ code at test time."),
+    "shortcut_hidden_evaluator_oracle": (
+        "shortcut", P, "make_shortcut_hidden_evaluator_oracle", {}, {},
+        "Uses the evaluator module it runs inside (or imports it) to regenerate the hidden instance and its noise, "
+        "then plays the central optimiser."),
+    "left_shortcut_cache_evasion": (
+        "left_shortcut", P, "make_left_shortcut_cache_evasion", {}, {},
+        "The hidden-evaluator oracle in the protocol run, plus a disk cache of its strategies that the isolated "
+        "replay process reads back to pass the locality audit."),
 }
 
 SCORING_FILES = ("scores.json", "scores_train.json", "scores_test.json",

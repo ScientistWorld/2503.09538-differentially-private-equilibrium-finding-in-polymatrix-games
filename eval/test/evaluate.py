@@ -15,7 +15,9 @@ audit draw exist only in this file.  For every policy found under outputs/ it
    trajectory, and verifies the protocol (exact rounds, probability vectors,
    bounded payoff-dependent movement per round);
 3. re-executes randomly chosen players of every instance in a fresh process
-   (``--replay``) from their local view and the messages they received alone.
+   (``eval/test/replay.py``, which holds no generator, noise or secret and blocks
+   imports of the evaluator package) from their local view and the messages
+   they received alone.
    A player whose transcript cannot be reproduced that way used information
    it does not have, and the instance fails (locality audit);
 4. scores exploitability against fixed comparator values stored next to this
@@ -53,6 +55,7 @@ SLICE = "test"
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
 MODULE = f"eval.{SLICE}.evaluate"
+REPLAY_MODULE = f"eval.{SLICE}.replay"   # holds no generator or secret
 COMPARATOR_PATH = HERE / "comparator_test.json"
 
 EXPERIMENTS = {
@@ -343,45 +346,6 @@ def run_policy_child(policy_path: Path, workdir: Path) -> None:
         print(f"[{SLICE}:run] {key} {status[key]} ({time.time() - start:.1f}s)", flush=True)
 
 
-def replay_child(policy_path: Path, iodir: Path) -> None:
-    """Re-execute audited players from their local views and received messages only."""
-    errors: dict[str, str] = {}
-    outputs: dict[int, np.ndarray] = {}
-    try:
-        spec = read_policy(policy_path)
-        factory = load_factory(spec)
-        meta = json.loads((iodir / "replay_in.json").read_text())
-        with np.load(iodir / "replay_in.npz", allow_pickle=False) as npz:
-            data = {k: npz[k] for k in npz.files}
-    except BaseException as exc:  # noqa: BLE001
-        (iodir / "replay_status.json").write_text(json.dumps({"_policy": _describe(exc)}))
-        return
-    for inst in meta["instances"]:
-        edges = np.array(data[f"edges{inst['j']}"], dtype=np.int64)
-        edges.setflags(write=False)
-        steps, a = int(inst["steps"]), int(inst["a"])
-        players = {}
-        for item in inst["items"]:
-            m = int(item["m"])
-            view = _view(item["player"], inst["n"], a, edges, data[f"nb{m}"], data[f"u{m}"], steps, inst["eta"],
-                         inst["sigma"], item["seed"], spec["options"])
-            try:
-                players[m] = factory(view)
-                outputs[m] = np.full((steps, a), np.nan)
-            except BaseException as exc:  # noqa: BLE001
-                errors[str(m)] = _describe(exc)
-        for t in range(steps):
-            for m in list(players):
-                try:
-                    out = players[m].step(t, data[f"own{m}"][t].copy(), data[f"rx{m}"][t].copy())
-                    outputs[m][t] = _as_strategy(out, a)
-                except BaseException as exc:  # noqa: BLE001
-                    errors[str(m)] = _describe(exc)
-                    del players[m]
-    np.savez(iodir / "replay_out.npz", **{f"out{m}": v for m, v in outputs.items()})
-    (iodir / "replay_status.json").write_text(json.dumps(errors))
-
-
 # ---------------------------------------------------------------------------
 # Protocol verification (scoring process)
 # ---------------------------------------------------------------------------
@@ -591,7 +555,7 @@ def run_replays(path: Path, jobs: list[dict], workroot: Path) -> tuple[dict, dic
     (iodir / "replay_in.json").write_text(json.dumps(meta))
     with open(iodir / "replay.log", "w") as log:
         try:
-            subprocess.run([sys.executable, "-m", MODULE, "--replay", str(path), "--workdir", str(iodir)],
+            subprocess.run([sys.executable, "-m", REPLAY_MODULE, "--policy", str(path), "--workdir", str(iodir)],
                            cwd=ROOT, stdout=log, stderr=subprocess.STDOUT, timeout=REPLAY_TIMEOUT)
         except subprocess.TimeoutExpired:
             pass
@@ -611,14 +575,14 @@ def run_replays(path: Path, jobs: list[dict], workroot: Path) -> tuple[dict, dic
         got = replayed.get(f"out{m}")
         if got is None or got.shape != exp.shape:
             why = errors.get(str(m)) or errors.get("_policy") or "no replayed output"
-            failures.setdefault(key, f"locality audit: player {player} could not be re-executed ({why})"[:300])
+            failures.setdefault(key, f"locality audit: player could not be re-executed (player {player}: {why})"[:300])
             max_dev = np.inf
             continue
         dev = float(np.nan_to_num(np.abs(got - exp), nan=np.inf).max())
         max_dev = max(max_dev, dev)
         if dev > AUDIT_TOL:
-            failures.setdefault(key, (f"locality audit: player {player}'s strategies are not reproduced from its "
-                                      f"local view and received messages (max deviation {dev:.3g})"))
+            failures.setdefault(key, (f"locality audit: strategies not reproduced from the player's local view and "
+                                      f"received messages (player {player}, max deviation {dev:.3g})"))
     shutil.rmtree(iodir, ignore_errors=True)
     stats = {"audited_players": len(expected), "audited_instances": len(jobs), "failed_instances": len(failures),
              "max_deviation": max_dev if np.isfinite(max_dev) else "inf"}
@@ -803,15 +767,11 @@ def main() -> None:
     parser.add_argument("--comparator", default=str(COMPARATOR_PATH))
     parser.add_argument("--build-comparator", action="store_true")
     parser.add_argument("--run-policy", help=argparse.SUPPRESS)
-    parser.add_argument("--replay", help=argparse.SUPPRESS)
     parser.add_argument("--workdir", help=argparse.SUPPRESS)
     args = parser.parse_args()
 
     if args.run_policy:
         run_policy_child(Path(args.run_policy), Path(args.workdir))
-        return
-    if args.replay:
-        replay_child(Path(args.replay), Path(args.workdir))
         return
     if args.build_comparator:
         build_comparator(Path(args.comparator))

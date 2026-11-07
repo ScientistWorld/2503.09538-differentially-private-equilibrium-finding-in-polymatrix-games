@@ -36,3 +36,5 @@ pre-hardening gym (method-written game files, claimed `eta`/`alpha`, a
 The same cases, adapted to the hardened output contract, plus new shortcuts are
 rerun by `python -m redteam.hardening.harness`; results are under
 `hardening/cases/` and summarised in `../HARDENING.md`.
+
+**Player-policy interface (final hardening).** The gym now scores per-player policies run by the evaluator on hidden instances. The transcript-based audits above (`audit_v2*`, `hardening/`) no longer run. The current audit is `python -m redteam.hardening_v3.harness` (`hardening_v3/policies.py` holds the variants and shortcut probes). Results are in `hardening_v3/summary.json`; the first run, before the replay was isolated from the evaluator module, is in `hardening_v3/summary_run1_before_replay_isolation.json`.

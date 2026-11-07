@@ -1,0 +1,2673 @@
+{
+  "better_max_regularization": {
+    "description": "Redteam variant: Algorithm 1 with regularizer weight 1 for every player.",
+    "evaluator_unchanged": true,
+    "kind": "better",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9186303697013525,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9205671188562927,
+          "relative_final_nash_gap": 1.0842427114816624
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9297188681178646,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9066178121239777,
+          "relative_final_nash_gap": 1.0655351880006183
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.65666540948579,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8499618993531743,
+          "relative_final_nash_gap": 0.9457055148963349
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              -0.0752237135215197,
+              -0.061827640776564136
+            ],
+            "se": 0.003436023971009066
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              -0.0682769377846516,
+              -0.0493479692106777
+            ],
+            "se": 0.004876095582580059
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              -0.05936856206837053,
+              -0.04856751601316877
+            ],
+            "se": 0.002747804077546033
+          }
+        },
+        "rank_gain_ci95": [
+          0.12239108527482577,
+          0.13790224888401206
+        ],
+        "rank_gain_se": 0.003971908523283663
+      },
+      "rank_gain": 0.13025834012399898,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9240420709987067,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9173934425751327,
+          "relative_final_nash_gap": 1.0967947117326107
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9340572388806636,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9003167363371304,
+          "relative_final_nash_gap": 1.0745763726727187
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.6531808949219668,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8295121241924726,
+          "relative_final_nash_gap": 0.9379551596751776
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              -0.07001975439279366,
+              -0.05470923890758074
+            ],
+            "se": 0.0038792499997564144
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              -0.06304516527941878,
+              -0.04398882263333735
+            ],
+            "se": 0.004803099474337287
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              -0.0652958214859839,
+              -0.048329599441787593
+            ],
+            "se": 0.004403281850766125
+          }
+        },
+        "rank_gain_ci95": [
+          0.1171378946356836,
+          0.135543357502259
+        ],
+        "rank_gain_se": 0.004682097308680091
+      },
+      "rank_gain": 0.12648845638480022,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "better_shrink_075": {
+    "description": "Redteam's best variant: anchor 0.75*own projected broadcast + 0.25*uniform, plain step.",
+    "evaluator_unchanged": true,
+    "kind": "better",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.8654826324720118,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8695908229898468,
+          "relative_final_nash_gap": 1.0564769703513432
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.868260818754063,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8501665730567176,
+          "relative_final_nash_gap": 1.0315889371885019
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.6056949766389466,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7843430406301076,
+          "relative_final_nash_gap": 0.906130706559672
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              -0.12592485641161622,
+              -0.11754468533122842
+            ],
+            "se": 0.002200001744714984
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              -0.126772300968625,
+              -0.11414640491163604
+            ],
+            "se": 0.0032810704065225826
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              -0.10713147394921026,
+              -0.10317128359725726
+            ],
+            "se": 0.0010052276474886727
+          }
+        },
+        "rank_gain_ci95": [
+          0.21810745988102667,
+          0.22870381942402182
+        ],
+        "rank_gain_se": 0.002694867131794458
+      },
+      "rank_gain": 0.22330169818548906,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.8696452187483756,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8661392095750585,
+          "relative_final_nash_gap": 1.0728180632108983
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.8695179982509744,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8419003087022178,
+          "relative_final_nash_gap": 1.0463709450174004
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.6028934691191827,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7658309499253058,
+          "relative_final_nash_gap": 0.8999952021010026
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              -0.12189680545393392,
+              -0.11193211364109126
+            ],
+            "se": 0.0024806210066663347
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              -0.12438900536520625,
+              -0.11269323769468673
+            ],
+            "se": 0.003029875169179111
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              -0.11119991000314688,
+              -0.10333755180730564
+            ],
+            "se": 0.0019923462710915623
+          }
+        },
+        "rank_gain_ci95": [
+          0.2140083570374774,
+          0.22592074795387845
+        ],
+        "rank_gain_se": 0.0030077488455946075
+      },
+      "rank_gain": 0.2200988208924025,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "comparator_as_method": {
+    "description": "The budget-matched structure-free comparator submitted as the method.",
+    "evaluator_unchanged": true,
+    "kind": "baseline",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0054843254576864,
+          "relative_final_nash_gap": 1.2570996074167105
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9803685636763537,
+          "relative_final_nash_gap": 1.2262084532574102
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2957135421291768,
+          "relative_final_nash_gap": 1.4901203562680458
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.011539525776561903,
+              0.01382736623591548
+            ],
+            "se": 0.0006061661072551529
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.009919492084189888,
+              0.012486585267878615
+            ],
+            "se": 0.0006689678198881211
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.2843091580887453,
+              0.29407975834583816
+            ],
+            "se": 0.0024789799966054888
+          }
+        },
+        "rank_gain_ci95": [
+          -0.1930489382247139,
+          -0.1861572482228837
+        ],
+        "rank_gain_se": 0.0017810510677136746
+      },
+      "rank_gain": -0.18947856341348315,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9974029751707407,
+          "relative_final_nash_gap": 1.2665357383975262
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9696617056135347,
+          "relative_final_nash_gap": 1.2441624336664534
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2718109220714886,
+          "relative_final_nash_gap": 1.4789343863347335
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.012347200478185674,
+              0.014348820278134883
+            ],
+            "se": 0.0005140724076788388
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.009514244285488383,
+              0.01388604575195041
+            ],
+            "se": 0.001140217381251211
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.2822006808033729,
+              0.2972327947475633
+            ],
+            "se": 0.0038980031622151525
+          }
+        },
+        "rank_gain_ci95": [
+          -0.19467384483188357,
+          -0.183343423504041
+        ],
+        "rank_gain_se": 0.0029102823046211934
+      },
+      "rank_gain": -0.18919962681191557,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "left_shortcut_hidden_evaluator_oracle": {
+    "description": "Imports the evaluator module at run time to regenerate the hidden instance and its noise, then plays the central optimiser.  Requires reading eval/ code at test time.",
+    "evaluator_unchanged": true,
+    "kind": "left_shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7571367219233014,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7640512946843696,
+          "relative_final_nash_gap": 0.8595300116879803
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7578503303031455,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.746528053715122,
+          "relative_final_nash_gap": 0.8368092671020086
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.3414103036618191,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.4412676619727274,
+          "relative_final_nash_gap": 0.4722906692118518
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              -0.23479132664899283,
+              -0.22577315140387158
+            ],
+            "se": 0.0023699646769560134
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              -0.23925458183974962,
+              -0.22269860989803716
+            ],
+            "se": 0.004282178876264744
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              -0.37568342580783676,
+              -0.36320433120595463
+            ],
+            "se": 0.003225143726493695
+          }
+        },
+        "rank_gain_ci95": [
+          0.5258194242035698,
+          0.5420102560516431
+        ],
+        "rank_gain_se": 0.004297752415304094
+      },
+      "rank_gain": 0.5340620002458432,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7608060067993401,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7616039802692572,
+          "relative_final_nash_gap": 0.8676693671439336
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7603525766325993,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.740894383381597,
+          "relative_final_nash_gap": 0.8418242321247554
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.34124303487710284,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.4333228012220364,
+          "relative_final_nash_gap": 0.4717210587412173
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              -0.2346775357546308,
+              -0.21581114494161974
+            ],
+            "se": 0.004850039925238686
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              -0.235252308783449,
+              -0.2200339675191854
+            ],
+            "se": 0.003917070116729181
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              -0.3748541169162306,
+              -0.362668987018704
+            ],
+            "se": 0.003073270775099654
+          }
+        },
+        "rank_gain_ci95": [
+          0.5188388244546009,
+          0.5380689382346826
+        ],
+        "rank_gain_se": 0.00493181560966407
+      },
+      "rank_gain": 0.5286309594088427,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "no_payoff_as_method": {
+    "description": "The payoff-blind protocol baseline submitted as the method.",
+    "evaluator_unchanged": true,
+    "kind": "baseline",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0825967154264498,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0786162538179247,
+          "relative_final_nash_gap": 1.2562984849802659
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.1133955879122976,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0757627458524304,
+          "relative_final_nash_gap": 1.2440069692168145
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.901122489132512,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.166387060450019,
+          "relative_final_nash_gap": 1.280346726314816
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.08623324110352086,
+              0.1043015049771265
+            ],
+            "se": 0.004688709804421661
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.10719370142475446,
+              0.14267088388776705
+            ],
+            "se": 0.008805035420751058
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.18067733115433288,
+              0.20109686851328304
+            ],
+            "se": 0.005194497188595643
+          }
+        },
+        "rank_gain_ci95": [
+          -0.23868503292728716,
+          -0.21515535033923244
+        ],
+        "rank_gain_se": 0.0060764990135588
+      },
+      "rank_gain": -0.22658895855018302,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0867973688321944,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0716643061296782,
+          "relative_final_nash_gap": 1.2551802157762515
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.1185125929171311,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0683560054253691,
+          "relative_final_nash_gap": 1.2562056419240752
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.9023372781455605,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1464134134846695,
+          "relative_final_nash_gap": 1.2670256462664455
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.08789876568201223,
+              0.11471367163135789
+            ],
+            "se": 0.006753180161673933
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.11356506414404803,
+              0.14854865095841766
+            ],
+            "se": 0.008872508697224253
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.1775826457400747,
+              0.20860894802160768
+            ],
+            "se": 0.007975552343006322
+          }
+        },
+        "rank_gain_ci95": [
+          -0.24462592469594543,
+          -0.21607025809744917
+        ],
+        "rank_gain_se": 0.0073009458648947605
+      },
+      "rank_gain": -0.22987299251432408,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "reference": {
+    "description": "Algorithm 1 exactly as shipped (method/dp_cce.py).",
+    "evaluator_unchanged": true,
+    "kind": "reference",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9872672511518764,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9927108944797316,
+          "relative_final_nash_gap": 1.2409471790412008
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9888564682949277,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.969298279189345,
+          "relative_final_nash_gap": 1.2128738941921233
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.7108244222198061,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9206561963690869,
+          "relative_final_nash_gap": 1.0699191389325975
+        }
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9866286682242643,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9843027782511572,
+          "relative_final_nash_gap": 1.2504029234179759
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9880923791152613,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9581044057855058,
+          "relative_final_nash_gap": 1.2283381265296802
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.7103262689967298,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9026181148690555,
+          "relative_final_nash_gap": 1.0645976236245143
+        }
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "shortcut_crash_small_games": {
+    "description": "Raises on the N=64 games (drops the smallest games), Algorithm 1 elsewhere.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/i0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+          "dense_cluster/n64/i1: no trajectory (policy error: RuntimeError: skip the smallest games)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/i0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+          "dense_er/n64/i1: no trajectory (policy error: RuntimeError: skip the smallest games)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/i0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+          "sparse_knn/n64/i1: no trajectory (policy error: RuntimeError: skip the smallest games)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "no trajectory": 8
+        },
+        "dense_er_scaling": {
+          "no trajectory": 8
+        },
+        "sparse_knn_scaling": {
+          "no trajectory": 8
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.069562827938086,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/seed0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+          "dense_cluster/n64/seed2: no trajectory (policy error: RuntimeError: skip the smallest games)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/seed0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+          "dense_er/n64/seed2: no trajectory (policy error: RuntimeError: skip the smallest games)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/seed0: no trajectory (policy error: RuntimeError: skip the smallest games)",
+          "sparse_knn/n64/seed2: no trajectory (policy error: RuntimeError: skip the smallest games)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "no trajectory": 6
+        },
+        "dense_er_scaling": {
+          "no trajectory": 6
+        },
+        "sparse_knn_scaling": {
+          "no trajectory": 6
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 54,
+        "audited_players": 432,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.07455869838131,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      }
+    }
+  },
+  "shortcut_forged_policy_claims": {
+    "description": "Payoff-blind dynamics; the policy manifest claims perfect scores, eta = 0, huge noise, 1 round.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0825967154264498,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0786162538179247,
+          "relative_final_nash_gap": 1.2562984849802659
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.1133955879122976,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0757627458524304,
+          "relative_final_nash_gap": 1.2440069692168145
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.901122489132512,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.166387060450019,
+          "relative_final_nash_gap": 1.280346726314816
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.08623324110352086,
+              0.1043015049771265
+            ],
+            "se": 0.004688709804421661
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.10719370142475446,
+              0.14267088388776705
+            ],
+            "se": 0.008805035420751058
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.18067733115433288,
+              0.20109686851328304
+            ],
+            "se": 0.005194497188595643
+          }
+        },
+        "rank_gain_ci95": [
+          -0.23868503292728716,
+          -0.21515535033923244
+        ],
+        "rank_gain_se": 0.0060764990135588
+      },
+      "rank_gain": -0.22658895855018302,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0867973688321944,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0716643061296782,
+          "relative_final_nash_gap": 1.2551802157762515
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.1185125929171311,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0683560054253691,
+          "relative_final_nash_gap": 1.2562056419240752
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.9023372781455605,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1464134134846695,
+          "relative_final_nash_gap": 1.2670256462664455
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.08789876568201223,
+              0.11471367163135789
+            ],
+            "se": 0.006753180161673933
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.11356506414404803,
+              0.14854865095841766
+            ],
+            "se": 0.008872508697224253
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.1775826457400747,
+              0.20860894802160768
+            ],
+            "se": 0.007975552343006322
+          }
+        },
+        "rank_gain_ci95": [
+          -0.24462592469594543,
+          -0.21607025809744917
+        ],
+        "rank_gain_se": 0.0073009458648947605
+      },
+      "rank_gain": -0.22987299251432408,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "shortcut_frame_oracle": {
+    "description": "Reads the protocol runner's full game and future noise from the Python call stack, then plays the central optimiser.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/i0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.209)",
+          "dense_cluster/n64/i1: locality audit: player 9's strategies are not reproduced from its local view and received messages (max deviation 0.2)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/i0: locality audit: player 7's strategies are not reproduced from its local view and received messages (max deviation 0.236)",
+          "dense_er/n64/i1: locality audit: player 2's strategies are not reproduced from its local view and received messages (max deviation 0.289)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/i0: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.554)",
+          "sparse_knn/n64/i1: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.274)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 229's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 38's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 42's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 75's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 87's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 88's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+        },
+        "dense_er_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 108's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 193's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 36's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 50's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2
+        },
+        "sparse_knn_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 177's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 33's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 56's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 60's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 4,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 84's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 2
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 96,
+        "max_deviation": 0.5539556207853611
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.819562827938086,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "unaudited_metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7571367219233014,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7640512946843696,
+          "relative_final_nash_gap": 0.8595300116879803
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7578503303031455,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.746528053715122,
+          "relative_final_nash_gap": 0.8368092671020086
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.3414103036618191,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.4412676619727274,
+          "relative_final_nash_gap": 0.4722906692118518
+        }
+      },
+      "unaudited_rank_gain": 0.5340620002458432
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/seed0: locality audit: player 11's strategies are not reproduced from its local view and received messages (max deviation 0.304)",
+          "dense_cluster/n64/seed2: locality audit: player 15's strategies are not reproduced from its local view and received messages (max deviation 0.182)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/seed0: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.255)",
+          "dense_er/n64/seed2: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.151)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/seed0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.185)",
+          "sparse_knn/n64/seed2: locality audit: player 8's strategies are not reproduced from its local view and received messages (max deviation 0.294)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 132's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 14's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 32's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 34's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 35's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 67's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 93's strategies are not reproduced from its local view and received messages": 1
+        },
+        "dense_er_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 26's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 39's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 40's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 48's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+        },
+        "sparse_knn_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 4,
+          "locality audit: player 109's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 118's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 14's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 161's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 23's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 82's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 72,
+        "max_deviation": 0.5398959341835492
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.82455869838131,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "unaudited_metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7608060067993401,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7616039802692572,
+          "relative_final_nash_gap": 0.8676693671439336
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7603525766325993,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.740894383381597,
+          "relative_final_nash_gap": 0.8418242321247554
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.34124303487710284,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.4333228012220364,
+          "relative_final_nash_gap": 0.4717210587412173
+        }
+      },
+      "unaudited_rank_gain": 0.5286309594088427
+    }
+  },
+  "shortcut_global_registry": {
+    "description": "Players pool private payoffs and noiseless strategies in a module-level registry and play a centrally optimised displacement clipped to the allowance.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/i0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.172)",
+          "dense_cluster/n64/i1: locality audit: player 9's strategies are not reproduced from its local view and received messages (max deviation 0.178)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/i0: locality audit: player 7's strategies are not reproduced from its local view and received messages (max deviation 0.214)",
+          "dense_er/n64/i1: locality audit: player 2's strategies are not reproduced from its local view and received messages (max deviation 0.26)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/i0: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.49)",
+          "sparse_knn/n64/i1: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.276)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 229's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 38's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 42's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 75's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 87's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 88's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+        },
+        "dense_er_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 108's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 193's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 36's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 50's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2
+        },
+        "sparse_knn_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 177's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 33's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 56's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 60's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 4,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 84's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 2
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 96,
+        "max_deviation": 0.48986401490986275
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.819562827938086,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "unaudited_metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.8453144231668324,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8492470222737484,
+          "relative_final_nash_gap": 1.0442340624853306
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.8548926275680826,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8363115693657115,
+          "relative_final_nash_gap": 1.033570377376872
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.5941766658216019,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7694525262528252,
+          "relative_final_nash_gap": 0.9379353849772055
+        }
+      },
+      "unaudited_rank_gain": 0.24454580188864575
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/seed0: locality audit: player 11's strategies are not reproduced from its local view and received messages (max deviation 0.257)",
+          "dense_cluster/n64/seed2: locality audit: player 15's strategies are not reproduced from its local view and received messages (max deviation 0.235)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/seed0: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.19)",
+          "dense_er/n64/seed2: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.109)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/seed0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.382)",
+          "sparse_knn/n64/seed2: locality audit: player 8's strategies are not reproduced from its local view and received messages (max deviation 0.264)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 132's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 14's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 3,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 32's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 34's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 35's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 67's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 93's strategies are not reproduced from its local view and received messages": 1
+        },
+        "dense_er_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 26's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 39's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 40's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 48's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+        },
+        "sparse_knn_scaling": {
+          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 4,
+          "locality audit: player 109's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 118's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 14's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 161's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 23's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2,
+          "locality audit: player 82's strategies are not reproduced from its local view and received messages": 1,
+          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 72,
+        "max_deviation": 0.5248668843421084
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.82455869838131,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "unaudited_metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.8476396491886135,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8443172217566243,
+          "relative_final_nash_gap": 1.060238122016173
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.8575389167267596,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8295432683713523,
+          "relative_final_nash_gap": 1.0392682121140322
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.5948589891633977,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7561300300583023,
+          "relative_final_nash_gap": 0.9234139541323988
+        }
+      },
+      "unaudited_rank_gain": 0.24099967505332784
+    }
+  },
+  "shortcut_nonfinite": {
+    "description": "Returns NaN strategies.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/i0: non-finite values",
+          "dense_cluster/n64/i1: non-finite values"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/i0: non-finite values",
+          "dense_er/n64/i1: non-finite values"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/i0: non-finite values",
+          "sparse_knn/n64/i1: non-finite values"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "non-finite values": 32
+        },
+        "dense_er_scaling": {
+          "non-finite values": 32
+        },
+        "sparse_knn_scaling": {
+          "non-finite values": 32
+        }
+      },
+      "locality_audit": null,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.819562827938086,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/seed0: non-finite values",
+          "dense_cluster/n64/seed2: non-finite values"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/seed0: non-finite values",
+          "dense_er/n64/seed2: non-finite values"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/seed0: non-finite values",
+          "sparse_knn/n64/seed2: non-finite values"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "non-finite values": 24
+        },
+        "dense_er_scaling": {
+          "non-finite values": 24
+        },
+        "sparse_knn_scaling": {
+          "non-finite values": 24
+        }
+      },
+      "locality_audit": null,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.82455869838131,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      }
+    }
+  },
+  "shortcut_public_instance_oracle": {
+    "description": "Redteam's global private optimizer + oracle, ported: regenerate the public games and noise, identify the instance from the public graph, play a central joint-Nash-gap optimiser clipped to the step allowance (falls back to Algorithm 1 if the instance is not public).",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9872672511518764,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9927108944797316,
+          "relative_final_nash_gap": 1.2409471790412008
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9888564682949277,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.969298279189345,
+          "relative_final_nash_gap": 1.2128738941921233
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.7108244222198061,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9206561963690869,
+          "relative_final_nash_gap": 1.0699191389325975
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "se": 0.0
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "se": 0.0
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.0,
+              0.0
+            ],
+            "se": 0.0
+          }
+        },
+        "rank_gain_ci95": [
+          0.0,
+          0.0
+        ],
+        "rank_gain_se": 0.0
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7608060067993401,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7616039802692572,
+          "relative_final_nash_gap": 0.8676693671439336
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7603525766325993,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.740894383381597,
+          "relative_final_nash_gap": 0.8418242321247554
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.34124303487710284,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.4333228012220364,
+          "relative_final_nash_gap": 0.4717210587412173
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              -0.2346775357546308,
+              -0.21581114494161974
+            ],
+            "se": 0.004850039925238686
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              -0.235252308783449,
+              -0.2200339675191854
+            ],
+            "se": 0.003917070116729181
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              -0.3748541169162306,
+              -0.362668987018704
+            ],
+            "se": 0.003073270775099654
+          }
+        },
+        "rank_gain_ci95": [
+          0.5188388244546009,
+          0.5380689382346826
+        ],
+        "rank_gain_se": 0.00493181560966407
+      },
+      "rank_gain": 0.5286309594088427,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "shortcut_runner_noise_patch": {
+    "description": "Patches the protocol runner to deliver noiseless messages, then plays Algorithm 1.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/i0: update exceeds the step allowance (round 7, player 0: 0.7699 > 0.139)",
+          "dense_cluster/n64/i1: update exceeds the step allowance (round 3, player 13: 0.754 > 0.1345)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/i1: update exceeds the step allowance (round 7, player 41: 0.9107 > 0.1547)",
+          "dense_er/n64/i2: update exceeds the step allowance (round 3, player 8: 0.6831 > 0.08138)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/i0: update exceeds the step allowance (round 1, player 28: 0.7674 > 0.1378)",
+          "sparse_knn/n64/i1: update exceeds the step allowance (round 1, player 28: 0.6067 > 0.1588)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "update exceeds the step allowance": 32
+        },
+        "dense_er_scaling": {
+          "update exceeds the step allowance": 31
+        },
+        "sparse_knn_scaling": {
+          "update exceeds the step allowance": 32
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 1,
+        "audited_players": 8,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.03125,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.807062827938083,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/seed0: update exceeds the step allowance (round 7, player 4: 0.7711 > 0.1516)",
+          "dense_cluster/n64/seed2: update exceeds the step allowance (round 6, player 8: 0.7297 > 0.04017)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/seed2: update exceeds the step allowance (round 7, player 26: 0.6844 > 0.06989)",
+          "dense_er/n64/seed4: update exceeds the step allowance (round 7, player 18: 0.7717 > 0.0404)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/seed0: update exceeds the step allowance (round 1, player 31: 0.7246 > 0.2363)",
+          "sparse_knn/n64/seed2: update exceeds the step allowance (round 1, player 56: 0.5463 > 0.06898)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "update exceeds the step allowance": 24
+        },
+        "dense_er_scaling": {
+          "update exceeds the step allowance": 23
+        },
+        "sparse_knn_scaling": {
+          "update exceeds the step allowance": 24
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 1,
+        "audited_players": 8,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.041666666666666664,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.807892031714644,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      }
+    }
+  },
+  "shortcut_scorer_tamper": {
+    "description": "Monkeypatches the evaluator's checks/metrics in its process and writes forged score files; payoff-blind dynamics otherwise.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0825967154264498,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0786162538179247,
+          "relative_final_nash_gap": 1.2562984849802659
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.1133955879122976,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0757627458524304,
+          "relative_final_nash_gap": 1.2440069692168145
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.901122489132512,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.166387060450019,
+          "relative_final_nash_gap": 1.280346726314816
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.08623324110352086,
+              0.1043015049771265
+            ],
+            "se": 0.004688709804421661
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.10719370142475446,
+              0.14267088388776705
+            ],
+            "se": 0.008805035420751058
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.18067733115433288,
+              0.20109686851328304
+            ],
+            "se": 0.005194497188595643
+          }
+        },
+        "rank_gain_ci95": [
+          -0.23868503292728716,
+          -0.21515535033923244
+        ],
+        "rank_gain_se": 0.0060764990135588
+      },
+      "rank_gain": -0.22658895855018302,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0867973688321944,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0716643061296782,
+          "relative_final_nash_gap": 1.2551802157762515
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.1185125929171311,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0683560054253691,
+          "relative_final_nash_gap": 1.2562056419240752
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.9023372781455605,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1464134134846695,
+          "relative_final_nash_gap": 1.2670256462664455
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.08789876568201223,
+              0.11471367163135789
+            ],
+            "se": 0.006753180161673933
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.11356506414404803,
+              0.14854865095841766
+            ],
+            "se": 0.008872508697224253
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.1775826457400747,
+              0.20860894802160768
+            ],
+            "se": 0.007975552343006322
+          }
+        },
+        "rank_gain_ci95": [
+          -0.24462592469594543,
+          -0.21607025809744917
+        ],
+        "rank_gain_se": 0.0073009458648947605
+      },
+      "rank_gain": -0.22987299251432408,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "shortcut_uniform": {
+    "description": "Returns the uniform strategy every round.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/i0: update exceeds the step allowance (round 1, player 15: 0.5963 > 0.09666)",
+          "dense_cluster/n64/i1: update exceeds the step allowance (round 3, player 10: 0.5963 > 0.08662)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/i0: update exceeds the step allowance (round 3, player 30: 0.5963 > 0.05583)",
+          "dense_er/n64/i1: update exceeds the step allowance (round 7, player 54: 0.5539 > 0.05038)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/i0: update exceeds the step allowance (round 1, player 28: 0.4986 > 0.1308)",
+          "sparse_knn/n64/i1: update exceeds the step allowance (round 0, player 9: 0.4986 > 0.136)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "update exceeds the step allowance": 32
+        },
+        "dense_er_scaling": {
+          "update exceeds the step allowance": 32
+        },
+        "sparse_knn_scaling": {
+          "update exceeds the step allowance": 32
+        }
+      },
+      "locality_audit": null,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.819562827938086,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/seed0: update exceeds the step allowance (round 3, player 59: 0.5591 > 0.08445)",
+          "dense_cluster/n64/seed2: update exceeds the step allowance (round 6, player 8: 0.5963 > 0.08328)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/seed0: update exceeds the step allowance (round 6, player 26: 0.5963 > 0.1283)",
+          "dense_er/n64/seed2: update exceeds the step allowance (round 7, player 34: 0.5963 > 0.1192)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/seed0: update exceeds the step allowance (round 1, player 29: 0.4986 > 0.08239)",
+          "sparse_knn/n64/seed2: update exceeds the step allowance (round 1, player 12: 0.4986 > 0.09101)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "update exceeds the step allowance": 24
+        },
+        "dense_er_scaling": {
+          "update exceeds the step allowance": 24
+        },
+        "sparse_knn_scaling": {
+          "update exceeds the step allowance": 24
+        }
+      },
+      "locality_audit": null,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.82455869838131,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      }
+    }
+  },
+  "weaker_half_step": {
+    "description": "Algorithm 1 with half the step size.",
+    "evaluator_unchanged": true,
+    "kind": "weaker",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.1252758207736713,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1268142448026761,
+          "relative_final_nash_gap": 1.397774972917151
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.1388806829779157,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1095109569163406,
+          "relative_final_nash_gap": 1.3811765840753283
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.8964856649120081,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1612702622487516,
+          "relative_final_nash_gap": 1.3358356795435875
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.13447660008888213,
+              0.14139646753160537
+            ],
+            "se": 0.0017702029253032251
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.14321769555309494,
+              0.15744789467729592
+            ],
+            "se": 0.0036246772806429396
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.1826465311913805,
+              0.18886702113951445
+            ],
+            "se": 0.0016138132439582748
+          }
+        },
+        "rank_gain_ci95": [
+          -0.2948409267785444,
+          -0.28506929605958653
+        ],
+        "rank_gain_se": 0.002466708671310893
+      },
+      "rank_gain": -0.28989687161802574,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.1230990994164496,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1152958000332063,
+          "relative_final_nash_gap": 1.4027198249899797
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.1399030593519497,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0980840975690012,
+          "relative_final_nash_gap": 1.390831233473799
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.8973422836031946,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1405471073881588,
+          "relative_final_nash_gap": 1.3304376552755492
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.1317966125597651,
+              0.14143276992279766
+            ],
+            "se": 0.002501950998621007
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.14524644068492285,
+              0.15926074858531689
+            ],
+            "se": 0.003562073458219705
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.18128269283139334,
+              0.19275113955090376
+            ],
+            "se": 0.002955495118711735
+          }
+        },
+        "rank_gain_ci95": [
+          -0.29463869468628195,
+          -0.2823004742810847
+        ],
+        "rank_gain_se": 0.0031982463952912456
+      },
+      "rank_gain": -0.2887155270222821,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  },
+  "weaker_no_gradient": {
+    "description": "Algorithm 1 with the payoff gradient removed.",
+    "evaluator_unchanged": true,
+    "kind": "weaker",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.272902853926261,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2693946306987316,
+          "relative_final_nash_gap": 1.5701216645723073
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.3079029491446803,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2654587644508686,
+          "relative_final_nash_gap": 1.568312601659453
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 1.1266327653896857,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.4594783851122228,
+          "relative_final_nash_gap": 1.669557514200865
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.27821378247594136,
+              0.2924198972868563
+            ],
+            "se": 0.003554829942922167
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.3008430439385202,
+              0.3388674363585568
+            ],
+            "se": 0.009807608448796851
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.40840090622961683,
+              0.4238483716480775
+            ],
+            "se": 0.0039267630832242025
+          }
+        },
+        "rank_gain_ci95": [
+          -0.6380006909609062,
+          -0.6129543039820379
+        ],
+        "rank_gain_se": 0.006386814641004571
+      },
+      "rank_gain": -0.6248145972264916,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [],
+        "dense_er_scaling": [],
+        "sparse_knn_scaling": []
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 0,
+        "max_deviation": 0.0
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.2753935894350992,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2599202011713244,
+          "relative_final_nash_gap": 1.5690065905834232
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.307424065782755,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2508739387965766,
+          "relative_final_nash_gap": 1.571940341809123
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 1.1278945891058276,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.4339975860701124,
+          "relative_final_nash_gap": 1.652035177782434
+        }
+      },
+      "paired_bootstrap": {
+        "primary_ratio_difference": {
+          "dense_cluster_scaling": {
+            "ci95": [
+              0.2817472980981536,
+              0.29697319183206056
+            ],
+            "se": 0.0038911213783132223
+          },
+          "dense_er_scaling": {
+            "ci95": [
+              0.300992943062306,
+              0.34017986194358996
+            ],
+            "se": 0.01004380101282547
+          },
+          "sparse_knn_scaling": {
+            "ci95": [
+              0.40533492448496694,
+              0.4324630579702424
+            ],
+            "se": 0.006918970493723958
+          }
+        },
+        "rank_gain_ci95": [
+          -0.6360101256051882,
+          -0.6067908607179797
+        ],
+        "rank_gain_se": 0.007543376460925184
+      },
+      "rank_gain": -0.6215494009105719,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      }
+    }
+  }
+}

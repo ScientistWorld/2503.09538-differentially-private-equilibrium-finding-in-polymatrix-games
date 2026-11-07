@@ -75,6 +75,22 @@ for topology in ("dense_er", "dense_cluster", "sparse_knn"):
     job["items"][0]["expected"] = job["items"][0]["expected"] + 1e-3
     failures, _ = T.run_replays(spec, [job], Path(tempfile.mkdtemp()))
     assert failures, "audit must reject a non-reproducible player"
+    if topology == "sparse_knn":
+        # a player that regenerates the instance from the evaluator module must not survive the isolated replay
+        from redteam.hardening_v3.policies import make_shortcut_hidden_evaluator_oracle as cheat
+        tr_c = T.execute_policy(cheat, topology, n, seed, {})
+        ok_c, _, _, b_c = T.check_transcript(g_ev, steps, eta, noise, tr_c)
+        print(topology, "evaluator-oracle transcript valid:", ok_c, "cce", T.cce_exploitability(g_ev, tr_c),
+              "vs reference", T.cce_exploitability(g_ev, tr_ev))
+        spec_c = Path(tempfile.mkdtemp()) / "policy.json"
+        spec_c.write_text(json.dumps({"method": "x", "module": "redteam.hardening_v3.policies",
+                                      "factory": "make_shortcut_hidden_evaluator_oracle"}))
+        for item in job["items"]:
+            item["own"], item["received"] = b_c[:, item["player"], :], b_c[:, g_ev.nbrs[item["player"]], :]
+            item["expected"] = tr_c[:, item["player"], :]
+        failures, _ = T.run_replays(spec_c, [job], Path(tempfile.mkdtemp()))
+        print(topology, "evaluator-oracle replay:", failures)
+        assert failures, "isolated replay must reject the evaluator oracle"
 print("SMOKE OK")
 PY
 
@@ -100,6 +116,7 @@ print("train scores through the player interface vs. the previous transcript eva
 PY
 
 stage "hardening audit"
+rm -rf redteam/hardening_v3/cases
 python -m redteam.hardening_v3.harness > tmp/harness.log 2>&1 || { echo "AUDIT FAILED"; tail -80 tmp/harness.log; }
 tail -30 tmp/harness.log
 

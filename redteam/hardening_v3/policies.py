@@ -20,9 +20,12 @@ rejects it or pays it nothing:
 * ``runner_noise_patch``        -- patches the protocol runner to send
   noiseless messages, then plays Algorithm 1.
 * ``nonfinite`` / ``uniform`` / ``crash_small_games`` -- invalid outputs.
-* ``hidden_evaluator_oracle``  -- imports the evaluator modules at run time to
-  regenerate the (hidden) instances and their noise, then runs the central
-  optimiser.  Probe for the shortcut this design cannot close.
+* ``hidden_evaluator_oracle``  -- uses the evaluator module it runs inside (or
+  imports it) to regenerate the hidden instance and its noise, then runs the
+  central optimiser.
+* ``cache_evasion``             -- the hidden-evaluator oracle in the protocol
+  run, plus a disk cache of its strategies that the isolated replay reads
+  back.  Probe for the shortcut class this design leaves to code review.
 """
 
 from __future__ import annotations
@@ -30,6 +33,7 @@ from __future__ import annotations
 import hashlib
 import json
 import sys
+import tempfile
 from pathlib import Path
 
 import numpy as np
@@ -393,3 +397,22 @@ def make_shortcut_crash_small_games(view):
     if int(view["n_players"]) == 64:
         raise RuntimeError("skip the smallest games")
     return Algorithm1Player(view)
+
+
+# ---------------------------------------------------------------------------
+# Left shortcut: evade the isolated replay with a cross-process disk cache
+# ---------------------------------------------------------------------------
+_CACHE_DIR = Path(tempfile.gettempdir()) / "polymatrix_shortcut_cache"
+
+
+def make_left_shortcut_cache_evasion(view):
+    path = _CACHE_DIR / f"{_edges_key(int(view['n_players']), view['edges'])[1]}.npy"
+    player = make_shortcut_hidden_evaluator_oracle(view)
+    if player.trajectory is not None:
+        if not path.exists():
+            _CACHE_DIR.mkdir(parents=True, exist_ok=True)
+            np.save(path, player.trajectory)
+        return player
+    if path.exists():
+        return _RowPlayer(view, np.load(path))
+    return player

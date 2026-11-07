@@ -26,7 +26,7 @@ The evaluator regenerates each game, its operating point (T, eta, sigma) and its
 1. every call returned a finite vector of length A, for exactly T rounds;
 2. every played strategy is a probability vector (tolerance 1e-6);
 3. every update has bounded payoff dependence. Let P be the player's own projected message (projected onto the simplex), u the uniform strategy, and g the player's payoff gradient against its neighbours' projected messages, centred over actions. The new strategy must lie within eta * ||g|| of the segment from P to (P + eta * u) / (1 + eta);
-4. **locality audit**: in every instance, randomly drawn players (8 per instance, drawn by the evaluator) are re-executed in a separate fresh process from their own view and the messages they received. Their strategies must be reproduced (tolerance 1e-7).
+4. **locality audit**: in every instance, randomly drawn players (8 per instance, drawn by the evaluator) are re-executed in a separate fresh process from their own view and the messages they received. That process holds nothing else, and evaluator modules cannot be imported there. Their strategies must be reproduced (tolerance 1e-7).
 
 Check 3 bounds, per round, how much a player's next message can depend on its private payoffs beyond public information. With the noise fixed by the evaluator, this fixes the privacy budget of every compliant submission. Check 4 requires each player to use only its own information. A `step` must be a deterministic function of the view and the messages received so far (use `view["seed"]` for randomness). Players must not share state or read anything else (other players' data, evaluator internals or files).
 

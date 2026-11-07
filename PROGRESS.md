@@ -108,3 +108,11 @@ The gym was re-built around a fixed privacy operating point (see `HARDENING.md`)
 - Baselines: `baseline/structure_free.py` (budget-matched prior-work-style learner, also the comparator) and `baseline/no_payoff.py`.
 - Hidden-test reference scores (comparator ratio / relative exploitability): dense ER 0.987 / 0.979, dense clustered 0.986 / 0.996, sparse kNN 0.715 / 0.910.
 - The redteam's shortcuts tie (claimed numbers are ignored) or fail. A compliant shrinkage variant scores +0.23 and weaker variants score below the reference.
+
+## Final hardening iteration (player-policy interface)
+
+See `HARDENING.md`:
+- **Interface.** A method is a per-player policy (`data/protocol.py`). The evaluators run the private protocol themselves on their own instances; the hidden test's games and noise exist only in `eval/test/`.
+- **Locality audit.** Randomly drawn players are re-executed in an isolated process from their local view.
+- **Reproduction.** Algorithm 1 (`method/dp_cce.py`) and the baselines are policies and reproduce the earlier dynamics exactly. The train scores are unchanged.
+- **Hidden-test reference:** comparator ratio 0.989 / 0.987 / 0.711; relative exploitability 0.969 / 0.993 / 0.921.

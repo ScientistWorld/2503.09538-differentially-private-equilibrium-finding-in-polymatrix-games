@@ -57,3 +57,7 @@
 ### [2026-11-07] - core_claim_plus (hardening)
 - Test hardened: eval-owned games, operating point, noise stream and comparator values. Privacy is a verified protocol gate. Failures score below every valid run. 6 test seeds per size.
 - Algorithm 1 beats the budget-matched structure-free comparator in all three families: 0.715 on sparse kNN, about 1.3% better on dense graphs. Absolute dense exploitability falls with N (slope -0.40).
+
+### [2026-11-07] - core_claim_plus (final hardening)
+- Submissions are now per-player policies. The hidden test runs them itself on hidden instances (game and noise salts only in `eval/test/`, 8 per size), recomputes all broadcasts, and spot-checks players with an isolated locality audit.
+- The redteam's centralised-optimizer shortcut (+0.543) scores 0 on the new test. Honest better variants still score +0.22 / +0.13 (paired SE <= 0.004). Algorithm 1 beats the budget-matched comparator in all three families (0.989 / 0.987 / 0.711).
