@@ -1,7 +1,7 @@
 {
   "case": "reference",
   "description": "Algorithm 1 exactly as shipped (method/dp_cce.py).",
-  "elapsed_seconds": 11.0,
+  "elapsed_seconds": 9.4,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

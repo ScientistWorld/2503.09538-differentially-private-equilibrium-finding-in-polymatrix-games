@@ -1,7 +1,7 @@
 {
   "case": "reference_noise_key3",
-  "description": "Reference under alternative noise stream 3 (seed-noise study).",
-  "elapsed_seconds": 10.2,
+  "description": "Reference under alternative noise stream 3 (seed-noise study; scored with --noise-key).",
+  "elapsed_seconds": 10.1,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

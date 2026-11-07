@@ -1,7 +1,7 @@
 {
   "case": "shortcut_public_game_no_noise",
   "description": "Algorithm 1 on the public games with the noise removed (broadcasts = strategies).",
-  "elapsed_seconds": 6.7,
+  "elapsed_seconds": 7.2,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

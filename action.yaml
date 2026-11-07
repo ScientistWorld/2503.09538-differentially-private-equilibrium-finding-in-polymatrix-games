@@ -5,4 +5,4 @@ action: submit
 gpus: 0
 test: false
 milestone: core_claim_plus
-notes: "Hardening check: build fixed comparator values, reproduce reference + baselines on the hardened protocol, score train/test, run the hardening audit (variants + shortcuts through evaluate_test.sh), validate."
+notes: "Final hardening check: end-to-end reproduce from final code, full audit incl. left-shortcut probes (rescaled known-noise gradient, per-instance best-variant selection) and paired comparator noise replicates, validate."

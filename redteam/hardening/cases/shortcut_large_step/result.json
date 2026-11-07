@@ -1,7 +1,7 @@
 {
   "case": "shortcut_large_step",
   "description": "Algorithm 1 with three times the operating-point step.",
-  "elapsed_seconds": 7.9,
+  "elapsed_seconds": 9.1,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

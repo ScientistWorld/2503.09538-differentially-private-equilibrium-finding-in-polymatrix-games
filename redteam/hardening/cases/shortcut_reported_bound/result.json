@@ -1,7 +1,7 @@
 {
   "case": "shortcut_reported_bound",
   "description": "Reference arrays; manifest claims privacy_bound = -1e30.",
-  "elapsed_seconds": 11.2,
+  "elapsed_seconds": 10.3,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

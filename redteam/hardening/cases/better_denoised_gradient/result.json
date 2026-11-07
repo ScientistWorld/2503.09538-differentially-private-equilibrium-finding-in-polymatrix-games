@@ -1,7 +1,7 @@
 {
   "case": "better_denoised_gradient",
   "description": "Algorithm 1, gradient direction from the running mean of public projected broadcasts, rescaled to the current public-gradient norm.",
-  "elapsed_seconds": 10.2,
+  "elapsed_seconds": 9.9,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

@@ -1,7 +1,7 @@
 {
   "case": "shortcut_zero_outputs",
   "description": "All-zero strategy vectors with the reference broadcasts.",
-  "elapsed_seconds": 6.0,
+  "elapsed_seconds": 6.6,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

@@ -1,7 +1,7 @@
 {
   "case": "shortcut_zero_outputs_zero_eta",
   "description": "All-zero strategies plus a claimed eta = 0.",
-  "elapsed_seconds": 6.6,
+  "elapsed_seconds": 7.1,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

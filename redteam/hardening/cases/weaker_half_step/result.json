@@ -1,7 +1,7 @@
 {
   "case": "weaker_half_step",
   "description": "Algorithm 1 with half the step size.",
-  "elapsed_seconds": 9.6,
+  "elapsed_seconds": 10.0,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

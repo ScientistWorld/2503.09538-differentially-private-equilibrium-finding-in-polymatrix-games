@@ -1,7 +1,7 @@
 {
   "case": "shortcut_negative_alpha",
   "description": "Reference arrays; manifest claims Renyi order alpha = -2.",
-  "elapsed_seconds": 10.3,
+  "elapsed_seconds": 9.5,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

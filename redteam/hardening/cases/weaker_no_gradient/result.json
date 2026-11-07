@@ -1,7 +1,7 @@
 {
   "case": "weaker_no_gradient",
   "description": "Algorithm 1 with all payoff gradients removed.",
-  "elapsed_seconds": 8.8,
+  "elapsed_seconds": 9.7,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

@@ -1,7 +1,7 @@
 {
   "case": "shortcut_fewer_rounds",
   "description": "Reference arrays truncated to T-1 rounds.",
-  "elapsed_seconds": 7.0,
+  "elapsed_seconds": 6.4,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

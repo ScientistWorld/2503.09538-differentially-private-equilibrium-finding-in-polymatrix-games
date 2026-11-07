@@ -1,7 +1,7 @@
 {
   "case": "old_better_separate_readout",
   "description": "Redteam 'better_fixed_transcript_readout': reference broadcasts, separately evolved private output states reported as the strategies.",
-  "elapsed_seconds": 6.7,
+  "elapsed_seconds": 7.4,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

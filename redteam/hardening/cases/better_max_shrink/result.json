@@ -1,7 +1,7 @@
 {
   "case": "better_max_shrink",
   "description": "Algorithm 1 update with the regularizer weight set to 1 for every player (maximal allowed shrink).",
-  "elapsed_seconds": 9.5,
+  "elapsed_seconds": 10.9,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

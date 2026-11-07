@@ -1,7 +1,7 @@
 {
   "case": "shortcut_empty_output",
   "description": "Zero rounds.",
-  "elapsed_seconds": 6.1,
+  "elapsed_seconds": 6.6,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

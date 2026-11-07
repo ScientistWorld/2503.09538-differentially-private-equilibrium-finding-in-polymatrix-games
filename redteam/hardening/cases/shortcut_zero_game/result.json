@@ -1,7 +1,7 @@
 {
   "case": "shortcut_zero_game",
   "description": "Reference arrays; manifest points game_path at all-zero-utility games.",
-  "elapsed_seconds": 10.8,
+  "elapsed_seconds": 11.1,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

@@ -1,7 +1,7 @@
 {
   "case": "shortcut_degrade_baseline",
   "description": "Reference arrays as our_method plus deliberately terrible 'structure_free_baseline' outputs on disk.",
-  "elapsed_seconds": 10.6,
+  "elapsed_seconds": 12.6,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

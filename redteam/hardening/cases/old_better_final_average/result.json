@@ -1,7 +1,7 @@
 {
   "case": "old_better_final_average",
   "description": "Redteam 'better_final_average': reference trajectory with the temporal average appended as an extra round.",
-  "elapsed_seconds": 6.6,
+  "elapsed_seconds": 6.4,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

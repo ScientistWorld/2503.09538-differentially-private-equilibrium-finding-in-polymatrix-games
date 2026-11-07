@@ -1,7 +1,7 @@
 {
   "case": "old_better_persistent_anchor",
   "description": "Redteam 'better_persistent_anchor': gradient step from the private noiseless strategy instead of the projected broadcast.",
-  "elapsed_seconds": 8.8,
+  "elapsed_seconds": 7.8,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

@@ -1,7 +1,7 @@
 {
   "case": "no_payoff_as_method",
   "description": "The payoff-blind protocol baseline submitted as the method.",
-  "elapsed_seconds": 8.4,
+  "elapsed_seconds": 10.4,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

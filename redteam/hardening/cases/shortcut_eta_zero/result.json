@@ -1,7 +1,7 @@
 {
   "case": "shortcut_eta_zero",
   "description": "Reference arrays; manifest claims eta = 0.",
-  "elapsed_seconds": 10.9,
+  "elapsed_seconds": 9.8,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {},

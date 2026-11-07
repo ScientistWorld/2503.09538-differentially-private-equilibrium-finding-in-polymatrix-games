@@ -1,7 +1,7 @@
 {
   "case": "shortcut_known_noise_gradient",
   "description": "Algorithm 1 but gradients use neighbours' true (pre-noise) strategies -- a privacy violation the transcript cannot reveal.",
-  "elapsed_seconds": 8.9,
+  "elapsed_seconds": 9.1,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {

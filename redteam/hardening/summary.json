@@ -79,6 +79,66 @@
     },
     "test_exit": 0
   },
+  "comparator_noise_key1": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9698927320597963,
+      "dense_er_scaling": 0.9728206041439668,
+      "sparse_knn_scaling": 0.9958053201752521
+    },
+    "kind": "replicate",
+    "rank_gain": -0.15125434803736298,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9786913873011333,
+      "dense_er_scaling": 0.9678362891195325,
+      "sparse_knn_scaling": 1.2695714610228397
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "comparator_noise_key2": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9899865919736524,
+      "dense_er_scaling": 0.9898008805938986,
+      "sparse_knn_scaling": 1.0067106462213071
+    },
+    "kind": "replicate",
+    "rank_gain": -0.17753294818709447,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.999098665276226,
+      "dense_er_scaling": 0.9827304645413495,
+      "sparse_knn_scaling": 1.283247107867483
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "comparator_noise_key3": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.9905133615915521,
+      "dense_er_scaling": 1.001694996943042,
+      "sparse_knn_scaling": 0.9811639988601186
+    },
+    "kind": "replicate",
+    "rank_gain": -0.17252452809792213,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.9996580971036643,
+      "dense_er_scaling": 0.9929606709801618,
+      "sparse_knn_scaling": 1.2517876538004817
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
   "no_payoff_as_method": {
     "comparator_exploitability_ratio": {
       "dense_cluster_scaling": 1.0816318256951711,
@@ -419,6 +479,26 @@
     },
     "test_exit": 0
   },
+  "shortcut_known_noise_gradient_rescaled": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 1.0624480487380001,
+      "dense_er_scaling": 1.0710192168427197,
+      "sparse_knn_scaling": 0.8983778418163891
+    },
+    "kind": "left_shortcut",
+    "rank_gain": -0.20394926589761136,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 1.0704897552191683,
+      "dense_er_scaling": 1.0593312978107303,
+      "sparse_knn_scaling": 1.1445700326014097
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
   "shortcut_large_step": {
     "comparator_exploitability_ratio": {
       "dense_cluster_scaling": 10.0,
@@ -511,6 +591,26 @@
       "dense_cluster_scaling": 0.9961448175126973,
       "dense_er_scaling": 0.9792963588580776,
       "sparse_knn_scaling": 0.9100250926436616
+    },
+    "status": {
+      "dense_cluster_scaling": "ok",
+      "dense_er_scaling": "ok",
+      "sparse_knn_scaling": "ok"
+    },
+    "test_exit": 0
+  },
+  "shortcut_select_best_variant": {
+    "comparator_exploitability_ratio": {
+      "dense_cluster_scaling": 0.8622597397306763,
+      "dense_er_scaling": 0.8650275380959058,
+      "sparse_knn_scaling": 0.6109436067517239
+    },
+    "kind": "left_shortcut",
+    "rank_gain": 0.2260488008753469,
+    "relative_exploitability": {
+      "dense_cluster_scaling": 0.870222663609541,
+      "dense_er_scaling": 0.8575425226137433,
+      "sparse_knn_scaling": 0.7779966573820803
     },
     "status": {
       "dense_cluster_scaling": "ok",

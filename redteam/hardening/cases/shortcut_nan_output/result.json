@@ -1,7 +1,7 @@
 {
   "case": "shortcut_nan_output",
   "description": "Non-finite strategies.",
-  "elapsed_seconds": 6.4,
+  "elapsed_seconds": 6.9,
   "evaluator_unchanged": true,
   "failure_reasons": {
     "dense_cluster_scaling": {
