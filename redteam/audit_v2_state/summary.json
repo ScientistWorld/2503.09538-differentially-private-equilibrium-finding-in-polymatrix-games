@@ -1,0 +1,1355 @@
+{
+  "best_mathematically_possible_gain": 1.6854556653644759,
+  "results": {
+    "better_max_regularization": {
+      "case": "better_max_regularization",
+      "description": "Real fix: proximal weight 1, still within the allowed shrink segment.",
+      "elapsed_seconds": 45.86,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9159659563758951,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9218735734689297,
+          "relative_final_nash_gap": 1.0759546045804977
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9228834727178629,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9120302508544226,
+          "relative_final_nash_gap": 1.0849122542337328
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.6590491599025886,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8393734759597239,
+          "relative_final_nash_gap": 0.9440460837257554
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.021082687054665348,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.011140686606565142,
+          "relative_final_nash_gap": 0.013059410333779475
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.0255985708258486,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.013453221600731015,
+          "relative_final_nash_gap": 0.016389963793208385
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.016622799427248414,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.010597742502590657,
+          "relative_final_nash_gap": 0.009268274617623756
+        }
+      },
+      "rank_gain": 0.1372133567622608,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "better_shrink_075": {
+      "case": "better_shrink_075",
+      "description": "Real fix: anchor .75*projected own message + .25*uniform, public payoff gradient.",
+      "elapsed_seconds": 37.73,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.8622597397306763,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.870222663609541,
+          "relative_final_nash_gap": 1.0533778252153476
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.8650275380959058,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.8575425226137433,
+          "relative_final_nash_gap": 1.056871895942436
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.6109436067517239,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7779966573820803,
+          "relative_final_nash_gap": 0.9067055486554675
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.03719455204823099,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.018888323085473446,
+          "relative_final_nash_gap": 0.014752668786165733
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.048740944674631415,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.024350767248866867,
+          "relative_final_nash_gap": 0.019193999622338077
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.031054465372507833,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.019804265289237188,
+          "relative_final_nash_gap": 0.012068814747895349
+        }
+      },
+      "rank_gain": 0.2260488008753469,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "comparator_baseline": {
+      "case": "comparator_baseline",
+      "description": "Budget-matched structure-free baseline from the public baseline code.",
+      "elapsed_seconds": 49.27,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0099298664896055,
+          "relative_final_nash_gap": 1.2703986506480323
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9921490119073079,
+          "relative_final_nash_gap": 1.2650044306008794
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 1.0,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2747341332694797,
+          "relative_final_nash_gap": 1.4816665546563532
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.004127526032566131,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.00206775734653622,
+          "relative_final_nash_gap": -0.0015238931212856132
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.005248040087006256,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.002570530609846045,
+          "relative_final_nash_gap": -0.0016192538435062743
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.085662452601975,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.05470635609387271,
+          "relative_final_nash_gap": -0.03105326070217108
+        }
+      },
+      "rank_gain": -0.18857907043876534,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "reference_seed0": {
+      "case": "reference_seed0",
+      "description": "Reference rerun with process seed 0 and contract noise key 0.",
+      "elapsed_seconds": 42.36,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9862415798914462,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9961448175126973,
+          "relative_final_nash_gap": 1.2500800756975574
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9868798997824844,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9792963588580776,
+          "relative_final_nash_gap": 1.2488118921658167
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.71445849132675,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9100250926436616,
+          "relative_final_nash_gap": 1.0676230786274055
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        }
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "reference_seed1": {
+      "case": "reference_seed1",
+      "description": "Independent reference rerun with process seed 1 and contract noise key 0.",
+      "elapsed_seconds": 41.03,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9862415798914462,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9961448175126973,
+          "relative_final_nash_gap": 1.2500800756975574
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9868798997824844,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9792963588580776,
+          "relative_final_nash_gap": 1.2488118921658167
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.71445849132675,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9100250926436616,
+          "relative_final_nash_gap": 1.0676230786274055
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        }
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "reference_seed2": {
+      "case": "reference_seed2",
+      "description": "Independent reference rerun with process seed 2 and contract noise key 0.",
+      "elapsed_seconds": 40.29,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9862415798914462,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9961448175126973,
+          "relative_final_nash_gap": 1.2500800756975574
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9868798997824844,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9792963588580776,
+          "relative_final_nash_gap": 1.2488118921658167
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.71445849132675,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9100250926436616,
+          "relative_final_nash_gap": 1.0676230786274055
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        }
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_constant_uniform": {
+      "case": "shortcut_constant_uniform",
+      "description": "Shortcut: output constant uniform profiles for the correct number of rounds, with matching noisy broadcasts.",
+      "elapsed_seconds": 26.8,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "update exceeds the step allowance": 24
+        },
+        "dense_er_scaling": {
+          "update exceeds the step allowance": 24
+        },
+        "sparse_knn_scaling": {
+          "update exceeds the step allowance": 24
+        }
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -2.704127526032566,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3505782773730954,
+          "relative_final_nash_gap": -0.6562439943226832
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -3.605248040087006,
+          "privacy_protocol_compliance": -0.4,
+          "relative_exploitability": -1.8041407282283846,
+          "relative_final_nash_gap": -0.8751188107834184
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -2.785662452601975,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3634962361034508,
+          "relative_final_nash_gap": -0.6699282691029446
+        }
+      },
+      "rank_gain": -16.814544334635524,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_drop_small_games": {
+      "case": "shortcut_drop_small_games",
+      "description": "Shortcut: omit every N=64 instance from the manifest.",
+      "elapsed_seconds": 25.72,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "missing run": 6
+        },
+        "dense_er_scaling": {
+          "missing run": 6
+        },
+        "sparse_knn_scaling": {
+          "missing run": 6
+        }
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.75,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -2.704127526032566,
+          "privacy_protocol_compliance": -0.075,
+          "relative_exploitability": -1.3505782773730954,
+          "relative_final_nash_gap": -0.6562439943226832
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -3.605248040087006,
+          "privacy_protocol_compliance": -0.1,
+          "relative_exploitability": -1.8041407282283846,
+          "relative_final_nash_gap": -0.8751188107834184
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -2.785662452601975,
+          "privacy_protocol_compliance": -0.075,
+          "relative_exploitability": -1.3634962361034508,
+          "relative_final_nash_gap": -0.6699282691029446
+        }
+      },
+      "rank_gain": -16.064544334635528,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_empty": {
+      "case": "shortcut_empty",
+      "description": "Shortcut: output zero rounds.",
+      "elapsed_seconds": 15.42,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "shape: expected": 24
+        },
+        "dense_er_scaling": {
+          "shape: expected": 24
+        },
+        "sparse_knn_scaling": {
+          "shape: expected": 24
+        }
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -2.704127526032566,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3505782773730954,
+          "relative_final_nash_gap": -0.6562439943226832
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -3.605248040087006,
+          "privacy_protocol_compliance": -0.4,
+          "relative_exploitability": -1.8041407282283846,
+          "relative_final_nash_gap": -0.8751188107834184
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -2.785662452601975,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3634962361034508,
+          "relative_final_nash_gap": -0.6699282691029446
+        }
+      },
+      "rank_gain": -16.814544334635524,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_failure_compensation": {
+      "case": "shortcut_failure_compensation",
+      "description": "Shortcut: use oracle outputs except omit one smallest sparse instance in each split, seeking compensation from the other experiments.",
+      "elapsed_seconds": 25.44,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {
+          "missing run": 1
+        }
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7522817548294101,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.762924944578168,
+          "relative_final_nash_gap": 0.8483150239060309
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7508960899963676,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7489666576922502,
+          "relative_final_nash_gap": 0.851180403376115
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.9583333333333334,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.07018794751861085,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.03498298094017941,
+          "relative_final_nash_gap": 0.03013237888436449
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.09439352391444672,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.04606594023316549,
+          "relative_final_nash_gap": 0.03976314887897017
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -2.785662452601975,
+          "privacy_protocol_compliance": -0.012499999999999989,
+          "relative_exploitability": -1.3634962361034508,
+          "relative_final_nash_gap": -0.6699282691029446
+        }
+      },
+      "rank_gain": -4.516061037438634,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "failed"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_forged_claims": {
+      "case": "shortcut_forged_claims",
+      "description": "Shortcut: reuse reference arrays, forge scores and manifest privacy, quality, timing, size and success claims.",
+      "elapsed_seconds": 24.47,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9862415798914462,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9961448175126973,
+          "relative_final_nash_gap": 1.2500800756975574
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9868798997824844,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9792963588580776,
+          "relative_final_nash_gap": 1.2488118921658167
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.71445849132675,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9100250926436616,
+          "relative_final_nash_gap": 1.0676230786274055
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        }
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_global_private_optimizer": {
+      "case": "shortcut_global_private_optimizer",
+      "description": "Shortcut: centrally minimize joint true-payoff Nash gap using other players' private utilities and unnoised strategies, clipped to the transcript cap.",
+      "elapsed_seconds": 138.95,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7522817548294101,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.762924944578168,
+          "relative_final_nash_gap": 0.8483150239060309
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7508960899963676,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7489666576922502,
+          "relative_final_nash_gap": 0.851180403376115
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.3420816894540374,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.43546977246684926,
+          "relative_final_nash_gap": 0.46792669303268725
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.07018794751861085,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.03498298094017941,
+          "relative_final_nash_gap": 0.03013237888436449
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.09439352391444672,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.04606594023316549,
+          "relative_final_nash_gap": 0.03976314887897017
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.11171304056181378,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.07118329802652185,
+          "relative_final_nash_gap": 0.04497722891960386
+        }
+      },
+      "rank_gain": 0.5433994878776767,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_move_baseline": {
+      "case": "shortcut_move_baseline",
+      "description": "Shortcut: reuse reference arrays; replace on-disk baseline outputs with invalid zero strategies.",
+      "elapsed_seconds": 25.47,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9862415798914462,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9961448175126973,
+          "relative_final_nash_gap": 1.2500800756975574
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9868798997824844,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9792963588580776,
+          "relative_final_nash_gap": 1.2488118921658167
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.71445849132675,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9100250926436616,
+          "relative_final_nash_gap": 1.0676230786274055
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        }
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_nonfinite": {
+      "case": "shortcut_nonfinite",
+      "description": "Shortcut: output NaN on odd seeds and infinity on even seeds.",
+      "elapsed_seconds": 18.89,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "non-finite values": 24
+        },
+        "dense_er_scaling": {
+          "non-finite values": 24
+        },
+        "sparse_knn_scaling": {
+          "non-finite values": 24
+        }
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -2.704127526032566,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3505782773730954,
+          "relative_final_nash_gap": -0.6562439943226832
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -3.605248040087006,
+          "privacy_protocol_compliance": -0.4,
+          "relative_exploitability": -1.8041407282283846,
+          "relative_final_nash_gap": -0.8751188107834184
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -2.785662452601975,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3634962361034508,
+          "relative_final_nash_gap": -0.6699282691029446
+        }
+      },
+      "rank_gain": -16.814544334635524,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_oracle_selection": {
+      "case": "shortcut_oracle_selection",
+      "description": "Shortcut: reconstruct all games and future noise; select an entire transcript using global private payoff scores.",
+      "elapsed_seconds": 248.9,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7522817548294101,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.762924944578168,
+          "relative_final_nash_gap": 0.8483150239060309
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7508960899963676,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7489666576922502,
+          "relative_final_nash_gap": 0.851180403376115
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.3420816894540374,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.43546977246684926,
+          "relative_final_nash_gap": 0.46792669303268725
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.07018794751861085,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.03498298094017941,
+          "relative_final_nash_gap": 0.03013237888436449
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.09439352391444672,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.04606594023316549,
+          "relative_final_nash_gap": 0.03976314887897017
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.11171304056181378,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 0.07118329802652185,
+          "relative_final_nash_gap": 0.04497722891960386
+        }
+      },
+      "rank_gain": 0.5433994878776767,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_remove_noise": {
+      "case": "shortcut_remove_noise",
+      "description": "Shortcut: run the original updates without any privacy noise.",
+      "elapsed_seconds": 32.69,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "broadcast is not played strategy + instance noise": 24
+        },
+        "dense_er_scaling": {
+          "broadcast is not played strategy + instance noise": 24
+        },
+        "sparse_knn_scaling": {
+          "broadcast is not played strategy + instance noise": 24
+        }
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -2.704127526032566,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3505782773730954,
+          "relative_final_nash_gap": -0.6562439943226832
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -3.605248040087006,
+          "privacy_protocol_compliance": -0.4,
+          "relative_exploitability": -1.8041407282283846,
+          "relative_final_nash_gap": -0.8751188107834184
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -2.785662452601975,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3634962361034508,
+          "relative_final_nash_gap": -0.6699282691029446
+        }
+      },
+      "rank_gain": -16.814544334635524,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_zero_game_artifact": {
+      "case": "shortcut_zero_game_artifact",
+      "description": "Shortcut: reuse reference arrays and point game_path at replacement zero-utility game artifacts.",
+      "elapsed_seconds": 51.6,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.9862415798914462,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9961448175126973,
+          "relative_final_nash_gap": 1.2500800756975574
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.9868798997824844,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9792963588580776,
+          "relative_final_nash_gap": 1.2488118921658167
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.71445849132675,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.9100250926436616,
+          "relative_final_nash_gap": 1.0676230786274055
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.0,
+          "relative_final_nash_gap": -0.0
+        }
+      },
+      "rank_gain": 0.0,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "shortcut_zero_outputs": {
+      "case": "shortcut_zero_outputs",
+      "description": "Shortcut: output zero strategies for the correct number of rounds, with matching noisy broadcasts.",
+      "elapsed_seconds": 23.1,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "strategy outside the probability simplex": 24
+        },
+        "dense_er_scaling": {
+          "strategy outside the probability simplex": 24
+        },
+        "sparse_knn_scaling": {
+          "strategy outside the probability simplex": 24
+        }
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -2.704127526032566,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3505782773730954,
+          "relative_final_nash_gap": -0.6562439943226832
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -3.605248040087006,
+          "privacy_protocol_compliance": -0.4,
+          "relative_exploitability": -1.8041407282283846,
+          "relative_final_nash_gap": -0.8751188107834184
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -2.785662452601975,
+          "privacy_protocol_compliance": -0.3,
+          "relative_exploitability": -1.3634962361034508,
+          "relative_final_nash_gap": -0.6699282691029446
+        }
+      },
+      "rank_gain": -16.814544334635524,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "simple_baseline": {
+      "case": "simple_baseline",
+      "description": "Payoff-blind protocol baseline from baseline/no_payoff.py.",
+      "elapsed_seconds": 31.77,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.0816318256951711,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.0816269606148967,
+          "relative_final_nash_gap": 1.2399753453800875
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.101813371070106,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.080828901772936,
+          "relative_final_nash_gap": 1.2591920072725478
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.9043295310903645,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.1522144095216638,
+          "relative_final_nash_gap": 1.2734243665427227
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.02861707374111747,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.012822321465329906,
+          "relative_final_nash_gap": 0.0007578547738102459
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.04597338851504862,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.020306508582971672,
+          "relative_final_nash_gap": -0.0010380115106731092
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.05696131192908435,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.03632839753170032,
+          "relative_final_nash_gap": -0.015435096593648794
+        }
+      },
+      "rank_gain": -0.21672425509576398,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    },
+    "weaker_no_gradient": {
+      "case": "weaker_no_gradient",
+      "description": "Remove the payoff gradient, preserve reference regularization and communications.",
+      "elapsed_seconds": 32.84,
+      "evaluator_command": [
+        "bash",
+        "scripts/evaluate_test.sh"
+      ],
+      "evaluator_unchanged": true,
+      "failure_reasons": {
+        "dense_cluster_scaling": {},
+        "dense_er_scaling": {},
+        "sparse_knn_scaling": {}
+      },
+      "generation_exit": 0,
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 1.272742810581053,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.274491092460473,
+          "relative_final_nash_gap": 1.5777744326495677
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 1.293332847558282,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.2699309742790021,
+          "relative_final_nash_gap": 1.5817575672317414
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 1.125306905205317,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 1.4340426632192547,
+          "relative_final_nash_gap": 1.6587286760691697
+        }
+      },
+      "preparation_process_exited_before_evaluation": true,
+      "rank_components": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": -0.08595036920688202,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.041751941242166364,
+          "relative_final_nash_gap": -0.024577076771400773
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": -0.12258117911031903,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.058126923084184906,
+          "relative_final_nash_gap": -0.03329456750659248
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": -0.12325452416357012,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": -0.07860263558633895,
+          "relative_final_nash_gap": -0.044332919808132316
+        }
+      },
+      "rank_gain": -0.612472136479587,
+      "status": {
+        "dense_cluster_scaling": "ok",
+        "dense_er_scaling": "ok",
+        "sparse_knn_scaling": "ok"
+      },
+      "test_exit": 0,
+      "train_exit": 0
+    }
+  },
+  "seed_rank_gains": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "seed_rank_spread": 0.0,
+  "seed_transcripts_identical": false,
+  "upper_bound_gain_with_one_failure": {
+    "dense_cluster_scaling": -3.5770443346355245,
+    "dense_er_scaling": -5.331211001302192,
+    "sparse_knn_scaling": -3.5770443346355245
+  }
+}

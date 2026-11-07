@@ -1,0 +1,65 @@
+{
+  "case": "comparator_baseline",
+  "description": "Budget-matched structure-free baseline from the public baseline code.",
+  "elapsed_seconds": 49.27,
+  "evaluator_command": [
+    "bash",
+    "scripts/evaluate_test.sh"
+  ],
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {}
+  },
+  "generation_exit": 0,
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 1.0,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 1.0099298664896055,
+      "relative_final_nash_gap": 1.2703986506480323
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 1.0,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9921490119073079,
+      "relative_final_nash_gap": 1.2650044306008794
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 1.0,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 1.2747341332694797,
+      "relative_final_nash_gap": 1.4816665546563532
+    }
+  },
+  "preparation_process_exited_before_evaluation": true,
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": -0.004127526032566131,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.00206775734653622,
+      "relative_final_nash_gap": -0.0015238931212856132
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": -0.005248040087006256,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.002570530609846045,
+      "relative_final_nash_gap": -0.0016192538435062743
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": -0.085662452601975,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.05470635609387271,
+      "relative_final_nash_gap": -0.03105326070217108
+    }
+  },
+  "rank_gain": -0.18857907043876534,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "ok"
+  },
+  "test_exit": 0,
+  "train_exit": 0
+}

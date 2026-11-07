@@ -1,0 +1,67 @@
+{
+  "case": "shortcut_failure_compensation",
+  "description": "Shortcut: use oracle outputs except omit one smallest sparse instance in each split, seeking compensation from the other experiments.",
+  "elapsed_seconds": 25.44,
+  "evaluator_command": [
+    "bash",
+    "scripts/evaluate_test.sh"
+  ],
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {
+      "missing run": 1
+    }
+  },
+  "generation_exit": 0,
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.7522817548294101,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.762924944578168,
+      "relative_final_nash_gap": 0.8483150239060309
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.7508960899963676,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.7489666576922502,
+      "relative_final_nash_gap": 0.851180403376115
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 10.0,
+      "privacy_protocol_compliance": 0.9583333333333334,
+      "relative_exploitability": 10.0,
+      "relative_final_nash_gap": 10.0
+    }
+  },
+  "preparation_process_exited_before_evaluation": true,
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.07018794751861085,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.03498298094017941,
+      "relative_final_nash_gap": 0.03013237888436449
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.09439352391444672,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.04606594023316549,
+      "relative_final_nash_gap": 0.03976314887897017
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": -2.785662452601975,
+      "privacy_protocol_compliance": -0.012499999999999989,
+      "relative_exploitability": -1.3634962361034508,
+      "relative_final_nash_gap": -0.6699282691029446
+    }
+  },
+  "rank_gain": -4.516061037438634,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "failed"
+  },
+  "test_exit": 0,
+  "train_exit": 0
+}

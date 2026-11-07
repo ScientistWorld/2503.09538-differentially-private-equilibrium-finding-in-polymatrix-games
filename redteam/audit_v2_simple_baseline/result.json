@@ -1,0 +1,65 @@
+{
+  "case": "simple_baseline",
+  "description": "Payoff-blind protocol baseline from baseline/no_payoff.py.",
+  "elapsed_seconds": 31.77,
+  "evaluator_command": [
+    "bash",
+    "scripts/evaluate_test.sh"
+  ],
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {}
+  },
+  "generation_exit": 0,
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 1.0816318256951711,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 1.0816269606148967,
+      "relative_final_nash_gap": 1.2399753453800875
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 1.101813371070106,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 1.080828901772936,
+      "relative_final_nash_gap": 1.2591920072725478
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.9043295310903645,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 1.1522144095216638,
+      "relative_final_nash_gap": 1.2734243665427227
+    }
+  },
+  "preparation_process_exited_before_evaluation": true,
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": -0.02861707374111747,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.012822321465329906,
+      "relative_final_nash_gap": 0.0007578547738102459
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": -0.04597338851504862,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.020306508582971672,
+      "relative_final_nash_gap": -0.0010380115106731092
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": -0.05696131192908435,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": -0.03632839753170032,
+      "relative_final_nash_gap": -0.015435096593648794
+    }
+  },
+  "rank_gain": -0.21672425509576398,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "ok"
+  },
+  "test_exit": 0,
+  "train_exit": 0
+}

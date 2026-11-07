@@ -1,0 +1,65 @@
+{
+  "case": "better_max_regularization",
+  "description": "Real fix: proximal weight 1, still within the allowed shrink segment.",
+  "elapsed_seconds": 45.86,
+  "evaluator_command": [
+    "bash",
+    "scripts/evaluate_test.sh"
+  ],
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {}
+  },
+  "generation_exit": 0,
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.9159659563758951,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9218735734689297,
+      "relative_final_nash_gap": 1.0759546045804977
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.9228834727178629,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.9120302508544226,
+      "relative_final_nash_gap": 1.0849122542337328
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.6590491599025886,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.8393734759597239,
+      "relative_final_nash_gap": 0.9440460837257554
+    }
+  },
+  "preparation_process_exited_before_evaluation": true,
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.021082687054665348,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.011140686606565142,
+      "relative_final_nash_gap": 0.013059410333779475
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.0255985708258486,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.013453221600731015,
+      "relative_final_nash_gap": 0.016389963793208385
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.016622799427248414,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.010597742502590657,
+      "relative_final_nash_gap": 0.009268274617623756
+    }
+  },
+  "rank_gain": 0.1372133567622608,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "ok"
+  },
+  "test_exit": 0,
+  "train_exit": 0
+}

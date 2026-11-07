@@ -1,0 +1,71 @@
+{
+  "case": "shortcut_drop_small_games",
+  "description": "Shortcut: omit every N=64 instance from the manifest.",
+  "elapsed_seconds": 25.72,
+  "evaluator_command": [
+    "bash",
+    "scripts/evaluate_test.sh"
+  ],
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {
+      "missing run": 6
+    },
+    "dense_er_scaling": {
+      "missing run": 6
+    },
+    "sparse_knn_scaling": {
+      "missing run": 6
+    }
+  },
+  "generation_exit": 0,
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 10.0,
+      "privacy_protocol_compliance": 0.75,
+      "relative_exploitability": 10.0,
+      "relative_final_nash_gap": 10.0
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 10.0,
+      "privacy_protocol_compliance": 0.75,
+      "relative_exploitability": 10.0,
+      "relative_final_nash_gap": 10.0
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 10.0,
+      "privacy_protocol_compliance": 0.75,
+      "relative_exploitability": 10.0,
+      "relative_final_nash_gap": 10.0
+    }
+  },
+  "preparation_process_exited_before_evaluation": true,
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": -2.704127526032566,
+      "privacy_protocol_compliance": -0.075,
+      "relative_exploitability": -1.3505782773730954,
+      "relative_final_nash_gap": -0.6562439943226832
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": -3.605248040087006,
+      "privacy_protocol_compliance": -0.1,
+      "relative_exploitability": -1.8041407282283846,
+      "relative_final_nash_gap": -0.8751188107834184
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": -2.785662452601975,
+      "privacy_protocol_compliance": -0.075,
+      "relative_exploitability": -1.3634962361034508,
+      "relative_final_nash_gap": -0.6699282691029446
+    }
+  },
+  "rank_gain": -16.064544334635528,
+  "status": {
+    "dense_cluster_scaling": "failed",
+    "dense_er_scaling": "failed",
+    "sparse_knn_scaling": "failed"
+  },
+  "test_exit": 0,
+  "train_exit": 0
+}

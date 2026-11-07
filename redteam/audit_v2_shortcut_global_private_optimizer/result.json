@@ -1,0 +1,65 @@
+{
+  "case": "shortcut_global_private_optimizer",
+  "description": "Shortcut: centrally minimize joint true-payoff Nash gap using other players' private utilities and unnoised strategies, clipped to the transcript cap.",
+  "elapsed_seconds": 138.95,
+  "evaluator_command": [
+    "bash",
+    "scripts/evaluate_test.sh"
+  ],
+  "evaluator_unchanged": true,
+  "failure_reasons": {
+    "dense_cluster_scaling": {},
+    "dense_er_scaling": {},
+    "sparse_knn_scaling": {}
+  },
+  "generation_exit": 0,
+  "metrics": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.7522817548294101,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.762924944578168,
+      "relative_final_nash_gap": 0.8483150239060309
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.7508960899963676,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.7489666576922502,
+      "relative_final_nash_gap": 0.851180403376115
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.3420816894540374,
+      "privacy_protocol_compliance": 1.0,
+      "relative_exploitability": 0.43546977246684926,
+      "relative_final_nash_gap": 0.46792669303268725
+    }
+  },
+  "preparation_process_exited_before_evaluation": true,
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "comparator_exploitability_ratio": 0.07018794751861085,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.03498298094017941,
+      "relative_final_nash_gap": 0.03013237888436449
+    },
+    "dense_er_scaling": {
+      "comparator_exploitability_ratio": 0.09439352391444672,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.04606594023316549,
+      "relative_final_nash_gap": 0.03976314887897017
+    },
+    "sparse_knn_scaling": {
+      "comparator_exploitability_ratio": 0.11171304056181378,
+      "privacy_protocol_compliance": 0.0,
+      "relative_exploitability": 0.07118329802652185,
+      "relative_final_nash_gap": 0.04497722891960386
+    }
+  },
+  "rank_gain": 0.5433994878776767,
+  "status": {
+    "dense_cluster_scaling": "ok",
+    "dense_er_scaling": "ok",
+    "sparse_knn_scaling": "ok"
+  },
+  "test_exit": 0,
+  "train_exit": 0
+}

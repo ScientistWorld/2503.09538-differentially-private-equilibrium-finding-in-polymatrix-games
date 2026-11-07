@@ -1,0 +1,88 @@
+{
+  "_meta": {
+    "methods": [
+      "our_method"
+    ],
+    "noise_key": 0,
+    "seeds": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10
+    ],
+    "sizes": [
+      64,
+      128,
+      256,
+      512
+    ],
+    "slice": "train"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=0: strategy outside the probability simplex",
+          "n=64 seed=2: strategy outside the probability simplex",
+          "n=64 seed=4: strategy outside the probability simplex",
+          "n=64 seed=6: strategy outside the probability simplex",
+          "n=64 seed=8: strategy outside the probability simplex"
+        ],
+        "failure_reasons": {
+          "strategy outside the probability simplex": 24
+        },
+        "max_step_utilization": 0.0,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "train",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    },
+    "dense_er_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=0: strategy outside the probability simplex",
+          "n=64 seed=2: strategy outside the probability simplex",
+          "n=64 seed=4: strategy outside the probability simplex",
+          "n=64 seed=6: strategy outside the probability simplex",
+          "n=64 seed=8: strategy outside the probability simplex"
+        ],
+        "failure_reasons": {
+          "strategy outside the probability simplex": 24
+        },
+        "max_step_utilization": 0.0,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "train",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    },
+    "sparse_knn_scaling": {
+      "our_method": {
+        "failure_examples": [
+          "n=64 seed=0: strategy outside the probability simplex",
+          "n=64 seed=2: strategy outside the probability simplex",
+          "n=64 seed=4: strategy outside the probability simplex",
+          "n=64 seed=6: strategy outside the probability simplex",
+          "n=64 seed=8: strategy outside the probability simplex"
+        ],
+        "failure_reasons": {
+          "strategy outside the probability simplex": 24
+        },
+        "max_step_utilization": 0.0,
+        "mean_step_utilization": null,
+        "per_n": {},
+        "required_instances": 24,
+        "slice": "train",
+        "status": "failed",
+        "valid_instances": 0
+      }
+    }
+  }
+}
