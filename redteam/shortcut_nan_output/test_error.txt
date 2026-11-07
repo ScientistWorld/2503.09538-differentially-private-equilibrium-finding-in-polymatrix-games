@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/eval/test/evaluate.py", line 281, in <module>
+    main()
+  File "/home/user/eval/test/evaluate.py", line 271, in main
+    scores, diagnostics = evaluate_runs(load_manifests(existing))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/eval/test/evaluate.py", line 168, in evaluate_runs
+    raise ValueError(f"non-finite trajectory values in {run['trajectory_path']}")
+ValueError: non-finite trajectory values in redteam/shortcut_nan_output/artifacts/dense_cluster_n64_seed1_trajectory.npz

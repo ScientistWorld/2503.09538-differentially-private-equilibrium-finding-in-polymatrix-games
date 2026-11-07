@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/user/eval/test/evaluate.py", line 281, in <module>
+    main()
+  File "/home/user/eval/test/evaluate.py", line 271, in main
+    scores, diagnostics = evaluate_runs(load_manifests(existing))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/eval/test/evaluate.py", line 169, in evaluate_runs
+    cce, _ = cce_exploitability(game, trajectory)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/data/polymatrix.py", line 159, in cce_exploitability
+    average_current = np.mean(np.stack(current_vals, axis=0), axis=0)
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.11/site-packages/numpy/_core/shape_base.py", line 454, in stack
+    raise ValueError('need at least one array to stack')
+ValueError: need at least one array to stack

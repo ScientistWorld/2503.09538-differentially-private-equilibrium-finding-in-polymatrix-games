@@ -1,0 +1,11 @@
+{
+  "run_id": "02fec3f7-5e7",
+  "status": "completed",
+  "returncode": 0,
+  "duration": 180.22492861747742,
+  "submitted_at": 1794048821.236224,
+  "started_at": 1794048873.8919687,
+  "completed_at": 1794049054.1168973,
+  "cases_completed_in_job": 2,
+  "gpus": 0
+}

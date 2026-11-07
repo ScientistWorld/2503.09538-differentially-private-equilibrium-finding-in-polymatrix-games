@@ -62,6 +62,9 @@ def run_case(name):
             # monkeypatching, evaluator imports or background processes.
             p = subprocess.run(['bash', f'scripts/evaluate_{split}.sh'], cwd=ROOT, stdout=log, stderr=subprocess.STDOUT)
         result[f'{split}_exit'] = p.returncode
+        if p.returncode:
+            # Keep rejection evidence even when verbose runtime logs are ignored.
+            shutil.copy2(folder / f'evaluate_{split}.log', folder / f'{split}_error.txt')
         for stem in ('scores', 'diagnostics'):
             source = ROOT / 'scoring' / f'{stem}_{split}.json'
             if source.exists() and (p.returncode == 0):

@@ -1,0 +1,236 @@
+{
+  "cases": {
+    "better_final_average": {
+      "rank_gain": -0.0023817537129077406,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0188263598189513,
+        "cce_exploitability_mean": 0.08482076412707508,
+        "final_nash_gap_mean": 0.09075971648604056,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.55655538859592e-17
+      }
+    },
+    "better_fixed_transcript_readout": {
+      "rank_gain": 0.07549242447599314,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.8569200101052973,
+        "cce_exploitability_mean": 0.07322881522740579,
+        "final_nash_gap_mean": 0.07236118735562289,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 5.037203293367654e-17
+      }
+    },
+    "better_fixed_transcript_stronger_readout": {
+      "rank_gain": 0.04939982446937925,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.9061257449467863,
+        "cce_exploitability_mean": 0.07818103547881658,
+        "final_nash_gap_mean": 0.08395822514163527,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.4326928195712045e-17
+      }
+    },
+    "better_persistent_anchor": {
+      "rank_gain": 0.10933857740469598,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.7880298965208904,
+        "cce_exploitability_mean": 0.06735728045194965,
+        "final_nash_gap_mean": 0.061854172430979355,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 5.1584984114144697e-17
+      }
+    },
+    "comparator_as_method": {
+      "rank_gain": 0.003891733552711615,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0,
+        "cce_exploitability_mean": 0.08289873059867978,
+        "final_nash_gap_mean": 0.0985906488525505,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.506960668386462e-17
+      }
+    },
+    "reference_seed0": {
+      "rank_gain": 0.0,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0052776889216164,
+        "cce_exploitability_mean": 0.0834146050282562,
+        "final_nash_gap_mean": 0.10359825465724376,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.7460950100552957e-17
+      }
+    },
+    "reference_seed1": {
+      "rank_gain": 0.003886488463444279,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.9989985071764165,
+        "cce_exploitability_mean": 0.082328721673337,
+        "final_nash_gap_mean": 0.10131142700921279,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.674368260081801e-17
+      }
+    },
+    "reference_seed2": {
+      "rank_gain": -0.008199705637542529,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0243518830352563,
+        "cce_exploitability_mean": 0.08505898050643039,
+        "final_nash_gap_mean": 0.1026490442737041,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.7254951687780713e-17
+      }
+    },
+    "shortcut_constant_uniform": {
+      "rank_gain": -0.11114037709012516,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0604135605066207,
+        "cce_exploitability_mean": 0.09025265586337783,
+        "final_nash_gap_mean": 0.09025265586337783,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 0.0
+      }
+    },
+    "shortcut_degrade_baseline": {
+      "rank_gain": 0.2855969969264448,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.2912851966055044,
+        "cce_exploitability_mean": 0.0834146050282562,
+        "final_nash_gap_mean": 0.10359825465724376,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.7460950100552957e-17
+      }
+    },
+    "shortcut_drop_small_games": {
+      "rank_gain": 1042.4182596566184,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0006146586057771,
+        "cce_exploitability_mean": 0.07700269467936521,
+        "final_nash_gap_mean": 0.09561078120514027,
+        "privacy_budget_mean": 4664.187767957617,
+        "strategy_simplex_violation_mean": 4.767959753867087e-17
+      }
+    },
+    "shortcut_empty_output": {
+      "rank_gain": null,
+      "test_exit": 1
+    },
+    "shortcut_eta_zero": {
+      "rank_gain": 3840.9201379421156,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0052776889216164,
+        "cce_exploitability_mean": 0.0834146050282562,
+        "final_nash_gap_mean": 0.10359825465724376,
+        "privacy_budget_mean": 0.0,
+        "strategy_simplex_violation_mean": 4.7460950100552957e-17
+      }
+    },
+    "shortcut_nan_output": {
+      "rank_gain": null,
+      "test_exit": 1
+    },
+    "shortcut_negative_alpha": {
+      "rank_gain": 7681.855408150128,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0052776889216164,
+        "cce_exploitability_mean": 0.0834146050282562,
+        "final_nash_gap_mean": 0.10359825465724376,
+        "privacy_budget_mean": -6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.7460950100552957e-17
+      }
+    },
+    "shortcut_public_game_no_noise": {
+      "rank_gain": 0.14724740256785798,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.7131917449333272,
+        "cce_exploitability_mean": 0.05958830802371006,
+        "final_nash_gap_mean": 0.049788546691753255,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 5.038118088950688e-17
+      }
+    },
+    "shortcut_reported_bound": {
+      "rank_gain": 0.0,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.0052776889216164,
+        "cce_exploitability_mean": 0.0834146050282562,
+        "final_nash_gap_mean": 0.10359825465724376,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.7460950100552957e-17
+      }
+    },
+    "shortcut_zero_game": {
+      "rank_gain": 0.4806344409109453,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.0,
+        "cce_exploitability_mean": 0.0,
+        "final_nash_gap_mean": 0.0,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.7460950100552957e-17
+      }
+    },
+    "shortcut_zero_outputs": {
+      "rank_gain": -0.01936555908905473,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.0,
+        "cce_exploitability_mean": 0.0,
+        "final_nash_gap_mean": 0.0,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 1.0
+      }
+    },
+    "shortcut_zero_outputs_zero_eta": {
+      "rank_gain": 3840.9007723830273,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 0.0,
+        "cce_exploitability_mean": 0.0,
+        "final_nash_gap_mean": 0.0,
+        "privacy_budget_mean": 0.0,
+        "strategy_simplex_violation_mean": 1.0
+      }
+    },
+    "weaker_no_gradient": {
+      "rank_gain": -0.4955308278996875,
+      "test_exit": 0,
+      "weighted_metrics": {
+        "baseline_cce_ratio": 1.4055977755267546,
+        "cce_exploitability_mean": 0.12190765166724564,
+        "final_nash_gap_mean": 0.1474537776920412,
+        "privacy_budget_mean": 6401.5587836800205,
+        "strategy_simplex_violation_mean": 4.4081966267366104e-17
+      }
+    }
+  },
+  "rank_definition": "sum_experiments(weight * sum_metrics(coefficient * (score - reference)))",
+  "seed_rank_gains": [
+    0.0,
+    0.003886488463444279,
+    -0.008199705637542529
+  ],
+  "seed_rank_population_std": 0.005037813160550701,
+  "seed_rank_range": 0.012086194100986807,
+  "seed_scope": "algorithm RNG changes; the same fixed test-game grid",
+  "shortcut_counts": {
+    "above_reference": 7,
+    "below_reference": 2,
+    "rejected": 2,
+    "tied_reference": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "run_id": "0353ab9d-cdc",
+  "status": "completed",
+  "returncode": 0,
+  "duration": 1321.9707307815552,
+  "submitted_at": 1794047279.86448,
+  "started_at": 1794047311.5036914,
+  "completed_at": 1794048633.4744222,
+  "cases_completed_in_job": 19,
+  "gpus": 0
+}
