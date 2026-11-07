@@ -5,4 +5,4 @@ action: submit
 gpus: 0
 test: false
 milestone: core_claim_plus
-notes: "Hardening job (CPU): smoke-test player-policy interface, build hidden-test comparator, reproduce reference + baselines (train + hidden test), run redteam/hardening_v3 audit (variants + shortcuts through no-arg hidden test), validate."
+notes: "Verification job (CPU): isolated replay module for the locality audit; smoke test incl. replay-isolation check, reproduce reference + baselines through final evaluators, full redteam/hardening_v3 audit (17 cases + cache-evasion probe), validate."
