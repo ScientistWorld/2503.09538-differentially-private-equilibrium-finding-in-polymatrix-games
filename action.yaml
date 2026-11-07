@@ -1,8 +1,6 @@
 # Once you set action to 'submit' or 'done', STOP immediately.
 # Do NOT sleep, poll, or wait for jobs. The system reads this file
 # only after your turn ends.
-action: submit
-gpus: 0
-test: false
+action: done
 milestone: core_claim_plus
-notes: "Final hardening check: end-to-end reproduce from final code, full audit incl. left-shortcut probes (rescaled known-noise gradient, per-instance best-variant selection) and paired comparator noise replicates, validate."
+notes: "Hardened: eval-owned games/noise/operating point/comparator, privacy as verified protocol gate, failures score below every valid run; all redteam shortcuts tie (ignored fields) or fail (-16), compliant improvements +0.14/+0.23, weaker -0.29/-0.61; reference beats budget-matched comparator in all families (kNN 0.715, dense ~1.3%, paired-stable); validate passes."
