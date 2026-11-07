@@ -18,7 +18,7 @@
       "our_method": {
         "exit_code": 0,
         "log_tail": "n256/seed4 ok (0.1s)\n[train:run] dense_cluster/n256/seed6 ok (0.1s)\n[train:run] dense_cluster/n256/seed8 ok (0.1s)\n[train:run] dense_cluster/n256/seed10 ok (0.1s)\n[train:run] dense_cluster/n512/seed0 ok (0.4s)\n[train:run] dense_cluster/n512/seed2 ok (0.4s)\n[train:run] dense_cluster/n512/seed4 ok (0.4s)\n[train:run] dense_cluster/n512/seed6 ok (0.4s)\n[train:run] dense_cluster/n512/seed8 ok (0.4s)\n[train:run] dense_cluster/n512/seed10 ok (0.4s)\n[train:run] sparse_knn/n64/seed0 ok (0.0s)\n[train:run] sparse_knn/n64/seed2 ok (0.0s)\n[train:run] sparse_knn/n64/seed4 ok (0.0s)\n[train:run] sparse_knn/n64/seed6 ok (0.0s)\n[train:run] sparse_knn/n64/seed8 ok (0.0s)\n[train:run] sparse_knn/n64/seed10 ok (0.0s)\n[train:run] sparse_knn/n128/seed0 ok (0.0s)\n[train:run] sparse_knn/n128/seed2 ok (0.0s)\n[train:run] sparse_knn/n128/seed4 ok (0.0s)\n[train:run] sparse_knn/n128/seed6 ok (0.0s)\n[train:run] sparse_knn/n128/seed8 ok (0.0s)\n[train:run] sparse_knn/n128/seed10 ok (0.0s)\n[train:run] sparse_knn/n256/seed0 ok (0.1s)\n[train:run] sparse_knn/n256/seed2 ok (0.1s)\n[train:run] sparse_knn/n256/seed4 ok (0.1s)\n[train:run] sparse_knn/n256/seed6 ok (0.1s)\n[train:run] sparse_knn/n256/seed8 ok (0.1s)\n[train:run] sparse_knn/n256/seed10 ok (0.1s)\n[train:run] sparse_knn/n512/seed0 ok (0.2s)\n[train:run] sparse_knn/n512/seed2 ok (0.2s)\n[train:run] sparse_knn/n512/seed4 ok (0.2s)\n[train:run] sparse_knn/n512/seed6 ok (0.2s)\n[train:run] sparse_knn/n512/seed8 ok (0.2s)\n[train:run] sparse_knn/n512/seed10 ok (0.2s)\n",
-        "seconds": 8.7
+        "seconds": 8.8
       }
     },
     "sizes": [

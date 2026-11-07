@@ -23,9 +23,9 @@
     },
     "policy_run": {
       "exit_code": 0,
-      "seconds": 21.0
+      "seconds": 21.3
     },
-    "seconds": 43.8,
+    "seconds": 46.8,
     "status": {
       "dense_cluster_scaling": "ok",
       "dense_er_scaling": "ok",
@@ -52,9 +52,9 @@
     },
     "policy_run": {
       "exit_code": 0,
-      "seconds": 15.0
+      "seconds": 16.2
     },
-    "seconds": 34.3,
+    "seconds": 37.0,
     "status": {
       "dense_cluster_scaling": "ok",
       "dense_er_scaling": "ok",

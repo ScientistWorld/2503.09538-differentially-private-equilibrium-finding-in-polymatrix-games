@@ -38,9 +38,9 @@
     },
     "policy_run": {
       "exit_code": 0,
-      "seconds": 23.7
+      "seconds": 20.1
     },
-    "seconds": 42.9,
+    "seconds": 34.3,
     "status": {
       "dense_cluster_scaling": "failed",
       "dense_er_scaling": "failed",
@@ -82,9 +82,9 @@
     },
     "policy_run": {
       "exit_code": 0,
-      "seconds": 16.8
+      "seconds": 15.5
     },
-    "seconds": 32.3,
+    "seconds": 27.4,
     "status": {
       "dense_cluster_scaling": "failed",
       "dense_er_scaling": "failed",

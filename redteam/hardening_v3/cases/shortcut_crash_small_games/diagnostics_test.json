@@ -18,7 +18,7 @@
       "our_method": {
         "exit_code": 0,
         "log_tail": "ames (0.0s)\n[test:run] sparse_knn/n64/i2 policy error: RuntimeError: skip the smallest games (0.0s)\n[test:run] sparse_knn/n64/i3 policy error: RuntimeError: skip the smallest games (0.0s)\n[test:run] sparse_knn/n64/i4 policy error: RuntimeError: skip the smallest games (0.0s)\n[test:run] sparse_knn/n64/i5 policy error: RuntimeError: skip the smallest games (0.0s)\n[test:run] sparse_knn/n64/i6 policy error: RuntimeError: skip the smallest games (0.0s)\n[test:run] sparse_knn/n64/i7 policy error: RuntimeError: skip the smallest games (0.0s)\n[test:run] sparse_knn/n128/i0 ok (0.0s)\n[test:run] sparse_knn/n128/i1 ok (0.0s)\n[test:run] sparse_knn/n128/i2 ok (0.0s)\n[test:run] sparse_knn/n128/i3 ok (0.0s)\n[test:run] sparse_knn/n128/i4 ok (0.0s)\n[test:run] sparse_knn/n128/i5 ok (0.0s)\n[test:run] sparse_knn/n128/i6 ok (0.0s)\n[test:run] sparse_knn/n128/i7 ok (0.0s)\n[test:run] sparse_knn/n256/i0 ok (0.1s)\n[test:run] sparse_knn/n256/i1 ok (0.1s)\n[test:run] sparse_knn/n256/i2 ok (0.1s)\n[test:run] sparse_knn/n256/i3 ok (0.1s)\n[test:run] sparse_knn/n256/i4 ok (0.1s)\n[test:run] sparse_knn/n256/i5 ok (0.1s)\n[test:run] sparse_knn/n256/i6 ok (0.1s)\n[test:run] sparse_knn/n256/i7 ok (0.1s)\n[test:run] sparse_knn/n512/i0 ok (0.3s)\n[test:run] sparse_knn/n512/i1 ok (0.3s)\n[test:run] sparse_knn/n512/i2 ok (0.3s)\n[test:run] sparse_knn/n512/i3 ok (0.3s)\n[test:run] sparse_knn/n512/i4 ok (0.3s)\n[test:run] sparse_knn/n512/i5 ok (0.3s)\n[test:run] sparse_knn/n512/i6 ok (0.3s)\n[test:run] sparse_knn/n512/i7 ok (0.3s)\n",
-        "seconds": 18.5
+        "seconds": 19.6
       }
     },
     "sizes": [

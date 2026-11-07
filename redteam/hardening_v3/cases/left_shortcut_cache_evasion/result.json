@@ -1,6 +1,6 @@
 {
-  "case": "left_shortcut_hidden_evaluator_oracle",
-  "description": "Imports the evaluator module at run time to regenerate the hidden instance and its noise, then plays the central optimiser.  Requires reading eval/ code at test time.",
+  "case": "left_shortcut_cache_evasion",
+  "description": "The hidden-evaluator oracle in the protocol run, plus a disk cache of its strategies that the isolated replay process reads back to pass the locality audit.",
   "evaluator_unchanged": true,
   "kind": "left_shortcut",
   "test": {
@@ -23,9 +23,9 @@
     },
     "policy_run": {
       "exit_code": 0,
-      "seconds": 149.9
+      "seconds": 179.0
     },
-    "seconds": 292.7,
+    "seconds": 201.1,
     "status": {
       "dense_cluster_scaling": "ok",
       "dense_er_scaling": "ok",
@@ -52,9 +52,9 @@
     },
     "policy_run": {
       "exit_code": 0,
-      "seconds": 96.0
+      "seconds": 121.0
     },
-    "seconds": 211.4,
+    "seconds": 135.7,
     "status": {
       "dense_cluster_scaling": "ok",
       "dense_er_scaling": "ok",

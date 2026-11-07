@@ -33,9 +33,9 @@
     "locality_audit": null,
     "policy_run": {
       "exit_code": 0,
-      "seconds": 7.0
+      "seconds": 8.0
     },
-    "seconds": 17.1,
+    "seconds": 24.7,
     "status": {
       "dense_cluster_scaling": "failed",
       "dense_er_scaling": "failed",
@@ -72,9 +72,9 @@
     "locality_audit": null,
     "policy_run": {
       "exit_code": 0,
-      "seconds": 5.5
+      "seconds": 6.2
     },
-    "seconds": 14.8,
+    "seconds": 19.4,
     "status": {
       "dense_cluster_scaling": "failed",
       "dense_er_scaling": "failed",

@@ -1,0 +1,94 @@
+{
+  "case": "shortcut_hidden_evaluator_oracle",
+  "description": "Uses the evaluator module it runs inside (or imports it) to regenerate the hidden instance and its noise, then plays the central optimiser.",
+  "evaluator_unchanged": true,
+  "kind": "shortcut",
+  "test": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [
+        "dense_cluster/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 0, max deviation 0.209)",
+        "dense_cluster/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 9, max deviation 0.2)"
+      ],
+      "dense_er_scaling": [
+        "dense_er/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 7, max deviation 0.236)",
+        "dense_er/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 2, max deviation 0.289)"
+      ],
+      "sparse_knn_scaling": [
+        "sparse_knn/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 20, max deviation 0.554)",
+        "sparse_knn/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 17, max deviation 0.274)"
+      ]
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {
+        "locality audit: strategies not reproduced from the player's local view and received messages": 32
+      },
+      "dense_er_scaling": {
+        "locality audit: strategies not reproduced from the player's local view and received messages": 32
+      },
+      "sparse_knn_scaling": {
+        "locality audit: strategies not reproduced from the player's local view and received messages": 32
+      }
+    },
+    "locality_audit": {
+      "audited_instances": 96,
+      "audited_players": 768,
+      "failed_instances": 96,
+      "max_deviation": 0.5539556207853611
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 176.9
+    },
+    "seconds": 199.8,
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    }
+  },
+  "train": {
+    "exit": 0,
+    "failure_examples": {
+      "dense_cluster_scaling": [
+        "dense_cluster/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 11, max deviation 0.304)",
+        "dense_cluster/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 15, max deviation 0.182)"
+      ],
+      "dense_er_scaling": [
+        "dense_er/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 17, max deviation 0.255)",
+        "dense_er/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 20, max deviation 0.151)"
+      ],
+      "sparse_knn_scaling": [
+        "sparse_knn/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 0, max deviation 0.185)",
+        "sparse_knn/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 8, max deviation 0.294)"
+      ]
+    },
+    "failure_reasons": {
+      "dense_cluster_scaling": {
+        "locality audit: strategies not reproduced from the player's local view and received messages": 24
+      },
+      "dense_er_scaling": {
+        "locality audit: strategies not reproduced from the player's local view and received messages": 24
+      },
+      "sparse_knn_scaling": {
+        "locality audit: strategies not reproduced from the player's local view and received messages": 24
+      }
+    },
+    "locality_audit": {
+      "audited_instances": 72,
+      "audited_players": 576,
+      "failed_instances": 72,
+      "max_deviation": 0.5398959341835492
+    },
+    "policy_run": {
+      "exit_code": 0,
+      "seconds": 120.3
+    },
+    "seconds": 135.8,
+    "status": {
+      "dense_cluster_scaling": "failed",
+      "dense_er_scaling": "failed",
+      "sparse_knn_scaling": "failed"
+    }
+  }
+}

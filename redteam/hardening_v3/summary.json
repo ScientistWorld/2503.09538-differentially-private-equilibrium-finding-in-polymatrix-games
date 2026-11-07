@@ -458,8 +458,8 @@
       }
     }
   },
-  "left_shortcut_hidden_evaluator_oracle": {
-    "description": "Imports the evaluator module at run time to regenerate the hidden instance and its noise, then plays the central optimiser.  Requires reading eval/ code at test time.",
+  "left_shortcut_cache_evasion": {
+    "description": "The hidden-evaluator oracle in the protocol run, plus a disk cache of its strategies that the isolated replay process reads back to pass the locality audit.",
     "evaluator_unchanged": true,
     "kind": "left_shortcut",
     "test": {
@@ -1140,98 +1140,27 @@
     "test": {
       "failure_examples": {
         "dense_cluster_scaling": [
-          "dense_cluster/n64/i0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.209)",
-          "dense_cluster/n64/i1: locality audit: player 9's strategies are not reproduced from its local view and received messages (max deviation 0.2)"
+          "dense_cluster/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 0, max deviation 0.209)",
+          "dense_cluster/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 9, max deviation 0.2)"
         ],
         "dense_er_scaling": [
-          "dense_er/n64/i0: locality audit: player 7's strategies are not reproduced from its local view and received messages (max deviation 0.236)",
-          "dense_er/n64/i1: locality audit: player 2's strategies are not reproduced from its local view and received messages (max deviation 0.289)"
+          "dense_er/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 7, max deviation 0.236)",
+          "dense_er/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 2, max deviation 0.289)"
         ],
         "sparse_knn_scaling": [
-          "sparse_knn/n64/i0: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.554)",
-          "sparse_knn/n64/i1: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.274)"
+          "sparse_knn/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 20, max deviation 0.554)",
+          "sparse_knn/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 17, max deviation 0.274)"
         ]
       },
       "failure_reasons": {
         "dense_cluster_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
-          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 229's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 38's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 42's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 75's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 87's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 88's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
         },
         "dense_er_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
-          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 108's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 193's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 36's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 50's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
         },
         "sparse_knn_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 177's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 33's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 56's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 60's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 4,
-          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 84's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 2
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
         }
       },
       "locality_audit": {
@@ -1291,79 +1220,27 @@
     "train": {
       "failure_examples": {
         "dense_cluster_scaling": [
-          "dense_cluster/n64/seed0: locality audit: player 11's strategies are not reproduced from its local view and received messages (max deviation 0.304)",
-          "dense_cluster/n64/seed2: locality audit: player 15's strategies are not reproduced from its local view and received messages (max deviation 0.182)"
+          "dense_cluster/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 11, max deviation 0.304)",
+          "dense_cluster/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 15, max deviation 0.182)"
         ],
         "dense_er_scaling": [
-          "dense_er/n64/seed0: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.255)",
-          "dense_er/n64/seed2: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.151)"
+          "dense_er/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 17, max deviation 0.255)",
+          "dense_er/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 20, max deviation 0.151)"
         ],
         "sparse_knn_scaling": [
-          "sparse_knn/n64/seed0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.185)",
-          "sparse_knn/n64/seed2: locality audit: player 8's strategies are not reproduced from its local view and received messages (max deviation 0.294)"
+          "sparse_knn/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 0, max deviation 0.185)",
+          "sparse_knn/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 8, max deviation 0.294)"
         ]
       },
       "failure_reasons": {
         "dense_cluster_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 3,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 132's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 14's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 3,
-          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 32's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 34's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 35's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 67's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 93's strategies are not reproduced from its local view and received messages": 1
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
         },
         "dense_er_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 26's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 39's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 40's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 48's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
         },
         "sparse_knn_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 4,
-          "locality audit: player 109's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 118's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 14's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 161's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 23's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 82's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
         }
       },
       "locality_audit": {
@@ -1428,98 +1305,27 @@
     "test": {
       "failure_examples": {
         "dense_cluster_scaling": [
-          "dense_cluster/n64/i0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.172)",
-          "dense_cluster/n64/i1: locality audit: player 9's strategies are not reproduced from its local view and received messages (max deviation 0.178)"
+          "dense_cluster/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 0, max deviation 0.172)",
+          "dense_cluster/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 9, max deviation 0.178)"
         ],
         "dense_er_scaling": [
-          "dense_er/n64/i0: locality audit: player 7's strategies are not reproduced from its local view and received messages (max deviation 0.214)",
-          "dense_er/n64/i1: locality audit: player 2's strategies are not reproduced from its local view and received messages (max deviation 0.26)"
+          "dense_er/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 7, max deviation 0.214)",
+          "dense_er/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 2, max deviation 0.26)"
         ],
         "sparse_knn_scaling": [
-          "sparse_knn/n64/i0: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.49)",
-          "sparse_knn/n64/i1: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.276)"
+          "sparse_knn/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 20, max deviation 0.49)",
+          "sparse_knn/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 17, max deviation 0.276)"
         ]
       },
       "failure_reasons": {
         "dense_cluster_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
-          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 229's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 38's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 42's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 75's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 87's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 88's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
         },
         "dense_er_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 3,
-          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 108's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 19's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 193's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 36's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 37's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 50's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
         },
         "sparse_knn_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 177's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 27's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 33's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 41's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 52's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 56's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 6's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 60's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 4,
-          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 84's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 2
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
         }
       },
       "locality_audit": {
@@ -1579,79 +1385,27 @@
     "train": {
       "failure_examples": {
         "dense_cluster_scaling": [
-          "dense_cluster/n64/seed0: locality audit: player 11's strategies are not reproduced from its local view and received messages (max deviation 0.257)",
-          "dense_cluster/n64/seed2: locality audit: player 15's strategies are not reproduced from its local view and received messages (max deviation 0.235)"
+          "dense_cluster/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 11, max deviation 0.257)",
+          "dense_cluster/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 15, max deviation 0.235)"
         ],
         "dense_er_scaling": [
-          "dense_er/n64/seed0: locality audit: player 17's strategies are not reproduced from its local view and received messages (max deviation 0.19)",
-          "dense_er/n64/seed2: locality audit: player 20's strategies are not reproduced from its local view and received messages (max deviation 0.109)"
+          "dense_er/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 17, max deviation 0.19)",
+          "dense_er/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 20, max deviation 0.109)"
         ],
         "sparse_knn_scaling": [
-          "sparse_knn/n64/seed0: locality audit: player 0's strategies are not reproduced from its local view and received messages (max deviation 0.382)",
-          "sparse_knn/n64/seed2: locality audit: player 8's strategies are not reproduced from its local view and received messages (max deviation 0.264)"
+          "sparse_knn/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 0, max deviation 0.382)",
+          "sparse_knn/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 8, max deviation 0.264)"
         ]
       },
       "failure_reasons": {
         "dense_cluster_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 3,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 132's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 14's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 15's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 3,
-          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 32's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 34's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 35's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 67's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 93's strategies are not reproduced from its local view and received messages": 1
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
         },
         "dense_er_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 1's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 10's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 16's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 17's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 20's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 21's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 22's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 26's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 29's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 3's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 39's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 40's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 43's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 48's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 49's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
         },
         "sparse_knn_scaling": {
-          "locality audit: player 0's strategies are not reproduced from its local view and received messages": 4,
-          "locality audit: player 109's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 11's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 118's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 12's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 13's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 14's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 161's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 18's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 2's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 23's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 24's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 4's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 5's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 68's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 7's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 8's strategies are not reproduced from its local view and received messages": 2,
-          "locality audit: player 82's strategies are not reproduced from its local view and received messages": 1,
-          "locality audit: player 9's strategies are not reproduced from its local view and received messages": 1
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
         }
       },
       "locality_audit": {
@@ -1707,6 +1461,171 @@
         }
       },
       "unaudited_rank_gain": 0.24099967505332784
+    }
+  },
+  "shortcut_hidden_evaluator_oracle": {
+    "description": "Uses the evaluator module it runs inside (or imports it) to regenerate the hidden instance and its noise, then plays the central optimiser.",
+    "evaluator_unchanged": true,
+    "kind": "shortcut",
+    "test": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 0, max deviation 0.209)",
+          "dense_cluster/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 9, max deviation 0.2)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 7, max deviation 0.236)",
+          "dense_er/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 2, max deviation 0.289)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/i0: locality audit: strategies not reproduced from the player's local view and received messages (player 20, max deviation 0.554)",
+          "sparse_knn/n64/i1: locality audit: strategies not reproduced from the player's local view and received messages (player 17, max deviation 0.274)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
+        },
+        "dense_er_scaling": {
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
+        },
+        "sparse_knn_scaling": {
+          "locality audit: strategies not reproduced from the player's local view and received messages": 32
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 96,
+        "audited_players": 768,
+        "failed_instances": 96,
+        "max_deviation": 0.5539556207853611
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.819562827938086,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "unaudited_metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7571367219233014,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7640512946843696,
+          "relative_final_nash_gap": 0.8595300116879803
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7578503303031455,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.746528053715122,
+          "relative_final_nash_gap": 0.8368092671020086
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.3414103036618191,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.4412676619727274,
+          "relative_final_nash_gap": 0.4722906692118518
+        }
+      },
+      "unaudited_rank_gain": 0.5340620002458432
+    },
+    "train": {
+      "failure_examples": {
+        "dense_cluster_scaling": [
+          "dense_cluster/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 11, max deviation 0.304)",
+          "dense_cluster/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 15, max deviation 0.182)"
+        ],
+        "dense_er_scaling": [
+          "dense_er/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 17, max deviation 0.255)",
+          "dense_er/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 20, max deviation 0.151)"
+        ],
+        "sparse_knn_scaling": [
+          "sparse_knn/n64/seed0: locality audit: strategies not reproduced from the player's local view and received messages (player 0, max deviation 0.185)",
+          "sparse_knn/n64/seed2: locality audit: strategies not reproduced from the player's local view and received messages (player 8, max deviation 0.294)"
+        ]
+      },
+      "failure_reasons": {
+        "dense_cluster_scaling": {
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
+        },
+        "dense_er_scaling": {
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
+        },
+        "sparse_knn_scaling": {
+          "locality audit: strategies not reproduced from the player's local view and received messages": 24
+        }
+      },
+      "locality_audit": {
+        "audited_instances": 72,
+        "audited_players": 576,
+        "failed_instances": 72,
+        "max_deviation": 0.5398959341835492
+      },
+      "metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 10.0,
+          "privacy_protocol_compliance": 0.0,
+          "relative_exploitability": 10.0,
+          "relative_final_nash_gap": 10.0
+        }
+      },
+      "rank_gain": -16.82455869838131,
+      "status": {
+        "dense_cluster_scaling": "failed",
+        "dense_er_scaling": "failed",
+        "sparse_knn_scaling": "failed"
+      },
+      "unaudited_metrics": {
+        "dense_cluster_scaling": {
+          "comparator_exploitability_ratio": 0.7608060067993401,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.7616039802692572,
+          "relative_final_nash_gap": 0.8676693671439336
+        },
+        "dense_er_scaling": {
+          "comparator_exploitability_ratio": 0.7603525766325993,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.740894383381597,
+          "relative_final_nash_gap": 0.8418242321247554
+        },
+        "sparse_knn_scaling": {
+          "comparator_exploitability_ratio": 0.34124303487710284,
+          "privacy_protocol_compliance": 1.0,
+          "relative_exploitability": 0.4333228012220364,
+          "relative_final_nash_gap": 0.4717210587412173
+        }
+      },
+      "unaudited_rank_gain": 0.5286309594088427
     }
   },
   "shortcut_nonfinite": {

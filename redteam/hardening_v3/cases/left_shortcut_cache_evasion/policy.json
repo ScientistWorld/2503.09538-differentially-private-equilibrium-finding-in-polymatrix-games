@@ -1,0 +1,6 @@
+{
+  "method": "our_method",
+  "module": "redteam.hardening_v3.policies",
+  "factory": "make_left_shortcut_cache_evasion",
+  "options": {}
+}
