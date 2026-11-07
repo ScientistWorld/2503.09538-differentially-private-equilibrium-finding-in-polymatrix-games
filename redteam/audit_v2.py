@@ -105,21 +105,28 @@ def run_case(case):
     if (ROOT / 'outputs').exists():
         shutil.move(ROOT / 'outputs', backup / 'outputs')
     (ROOT / 'outputs').mkdir()
-    installed = ROOT / 'method/audit_v2_candidate.py'
+    # Different source wrappers can have equal size and mtime. Reusing one
+    # module filename can therefore reuse an earlier wrapper's valid .pyc.
+    # A distinct module name per case prevents that ordinary import-cache bug.
+    installed = ROOT / f'method/audit_v2_{case}.py'
     if installed.exists():
-        raise RuntimeError('Refusing to overwrite existing method/audit_v2_candidate.py')
+        raise RuntimeError(f'Refusing to overwrite existing {installed}')
     started = time.time()
     protected_before = fingerprint()
     result = dict(case=case, description=CASES[case], evaluator_command=['bash', 'scripts/evaluate_test.sh'])
     try:
         shutil.copy2(folder / 'method.py', installed)
         with (folder / 'generation.log').open('w') as log:
-            proc = subprocess.run([sys.executable, '-m', 'method.audit_v2_candidate'], cwd=ROOT,
+            proc = subprocess.run([sys.executable, '-m', f'method.audit_v2_{case}'], cwd=ROOT,
                                   stdout=log, stderr=subprocess.STDOUT)
         result['generation_exit'] = proc.returncode
         if proc.returncode:
             raise RuntimeError(f'candidate generation failed: {case}')
         result['preparation_process_exited_before_evaluation'] = True
+        if case.startswith('reference_seed'):
+            expected = f'{case}: dense_er N=64 done'
+            if expected not in (folder / 'generation.log').read_text():
+                raise RuntimeError(f'Wrong reference wrapper executed for {case}')
         for split in ('train', 'test'):
             with (folder / f'evaluate_{split}.log').open('w') as log:
                 proc = subprocess.run(['bash', f'scripts/evaluate_{split}.sh'], cwd=ROOT,
@@ -141,6 +148,8 @@ def run_case(case):
         result['elapsed_seconds'] = round(time.time() - started, 2)
         (folder / 'result.json').write_text(json.dumps(result, indent=2, sort_keys=True))
         installed.unlink(missing_ok=True)
+        for cached_wrapper in (ROOT / 'method/__pycache__').glob(f'audit_v2_{case}.*.pyc'):
+            cached_wrapper.unlink()
         shutil.rmtree(ROOT / 'outputs')
         if (backup / 'outputs').exists():
             shutil.move(backup / 'outputs', ROOT / 'outputs')

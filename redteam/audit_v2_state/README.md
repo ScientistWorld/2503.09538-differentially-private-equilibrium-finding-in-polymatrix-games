@@ -19,3 +19,11 @@ Scores/diagnostics/result files are saved next to each candidate's run.sh.
 The runtime harness restores the original outputs and scoring files after each
 case, and verifies evaluator hashes. Its installed method wrapper is removed.
 The temporary scheduler script will be restored before final delivery.
+
+Job 0e3cdfc6-564 completed all 20 cases. Log review caught an ordinary Python
+bytecode-cache collision: the seed-2 wrapper had the seed-1 wrapper's filename,
+mtime and byte length, so Python executed seed 1 again. The harness now uses a
+different module filename per case and checks reference invocation logs. A
+follow-up job reruns seed 2; only the corrected three runs are used in the final
+seed-spread claim. Other adjacent wrappers had different byte lengths and their
+generation logs identify the intended case.
