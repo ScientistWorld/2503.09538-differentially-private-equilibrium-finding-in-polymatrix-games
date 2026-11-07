@@ -1,0 +1,6 @@
+{
+  "communication_steps": "unchanged except explicit shortcuts",
+  "name": "better_persistent_anchor",
+  "runs": 60,
+  "uses_hidden_inputs": false
+}

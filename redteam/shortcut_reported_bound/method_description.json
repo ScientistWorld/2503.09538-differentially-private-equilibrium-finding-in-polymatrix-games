@@ -1,0 +1,6 @@
+{
+  "communication_steps": "unchanged except explicit shortcuts",
+  "name": "shortcut_reported_bound",
+  "runs": 60,
+  "uses_hidden_inputs": false
+}

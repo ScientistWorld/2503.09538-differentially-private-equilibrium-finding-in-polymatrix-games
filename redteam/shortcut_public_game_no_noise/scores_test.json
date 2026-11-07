@@ -1,0 +1,46 @@
+{
+  "experiments": {
+    "dense_cluster_scaling": {
+      "results": {
+        "our_method": {
+          "baseline_cce_ratio": 0.7143463246298453,
+          "cce_decreases_with_n": 1.0033172861723516,
+          "cce_exploitability_mean": 0.044164171681579295,
+          "competitive_with_baseline": 1.0,
+          "final_nash_gap_mean": 0.035758018231145085,
+          "privacy_budget_mean": 6605.869712510952,
+          "privacy_decreases_with_n": 1.0005199186153684,
+          "strategy_simplex_violation_mean": 5.18418045037522e-17
+        }
+      }
+    },
+    "dense_er_scaling": {
+      "results": {
+        "our_method": {
+          "baseline_cce_ratio": 0.6919799653449608,
+          "cce_decreases_with_n": 1.003827470771169,
+          "cce_exploitability_mean": 0.04639825823295993,
+          "competitive_with_baseline": 1.0,
+          "final_nash_gap_mean": 0.03624979693840378,
+          "privacy_budget_mean": 6937.685412381661,
+          "privacy_decreases_with_n": 1.0008470742833278,
+          "strategy_simplex_violation_mean": 5.1021876610810035e-17
+        }
+      }
+    },
+    "sparse_knn_scaling": {
+      "results": {
+        "our_method": {
+          "baseline_cce_ratio": 0.7403195380212974,
+          "cce_exploitability_mean": 0.09259917742017434,
+          "cce_stable_or_decreases_with_n": 1.0003535619454833,
+          "competitive_with_baseline": 1.0,
+          "final_nash_gap_mean": 0.08187074149016071,
+          "privacy_budget_mean": 5482.4123499135685,
+          "privacy_decreases_with_n": 1.0487915353274446,
+          "strategy_simplex_violation_mean": 4.806629631352402e-17
+        }
+      }
+    }
+  }
+}

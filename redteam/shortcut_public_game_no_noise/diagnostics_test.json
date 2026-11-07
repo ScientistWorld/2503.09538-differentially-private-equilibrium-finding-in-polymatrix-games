@@ -1,0 +1,622 @@
+{
+  "_meta": {
+    "selected_runs": 48,
+    "slice": "test"
+  },
+  "experiments": {
+    "dense_cluster_scaling": {
+      "methods": {
+        "our_method": {
+          "raw_baseline_cce_ratio": 0.7143463246298453,
+          "raw_cce_slope": -0.33172861723516534,
+          "raw_nash_gap_slope": -0.2973871052888378,
+          "raw_privacy_slope": -0.05199186153683162,
+          "slice": "test"
+        }
+      },
+      "slice": "test"
+    },
+    "dense_er_scaling": {
+      "methods": {
+        "our_method": {
+          "raw_baseline_cce_ratio": 0.6919799653449608,
+          "raw_cce_slope": -0.382747077116886,
+          "raw_nash_gap_slope": -0.3001329605549661,
+          "raw_privacy_slope": -0.08470742833277242,
+          "slice": "test"
+        }
+      },
+      "slice": "test"
+    },
+    "sparse_knn_scaling": {
+      "methods": {
+        "our_method": {
+          "raw_baseline_cce_ratio": 0.7403195380212974,
+          "raw_cce_slope": -0.035356194548338216,
+          "raw_nash_gap_slope": -0.07340436410048025,
+          "raw_privacy_slope": -4.879153532744453,
+          "slice": "test"
+        }
+      },
+      "slice": "test"
+    }
+  },
+  "groups": {
+    "dense_cluster/noisy_omd/n128": {
+      "cce_exploitability": {
+        "mean": 0.07223051351977477,
+        "n": 2,
+        "std": 0.003229097033659374
+      },
+      "final_nash_gap": {
+        "mean": 0.09400738726629557,
+        "n": 2,
+        "std": 0.004449925018382948
+      },
+      "privacy_budget": {
+        "mean": 6898.260287131545,
+        "n": 2,
+        "std": 5.6027111086227706
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.003593026020603e-17,
+        "n": 2,
+        "std": 2.9815559743351372e-18
+      }
+    },
+    "dense_cluster/noisy_omd/n256": {
+      "cce_exploitability": {
+        "mean": 0.0527367321657745,
+        "n": 2,
+        "std": 0.0007995609425998258
+      },
+      "final_nash_gap": {
+        "mean": 0.06399804567550427,
+        "n": 2,
+        "std": 0.000498687564722794
+      },
+      "privacy_budget": {
+        "mean": 6590.370563962986,
+        "n": 2,
+        "std": 3.643730845150003
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.632253781944318e-17,
+        "n": 2,
+        "std": 1.2197274440461925e-18
+      }
+    },
+    "dense_cluster/noisy_omd/n512": {
+      "cce_exploitability": {
+        "mean": 0.04194156082543714,
+        "n": 2,
+        "std": 0.0004493033382569171
+      },
+      "final_nash_gap": {
+        "mean": 0.052162444406894805,
+        "n": 2,
+        "std": 0.0006538433275754194
+      },
+      "privacy_budget": {
+        "mean": 6128.496344632834,
+        "n": 2,
+        "std": 2.6503709429125593
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.808436634973212e-17,
+        "n": 2,
+        "std": 7.047314121155779e-19
+      }
+    },
+    "dense_cluster/noisy_omd/n64": {
+      "cce_exploitability": {
+        "mean": 0.08047994360143919,
+        "n": 2,
+        "std": 0.000735573525200553
+      },
+      "final_nash_gap": {
+        "mean": 0.10020671191191322,
+        "n": 2,
+        "std": 0.003882941329382439
+      },
+      "privacy_budget": {
+        "mean": 6806.351654316447,
+        "n": 2,
+        "std": 51.627619083917125
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.4777549723651333e-17,
+        "n": 2,
+        "std": 7.589415207398531e-19
+      }
+    },
+    "dense_cluster/our_method/n128": {
+      "cce_exploitability": {
+        "mean": 0.04883183107032102,
+        "n": 2,
+        "std": 0.00031838018082185407
+      },
+      "final_nash_gap": {
+        "mean": 0.0389047829654369,
+        "n": 2,
+        "std": 0.0010721113772968402
+      },
+      "privacy_budget": {
+        "mean": 6898.260287131545,
+        "n": 2,
+        "std": 5.6027111086227706
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.2366964931049864e-17,
+        "n": 2,
+        "std": 4.336808689942018e-19
+      }
+    },
+    "dense_cluster/our_method/n256": {
+      "cce_exploitability": {
+        "mean": 0.038622544180752866,
+        "n": 2,
+        "std": 0.00037604762134246447
+      },
+      "final_nash_gap": {
+        "mean": 0.03146576084393185,
+        "n": 2,
+        "std": 0.0001813774351526569
+      },
+      "privacy_budget": {
+        "mean": 6590.370563962986,
+        "n": 2,
+        "std": 3.643730845150003
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.1553813301685736e-17,
+        "n": 2,
+        "std": 1.734723475976807e-18
+      }
+    },
+    "dense_cluster/our_method/n512": {
+      "cce_exploitability": {
+        "mean": 0.0298307863386884,
+        "n": 2,
+        "std": 0.00017708576042223603
+      },
+      "final_nash_gap": {
+        "mean": 0.025475658895737587,
+        "n": 2,
+        "std": 0.000297994520235682
+      },
+      "privacy_budget": {
+        "mean": 6128.496344632834,
+        "n": 2,
+        "std": 2.6503709429125593
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.183841637196318e-17,
+        "n": 2,
+        "std": 3.6591823321385775e-19
+      }
+    },
+    "dense_cluster/our_method/n64": {
+      "cce_exploitability": {
+        "mean": 0.05937152513655488,
+        "n": 2,
+        "std": 0.0023536241765719015
+      },
+      "final_nash_gap": {
+        "mean": 0.04718587021947399,
+        "n": 2,
+        "std": 4.575044331871919e-05
+      },
+      "privacy_budget": {
+        "mean": 6806.351654316447,
+        "n": 2,
+        "std": 51.627619083917125
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.160802341031001e-17,
+        "n": 2,
+        "std": 2.168404344971009e-19
+      }
+    },
+    "dense_er/noisy_omd/n128": {
+      "cce_exploitability": {
+        "mean": 0.07295121700320317,
+        "n": 2,
+        "std": 0.00022584409306953407
+      },
+      "final_nash_gap": {
+        "mean": 0.09210221183433533,
+        "n": 2,
+        "std": 0.001144077318710232
+      },
+      "privacy_budget": {
+        "mean": 7198.980558340989,
+        "n": 2,
+        "std": 11.131152601139547
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.629543276513104e-17,
+        "n": 2,
+        "std": 8.673617379884035e-19
+      }
+    },
+    "dense_er/noisy_omd/n256": {
+      "cce_exploitability": {
+        "mean": 0.05643047953288649,
+        "n": 2,
+        "std": 0.0013004213249456602
+      },
+      "final_nash_gap": {
+        "mean": 0.06787255825040618,
+        "n": 2,
+        "std": 0.003048780878061194
+      },
+      "privacy_budget": {
+        "mean": 6795.859737571236,
+        "n": 2,
+        "std": 12.510499215483378
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.778621075229861e-17,
+        "n": 2,
+        "std": 1.9786689647860456e-18
+      }
+    },
+    "dense_er/noisy_omd/n512": {
+      "cce_exploitability": {
+        "mean": 0.0428317785451818,
+        "n": 2,
+        "std": 0.00019527469586875026
+      },
+      "final_nash_gap": {
+        "mean": 0.054893041328188064,
+        "n": 2,
+        "std": 0.00015516858499186464
+      },
+      "privacy_budget": {
+        "mean": 6272.518151772456,
+        "n": 2,
+        "std": 2.259403656192262
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.846383711010205e-17,
+        "n": 2,
+        "std": 1.5720931501039814e-18
+      }
+    },
+    "dense_er/noisy_omd/n64": {
+      "cce_exploitability": {
+        "mean": 0.09603175939213968,
+        "n": 2,
+        "std": 0.0038575483640915717
+      },
+      "final_nash_gap": {
+        "mean": 0.11480451374208175,
+        "n": 2,
+        "std": 0.004584119082300636
+      },
+      "privacy_budget": {
+        "mean": 7483.383201841962,
+        "n": 2,
+        "std": 39.58482202283449
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.130810277169772e-17,
+        "n": 2,
+        "std": 1.6263032587282567e-18
+      }
+    },
+    "dense_er/our_method/n128": {
+      "cce_exploitability": {
+        "mean": 0.04931196880460113,
+        "n": 2,
+        "std": 0.0010476094258890754
+      },
+      "final_nash_gap": {
+        "mean": 0.03790926350744931,
+        "n": 2,
+        "std": 0.0004736083005705827
+      },
+      "privacy_budget": {
+        "mean": 7198.980558340989,
+        "n": 2,
+        "std": 11.131152601139547
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.9276988739466177e-17,
+        "n": 2,
+        "std": 9.215718466126788e-19
+      }
+    },
+    "dense_er/our_method/n256": {
+      "cce_exploitability": {
+        "mean": 0.038393601970438895,
+        "n": 2,
+        "std": 9.683341441718563e-06
+      },
+      "final_nash_gap": {
+        "mean": 0.03208394975635055,
+        "n": 2,
+        "std": 0.000239335624963935
+      },
+      "privacy_budget": {
+        "mean": 6795.859737571236,
+        "n": 2,
+        "std": 12.510499215483378
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.209591438792849e-17,
+        "n": 2,
+        "std": 3.7947076036992655e-19
+      }
+    },
+    "dense_er/our_method/n512": {
+      "cce_exploitability": {
+        "mean": 0.030328597814724915,
+        "n": 2,
+        "std": 0.0005284493001242903
+      },
+      "final_nash_gap": {
+        "mean": 0.025932168522154728,
+        "n": 2,
+        "std": 0.0004253404071491544
+      },
+      "privacy_budget": {
+        "mean": 6272.518151772456,
+        "n": 2,
+        "std": 2.259403656192262
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.3274984250506474e-17,
+        "n": 2,
+        "std": 1.5856456772600502e-18
+      }
+    },
+    "dense_er/our_method/n64": {
+      "cce_exploitability": {
+        "mean": 0.06755886434207475,
+        "n": 2,
+        "std": 0.0019925472333055597
+      },
+      "final_nash_gap": {
+        "mean": 0.049073805967660526,
+        "n": 2,
+        "std": 0.0015817285244603338
+      },
+      "privacy_budget": {
+        "mean": 7483.383201841962,
+        "n": 2,
+        "std": 39.58482202283449
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.9439619065339e-17,
+        "n": 2,
+        "std": 3.686287386450715e-18
+      }
+    },
+    "sparse_knn/noisy_omd/n128": {
+      "cce_exploitability": {
+        "mean": 0.12923039304834988,
+        "n": 2,
+        "std": 0.0003193982411796442
+      },
+      "final_nash_gap": {
+        "mean": 0.1463845894141036,
+        "n": 2,
+        "std": 0.003832756417613367
+      },
+      "privacy_budget": {
+        "mean": 0.7443869484242169,
+        "n": 2,
+        "std": 0.04306370776007862
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.7704895589362195e-17,
+        "n": 2,
+        "std": 1.734723475976807e-18
+      }
+    },
+    "sparse_knn/noisy_omd/n256": {
+      "cce_exploitability": {
+        "mean": 0.12119923437749053,
+        "n": 2,
+        "std": 0.008912515805429948
+      },
+      "final_nash_gap": {
+        "mean": 0.14131343592959184,
+        "n": 2,
+        "std": 0.0013160529212015576
+      },
+      "privacy_budget": {
+        "mean": 0.5539890927613094,
+        "n": 2,
+        "std": 0.02347411410005551
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.503053023056462e-17,
+        "n": 2,
+        "std": 2.674365358797576e-18
+      }
+    },
+    "sparse_knn/noisy_omd/n512": {
+      "cce_exploitability": {
+        "mean": 0.12188909659864092,
+        "n": 2,
+        "std": 0.0008446679204016025
+      },
+      "final_nash_gap": {
+        "mean": 0.14379574406528534,
+        "n": 2,
+        "std": 0.0010856447404801045
+      },
+      "privacy_budget": {
+        "mean": 0.3075108947107268,
+        "n": 2,
+        "std": 0.023474114100055482
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.434386885465713e-17,
+        "n": 2,
+        "std": 1.1926223897340549e-18
+      }
+    },
+    "sparse_knn/noisy_omd/n64": {
+      "cce_exploitability": {
+        "mean": 0.1279486212142753,
+        "n": 2,
+        "std": 0.008468406243684556
+      },
+      "final_nash_gap": {
+        "mean": 0.13311052582440314,
+        "n": 2,
+        "std": 0.005470505296385833
+      },
+      "privacy_budget": {
+        "mean": 21928.043512718377,
+        "n": 2,
+        "std": 113.0978480544145
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 2.949029909160572e-17,
+        "n": 2,
+        "std": 9.540979117872439e-18
+      }
+    },
+    "sparse_knn/our_method/n128": {
+      "cce_exploitability": {
+        "mean": 0.09765451054725058,
+        "n": 2,
+        "std": 0.001637859502356974
+      },
+      "final_nash_gap": {
+        "mean": 0.09004999570241942,
+        "n": 2,
+        "std": 0.002636110400307541
+      },
+      "privacy_budget": {
+        "mean": 0.7443869484242169,
+        "n": 2,
+        "std": 0.04306370776007862
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.182486384480711e-17,
+        "n": 2,
+        "std": 8.890457814381136e-18
+      }
+    },
+    "sparse_knn/our_method/n256": {
+      "cce_exploitability": {
+        "mean": 0.09140821841113529,
+        "n": 2,
+        "std": 0.0017711841753272756
+      },
+      "final_nash_gap": {
+        "mean": 0.0788244759574104,
+        "n": 2,
+        "std": 0.001472074387053407
+      },
+      "privacy_budget": {
+        "mean": 0.5539890927613094,
+        "n": 2,
+        "std": 0.02347411410005551
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 4.777717573419456e-17,
+        "n": 2,
+        "std": 7.950815931560376e-19
+      }
+    },
+    "sparse_knn/our_method/n512": {
+      "cce_exploitability": {
+        "mean": 0.08796334679132353,
+        "n": 2,
+        "std": 0.0004204680918866305
+      },
+      "final_nash_gap": {
+        "mean": 0.07434550163257593,
+        "n": 2,
+        "std": 0.0008315437634710682
+      },
+      "privacy_budget": {
+        "mean": 0.3075108947107268,
+        "n": 2,
+        "std": 0.023474114100055482
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 5.319818659662208e-17,
+        "n": 2,
+        "std": 5.059610138265677e-19
+      }
+    },
+    "sparse_knn/our_method/n64": {
+      "cce_exploitability": {
+        "mean": 0.09337063393098803,
+        "n": 2,
+        "std": 0.003890205289811946
+      },
+      "final_nash_gap": {
+        "mean": 0.08426299266823707,
+        "n": 2,
+        "std": 0.0012412801647210397
+      },
+      "privacy_budget": {
+        "mean": 21928.043512718377,
+        "n": 2,
+        "std": 113.0978480544145
+      },
+      "runs": 2,
+      "slice": "test",
+      "strategy_simplex_violation": {
+        "mean": 3.946495907847236e-17,
+        "n": 2,
+        "std": 3.903127820947816e-18
+      }
+    }
+  }
+}

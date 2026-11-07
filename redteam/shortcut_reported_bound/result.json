@@ -1,0 +1,40 @@
+{
+  "elapsed_seconds": 68.98539938300382,
+  "name": "shortcut_reported_bound",
+  "preparation_exit": 0,
+  "rank_components": {
+    "dense_cluster_scaling": {
+      "baseline_cce_ratio": -0.0,
+      "cce_decreases_with_n": 0.0,
+      "cce_exploitability_mean": -0.0,
+      "competitive_with_baseline": 0.0,
+      "final_nash_gap_mean": -0.0,
+      "privacy_budget_mean": -0.0,
+      "privacy_decreases_with_n": 0.0,
+      "strategy_simplex_violation_mean": -0.0
+    },
+    "dense_er_scaling": {
+      "baseline_cce_ratio": -0.0,
+      "cce_decreases_with_n": 0.0,
+      "cce_exploitability_mean": -0.0,
+      "competitive_with_baseline": 0.0,
+      "final_nash_gap_mean": -0.0,
+      "privacy_budget_mean": -0.0,
+      "privacy_decreases_with_n": 0.0,
+      "strategy_simplex_violation_mean": -0.0
+    },
+    "sparse_knn_scaling": {
+      "baseline_cce_ratio": -0.0,
+      "cce_exploitability_mean": -0.0,
+      "cce_stable_or_decreases_with_n": 0.0,
+      "competitive_with_baseline": 0.0,
+      "final_nash_gap_mean": -0.0,
+      "privacy_budget_mean": -0.0,
+      "privacy_decreases_with_n": 0.0,
+      "strategy_simplex_violation_mean": -0.0
+    }
+  },
+  "rank_gain": 0.0,
+  "test_exit": 0,
+  "train_exit": 0
+}
