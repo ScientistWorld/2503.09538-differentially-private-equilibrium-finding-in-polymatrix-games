@@ -22,6 +22,7 @@ CASES = [
     'shortcut_public_game_no_noise', 'shortcut_constant_uniform',
     'shortcut_zero_outputs', 'shortcut_zero_outputs_zero_eta',
     'shortcut_nan_output', 'shortcut_empty_output',
+    'better_fixed_transcript_readout', 'better_fixed_transcript_stronger_readout',
 ]
 
 

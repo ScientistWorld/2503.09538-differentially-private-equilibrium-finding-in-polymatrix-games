@@ -121,6 +121,23 @@ def run(name):
             elif name == 'better_persistent_anchor':
                 # Real local update change, same noise, graph, eta and messages.
                 traj, broadcasts = algorithm(game, r['steps'], r['eta'], r['sigma'], 2000 + seed, anchor=True)
+            elif name in ('better_fixed_transcript_readout', 'better_fixed_transcript_stronger_readout'):
+                # Genuine private local readout. Keep the entire reference
+                # communication protocol and its broadcasts bit-for-bit.
+                # Each player only accesses its own utility matrices and the
+                # already received noisy neighbor messages. The local output
+                # states never feed back into communication. Thus any privacy
+                # guarantee for an observer of reference channels is unchanged.
+                shadow = np.full((n, a), 1 / a)
+                degree = np.maximum(game.degrees.astype(float), 1)
+                tau = harmonic_mean_degree(game) ** (5 / 9) / (degree * np.log(n))
+                readout_eta = 2. if name.endswith('stronger_readout') else r['eta']
+                readout = []
+                for message in broadcasts:
+                    local_gradient = gradients(game, project_simplex(message))
+                    shadow = project_simplex((shadow - readout_eta * local_gradient) / (1 + readout_eta * tau[:, None]))
+                    readout.append(shadow.copy())
+                traj = np.stack(readout)
             elif name == 'weaker_no_gradient':
                 # Genuine ablation: remove all payoff-dependent update terms.
                 traj, broadcasts = algorithm(game, r['steps'], r['eta'], r['sigma'], 2000 + seed, no_gradient=True)
